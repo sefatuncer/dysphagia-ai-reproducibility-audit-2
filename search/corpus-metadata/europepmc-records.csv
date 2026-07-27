@@ -1,0 +1,514 @@
+source,id,doi,pmid,year,venue,title
+EuropePMC,42411212,10.2174/0115672026477902260702064111,42411212,2026,Curr Neurovasc Res,The Technological Advances in Artificial Intelligence-assisted Diagnosis of Dysphagia: A Mini Review.
+EuropePMC,42338670,10.2147/copd.s607694,42338670,2026,Int J Chron Obstruct Pulmon Dis,Development and Validation of an Explainable Machine Learning Model for Identification of Dysphagia in Patients with COPD.
+EuropePMC,41714402,10.1038/s41598-026-40751-9,41714402,2026,Sci Rep,Classification of dysphagia severity after lateral medullary infarction with deep learning.
+EuropePMC,41298263,10.1136/bmjopen-2025-108726,41298263,2025,BMJ Open,Artificial intelligence tools for the assessment and management of dysphagia: protocol for a scoping review.
+EuropePMC,42234064,10.1007/s11548-026-03727-8,42234064,2026,Int J Comput Assist Radiol Surg,Deep learning for early detection of Zenker's diverticulum based on swallowing sound analysis.
+EuropePMC,40767676,10.1590/2317-1782/e20240305en,40767676,2025,Codas,Artificial intelligence in the diagnosis and management of dysphagia: a scoping review.
+EuropePMC,42232336,10.1044/2025_persp-25-00140,42232336,2026,Perspect ASHA Spec Interest Groups,Enhancing the assessment of deglutition function in preterm infants with mechano-acoustic analysis and machine learning: a narrative review.
+EuropePMC,41541664,10.1016/j.isci.2025.114451,41541664,2026,iScience,Interpretable machine learning for accessible dysphagia screening and staging in older adults.
+EuropePMC,41305043,10.3390/s25226834,41305043,2025,Sensors (Basel),Early Detection of Dysphagia Signs in Parkinson's Disease: An Artificial Intelligence-Based Approach Using Non-Invasive Sensors.
+EuropePMC,42384315,10.1007/s10439-026-04267-7,42384315,2026,Ann Biomed Eng,"Screening and Evaluation of Post-stroke Dysphagia: Insights from Neurology, Artificial Intelligence and Data Science-A Scoping Review."
+EuropePMC,41400168,10.1111/joor.70124,41400168,2026,J Oral Rehabil,Identification of Individualised Aspiration Mechanisms in Post-Stroke Dysphagia: A VFSS-Based Interpretable Machine Learning Approach.
+EuropePMC,PPR1235978,10.64898/2026.05.16.26353385,,2026,,Automated identification of bolus types in modified barium swallow studies using deep learning: a preliminary study
+EuropePMC,PPR1053347,10.21203/rs.3.rs-7007189/v1,,2025,,Prediction of dysphagia severity after lateral medullary infarction with deep learning
+EuropePMC,42058278,10.3389/fradi.2026.1767875,42058278,2026,Front Radiol,YOLO11-based detection of manometry sensors in video-fluoroscopy imaging for computer-aided multimodal assessment of swallowing.
+EuropePMC,41905601,10.1016/j.apmr.2026.03.016,41905601,2026,Arch Phys Med Rehabil,Assessing the Performance and Reliability of Deep Learning Autosegmentation in Videofluoroscopic Swallowing Studies: A Systematic Review and Meta-analysis.
+EuropePMC,41772529,10.1186/s12893-026-03554-3,41772529,2026,BMC Surg,Interpretable machine learning model for predicting the risk of dysphagia in patients after cardiac surgery.
+EuropePMC,41963397,10.1038/s41598-026-44495-4,41963397,2026,Sci Rep,Artificial intelligence and image processing framework for automated airway invasion detection and residue classification from swallowing endoscopy.
+EuropePMC,42228093,10.1007/s00455-026-10956-1,42228093,2026,Dysphagia,Deep Learning-Based Acoustic Screening for Penetration-Aspiration Events Using Short Voice Recordings.
+EuropePMC,42270275,10.1016/j.foodres.2026.119567,42270275,2026,Food Res Int,3D printing of wheat starch gels for dysphagia diet: Molecular interaction mechanisms and machine learning-assisted prediction of IDDSI levels.
+EuropePMC,42127994,10.1088/2516-1091/ae6d5d,42127994,2026,Prog Biomed Eng (Bristol),Wearable sensors for monitoring neurogenic dysphagia: a scoping review.
+EuropePMC,40624237,10.1038/s41598-025-10397-0,40624237,2025,Sci Rep,Deep learning-based video analysis for automatically detecting penetration and aspiration in videofluoroscopic swallowing study.
+EuropePMC,PPR1185123,10.21203/rs.3.rs-9450763/v1,,2026,,A Machine Learning–Based Prediction Model for Dysphagia After Radiotherapy in Nasopharyngeal Carcinoma Survivors
+EuropePMC,40901523,10.3389/fmed.2025.1624381,40901523,2025,Front Med (Lausanne),Artificial intelligence in dysphagia since the 21st century: a bibliometric and visualization study.
+EuropePMC,42083492,10.1097/mco.0000000000001229,42083492,2026,Curr Opin Clin Nutr Metab Care,Artificial intelligence in nutritional assessment and decision making.
+EuropePMC,42168445,10.1038/s41598-026-53618-w,42168445,2026,Sci Rep,Post-swallowing voice-based aspiration screening in dysphagia using a deep learning approach: insights from audio segmentation.
+EuropePMC,41236586,10.1007/s12194-025-00984-1,41236586,2026,Radiol Phys Technol,Automatic measurement of pharyngeal contraction ratio during deglutition using 2D cine MRI with deep learning: A pilot study.
+EuropePMC,41345272,10.1038/s41598-025-30913-6,41345272,2025,Sci Rep,An efficient dimensionality reduction framework using metaheuristic optimization with deep learning models for amyotrophic lateral sclerosis disease progression prediction.
+EuropePMC,40725718,10.3390/jcm14145025,40725718,2025,J Clin Med,Predicting Long-Term Prognosis of Poststroke Dysphagia with Machine Learning.
+EuropePMC,PPR1110382,10.21203/rs.3.rs-7823321/v1,,2025,,Deep Learning-Based Classification of Dysphagia Severity Using M-Mode Ultrasound Imaging
+EuropePMC,40312192,10.1016/j.jvoice.2025.04.010,40312192,2025,J Voice,Artificial Intelligence in Speech-Language Pathology and Dysphagia: A Review From Latin American Perspective and Pilot Test of LLMs for Rehabilitation Planning.
+EuropePMC,41774024,10.1016/j.pedhc.2026.01.009,41774024,2026,J Pediatr Health Care,Systematic Review of Studies Investigating Infant Feeding Difficulties: Focus on Machine Learning Applications.
+EuropePMC,42135376,10.1038/s41598-026-52516-5,42135376,2026,Sci Rep,Machine learning-based analysis of the relationship between brain lesion sites and swallowing and cognitive functions in stroke patients.
+EuropePMC,41578264,10.1186/s12911-025-03337-5,41578264,2026,BMC Med Inform Decis Mak,Machine learning-based model for prediction of swallowing recovery in post-stroke patients.
+EuropePMC,40936063,10.1007/s00455-025-10879-3,40936063,2026,Dysphagia,Using Machine Learning for the Automated Segmentation and Detection of Swallows Obtained by Digital Cervical Auscultation in Preterm Neonates.
+EuropePMC,40812133,10.1016/j.aucc.2025.101307,40812133,2025,Aust Crit Care,Exploring explainable machine learning techniques to aid dysphagia risk identification: A feasibility study.
+EuropePMC,41464178,10.3390/diagnostics15243180,41464178,2025,Diagnostics (Basel),Detecting Airway Invasion in Variable-Length Videofluoroscopic Swallowing Studies: A Vision Transformer Approach for Oropharyngeal Dysphagia.
+EuropePMC,41699632,10.1186/s12911-026-03365-9,41699632,2026,BMC Med Inform Decis Mak,Machine learning for dysphagia risk prediction in older adults after acute ischemic stroke.
+EuropePMC,42143569,10.1111/1541-4337.70507,42143569,2026,Compr Rev Food Sci Food Saf,Modulating Protein-Starch Interactions for Microstructure and Rheology of Soft-Textured Dysphagia Foods-A Review.
+EuropePMC,42108719,10.1111/nmo.70344,42108719,2026,Neurogastroenterol Motil,Artificial Intelligence Chatbots for Dysphagia Patient Education: A Multi-Center International Expert Evaluation.
+EuropePMC,40403345,10.1016/j.anl.2025.05.002,40403345,2025,Auris Nasus Larynx,Digital health technologies in swallowing care from screening to rehabilitation: A narrative review.
+EuropePMC,42154713,10.1109/jbhi.2026.3695144,42154713,2026,IEEE J Biomed Health Inform,SPARNet: A Framework for Airway Invasion Tracking from Fluoroscopic Videos of Dysphagia Patients.
+EuropePMC,39217249,10.1038/s41598-024-70774-z,39217249,2024,Sci Rep,Deep learning approach for dysphagia detection by syllable-based speech analysis with daily conversations.
+EuropePMC,41973941,10.2196/81028,41973941,2026,JMIR AI,Using Machine Learning to Improve Screening for Oropharyngeal Dysphagia in Hospitalized Versus Primary Care Adult Patients With COVID-19 Disease: Retrospective Observational Study.
+EuropePMC,39370611,10.1111/nmo.14931,39370611,2024,Neurogastroenterol Motil,Comparison of measurement of integrated relaxation pressure by esophageal manometry with analysis of swallowing sounds with artificial intelligence in patients with achalasia.
+EuropePMC,41634176,10.1007/s10278-026-01845-y,41634176,2026,J Imaging Inform Med,Detection of Swallowing Abnormalities in Pediatric FEES Recordings Using Rule-Based and Model-Based Methods.
+EuropePMC,39914196,10.1016/j.compbiomed.2025.109759,39914196,2025,Comput Biol Med,Automated dysphagia characterization in head and neck cancer patients using videofluoroscopic swallowing studies.
+EuropePMC,41275529,10.1016/j.heares.2025.109479,41275529,2026,Hear Res,Multi-feature machine learning classification of sonotubometry for eustachian tube dysfunction assessment.
+EuropePMC,41477802,10.1109/jbhi.2025.3650133,41477802,2026,IEEE J Biomed Health Inform,CFSCNet: A Coarse-Fine Stream Conformer Neural Network for Swallow Segmentation.
+EuropePMC,42074713,10.3390/jcm15082911,42074713,2026,J Clin Med,Monitoring Spontaneous Swallowing After Tracheostomy Using a Neck-Worn Electronic Stethoscope: A Pilot Study.
+EuropePMC,42371600,10.1177/20552076261465164,42371600,2026,Digit Health,Multi-sensor fusion for differentiating swallows between healthy adults and patients with post-stroke dysphagia.
+EuropePMC,42212596,10.1177/21695172261451702,42212596,2026,Soft Robot,Bioinspired Swallowing Soft Gripper with Toroidal Optical Waveguides for Multimodal Interactive Perception.
+EuropePMC,42005711,10.1016/j.ctro.2026.101165,42005711,2026,Clin Transl Radiat Oncol,Artificial intelligence (AI) for early identification of radiotherapy related toxicities from the electronic health records of patients with head and neck cancer.
+EuropePMC,41033356,10.1016/j.radonc.2025.111169,41033356,2025,Radiother Oncol,"Deep learning NTCP model for late dysphagia after radiotherapy for head and neck cancer patients based on 3D dose, CT and segmentations."
+EuropePMC,42164142,10.3389/fmed.2026.1804250,42164142,2026,Front Med (Lausanne),Swallowing impairment and aspiration risk in clinically stabilized patients hospitalized for acute respiratory events: a cohort-wide machine-learning analysis with COPD-specific insights.
+EuropePMC,41150044,10.3390/jimaging11100368,41150044,2025,J Imaging,Unsupervised Segmentation of Bolus and Residue in Videofluoroscopy Swallowing Studies.
+EuropePMC,42073057,10.3390/children13040479,42073057,2026,Children (Basel),Artificial Intelligence-Based Video Analysis for Assessing Sucking Behavior in Preterm Infants: A Feasibility Study.
+EuropePMC,39157445,10.3389/fbioe.2024.1433087,39157445,2024,Front Bioeng Biotechnol,A deep learning approach to dysphagia-aspiration detecting algorithm through pre- and post-swallowing voice changes.
+EuropePMC,41912327,10.3340/jkns.2025.0252,41912327,2026,J Korean Neurosurg Soc,Machine Learning Prediction of Prevertebral Soft Tissue Swelling after Single-Level Anterior Cervical Surgery : A Proof-of-Concept Study.
+EuropePMC,41378357,10.2147/ijgm.s567157,41378357,2025,Int J Gen Med,Predicting Early Dysphagia in Acute Ischemic Stroke Using an Explainable Machine Learning Model.
+EuropePMC,41195886,10.1097/rnj.0000000000000521,41195886,2026,Rehabil Nurs,Swallowing Dysfunction in Stroke: The Role of Nurses and Rehabilitation Strategies Across Recovery Phases.
+EuropePMC,39624613,10.2147/ijgm.s484237,39624613,2024,Int J Gen Med,A Machine-Learning Model Based on Clinical Features for the Prediction of Severe Dysphagia After Ischemic Stroke.
+EuropePMC,PPR1039641,10.1101/2025.06.20.25329926,,2025,,"Deep learning NTCP model for late dysphagia after radiotherapy for head and neck cancer patients based on 3D dose, CT and segmentations"
+EuropePMC,40131688,10.1007/s12094-025-03900-6,40131688,2025,Clin Transl Oncol,Artificial intelligence in dysphagia assessment: evaluating lingual muscle composition in head and neck cancer.
+EuropePMC,41067594,10.1016/j.cgh.2025.09.034,41067594,2026,Clin Gastroenterol Hepatol,From Pixels to Peristalsis: Comparing Achalasia Diagnosis With Artificial Intelligence With Expert Endoscopists.
+EuropePMC,39834880,10.1177/17562864241311130,39834880,2025,Ther Adv Neurol Disord,Predictors and lesion patterns of dysphagia and swallowing outcomes after acute intracerebral hemorrhage.
+EuropePMC,40726741,10.1007/s41666-025-00201-z,40726741,2025,J Healthc Inform Res,Novel Videographic-Free Framework for Tracking Anatomical Structures Using Swallowing Accelerometer Signals and Multi-task Transformers.
+EuropePMC,39698476,10.1109/jtehm.2024.3497895,39698476,2024,IEEE J Transl Eng Health Med,Elevating Patient Care With Deep Learning: High-Resolution Cervical Auscultation Signals for Swallowing Kinematic Analysis in Nasogastric Tube Patients.
+EuropePMC,41330067,10.1016/j.compbiomed.2025.111361,41330067,2026,Comput Biol Med,Automated detection of chewing movements in videofluoroscopic swallowing studies using deep learning for landmark detection and motion analysis.
+EuropePMC,42217237,10.1080/10749357.2026.2675410,42217237,2026,Top Stroke Rehabil,Optimizing cervical breath sound acquisition protocol in dysphagia patients: an orthogonal experimental study.
+EuropePMC,41787362,10.1186/s12877-026-07247-7,41787362,2026,BMC Geriatr,Symptom clustering of old adult dysphagic patient phenotypes by unsupervised machine learning using multidimensional characteristics: a cross-sectional study.
+EuropePMC,38719714,10.1016/j.otc.2024.04.002,38719714,2024,Otolaryngol Clin North Am,"Artificial Intelligence in Laryngology, Broncho-Esophagology, and Sleep Surgery."
+EuropePMC,PPR718009,10.20944/preprints202308.2166.v1,,2023,,Artificial Intelligence in the Interpretation of Videofluoroscopic Swallowing Studies: Implications and Advances for Speech Pathologists
+EuropePMC,41571515,10.1016/j.neurot.2026.e00835,41571515,2026,Neurotherapeutics,Metaplasticity in swallowing system via cross-modal neurostimulation: A randomized crossover trial with magnetoencephalography.
+EuropePMC,39765160,10.1016/j.clnu.2024.12.022,39765160,2025,Clin Nutr,Effect of artificial intelligence-based video-game system on dysphagia in patients with stroke: A randomized controlled trial.
+EuropePMC,38130696,10.3389/fnins.2023.1302132,38130696,2023,Front Neurosci,Machine-learning assisted swallowing assessment: a deep learning-based quality improvement tool to screen for post-stroke dysphagia.
+EuropePMC,37980257,10.1016/j.anl.2023.11.004,37980257,2024,Auris Nasus Larynx,Effectiveness of FEES with artificial intelligence-assisted computer-aided diagnosis.
+EuropePMC,41515539,10.3390/diagnostics16010045,41515539,2025,Diagnostics (Basel),Multi-Center Validation of Artificial Intelligence-Based Video Analysis Platform for Automatic Evaluation of Swallowing Disorders.
+EuropePMC,40324167,10.2196/65551,40324167,2025,J Med Internet Res,Current Technological Advances in Dysphagia Screening: Systematic Scoping Review.
+EuropePMC,37858370,10.1016/j.ultrasmedbio.2023.09.008,37858370,2024,Ultrasound Med Biol,Bedside Ultrasound to Identify and Predict Severity of Dysphagia Following Ischemic Stroke: Human Versus Artificial Intelligence.
+EuropePMC,39828090,10.1016/j.bbr.2025.115430,39828090,2025,Behav Brain Res,The basic theory and application of the mirror neuron system in dysphagia after stroke.
+EuropePMC,42355869,10.3390/jcm15124702,42355869,2026,J Clin Med,Construction and Validation of a 90-Day Mortality Risk Prediction Model Based on Interpretable Machine Learning for Acute Ischemic Stroke Patients Undergoing Mechanical Thrombectomy.
+EuropePMC,39961823,10.1007/s00455-025-10812-8,39961823,2025,Dysphagia,Artificial Intelligence in Videofluoroscopy Swallow Study Analysis: A Comprehensive Review.
+EuropePMC,42006865,10.3389/fmed.2026.1735311,42006865,2026,Front Med (Lausanne),Quantifying clinical indicators for identifying and prognosticating aspiration pneumonia in Chinese geriatric patients: a retrospective cohort study integrating multivariable regression and interpretable machine learning.
+EuropePMC,41977804,10.3390/s26072019,41977804,2026,Sensors (Basel),A Multimodal In-Ear Audio and Physiological Dataset for Swallowing and Non-Verbal Event Classification.
+EuropePMC,39674434,10.1016/j.jstrokecerebrovasdis.2024.108200,39674434,2025,J Stroke Cerebrovasc Dis,Prediction of stroke-associated hospital-acquired pneumonia: Machine learning approach.
+EuropePMC,42145330,10.1177/20552076261450337,42145330,2026,Digit Health,Application of intelligent technologies for dysphagia risk prediction: A scoping review.
+EuropePMC,41352478,10.1016/j.clnesp.2025.11.157,41352478,2026,Clin Nutr ESPEN,Application of machine learning to create a prediction model for the need of aggressive nutritional intervention during head &amp; neck cancer radiotherapy.
+EuropePMC,42050134,10.1007/s00405-026-10265-1,42050134,2026,Eur Arch Otorhinolaryngol,Machine learning for predicting muscle loss after radiotherapy using clinical and toxicity data in oral cavity cancer.
+EuropePMC,41518152,10.1002/micr.70176,41518152,2026,Microsurgery,Computer Aided Design/Computer Aided Manufacturing-Guided Scapular Tip Free Flap Reconstruction for Complex Maxillofacial Defects.
+EuropePMC,36335226,10.1038/s41598-022-21530-8,36335226,2022,Sci Rep,A preliminary deep learning study on automatic segmentation of contrast-enhanced bolus in videofluorography of swallowing.
+EuropePMC,42255209,10.3389/fonc.2026.1830230,42255209,2026,Front Oncol,Early toxicity prediction using longitudinal cone-beam CT delta-radiomics in HPV-positive oropharyngeal cancer.
+EuropePMC,41708055,10.1097/moo.0000000000001117,41708055,2026,Curr Opin Otolaryngol Head Neck Surg,Artificial intelligence in head and neck cancer rehabilitation services: current state and future perspectives.
+EuropePMC,PPR1208476,10.21203/rs.3.rs-8824836/v1,,2026,,Machine Learning Model for ILD Risk Prediction in Dermatomyositis Using LASSO Regression
+EuropePMC,36833691,10.3390/ijerph20042998,36833691,2023,Int J Environ Res Public Health,A Comprehensive Assessment Protocol for Swallowing (CAPS): Paving the Way towards Computer-Aided Dysphagia Screening.
+EuropePMC,41494913,10.1016/j.prosdent.2025.12.022,41494913,2026,J Prosthet Dent,Pharyngeal obturator using a combined conventional and digital approach: A clinical report.
+EuropePMC,40834639,10.1016/j.compbiomed.2025.110887,40834639,2025,Comput Biol Med,Non-invasive integrated swallowing kinematic analysis framework leveraging transformer-based multi-task neural networks.
+EuropePMC,41255362,10.2174/011570159x443258251114091930,41255362,2025,Curr Neuropharmacol,Systematic Review of Artificial Intelligence Applications in Clinical Trials for Central Nervous System Injuries.
+EuropePMC,40727154,10.1007/s12070-025-05540-2,40727154,2025,Indian J Otolaryngol Head Neck Surg,A Comprehensive Review of Diagnostic Approaches to Vocal Fold Paralysis Using Artificial Intelligence.
+EuropePMC,37441197,10.3389/fbioe.2023.1205009,37441197,2023,Front Bioeng Biotechnol,Computer-aided screening of aspiration risks in dysphagia with wearable technology: a Systematic Review and meta-analysis on test accuracy.
+EuropePMC,40854518,10.1016/j.jamda.2025.105822,40854518,2025,J Am Med Dir Assoc,Ultrasound-based Models for Identifying Sarcopenic Dysphagia: The Key Role of Digastric Muscle.
+EuropePMC,39302050,10.1089/brain.2024.0021,39302050,2024,Brain Connect,Repetitive Transcranial Magnetic Stimulation on Individualized Spots Based on Task functional Magnetic Resonance Imaging Improves Swallowing Function in Poststroke Dysphagia.
+EuropePMC,40293507,10.1007/s00455-025-10829-z,40293507,2025,Dysphagia,A Machine Learning Pipeline for Automated Bolus Segmentation and Area Measurement in Swallowing Videofluoroscopy Images of an Infant Pig Model.
+EuropePMC,41046271,10.1007/s11548-025-03505-y,41046271,2026,Int J Comput Assist Radiol Surg,Advancing modified barium swallow pre-sorting with deep learning: a new paradigm for the first step analysis in X-ray swallowing study.
+EuropePMC,38981027,10.1002/advs.202404211,38981027,2024,Adv Sci (Weinh),Automatic Clinical Assessment of Swallowing Behavior and Diagnosis of Silent Aspiration Using Wireless Multimodal Wearable Electronics.
+EuropePMC,40820054,10.1007/s10238-025-01835-4,40820054,2025,Clin Exp Med,Machine learning-based prediction of gastroesophageal junction cancer using electronic medical records.
+EuropePMC,40459758,10.1007/s00455-025-10833-3,40459758,2025,Dysphagia,Use of Transfer Learning for the Automated Segmentation and Detection of Swallows via Digital Cervical Auscultation in Children.
+EuropePMC,39658158,10.1016/j.foodres.2024.115354,39658158,2025,Food Res Int,Comprehensive review of dysphagia and technological advances in dysphagia food.
+EuropePMC,40545474,10.1111/ggi.70108,40545474,2025,Geriatr Gerontol Int,Application of an artificial intelligence-assisted electronic stethoscope for evaluating swallowing function decline across age groups and sex in Japan.
+EuropePMC,40125566,10.1002/advs.202500472,40125566,2025,Adv Sci (Weinh),Accurate and Noninvasive Dysphagia Assessment via a Soft High-Density sEMG Electrode Array Conformal to the Submental and Infrahyoid Muscles.
+EuropePMC,38116798,10.1097/moo.0000000000000948,38116798,2024,Curr Opin Otolaryngol Head Neck Surg,Machine learning in the evaluation of voice and swallowing in the head and neck cancer patient.
+EuropePMC,40183358,10.1177/1877718x251329354,40183358,2025,J Parkinsons Dis,Digital health technology for Parkinson's disease with comprehensive monitoring and artificial intelligence-enabled haptic biofeedback for bulbar dysfunction.
+EuropePMC,38928546,10.3390/brainsci14060546,38928546,2024,Brain Sci,The Development of an Artificial Intelligence Video Analysis-Based Web Application to Diagnose Oropharyngeal Dysphagia: A Pilot Study.
+EuropePMC,40040030,10.1109/embc53108.2024.10782280,40040030,2024,Annu Int Conf IEEE Eng Med Biol Soc,Swallowing Assessment using High-Resolution Cervical Auscultations and Transformer-based Neural Networks.
+EuropePMC,40993813,10.1186/s41479-025-00175-x,40993813,2025,Pneumonia (Nathan),Assessing the prevalence and the underdiagnosis of aspiration pneumonia among older hospitalized patients with community-acquired pneumonia using an artificial intelligence algorithm.
+EuropePMC,PPR971577,10.21203/rs.3.rs-5856988/v1,,2025,,Symptom Clustering of Dysphagia Phenotypes by Unsupervised Machine Learning Using Multidimensional Characteristics: A Cross-sectional Study of the Elderly Chinese Population
+EuropePMC,40751301,10.1111/joor.70030,40751301,2025,J Oral Rehabil,Automated Assessment of Test of Masticating and Swallowing Solids Using a Neck-Worn Electronic Stethoscope: A Pilot Study.
+EuropePMC,41932499,10.1016/j.radonc.2026.111521,41932499,2026,Radiother Oncol,Explainable machine learning to predict muscle loss during radiotherapy for oral cavity cancer.
+EuropePMC,41446864,10.3389/fmed.2025.1719174,41446864,2025,Front Med (Lausanne),Development and validation of a screening model for dysphagia in the elderly based on acoustic features.
+EuropePMC,PPR822178,10.1101/2024.03.11.24304069,,2024,,Machine Learning in Acute Stroke Care: A Novel Model for Assessing the Need for Enteral Nutrition
+EuropePMC,35166079,10.3346/jkms.2022.37.e42,35166079,2022,J Korean Med Sci,Deep Learning Analysis to Automatically Detect the Presence of Penetration or Aspiration in Videofluoroscopic Swallowing Study.
+EuropePMC,42099895,10.1016/j.phro.2026.100978,42099895,2026,Phys Imaging Radiat Oncol,An evaluation of uncertainty quantification methods and measures for deep learning outcome prediction models in head and neck cancer radiotherapy.
+EuropePMC,40903676,10.1007/s00586-025-09320-y,40903676,2026,Eur Spine J,LASSO-based machine learning algorithm for prediction of dysphagia in patients suffering anterior cervical discectomy and fusion.
+EuropePMC,36522385,10.1038/s41598-022-25618-z,36522385,2022,Sci Rep,Expert-level aspiration and penetration detection during flexible endoscopic evaluation of swallowing with artificial intelligence-assisted diagnosis.
+EuropePMC,PPR451319,10.21203/rs.3.rs-1290779/v1,,2022,,Automatic segmentation of contrast-enhanced bolus in videofluorography images of swallowing using deep learning: a preliminary study
+EuropePMC,41741312,10.1016/j.oooo.2026.01.010,41741312,2026,Oral Surg Oral Med Oral Pathol Oral Radiol,The role of dentists in the recognition of neurodegenerative and systemic conditions with neurological involvement.
+EuropePMC,40750014,10.1016/j.radonc.2025.111066,40750014,2025,Radiother Oncol,Explainable machine learning for predicting aspiration pneumonia after radiotherapy in oral cavity cancer.
+EuropePMC,41862771,10.1007/s11894-026-01039-0,41862771,2026,Curr Gastroenterol Rep,Gastrointestinal Complaints After Fundoplication: Rapid Review and Evidence Mapping.
+EuropePMC,41856253,10.1016/j.radonc.2026.111486,41856253,2026,Radiother Oncol,A multi-toxicity deep learning approach for normal tissue complication probability modelling in head and neck cancer patients receiving radiotherapy.
+EuropePMC,40031587,10.1109/tnsre.2025.3540842,40031587,2025,IEEE Trans Neural Syst Rehabil Eng,Continuous Estimation of Swallowing Motion With EMG and MMG Signals.
+EuropePMC,41331076,10.1038/s43856-025-01255-1,41331076,2025,Commun Med (Lond),A deep learning-based approach to enhance accuracy and feasibility of long-term high-resolution manometry examinations.
+EuropePMC,41974983,10.1038/s41598-026-48214-x,41974983,2026,Sci Rep,Explainable machine learning for predicting mechanical ventilation in Alzheimer's patients with pneumonia: a SHAP-guided XGBoost nomogram based on MIMIC-IV.
+EuropePMC,41749734,10.3390/bioengineering13020195,41749734,2026,Bioengineering (Basel),"Digital and Intelligent Rehabilitation Technologies in Stroke and Neurological Disorders: A Systematic Review of Artificial Intelligence, Virtual Reality, Gamification, and Emerging Therapeutic Platforms in Neurorehabilitation."
+EuropePMC,36417738,10.1109/jbhi.2022.3224323,36417738,2023,IEEE J Biomed Health Inform,Autonomous Swallow Segment Extraction Using Deep Learning in Neck-Sensor Vibratory Signals From Patients With Dysphagia.
+EuropePMC,PPR397119,10.21203/rs.3.rs-884186/v1,,2021,,Deep Learning Analysis to Automatically Detect the Presence of Penetration or Aspiration in Videofluoroscopic Swallowing Study
+EuropePMC,38953836,10.1152/ajpgi.00139.2024,38953836,2024,Am J Physiol Gastrointest Liver Physiol,Enhancing the diagnostic yield of esophageal manometry using distension-contraction plots of peristalsis and artificial intelligence.
+EuropePMC,41829459,10.3390/s26051498,41829459,2026,Sensors (Basel),Quantification of Tongue Motor Dysfunction in Amyotrophic Lateral Sclerosis Using a Smartphone-Based Task and Deep Learning.
+EuropePMC,38743079,10.1007/s00405-024-08678-x,38743079,2024,Eur Arch Otorhinolaryngol,Clinical evaluation of a machine learning-based dysphagia risk prediction tool.
+EuropePMC,39460005,10.3390/s24206525,39460005,2024,Sensors (Basel),Electromyography- and Bioimpedance-Based Detection of Swallow Onset for the Control of Dysphagia Treatment.
+EuropePMC,41636824,10.2196/86069,41636824,2026,JMIR Form Res,Prediction of Aspiration Risk by Using Vocal Biomarkers: Machine Learning Development and Validation Study.
+EuropePMC,39433063,10.1055/a-2445-8952,39433063,2024,Semin Respir Crit Care Med,Swallowing and Aspiration: How to Evaluate and Treat Swallowing Disorders Associated with Aspiration Pneumonia in Older Persons.
+EuropePMC,39917741,10.3389/fnut.2025.1518466,39917741,2025,Front Nutr,Navigating next-gen nutrition care using artificial intelligence-assisted dietary assessment tools-a scoping review of potential applications.
+EuropePMC,PPR1106236,10.1101/2025.10.22.25337435,,2025,,Machine learning predicts treatment response to nusinersen in non-sitter Spinal Muscular Atrophy (SMA).
+EuropePMC,41308193,10.2196/85223,41308193,2025,J Med Internet Res,AI in Esophageal Motility Disorders: Systematic Review of High-Resolution Manometry Studies.
+EuropePMC,40500934,10.1002/smll.202503969,40500934,2025,Small,A Highly Flexible Self-Powered Triboelectric Sensor Array for Silent Speech Recognition and Swallowing Motion Analysis.
+EuropePMC,39012305,10.1111/ene.16370,39012305,2024,Eur J Neurol,Dysphagia in primary progressive aphasia: Clinical predictors and neuroanatomical basis.
+EuropePMC,41761651,10.1002/adhm.202505765,41761651,2026,Adv Healthc Mater,Skin-Interfaced Wireless Biomechanical System for Detecting Aspiration in Elderly Populations.
+EuropePMC,IND608721790,,,2024,Food Research International.,Comprehensive review of dysphagia and technological advances in dysphagia food
+EuropePMC,38793908,10.3390/s24103057,38793908,2024,Sensors (Basel),Novel Approach Combining Shallow Learning and Ensemble Learning for the Automated Detection of Swallowing Sounds in a Clinical Database.
+EuropePMC,40778379,10.1016/j.dib.2025.111890,40778379,2025,Data Brief,"ChewNet: A multimodal dataset for invivo and invitro beef and plant-based burger patty boluses with images, texture, and force profiles."
+EuropePMC,PPR1156077,10.21203/rs.3.rs-8494694/v1,,2026,,Risk prediction of progression of reflux esophagitis based on contrast-enhanced ultrasound technology and machine learning
+EuropePMC,41176567,10.1007/s00405-025-09797-9,41176567,2026,Eur Arch Otorhinolaryngol,Digital workflow for a 3D-Printed speech bulb denture in an edentulous Post-Oncologic patient with velopharyngeal insufficiency: A case report.
+EuropePMC,37845272,10.1038/s41598-023-44802-3,37845272,2023,Sci Rep,Application of deep learning technology for temporal analysis of videofluoroscopic swallowing studies.
+EuropePMC,41282964,10.1007/s40203-025-00401-w,41282964,2025,In Silico Pharmacol,Targeting the core: C9ORF72 antagonists as pioneers in amyotrophic lateral sclerosis therapy-a computational and machine learning based approach.
+EuropePMC,37837871,10.1016/j.jns.2023.120831,37837871,2023,J Neurol Sci,Swallowing sound index analysis using electronic stethoscope and artificial intelligence for patients with Parkinson's disease.
+EuropePMC,39579458,10.1016/j.cmpb.2024.108505,39579458,2025,Comput Methods Programs Biomed,Recent advancements and future directions in automatic swallowing analysis via videofluoroscopy: A review.
+EuropePMC,39130520,10.1177/20552076241271778,39130520,2024,Digit Health,Diagnostic value of a deep learning-based hyoid bone tracking model for aspiration in patients with post-stroke dysphagia.
+EuropePMC,41429451,10.1136/bmjoq-2025-003704,41429451,2025,BMJ Open Qual,AI-generated videos in medical education: systematic review.
+EuropePMC,42394558,10.3760/cma.j.cn112144-20260309-00152,42394558,2026,Zhonghua Kou Qiang Yi Xue Za Zhi,[Intraoral approach combined with submandibular minor incision for mandibular defect reconstruction using vascularized iliac bone-muscle flap: a clinical study].
+EuropePMC,38555417,10.1186/s12984-024-01329-6,38555417,2024,J Neuroeng Rehabil,Prediction of dysphagia aspiration through machine learning-based analysis of patients' postprandial voices.
+EuropePMC,36742082,10.12786/bn.2022.15.e26,36742082,2022,Brain Neurorehabil,Use of Machine Learning in Stroke Rehabilitation: A Narrative Review.
+EuropePMC,37188793,10.1038/s41598-023-34999-8,37188793,2023,Sci Rep,Machine learning predictive model for aspiration screening in hospitalized patients with acute stroke.
+EuropePMC,42074767,10.3390/jcm15082963,42074767,2026,J Clin Med,"Hybrid Reconstruction in Head and Neck Surgery: Integration of Virtual Planning, Navigation, and Robotic Microsurgery."
+EuropePMC,37838567,10.1016/j.anl.2023.09.001,37838567,2024,Auris Nasus Larynx,Artificial intelligence-based diagnosis of the depth of laryngopharyngeal cancer.
+EuropePMC,39026580,10.3389/fneur.2024.1363928,39026580,2024,Front Neurol,Mapping research trends regarding the mechanism of dysphagia from 1993 to 2023: a bibliometrics study and visualization analysis.
+EuropePMC,42053016,10.31083/bjhm52964,42053016,2026,Br J Hosp Med (Lond),Treatment and Care of Patients With Mucosal Head and Neck Cancer.
+EuropePMC,PPR719848,10.21203/rs.3.rs-3294017/v1,,2023,,Prediction of dysphagia aspiration through machine learning-based analysis of patients’ postprandial voices
+EuropePMC,40034637,10.7759/cureus.78358,40034637,2025,Cureus,Development of a Pharyngeal Residue Level Assessment Index Using Artificial Intelligence (AI) Acoustic Analysis: A Study Protocol.
+EuropePMC,IND608318562,,,2024,Trends in food science & technology.,3D printing of nutritious dysphagia diet: Status and perspectives
+EuropePMC,36753006,10.1007/s11282-023-00669-8,36753006,2023,Oral Radiol,Detection of aspiration from images of a videofluoroscopic swallowing study adopting deep learning.
+EuropePMC,40122374,10.1016/j.gassur.2025.102029,40122374,2025,J Gastrointest Surg,Application of machine learning models to identify predictors of good outcome after laparoscopic fundoplication.
+EuropePMC,37602264,10.3389/fneur.2023.1212024,37602264,2023,Front Neurol,Swallowing sound evaluation using an electronic stethoscope and artificial intelligence analysis for patients with amyotrophic lateral sclerosis.
+EuropePMC,PPR1168191,10.20944/preprints202603.1247.v1,,2026,,"Hybrid Reconstruction in Head and Neck Surgery: Integration of Virtual Planning, Navigation, and Robotic Microsurgery"
+EuropePMC,39775108,10.1038/s41746-024-01417-w,39775108,2025,NPJ Digit Med,Multimodal deep ensemble classification system with wearable vibration sensor for detecting throat-related events.
+EuropePMC,42054414,10.1371/journal.pone.0347891,42054414,2026,PLoS One,A cross-sectional protocol for experimental tongue high-density surface electromyography to detect and classify radiation-associated hypoglossal neuropathy.
+EuropePMC,PPR1013810,10.1101/2025.05.04.25326112,,2025,,Development and Validation of a Machine Learning Model That Uses Voice to Predict Aspiration Risk
+EuropePMC,35018714,10.1002/cre2.531,35018714,2022,Clin Exp Dent Res,Real-time assessment of swallowing sound using an electronic stethoscope and an artificial intelligence system.
+EuropePMC,38931536,10.3390/s24123748,38931536,2024,Sensors (Basel),Identification of Respiratory Pauses during Swallowing by Unconstrained Measuring Using Millimeter Wave Radar.
+EuropePMC,40799864,10.7759/cureus.87751,40799864,2025,Cureus,Pharmacist's Support in the Transition From Hospital to Home Care in Patients With Multiple Medications: Avoidance of Fragmentation of Care.
+EuropePMC,42438145,10.1002/hed.70353,42438145,2026,Head Neck,Evaluation of Machine Learning and Statistical Models for Predicting Long Term Gastrostomy Tube Dependency in Patients Undergoing Major Oral Cavity Cancer Surgery With Free Flap Reconstruction.
+EuropePMC,37703300,10.1080/0284186x.2023.2256958,37703300,2023,Acta Oncol,Consistency in contouring of organs at risk by artificial intelligence vs oncologists in head and neck cancer patients.
+EuropePMC,39850498,10.1055/s-0044-1801781,39850498,2025,Int Arch Otorhinolaryngol,Artificial Intelligence for Diagnosis and Treatment of Dysphagia.
+EuropePMC,PPR577750,10.21203/rs.3.rs-2311543/v1,,2022,,Application of Deep Learning Technology for Temporal Analysis of Videofluoroscopic Swallowing Studies
+EuropePMC,38991887,10.1016/j.prosdent.2024.06.007,38991887,2025,J Prosthet Dent,Digitally designed and milled implant-retained maxillofacial prosthesis for velopharyngeal closure in a patient with a nonsurgically treated cleft palate: A clinical report.
+EuropePMC,32326267,10.3390/healthcare8020103,32326267,2020,Healthcare (Basel),Classifying Dysphagic Swallowing Sounds with Support Vector Machines.
+EuropePMC,41873958,10.3390/geriatrics11020023,41873958,2026,Geriatrics (Basel),Risk Stratification for In-Hospital Mortality in Alzheimer's Disease Using Interpretable Regression and Explainable AI.
+EuropePMC,42394395,10.1021/acssensors.6c01452,42394395,2026,ACS Sens,A Wearable Earplug-Shaped Piezoresistive Sensor Based on Ear Canal Deformation for the Screening of Temporomandibular Joint Motion Abnormalities.
+EuropePMC,39070893,10.1177/20552076241264640,39070893,2024,Digit Health,Exploratory analysis of swallowing behaviour in community-dwelling older adults using a wearable device: Differences by age and ingestant under different task loads.
+EuropePMC,39697021,10.3760/cma.j.cn121430-20240526-00461,39697021,2024,Zhonghua Wei Zhong Bing Ji Jiu Yi Xue,[Construction and external validation of a non-invasive pre-hospital screening model for stroke patients: a study based on artificial intelligence DeepFM algorithm].
+EuropePMC,37247613,10.1159/000531265,37247613,2023,Folia Phoniatr Logop,Advances for Dysphagia in the Digital Age: Integrative Imaging and Wearable Technologies.
+EuropePMC,35482213,10.1007/s00455-022-10438-0,35482213,2023,Dysphagia,Deep Learning for Automatic Hyoid Tracking in Videofluoroscopic Swallow Studies.
+EuropePMC,41071984,10.2196/72372,41071984,2025,JMIR Mhealth Uhealth,Wearable Technologies in Head and Neck Oncology: Scoping Review.
+EuropePMC,PPR1141414,10.20944/preprints202601.0401.v1,,2026,,Risk Stratification for In-Hospital Mortality in Alzheimer’s Disease Using Interpretable Regression and Explainable AI
+EuropePMC,40039880,10.1109/embc53108.2024.10782457,40039880,2024,Annu Int Conf IEEE Eng Med Biol Soc,Optimizing Modified Barium Swallow Exam Workflow: Automating Pre-Analysis Video Sorting in Swallowing Function Assessment.
+EuropePMC,PPR1110957,10.20944/preprints202510.2200.v1,,2025,,Phenotype Correlations of Neurological Manifestations in Wolfram Syndrome: Predictive Modeling in a Spanish Cohort
+EuropePMC,39666090,10.1007/s00520-024-09071-4,39666090,2024,Support Care Cancer,"Cancer treatment-induced ulcerative mucositis serves as a significant predictor of burden of illness including dysphagia, and associated disparities among hospitalized cancer patients."
+EuropePMC,42174817,10.3233/shti260140,42174817,2026,Stud Health Technol Inform,Prediction of Early Functional Outcome After Acute Ischemic Stroke Using Real-World Clinical Data in Vietnam and Indonesia: Retrospective Cohort Study.
+EuropePMC,34260973,10.1016/j.cmpb.2021.106248,34260973,2021,Comput Methods Programs Biomed,Machine learning based analysis of speech dimensions in functional oropharyngeal dysphagia.
+EuropePMC,42116021,10.1186/s12885-026-15904-8,42116021,2026,BMC Cancer,Involved nodal versus elective neck radiotherapy (INVERT) for head and neck squamous cell carcinoma: a prospective phase II randomized controlled trial protocol.
+EuropePMC,38154556,10.1016/j.jaip.2023.12.031,38154556,2024,J Allergy Clin Immunol Pract,"Artificial Intelligence Tools for the Diagnosis of Eosinophilic Esophagitis in Adults Reporting Dysphagia: Development, External Validation, and Software Creation for Point-of-Care Use."
+EuropePMC,42335933,10.1088/1758-5090/ae80ff,42335933,2026,Biofabrication,"Engineering the esophagus: advances, challenges, and translational pathways in esophageal tissue reconstruction."
+EuropePMC,35890906,10.3390/s22145227,35890906,2022,Sensors (Basel),Automated Chicago Classification for Esophageal Motility Disorder Diagnosis Using Machine Learning.
+EuropePMC,36170765,10.1016/j.jns.2022.120434,36170765,2022,J Neurol Sci,Cerebral control of swallowing: An update on neurobehavioral evidence.
+EuropePMC,42215892,10.1186/s12877-026-07666-6,42215892,2026,BMC Geriatr,"The impact of an artificial intelligence (AI)-assisted education program on mental health, social support and quality of life in older individuals with head and neck cancer: study protocol of a randomized controlled trial."
+EuropePMC,39990691,10.3389/fonc.2025.1502404,39990691,2025,Front Oncol,Risk prediction models for dysphagia after radiotherapy among patients with head and neck cancer: a systematic review and meta-analysis.
+EuropePMC,39398792,10.7759/cureus.69127,39398792,2024,Cureus,Comparative Evaluation of Speech Quality Before and After Functional Palatal Recontouring in Complete Dentures using Artificial Intelligence: A Study Protocol.
+EuropePMC,40573471,10.3390/s25123584,40573471,2025,Sensors (Basel),Method for Estimating Amount of Saliva Secreted Using a Throat Microphone.
+EuropePMC,36576585,10.1007/s00455-022-10547-w,36576585,2023,Dysphagia,A Systematic and Universal Artificial Intelligence Screening Method for Oropharyngeal Dysphagia: Improving Diagnosis Through Risk Management.
+EuropePMC,36873304,10.1109/jtehm.2023.3246919,36873304,2023,IEEE J Transl Eng Health Med,Non-Invasive Sensor-Based Estimation of Anterior-Posterior Upper Esophageal Sphincter Opening Maximal Distension.
+EuropePMC,42096937,10.1016/j.jcis.2026.140675,42096937,2026,J Colloid Interface Sci,Unveiling metastable intermediates of block copolymer self-assembly in colloids via graphene liquid cell imaging.
+EuropePMC,40463824,10.3389/frai.2025.1595101,40463824,2025,Front Artif Intell,Risk prediction of stroke-associated pneumonia in acute ischemic stroke with atrial fibrillation using machine learning models.
+EuropePMC,41718893,10.1007/s00520-026-10475-7,41718893,2026,Support Care Cancer,Multidimensional analysis of postoperative nursing challenges in oral cancer surgery: a retrospective study of 245 patients and proposal of the PROTECT mode.
+EuropePMC,39083586,10.1126/scitranslmed.abq5585,39083586,2024,Sci Transl Med,Neural landscape is associated with functional outcomes in irradiated patients with oropharyngeal squamous cell carcinoma.
+EuropePMC,PPR693088,10.2139/ssrn.4505662,,2023,,Toxicity Detection Using Dual-Channel Convolutional Neural Network During Covid-19 Pandemic
+EuropePMC,37731914,10.1038/s41378-023-00591-3,37731914,2023,Microsyst Nanoeng,Stretchable and durable HD-sEMG electrodes for accurate recognition of swallowing activities on complex epidermal surfaces.
+EuropePMC,42167959,10.1016/j.suronc.2026.102356,42167959,2026,Surg Oncol,Robotic thyroidectomy using Artificial Intelligence (AI) model in real-time recognizing Recurrent Laryngeal Nerves (RLN).
+EuropePMC,37831597,10.1002/mp.16782,37831597,2023,Med Phys,Technical note: Evaluation of deep learning based synthetic CTs clinical readiness for dose and NTCP driven head and neck adaptive proton therapy.
+EuropePMC,40401025,10.3389/fneur.2025.1513732,40401025,2025,Front Neurol,Interpretable machine learning for early predicting the risk of ventilator-associated pneumonia in ischemic stroke patients in the intensive care unit.
+EuropePMC,42192339,10.1186/s12879-026-13667-y,42192339,2026,BMC Infect Dis,Multi-dimensional risk prediction and genetic architecture of aspiration pneumonia: a population-based analysis.
+EuropePMC,41464213,10.3390/diagnostics15243213,41464213,2025,Diagnostics (Basel),Phenotype Correlations of Neurological Manifestations in Wolfram Syndrome: Predictive Modeling in a Spanish Cohort.
+EuropePMC,34723069,10.1159/000517144,34723069,2021,Digit Biomark,Advanced Machine Learning Tools to Monitor Biomarkers of Dysphagia: A Wearable Sensor Proof-of-Concept Study.
+EuropePMC,36625964,10.1007/s00455-022-10548-9,36625964,2023,Dysphagia,Evaluation of a Machine Learning-Based Dysphagia Prediction Tool in Clinical Routine: A Prospective Observational Cohort Study.
+EuropePMC,33668528,10.3390/diagnostics11020300,33668528,2021,Diagnostics (Basel),Automatic Pharyngeal Phase Recognition in Untrimmed Videofluoroscopic Swallowing Study Using Transfer Learning with Deep Convolutional Neural Networks.
+EuropePMC,39457989,10.3390/jcm13206039,39457989,2024,J Clin Med,"A Comprehensive Systematic Review on Functional Results, Speech and Swallowing Outcomes after Trans-Oral Robotic Surgery for Oropharyngeal Squamous Cell Cancer."
+EuropePMC,37140481,10.1002/mp.16431,37140481,2023,Med Phys,Patient selection for proton therapy using Normal Tissue Complication Probability with deep learning dose prediction for oropharyngeal cancer.
+EuropePMC,38356692,10.1016/j.phro.2024.100540,38356692,2024,Phys Imaging Radiat Oncol,Clinical acceptability of automatically generated lymph node levels and structures of deglutition and mastication for head and neck radiation therapy.
+EuropePMC,34126411,10.1016/j.cmpb.2021.106212,34126411,2021,Comput Methods Programs Biomed,Deep learning for tracing esophageal motility function over time.
+EuropePMC,34487983,10.1016/j.media.2021.102218,34487983,2021,Med Image Anal,Automatic annotation of cervical vertebrae in videofluoroscopy images via deep learning.
+EuropePMC,34874302,10.1088/1361-6560/ac4000,34874302,2022,Phys Med Biol,Prospectively-validated deep learning model for segmenting swallowing and chewing structures in CT.
+EuropePMC,41684498,10.4103/jmp.jmp_140_25,41684498,2025,J Med Phys,Advancements in Body Sound Diagnostics: Exploring Acoustic Signals for Medical Applications and Future Research Directions.
+EuropePMC,41457499,10.1111/1541-4337.70364,41457499,2026,Compr Rev Food Sci Food Saf,"Altered Digestive and Absorptive Characteristics of Food Proteins in Older Adults: Mechanisms, Model Applications, and Innovative Strategies."
+EuropePMC,35009794,10.3390/s22010253,35009794,2021,Sensors (Basel),Integrated Relaxation Pressure Classification and Probe Positioning Failure Detection in High-Resolution Esophageal Manometry Using Machine Learning.
+EuropePMC,39941462,10.3390/jcm14030792,39941462,2025,J Clin Med,Clustering and Machine Learning Models of Skeletal Class I and II Parameters of Arab Orthodontic Patients.
+EuropePMC,IND608571463,,,2023,Heliyon,Prediction of five-year survival among esophageal cancer patients using machine learning
+EuropePMC,PPR657940,10.21203/rs.3.rs-2888134/v1,,2023,,Stretchable and Durable HD-sEMG Electrodes for Accurate Swallowing Activity Recognition on Complex Epidermal Surfaces
+EuropePMC,41023933,10.1186/s12903-025-06885-4,41023933,2025,BMC Oral Health,Analysis and research on clinical factors and treatment of infection in oral and maxillofacial space infection.
+EuropePMC,31946425,10.1109/embc.2019.8857937,31946425,2019,Annu Int Conf IEEE Eng Med Biol Soc,Applying Machine Learning Algorithms for Automatic Detection of Swallowing from Sound.
+EuropePMC,41430014,10.1007/s13304-025-02490-w,41430014,2026,Updates Surg,Reflections on surgery for hiatal hernia.
+EuropePMC,40411319,10.1080/03639045.2025.2510581,40411319,2025,Drug Dev Ind Pharm,Innovative strategies in the formulation and applications of mouth dissolving films for enhanced oral drug delivery.
+EuropePMC,37907728,10.1007/s00455-023-10623-9,37907728,2024,Dysphagia,Using ChatGPT to Generate Research Ideas in Dysphagia: A Pilot Study.
+EuropePMC,38125437,10.1016/j.heliyon.2023.e22654,38125437,2023,Heliyon,Prediction of five-year survival among esophageal cancer patients using machine learning.
+EuropePMC,32895465,10.1038/s41598-020-71713-4,32895465,2020,Sci Rep,Machine learning analysis to automatically measure response time of pharyngeal swallowing reflex in videofluoroscopic swallowing study.
+EuropePMC,41047459,10.1007/s13760-025-02904-x,41047459,2025,Acta Neurol Belg,"Predicting cognitive decline using tongue pressure: a novel, non-invasive screening strategy for dementia in geriatric dentistry."
+EuropePMC,42412265,10.1007/s12975-026-01465-2,42412265,2026,Transl Stroke Res,Quantitative Cerebrovascular Analysis for Improved Prediction of Post-Stroke Complications.
+EuropePMC,41013501,10.1186/s12903-025-06768-8,41013501,2025,BMC Oral Health,Segmental airway volume as a predictive indicator of postoperative extubation timing in patients with oral and maxillofacial space infections: a retrospective analysis.
+EuropePMC,38875685,10.2196/56245,38875685,2024,JMIR Biomed Eng,Investigation of Deepfake Voice Detection Using Speech Pause Patterns: Algorithm Development and Validation.
+EuropePMC,38273251,10.1186/s12883-024-03532-3,38273251,2024,BMC Neurol,Feasibility of a clinical-radiomics combined model to predict the occurrence of stroke-associated pneumonia.
+EuropePMC,42226185,10.1186/s12985-026-03178-2,42226185,2026,Virol J,Post-marketing safety profile of bictegravir/emtricitabine/tenofovir alafenamide: a FAERS pharmacovigilance study with EudraVigilance validation and mechanistic investigation of pancreatitis.
+EuropePMC,36101332,10.3390/biology11070951,36101332,2022,Biology (Basel),Improving the Accuracy of Diagnosis for Multiple-System Atrophy Using Deep Learning-Based Method.
+EuropePMC,41493595,10.1007/s00520-025-10304-3,41493595,2026,Support Care Cancer,Increasing tongue pressure with CAD/CAM palatal augmentation plate for tongue cancer patients with glossectomy.
+EuropePMC,41574726,10.3892/or.2026.9058,41574726,2026,Oncol Rep,Collaborative breakthroughs in precision diagnosis and treatment of nasopharyngeal cancer: Biomarker‑driven screening and endoscopic minimally invasive surgery reshape the new paradigm of early intervention (Review).
+EuropePMC,35092488,10.1007/s00455-022-10410-y,35092488,2022,Dysphagia,Using an Automated Speech Recognition Approach to Differentiate Between Normal and Aspirating Swallowing Sounds Recorded from Digital Cervical Auscultation in Children.
+EuropePMC,37612344,10.1038/s41598-023-40411-2,37612344,2023,Sci Rep,Development and validation of a machine learning-based prognostic risk stratification model for acute ischemic stroke.
+EuropePMC,39407807,10.3390/jcm13195747,39407807,2024,J Clin Med,Routine ICU Surveillance after Brain Tumor Surgery: Patient Selection Using Machine Learning.
+EuropePMC,41358552,10.5604/01.3001.0055.1485,41358552,2025,Otolaryngol Pol,"15th Congress of the European Laryngological Society, May 2025, Warsaw, Poland."
+EuropePMC,40039282,10.1109/embc53108.2024.10782047,40039282,2024,Annu Int Conf IEEE Eng Med Biol Soc,A Wearable System for Monitoring Neurological Disorder Events with Multi-Class Classification Model in Daily Life.
+EuropePMC,34073586,10.3390/s21113712,34073586,2021,Sensors (Basel),Automatic Hyoid Bone Tracking in Real-Time Ultrasound Swallowing Videos Using Deep Learning Based and Correlation Filter Based Trackers.
+EuropePMC,33331470,10.1590/s0004-2803.202000000-66,33331470,2020,Arq Gastroenterol,ARTIFICIAL INTELLIGENCE AND DYSPHAGIA: NOVEL SOLUTIONS TO OLD PROBLEMS.
+EuropePMC,39001334,10.3390/diagnostics14131444,39001334,2024,Diagnostics (Basel),Automated Laryngeal Invasion Detector of Boluses in Videofluoroscopic Swallowing Study Videos Using Action Recognition-Based Networks.
+EuropePMC,35452850,10.1016/j.autrev.2022.103105,35452850,2022,Autoimmun Rev,A machine learning analysis to predict the response to intravenous and subcutaneous immunoglobulin in inflammatory myopathies. A proposal for a future multi-omics approach in autoimmune diseases.
+EuropePMC,35456693,10.3390/pharmaceutics14040859,35456693,2022,Pharmaceutics,Puzzle out Machine Learning Model-Explaining Disintegration Process in ODTs.
+EuropePMC,39211970,10.5125/jkaoms.2024.50.4.216,39211970,2024,J Korean Assoc Oral Maxillofac Surg,Prediction of intensive care unit admission using machine learning in patients with odontogenic infection.
+EuropePMC,34201839,10.3390/diagnostics11071147,34201839,2021,Diagnostics (Basel),Hyoid Bone Tracking in a Videofluoroscopic Swallowing Study Using a Deep-Learning-Based Segmentation Network.
+EuropePMC,41345820,10.1002/mp.70183,41345820,2025,Med Phys,Efficient proton-photon patient selection via dose and NTCP prediction for head and neck cancer patients.
+EuropePMC,40183426,10.1177/15330338251333018,40183426,2025,Technol Cancer Res Treat,Attention-based Vision Transformer Enables Early Detection of Radiotherapy-Induced Toxicity in Magnetic Resonance Images of a Preclinical Model.
+EuropePMC,32578538,10.3233/shti200071,32578538,2020,Stud Health Technol Inform,Multivariable Risk Prediction of Dysphagia in Hospitalized Patients Using Machine Learning.
+EuropePMC,38358023,10.1111/jocn.16999,38358023,2024,J Clin Nurs,Machine learning decision support model for discharge planning in stroke patients.
+EuropePMC,41475035,10.1016/j.ajem.2025.12.022,41475035,2026,Am J Emerg Med,"The global epidemiology of botulism outbreaks from open-source intelligence, 2017-2024."
+EuropePMC,36202829,10.1038/s41598-022-20348-8,36202829,2022,Sci Rep,Post-stroke respiratory complications using machine learning with voice features from mobile devices.
+EuropePMC,IND609111427,,,2025,Vet Res Commun,"Three-dimensional reconstruction of gustatory papillae and its taste buds in short-hair cats (Felis Catus domestica, felidae, Carnivora)"
+EuropePMC,38383805,10.1007/s10278-024-01039-4,38383805,2024,J Imaging Inform Med,Automatic Tracking of Hyoid Bone Displacement and Rotation Relative to Cervical Vertebrae in Videofluoroscopic Swallow Studies Using Deep Learning.
+EuropePMC,41822500,10.3389/fimmu.2026.1736692,41822500,2026,Front Immunol,Analysis of adverse drug reactions associated with ravulizumab: a retrospective pharmacovigilance study utilizing the FAERS database.
+EuropePMC,42047843,10.1007/s00240-026-01989-0,42047843,2026,Urolithiasis,Pharmacovigilance analysis and real-world adverse event profile (safety signals and product-related issues) of potassium citrate: a US FDA adverse event reporting system (FAERS) based analysis.
+EuropePMC,38075055,10.3389/fendo.2023.1165178,38075055,2023,Front Endocrinol (Lausanne),A clinical prediction model based on interpretable machine learning algorithms for prolonged hospital stay in acute ischemic stroke patients: a real-world study.
+EuropePMC,40897992,10.1007/s40263-025-01217-0,40897992,2025,CNS Drugs,Genetic and Mechanistic Insights Inform Amyotrophic Lateral Sclerosis Treatment and Symptomatic Management: Current and Emerging Therapeutics and Clinical Trial Design Considerations.
+EuropePMC,37627973,10.3390/diagnostics13162714,37627973,2023,Diagnostics (Basel),Automatic Detection System for Velopharyngeal Insufficiency Based on Acoustic Signals from Nasal and Oral Channels.
+EuropePMC,35592984,10.3233/shti220371,35592984,2022,Stud Health Technol Inform,SAINTENS: Self-Attention and Intersample Attention Transformer for Digital Biomarker Development Using Tabular Healthcare Real World Data.
+EuropePMC,33100445,10.1016/j.future.2020.09.040,33100445,2021,Future Gener Comput Syst,Estimation of laryngeal closure duration during swallowing without invasive X-rays.
+EuropePMC,33305091,10.1016/j.adro.2019.12.007,33305091,2020,Adv Radiat Oncol,Combination of a Big Data Analytics Resource System With an Artificial Intelligence Algorithm to Identify Clinically Actionable Radiation Dose Thresholds for Dysphagia in Head and Neck Patients.
+EuropePMC,39506450,10.1021/acsami.4c12852,39506450,2024,ACS Appl Mater Interfaces,"Highly Elastic, Fatigue-Resistant, and Antifreezing MXene Functionalized Organohydrogels as Flexible Pressure Sensors for Human Motion Monitoring."
+EuropePMC,35457398,10.3390/ijerph19084529,35457398,2022,Int J Environ Res Public Health,A Basic Study for Predicting Dysphagia in Panoramic X-ray Images Using Artificial Intelligence (AI)-Part 1: Determining Evaluation Factors and Cutoff Levels.
+EuropePMC,34836264,10.3390/nu13114009,34836264,2021,Nutrients,A Machine Learning-Based Screening Test for Sarcopenic Dysphagia Using Image Recognition.
+EuropePMC,42046045,10.1186/s12904-026-02107-y,42046045,2026,BMC Palliat Care,Palliative care symptoms of people living with rapidly progressive prion diseases: a systematic review.
+EuropePMC,32955619,10.1007/s00455-020-10191-2,32955619,2021,Dysphagia,How Closely do Machine Ratings of Duration of UES Opening During Videofluoroscopy Approximate Clinician Ratings Using Temporal Kinematic Analyses and the MBSImP?
+EuropePMC,35790457,10.1177/15330338221105724,35790457,2022,Technol Cancer Res Treat,Evaluating Automatic Segmentation for Swallowing-Related Organs for Head and Neck Cancer.
+EuropePMC,40078269,10.7759/cureus.78804,40078269,2025,Cureus,The Contemporary Diagnostic Approaches to Esophageal Symptomatology.
+EuropePMC,PPR794237,10.21203/rs.3.rs-3888376/v1,,2024,,Machine learning and feature selection methods to predict 1-year survival and disease progression for Amyotrophic Lateral Sclerosis
+EuropePMC,40867249,10.3390/cancers17162620,40867249,2025,Cancers (Basel),A Decision-Making Method for Photon/Proton Selection for Nasopharyngeal Cancer Based on Dose Prediction and NTCP.
+EuropePMC,41272713,10.1186/s12967-025-07477-0,41272713,2025,J Transl Med,Feeding intelligence: comparative evaluation of ChatGPT and clinical guidelines for nutritional management in head and neck cancer.
+EuropePMC,40372507,10.1007/s11259-025-10764-2,40372507,2025,Vet Res Commun,"Three-dimensional reconstruction of gustatory papillae and its taste buds in short-hair cats (Felis Catus domestica, felidae, Carnivora)."
+EuropePMC,37980845,10.1016/j.jstrokecerebrovasdis.2023.107489,37980845,2024,J Stroke Cerebrovasc Dis,Machine learning prediction of hospital discharge disposition for inpatients with acute ischemic stroke following mechanical thrombectomy in the United States.
+EuropePMC,36595251,10.1088/1741-2552/acab2f,36595251,2023,J Neural Eng,A robust HD-sEMG sensor suitable for convenient acquisition of muscle activity in clinical post-stroke dysphagia.
+EuropePMC,38456721,10.1080/03639045.2024.2327475,38456721,2024,Drug Dev Ind Pharm,Computer-aided optimization of carbidopa/levodopa orally disintegrating tablets.
+EuropePMC,40616172,10.1186/s40001-025-02714-0,40616172,2025,Eur J Med Res,Research on transcranial magnetic stimulation for stroke rehabilitation: a visual analysis based on CiteSpace.
+EuropePMC,29993526,10.1109/tbme.2018.2807487,29993526,2018,IEEE Trans Biomed Eng,"Using Machine Learning and a Combination of Respiratory Flow, Laryngeal Motion, and Swallowing Sounds to Classify Safe and Unsafe Swallowing."
+EuropePMC,38218707,10.1016/j.prosdent.2023.12.021,38218707,2025,J Prosthet Dent,Digital design of open hollow obturator framework using existing dentures: A dental technique.
+EuropePMC,39416326,10.1007/s12055-024-01758-x,39416326,2024,Indian J Thorac Cardiovasc Surg,"Item-specific analysis of hoarseness to detect aspiration after cardiac surgery: an exploratory study of adopting an iPhone application ""GRBASZero""."
+EuropePMC,PPR1079700,10.21203/rs.3.rs-7393011/v1,,2025,,Feeding Intelligence: Comparative Evaluation of ChatGPT and Clinical Guidelines for Nutritional Management in Head and Neck Cancer
+EuropePMC,33018962,10.1109/embc44109.2020.9176721,33018962,2020,Annu Int Conf IEEE Eng Med Biol Soc,Deep Learning-Based Swallowing Monitor for Realtime Detection of Swallow Duration.
+EuropePMC,35961072,10.1016/j.cmpb.2022.107058,35961072,2022,Comput Methods Programs Biomed,Automated pharyngeal phase detection and bolus localization in videofluoroscopic swallowing study: Killing two birds with one stone?
+EuropePMC,40062449,10.1093/jjco/hyaf045,40062449,2025,Jpn J Clin Oncol,Recent advances in endoscopic diagnosis and treatment of superficial head and neck cancer.
+EuropePMC,33130951,10.1007/s00455-020-10201-3,33130951,2021,Dysphagia,Swallowing Assessment in Parkinson's Disease: Patient and Investigator Reported Outcome Measures are not Aligned.
+EuropePMC,40025183,10.1007/s00405-025-09295-y,40025183,2025,Eur Arch Otorhinolaryngol,Is there any room for ChatGPT AI bot in speech-language pathology?
+EuropePMC,36341260,10.3389/fmed.2022.950728,36341260,2022,Front Med (Lausanne),Harnessing artificial intelligence to infer novel spatial biomarkers for the diagnosis of eosinophilic esophagitis.
+EuropePMC,40431762,10.3390/s25102966,40431762,2025,Sensors (Basel),A Systematic Review of Sensor-Based Methods for Measurement of Eating Behavior.
+EuropePMC,33018437,10.1109/embc44109.2020.9176664,33018437,2020,Annu Int Conf IEEE Eng Med Biol Soc,Automated Bolus Detection in Videofluoroscopic Images of Swallowing Using Mask-RCNN.
+EuropePMC,37548514,10.1097/moo.0000000000000918,37548514,2023,Curr Opin Otolaryngol Head Neck Surg,Advances in and applications of imaging and radiomics in head and neck cancer survivorship.
+EuropePMC,PMC11201460,,,2024,Brain Sci,The Development of an Artificial Intelligence Video Analysis-Based Web Application to Diagnose Oropharyngeal Dysphagia: A Pilot Study
+EuropePMC,PPR1268575,10.64898/2026.02.12.26346217,,2026,,Quantitative Cerebrovascular Analysis for Improved Prediction of Post-Stroke Complications
+EuropePMC,32419103,10.1007/s00455-020-10124-z,32419103,2021,Dysphagia,Tracking Hyoid Bone Displacement During Swallowing Without Videofluoroscopy Using Machine Learning of Vibratory Signals.
+EuropePMC,36370899,10.1016/j.brainresbull.2022.11.006,36370899,2023,Brain Res Bull,Involvement of ghrelin in the regulation of swallowing motor activity in an arterially perfused rat preparation.
+EuropePMC,40363517,10.3390/ma18092014,40363517,2025,Materials (Basel),Anti-Freezing Conductive Ionic Hydrogel-Enabled Triboelectric Nanogenerators for Wearable Speech Recognition.
+EuropePMC,35662031,10.1002/lary.30239,35662031,2023,Laryngoscope,An Artificial Intelligence-Based Cosmesis Evaluation for Temporomandibular Joint Reconstruction.
+EuropePMC,37822705,10.1016/j.ctro.2023.100677,37822705,2023,Clin Transl Radiat Oncol,Comparing supervised and semi-supervised machine learning approaches in NTCP modeling to predict complications in head and neck cancer patients.
+EuropePMC,41325813,10.1016/j.ejps.2025.107392,41325813,2026,Eur J Pharm Sci,Application of a forward design-based multi-attribute decision-making method in quality assessment in pharmaceutical tablet manufacturing.
+EuropePMC,33781085,10.1089/brain.2020.0818,33781085,2021,Brain Connect,Repetitive Transcranial Magnetic Stimulation on the Supplementary Motor Area Changes Brain Connectivity in Functional Dysphagia.
+EuropePMC,36502169,10.3390/s22239468,36502169,2022,Sensors (Basel),AI-Based Detection of Aspiration for Video-Endoscopy with Visual Aids in Meaningful Frames to Interpret the Model Outcome.
+EuropePMC,PPR579778,10.20944/preprints202212.0051.v1,,2022,,AI-based Detection of Aspiration for Video-endoscopy with Visual Aids in Meaningful Frames to Interpret the Model Outcome
+EuropePMC,PPR747512,10.1101/2023.10.24.23297349,,2023,,"Data Farming to Table: Combined Use of a Learning Health System Infrastructure, Statistical Profiling, and Artificial Intelligence for Automating Toxicity and 3-year Survival for Quantified Predictive Feature Discovery from Real-World Data for Patients Having Head and Neck Cancers"
+EuropePMC,40095289,10.1007/s11096-024-01860-5,40095289,2025,Int J Clin Pharm,Developing a machine learning-based predictive model for the analgesic effectiveness of transdermal fentanyl in cancer patients: an interpretable approach.
+EuropePMC,37434729,10.1177/20552076231183548,37434729,2023,Digit Health,Research on a real-time dynamic monitoring method for silent aspiration after stroke based on semisupervised deep learning: A protocol study.
+EuropePMC,36549252,10.1016/j.cmpb.2022.107309,36549252,2023,Comput Methods Programs Biomed,Voiceprint and machine learning models for early detection of bulbar dysfunction in ALS.
+EuropePMC,36428870,10.3390/diagnostics12112811,36428870,2022,Diagnostics (Basel),Tongue Contour Tracking and Segmentation in Lingual Ultrasound for Speech Recognition: A Review.
+EuropePMC,PPR92862,10.1101/772178,,2019,,Deep learning-based auto-segmentation of swallowing and chewing structures
+EuropePMC,39939995,10.1186/s12938-025-01350-3,39939995,2025,Biomed Eng Online,Comparative analysis of electrical signals in facial expression muscles.
+EuropePMC,PPR752854,10.21203/rs.3.rs-3437583/v1,,2023,,Combined Unsupervised Machine Learning and clinical cohort for phenotyping complex diseases with its application to Amyotrophic lateral sclerosis
+EuropePMC,PPR870994,10.21203/rs.3.rs-4495427/v1,,2024,,PortableNet: An Automatical Diagnosis Method for Gastrointestinal Motility Analysis
+EuropePMC,PPR953150,10.1101/2024.12.12.24318964,,2024,,Segmentation of the Human Tongue Musculature Using MRI: Field Guide and Validation in Motor Neuron Disease
+EuropePMC,PMC9766689,,,2022,Innov Aging,QUALITY OF LIFE AND SOCIAL DETERMINANTS PREDICT HOSPICE IN DEMENTIA CAREGIVING DYADS: A MACHINE LEARNING APPROACH
+EuropePMC,39728580,10.3390/nano14242044,39728580,2024,Nanomaterials (Basel),Flexible and Stable GaN Piezoelectric Sensor for Motion Monitoring and Fall Warning.
+EuropePMC,37063103,10.3389/fnhum.2023.1100320,37063103,2023,Front Hum Neurosci,The effects of intermittent theta burst stimulation of the unilateral cerebellar hemisphere on swallowing-related brain regions in healthy subjects.
+EuropePMC,40019494,10.1113/jp287732,40019494,2025,J Physiol,Cerebellar control of targeted tongue movements.
+EuropePMC,40071473,10.1097/cco.0000000000001135,40071473,2025,Curr Opin Oncol,New trends in supportive care of head and neck cancers.
+EuropePMC,33850401,10.4103/ccd.ccd_415_19,33850401,2020,Contemp Clin Dent,Effects of Habit-Breaking Appliances on Tongue Movements during Deglutition in Children with Tongue Thrust Swallowing using Ultrasonography - A Pilot Study.
+EuropePMC,39790627,10.1016/j.atssr.2024.06.007,39790627,2024,Ann Thorac Surg Short Rep,ChatGPT vs Expert-Guided Care Pathways for Postesophagectomy Symptom Management.
+EuropePMC,35183364,10.1016/j.prosdent.2021.12.028,35183364,2023,J Prosthet Dent,Design of palatal and lingual augmentation prostheses by using an intraoral scanner for a patient after a glossectomy: A clinical report.
+EuropePMC,40200687,10.1002/adma.202500077,40200687,2025,Adv Mater,Pressure Induced Molecular-Arrangement and Charge-Density Perturbance in Doped Polymer for Intelligent Motion and Vocal Recognitions.
+EuropePMC,38482201,10.3389/fonc.2024.1346797,38482201,2024,Front Oncol,Impact of radiation dose distribution on nutritional supplementation needs in head and neck cancer radiotherapy: a voxel-based machine learning approach.
+EuropePMC,36830703,10.3390/biom13020334,36830703,2023,Biomolecules,Application of an Artificial Neural Network to Identify the Factors Influencing Neurorehabilitation Outcomes of Patients with Ischemic Stroke Treated with Thrombolysis.
+EuropePMC,41073116,10.1136/bmjopen-2025-103704,41073116,2025,BMJ Open,"Understanding the complexity of living with, and managing, secretions in motor neuron disease/amyotrophic lateral sclerosis (MND/ALS/ALS): protocol for a complex intervention systematic review."
+EuropePMC,36535432,10.1016/j.ijrobp.2022.12.004,36535432,2023,Int J Radiat Oncol Biol Phys,Automated Robust Planning for IMPT in Oropharyngeal Cancer Patients Using Machine Learning.
+EuropePMC,34415842,10.1109/jbhi.2021.3106565,34415842,2022,IEEE J Biomed Health Inform,Improving Non-Invasive Aspiration Detection With Auxiliary Classifier Wasserstein Generative Adversarial Networks.
+EuropePMC,34428093,10.1044/2021_jslhr-21-00134,34428093,2021,J Speech Lang Hear Res,Characterizing Swallows From People With Neurodegenerative Diseases Using High-Resolution Cervical Auscultation Signals and Temporal and Spatial Swallow Kinematic Measurements.
+EuropePMC,35566653,10.3390/jcm11092529,35566653,2022,J Clin Med,Application of Convolutional Neural Networks for Diagnosis of Eosinophilic Esophagitis Based on Endoscopic Imaging.
+EuropePMC,31500332,10.3390/s19183873,31500332,2019,Sensors (Basel),Automatic Detection of the Pharyngeal Phase in Raw Videos for the Videofluoroscopic Swallowing Study Using Efficient Data Collection and 3D Convolutional Networks <sup>†</sup>.
+EuropePMC,34560503,10.1016/j.compbiomed.2021.104871,34560503,2021,Comput Biol Med,Artificial intelligence for quality control of oscillometry measures.
+EuropePMC,32650664,10.1044/2019_ajslp-19-00068,32650664,2020,Am J Speech Lang Pathol,Cortical and Subcortical Control of Swallowing-Can We Use Information From Lesion Locations to Improve Diagnosis and Treatment for Patients With Stroke?
+EuropePMC,33034672,10.1007/s00066-020-01697-7,33034672,2021,Strahlenther Onkol,Incorporating dose-volume histogram parameters of swallowing organs at risk in a videofluoroscopy-based predictive model of radiation-induced dysphagia after head and neck cancer intensity-modulated radiation therapy.
+EuropePMC,37114643,10.1111/jgh.16194,37114643,2023,J Gastroenterol Hepatol,Machine learning can guide suitability of consultation and patient referral through telemedicine for hepatobiliary diseases.
+EuropePMC,38432642,10.1016/j.joms.2024.02.006,38432642,2024,J Oral Maxillofac Surg,Virtual Surgical Guidance Improves Quality of Life Following Scapular Free-Flap Reconstruction of Maxillary Defects.
+EuropePMC,40621723,10.1080/21678421.2025.2522399,40621723,2026,Amyotroph Lateral Scler Frontotemporal Degener,Feature selection using metaheuristics to predict annual amyotrophic lateral sclerosis progression.
+EuropePMC,35698194,10.1186/s12957-022-02654-7,35698194,2022,World J Surg Oncol,Novel computer-aided reconstruction of soft tissue defects following resection of oral and oropharyngeal squamous cell carcinoma.
+EuropePMC,34891978,10.1109/embc46164.2021.9629562,34891978,2021,Annu Int Conf IEEE Eng Med Biol Soc,The effect of time on the automated detection of the pharyngeal phase in videofluoroscopic swallowing studies.
+EuropePMC,40663524,10.1371/journal.pone.0328371,40663524,2025,PLoS One,Update of safety profile of bile acid sequestrants: A real-world pharmacovigilance study of the FDA adverse event reporting system.
+EuropePMC,39044932,10.25122/jml-2024-0017,39044932,2024,J Med Life,Combination of CAD/CAM technologies and conventional processing in the fabrication of a maxillary obturator prosthesis: a clinical report.
+EuropePMC,30120314,10.1038/s41598-018-30182-6,30120314,2018,Sci Rep,Automatic hyoid bone detection in fluoroscopic images using deep learning.
+EuropePMC,38291119,10.1038/s41598-024-52899-3,38291119,2024,Sci Rep,Author Correction: Application of deep learning technology for temporal analysis of videofluoroscopic swallowing studies.
+EuropePMC,39550608,10.1080/0954898x.2024.2426580,39550608,2026,Network,Kruskal Szekeres generative adversarial network augmented deep autoencoder for colorectal cancer detection.
+EuropePMC,40995989,10.2340/1651-226x.2025.44020,40995989,2025,Acta Oncol,CNN-based prediction using early post-radiotherapy MRI as a proxy for toxicity in the murine head and neck.
+EuropePMC,PPR481712,10.21203/rs.3.rs-1529003/v1,,2022,,Post-stroke respiratory complications using machine learning with voice features from mobile devices
+EuropePMC,PPR1016766,10.1101/2025.04.30.651533,,2025,,Individualized AI-driven neuromodulation enhances tongue motor and sensory control networks: a precision intervention for neurorehabilitation in cancer survivors and patients with neurodegenerative disease
+EuropePMC,31884906,10.1161/strokeaha.119.027439,31884906,2020,Stroke,Development of a Novel Prognostic Model to Predict 6-Month Swallowing Recovery After Ischemic Stroke.
+EuropePMC,38254424,10.3390/ani14020256,38254424,2024,Animals (Basel),Development of a Dog Health Score Using an Artificial Intelligence Disease Prediction Algorithm Based on Multifaceted Data.
+EuropePMC,35247215,10.1002/lary.30096,35247215,2022,Laryngoscope,Comparing the M.D. Anderson Symptom and Dysphagia Inventories for Head and Neck Cancer Patients.
+EuropePMC,31417694,10.1098/rsos.181982,31417694,2019,R Soc Open Sci,Neck sensor-supported hyoid bone movement tracking during swallowing.
+EuropePMC,39855386,10.1016/j.avsg.2025.01.010,39855386,2025,Ann Vasc Surg,Correlation between Osteal Kneading and Carotid Artery Atherosclerotic Plaque.
+EuropePMC,36672100,10.3390/brainsci13010119,36672100,2023,Brain Sci,Neuroplasticity Elicited by Modified Pharyngeal Electrical Stimulation: A Pilot Study.
+EuropePMC,40453668,10.3389/fphar.2025.1497708,40453668,2025,Front Pharmacol,Adverse events associated with vismodegib: insights from a real-world pharmacovigilance study using the FAERS database.
+EuropePMC,40472039,10.1371/journal.pone.0324675,40472039,2025,PLoS One,A real-world disproportionality analysis of Tenofovir Alafenamide (TAF): Data mining of the FDA adverse event reporting system (FAERS).
+EuropePMC,40186014,10.1007/s00261-025-04890-3,40186014,2025,Abdom Radiol (NY),Diagnostic value of combining ultrafast cine MRI and morphological measurements on gastroesophageal reflux disease.
+EuropePMC,33824036,10.1016/j.anl.2021.03.014,33824036,2021,Auris Nasus Larynx,Impact of CAD/CAM mandibular reconstruction on chewing and swallowing function after surgery for locally advanced oral cancer: A retrospective study of 50 cases.
+EuropePMC,39636580,10.1080/14740338.2024.2438751,39636580,2026,Expert Opin Drug Saf,Safety assessment of tafamidis: a real-world adverse event analysis from the FAERS database.
+EuropePMC,36223331,10.1371/journal.pntd.0010789,36223331,2022,PLoS Negl Trop Dis,"Constructing, validating, and updating machine learning models to predict survival in children with Ebola Virus Disease."
+EuropePMC,40953868,10.1136/bmjopen-2025-109094,40953868,2025,BMJ Open,"Flap sparing in postoperative radiotherapy versus standard flap-agnostic radiotherapy of oral cavity cancers (OPTIFLAP): protocol for a de-escalation, randomised, non-inferiority, phase III trial."
+EuropePMC,PPR357526,10.1101/2021.06.10.21258624,,2021,,DEEP LEARNING TISSUE ANALYSIS DIAGNOSES AND PREDICTS TREATMENT RESPONSE IN EOSINOPHILIC ESOPHAGITIS
+EuropePMC,41122661,10.1115/1.4066459,41122661,2025,J Eng Sci Med Diagn Ther,Infants Sucking Pattern Identification Using Machine-Learned Computational Modeling.
+EuropePMC,30384221,10.1016/j.jelekin.2018.10.004,30384221,2018,J Electromyogr Kinesiol,Automatic detection of oral and pharyngeal phases in swallowing using classification algorithms and multichannel EMG.
+EuropePMC,PPR916993,10.1101/2024.09.26.615128,,2024,,Cerebellar control of targeted tongue movements
+EuropePMC,34701308,10.1016/j.ijrobp.2021.07.1108,34701308,2021,Int J Radiat Oncol Biol Phys,Modeling Patient-Reported Swallowing Outcomes With Dose to the Epiglottis.
+EuropePMC,38257664,10.3390/s24020571,38257664,2024,Sensors (Basel),"Eating Event Recognition Using Accelerometer, Gyroscope, Piezoelectric, and Lung Volume Sensors."
+EuropePMC,40561502,10.2196/59926,40561502,2025,JMIR Mhealth Uhealth,"Impact of mHealth on Postoperative Quality of Life, Self-Management, and Dysfunction in Patients With Oral and Maxillofacial Tumors: Nonrandomized Controlled Trial."
+EuropePMC,34537905,10.1007/s00455-021-10368-3,34537905,2022,Dysphagia,Characterizing Effortful Swallows from Healthy Community Dwelling Adults Across the Lifespan Using High-Resolution Cervical Auscultation Signals and MBSImP Scores: A Preliminary Study.
+EuropePMC,34202763,10.3390/cancers13133162,34202763,2021,Cancers (Basel),Modern Diagnosis of Early Esophageal Cancer: From Blood Biomarkers to Advanced Endoscopy and Artificial Intelligence.
+EuropePMC,32650655,10.1044/2020_ajslp-19-00155,32650655,2020,Am J Speech Lang Pathol,High-Resolution Cervical Auscultation and Data Science: New Tools to Address an Old Problem.
+EuropePMC,35937555,10.1044/2020_persp-20-00073,35937555,2020,Perspect ASHA Spec Interest Groups,Automatic Estimation of Laryngeal Vestibule Closure Duration Using High- Resolution Cervical Auscultation Signals.
+EuropePMC,38391244,10.1039/d3nr05372e,38391244,2024,Nanoscale,Multifunctional black phosphorus pressure sensors with bending angle monitoring and direction recognition characteristics.
+EuropePMC,32337359,10.1002/lio2.362,32337359,2020,Laryngoscope Investig Otolaryngol,Prediction of vestibular schwannoma recurrence using artificial neural network.
+EuropePMC,34018024,10.1007/s00455-021-10317-0,34018024,2022,Dysphagia,Establishing Reference Values for Temporal Kinematic Swallow Events Across the Lifespan in Healthy Community Dwelling Adults Using High-Resolution Cervical Auscultation.
+EuropePMC,36452051,10.1093/geroni/igac051,36452051,2022,Innov Aging,Predicting Hospice Transitions in Dementia Caregiving Dyads: An Exploratory Machine Learning Approach.
+EuropePMC,38760808,10.1186/s12938-024-01241-z,38760808,2024,Biomed Eng Online,sEMG-based automatic characterization of swallowed materials.
+EuropePMC,34207049,10.3390/jcm10122681,34207049,2021,J Clin Med,Reliability of Machine and Human Examiners for Detection of Laryngeal Penetration or Aspiration in Videofluoroscopic Swallowing Studies.
+EuropePMC,37505164,10.1097/md.0000000000034298,37505164,2023,Medicine (Baltimore),Association between successful weaning from nasogastric tube feeding and thoracic muscle mass in patients with aspiration pneumonia.
+EuropePMC,PPR944656,10.1101/2024.11.22.24317773,,2024,,Risk prediction models for pneumonia in hospitalized stroke patients: A systematic review
+EuropePMC,34701388,10.1016/j.ijrobp.2021.07.1180,34701388,2021,Int J Radiat Oncol Biol Phys,Predicting Feeding Tube Placement in Head and Neck Cancer Patients Receiving Radiation Therapy With Machine Learning.
+EuropePMC,39323457,10.1002/hsr2.70081,39323457,2024,Health Sci Rep,Patient and care partner perspectives and preferences related to myasthenia gravis treatment: A qualitative study.
+EuropePMC,32457331,10.1038/s41598-020-65492-1,32457331,2020,Sci Rep,Non-invasive identification of swallows via deep learning in high resolution cervical auscultation recordings.
+EuropePMC,38901483,10.1016/j.wneu.2024.06.083,38901483,2024,World Neurosurg,Perioperative Segmentation of the Posterior Fossa and the Keel of Goodrich in Surgical Outcomes of Chiari Malformations.
+EuropePMC,PPR783012,10.21203/rs.3.rs-3824771/v1,,2024,,Real world clinical experience using daily artificial intelligence-assisted online adaptive radiotherapy for head and neck cancer
+EuropePMC,36812552,10.1371/journal.pdig.0000061,36812552,2022,PLOS Digit Health,A pilot study of the Earable device to measure facial muscle and eye movement tasks among healthy volunteers.
+EuropePMC,PPR931933,10.21203/rs.3.rs-5318884/v1,,2024,,A comparative study on the influencing factors and risk prediction models for stroke- associated pneumonia in patients with acute ischemic stroke and atrial fibrillation
+EuropePMC,40660869,10.1002/mp.17937,40660869,2025,Med Phys,Transfer learning for DL-based Synthetic CT after reconstruction algorithm upgrade in a proton therapy clinic.
+EuropePMC,36639403,10.1038/s41598-023-27863-2,36639403,2023,Sci Rep,Symptoms timeline and outcomes in amyotrophic lateral sclerosis using artificial intelligence.
+EuropePMC,32750928,10.1109/jbhi.2020.3000057,32750928,2021,IEEE J Biomed Health Inform,Upper Esophageal Sphincter Opening Segmentation With Convolutional Recurrent Neural Networks in High Resolution Cervical Auscultation.
+EuropePMC,31684165,10.3390/ijerph16214269,31684165,2019,Int J Environ Res Public Health,Predicting the Swallow-Related Quality of Life of the Elderly Living in a Local Community Using Support Vector Machine.
+EuropePMC,37459369,10.1371/journal.pntd.0010853,37459369,2023,PLoS Negl Trop Dis,"Individual longitudinal compliance to neglected tropical disease mass drug administration programmes, a systematic review."
+EuropePMC,37627793,10.3390/bioengineering10080908,37627793,2023,Bioengineering (Basel),Real-Time Tracking of Laryngeal Motion via the Surface Depth-Sensing Technique for Radiotherapy in Laryngeal Cancer Patients.
+EuropePMC,34967381,10.1097/md.0000000000028439,34967381,2021,Medicine (Baltimore),Added value of systemic inflammation markers in predicting pulmonary infection in stroke patients: A retrospective study by machine learning analysis.
+EuropePMC,PPR395006,10.21203/rs.3.rs-813839/v1,,2021,,Intraoral Swallow Pressure Profiles-General Features and Aids to Categorization
+EuropePMC,40927975,10.1002/14651858.cd014745.pub2,40927975,2025,Cochrane Database Syst Rev,Prognostic models for radiation-induced complications after radiotherapy in head and neck cancer patients.
+EuropePMC,37894701,10.3390/molecules28207224,37894701,2023,Molecules,"Analysis of Volatile Compounds in Processed Cream Cheese Models for the Prediction of ""Fresh Cream"" Aroma Perception."
+EuropePMC,34941054,10.1097/md.0000000000028112,34941054,2021,Medicine (Baltimore),Measurement of laryngeal elevation by automated segmentation using Mask R-CNN.
+EuropePMC,39312995,10.1016/j.jdent.2024.105354,39312995,2024,J Dent,"Human-AI collaboration improves adults' oral biomechanical functions: A multi-centre, self-controlled clinical trial."
+EuropePMC,34963825,10.1109/jtehm.2021.3134926,34963825,2022,IEEE J Transl Eng Health Med,A Preliminary Investigation of Similarities of High Resolution Cervical Auscultation Signals Between Thin Liquid Barium and Water Swallows.
+EuropePMC,36052046,10.1155/2022/5476714,36052046,2022,Comput Intell Neurosci,Preemptive Diagnosis of Alzheimer's Disease in the Eastern Province of Saudi Arabia Using Computational Intelligence Techniques.
+EuropePMC,33059060,10.1016/j.cmpb.2020.105786,33059060,2021,Comput Methods Programs Biomed,Machine-Learning based model order reduction of a biomechanical model of the human tongue.
+EuropePMC,31914991,10.1186/s12911-019-1010-x,31914991,2020,BMC Med Inform Decis Mak,Assessing stroke severity using electronic health record data: a machine learning approach.
+EuropePMC,32938263,10.1142/s0129065720500562,32938263,2021,Int J Neural Syst,A Swallowing Decoder Based on Deep Transfer Learning: AlexNet Classification of the Intracranial Electrocorticogram.
+EuropePMC,30456688,10.1007/s10916-018-1115-2,30456688,2018,J Med Syst,Blood Sugar Level Indication Through Chewing and Swallowing from Acoustic MEMS Sensor and Deep Learning Algorithm for Diabetic Management.
+EuropePMC,37507650,10.3758/s13428-023-02171-9,37507650,2024,Behav Res Methods,An open-source toolbox for measuring vocal tract shape from real-time magnetic resonance images.
+EuropePMC,33651206,10.1007/s10237-021-01420-0,33651206,2021,Biomech Model Mechanobiol,Mechanics informed fluoroscopy of esophageal transport.
+EuropePMC,32864624,10.1109/bhi.2019.8834506,32864624,2019,IEEE EMBS Int Conf Biomed Health Inform,DeepDDK: A Deep Learning based Oral-Diadochokinesis Analysis Software.
+EuropePMC,29399642,10.1016/j.ctro.2017.11.009,29399642,2018,Clin Transl Radiat Oncol,Incorporating spatial dose metrics in machine learning-based normal tissue complication probability (NTCP) models of severe acute dysphagia resulting from head and neck radiotherapy.
+EuropePMC,37363993,10.1158/1078-0432.ccr-23-0334,37363993,2023,Clin Cancer Res,Efficacy and Quality-of-Life Following Involved Nodal Radiotherapy for Head and Neck Squamous Cell Carcinoma: The INRT-AIR Phase II Clinical Trial.
+EuropePMC,39502527,10.3389/fphar.2024.1438292,39502527,2024,Front Pharmacol,Adverse drug reaction signals mining comparison of amiodarone and dronedarone: a pharmacovigilance study based on FAERS.
+EuropePMC,27521686,10.1016/j.physbeh.2016.08.005,27521686,2016,Physiol Behav,Calculation of upper esophageal sphincter restitution time from high resolution manometry data using machine learning.
+EuropePMC,38179406,10.5306/wjco.v14.i12.570,38179406,2023,World J Clin Oncol,Update on current diagnosis and management of anaplastic thyroid carcinoma.
+EuropePMC,PPR526651,10.21203/rs.3.rs-1887824/v1,,2022,,Knitted Structural Design of MXene/Cu2O Based Strain Sensor for Smart Wear
+EuropePMC,33688838,10.2196/21331,33688838,2021,JMIR Med Inform,Detection of Bulbar Involvement in Patients With Amyotrophic Lateral Sclerosis by Machine Learning Voice Analysis: Diagnostic Decision Support Development Study.
+EuropePMC,34157446,10.1016/j.jormas.2021.05.015,34157446,2021,J Stomatol Oral Maxillofac Surg,In-house tooth-supported guide for the injection of botulinum toxin into the lateral pterygoid muscle using Blue Sky Plan software: A technical note.
+EuropePMC,36553209,10.3390/diagnostics12123202,36553209,2022,Diagnostics (Basel),Endoscopic Diagnosis of Eosinophilic Esophagitis: Basics and Recent Advances.
+EuropePMC,38195582,10.1186/s13014-023-02381-7,38195582,2024,Radiat Oncol,Using meta-analysis and CNN-NLP to review and classify the medical literature for normal tissue complication probability in head and neck cancer.
+EuropePMC,35789816,10.1007/s40496-022-00314-z,35789816,2022,Curr Oral Health Rep,Roles of Dental Care in Disaster Medicine in Japan.
+EuropePMC,33209391,10.21037/jtd-20-1956,33209391,2020,J Thorac Dis,An artificial neural network model predicting pathologic nodal metastases in clinical stage I-II esophageal squamous cell carcinoma patients.
+EuropePMC,38264200,,38264200,2024,ORL Head Neck Nurs,Post-extubation Assessment of Laryngeal Symptoms and Severity (PALSS) in the Intensive Care Unit: Protocol of a Prospective Cohort Study.
+EuropePMC,35285113,10.1111/1460-6984.12712,35285113,2022,Int J Lang Commun Disord,Automated assessment of hyoid movement during normal swallow using ultrasound.
+EuropePMC,37137220,10.1016/j.cmpb.2023.107563,37137220,2023,Comput Methods Programs Biomed,A novel computer based risk prediction model for vocal cord palsy before thyroidectomy.
+EuropePMC,29755210,10.1016/j.neucom.2017.12.059,29755210,2018,Neurocomputing (Amst),Deep Learning for Classification of Normal Swallows in Adults.
+EuropePMC,29874030,10.1021/acsnano.8b02133,29874030,2018,ACS Nano,Metallic Nanoislands on Graphene for Monitoring Swallowing Activity in Head and Neck Cancer Patients.
+EuropePMC,38836001,10.3389/fneur.2024.1396002,38836001,2024,Front Neurol,A multimodal approach to automated hierarchical assessment of bulbar involvement in amyotrophic lateral sclerosis.
+EuropePMC,37611115,10.1093/eurheartj/ehad535,37611115,2023,Eur Heart J,"Sodium-based paracetamol: impact on blood pressure, cardiovascular events, and all-cause mortality."
+EuropePMC,37390759,10.1016/j.oraloncology.2023.106460,37390759,2023,Oral Oncol,Spatially-aware clustering improves AJCC-8 risk stratification performance in oropharyngeal carcinomas.
+EuropePMC,35263687,10.1016/j.compbiomed.2022.105339,35263687,2022,Comput Biol Med,LARNet-STC: Spatio-temporal orthogonal region selection network for laryngeal closure detection in endoscopy videos.
+EuropePMC,29143418,10.1111/nmo.13236,29143418,2018,Neurogastroenterol Motil,Identification of swallowing disorders in early and mid-stage Parkinson's disease using pattern recognition of pharyngeal high-resolution manometry data.
+EuropePMC,28361202,10.1007/s00455-017-9794-2,28361202,2017,Dysphagia,Swallowing Preparation and Execution: Insights from a Delayed-Response Functional Magnetic Resonance Imaging (fMRI) Study.
+EuropePMC,36457205,10.12659/msm.938298,36457205,2022,Med Sci Monit,Narrative Review of Noninvasive Brain Stimulation in Stroke Rehabilitation.
+EuropePMC,25618539,10.1007/s00455-014-9593-y,25618539,2015,Dysphagia,Neural network pattern recognition of lingual-palatal pressure for automated detection of swallow.
+EuropePMC,35124896,10.1002/adhm.202102508,35124896,2022,Adv Healthc Mater,Sublingual Boosting with a Novel Mucoadhesive Thermogelling Hydrogel Following Parenteral CAF01 Priming as a Strategy Against Chlamydia trachomatis.
+EuropePMC,24664169,10.1007/s11517-014-1151-0,24664169,2014,Med Biol Eng Comput,Noninvasive and automatic diagnosis of patients at high risk of swallowing aspiration.
+EuropePMC,32306186,10.1007/s11548-020-02145-8,32306186,2020,Int J Comput Assist Radiol Surg,"Segmentation of cervical intervertebral disks in videofluorography by CNN, multi-channelization and feature selection."
+EuropePMC,26891061,10.1111/nmo.12730,26891061,2016,Neurogastroenterol Motil,Objective prediction of pharyngeal swallow dysfunction in dysphagia through artificial neural network modeling.
+EuropePMC,33689278,10.1021/acsami.0c21598,33689278,2021,ACS Appl Mater Interfaces,Superstretching MXene Composite Hydrogel as a Bidirectional Stress Response Thixotropic Sensor.
+EuropePMC,36439200,10.3389/fncel.2022.817732,36439200,2022,Front Cell Neurosci,The impact of acupuncture on neuroplasticity after ischemic stroke: a literature review and perspectives.
+EuropePMC,PPR554977,10.1101/2022.10.06.22280483,,2022,,"Individual longitudinal compliance to neglected tropical disease mass drug administration programmes, a systematic review"
+EuropePMC,36067634,10.1016/j.compbiomed.2022.106068,36067634,2022,Comput Biol Med,An EMG-based Eating Behaviour Monitoring system with haptic feedback to promote mindful eating.
+EuropePMC,36562537,10.1021/acsami.2c18441,36562537,2023,ACS Appl Mater Interfaces,"Chestnut-Tannin-Crosslinked, Antibacterial, Antifreezing, Conductive Organohydrogel as a Strain Sensor for Motion Monitoring, Flexible Keyboards, and Velocity Monitoring."
+EuropePMC,31298717,10.1001/jamanetworkopen.2019.6972,31298717,2019,JAMA Netw Open,Development and Validation of a Deep Learning Algorithm for Mortality Prediction in Selecting Patients With Dementia for Earlier Palliative Care Interventions.
+EuropePMC,32889627,10.1007/s00455-020-10177-0,32889627,2021,Dysphagia,A Preliminary Investigation of Whether HRCA Signals Can Differentiate Between Swallows from Healthy People and Swallows from People with Neurodegenerative Diseases.
+EuropePMC,26253217,10.1016/j.physbeh.2015.08.003,26253217,2015,Physiol Behav,Peripheral and central control of swallowing initiation in healthy humans.
+EuropePMC,35266043,10.1007/s00415-022-11022-0,35266043,2022,J Neurol,"Predicting functional impairment trajectories in amyotrophic lateral sclerosis: a probabilistic, multifactorial model of disease progression."
+EuropePMC,27480734,10.1016/j.cmpb.2016.07.010,27480734,2016,Comput Methods Programs Biomed,Computer-assisted detection of swallowing difficulty.
+EuropePMC,36453395,10.4103/1673-5374.355981,36453395,2023,Neural Regen Res,Cell-based therapeutic strategies for treatment of spinocerebellar ataxias: an update.
+EuropePMC,IND605853978,10.1016/j.jfoodeng.2017.10.016,,2018,Journal of food engineering.,A new take on measuring relative nutritional density: The feasibility of using a deep neural network to assess commercially-prepared puréed food concentrations
+EuropePMC,35161881,10.3390/s22031137,35161881,2022,Sensors (Basel),Detecting Bulbar Involvement in Patients with Amyotrophic Lateral Sclerosis Based on Phonatory and Time-Frequency Features.
+EuropePMC,31312805,10.1016/j.eclinm.2019.06.003,31312805,2019,EClinicalMedicine,"Machine-learning Prognostic Models from the 2014-16 Ebola Outbreak: Data-harmonization Challenges, Validation Strategies, and mHealth Applications."
+EuropePMC,35528325,10.1117/12.2611541,35528325,2022,Proc SPIE Int Soc Opt Eng,Oral Cavity Anatomical Site Image Classification and Analysis.
+EuropePMC,33018436,10.1109/embc44109.2020.9176149,33018436,2020,Annu Int Conf IEEE Eng Med Biol Soc,Orthogonal Region Selection Network for Laryngeal Closure Detection in Laryngoscopy Videos.
+EuropePMC,PPR13853,10.1101/294587,,2018,,"Machine-Learning prognostic models from the 2014-16 Ebola outbreak: data-harmonization challenges, validation strategies, and mHealth applications"
+EuropePMC,22682474,10.1186/1743-0003-9-34,22682474,2012,J Neuroeng Rehabil,Quantitative classification of pediatric swallowing through accelerometry.
+EuropePMC,32600632,10.1016/j.nic.2020.04.002,32600632,2020,Neuroimaging Clin N Am,Technical Improvements in Head and Neck MR Imaging: At the Cutting Edge.
+EuropePMC,29165287,10.1016/j.ijrobp.2017.08.004,29165287,2017,Int J Radiat Oncol Biol Phys,Quantitative Evaluation of Head and Neck Cancer Treatment-Related Dysphagia in the Development of a Personalized Treatment Deintensification Paradigm.
+EuropePMC,35280269,10.3389/fneur.2022.838191,35280269,2022,Front Neurol,An Automated Tongue Tracker for Quantifying Bulbar Function in ALS.
+EuropePMC,PPR389525,10.31234/osf.io/y6xde,,2021,,An open-source toolbox for measuring vocal tract shape from real-time magnetic resonance images
+EuropePMC,26607248,10.1152/japplphysiol.00653.2015,26607248,2016,J Appl Physiol (1985),Brain and behavioral effects of swallowing carbonated water on the human pharyngeal motor system.
+EuropePMC,31633385,10.1177/0022034519877400,31633385,2019,Adv Dent Res,Oral Rehabilitation of Patients Sustaining Orofacial Injuries: The UPenn Initiative.
+EuropePMC,35356617,10.1155/2022/3698721,35356617,2022,J Healthc Eng,Clinical Research on Gastrointestinal Surgery Based on Smart Medicine.
+EuropePMC,33921900,10.3390/s21082875,33921900,2021,Sensors (Basel),Chest-Worn Inertial Sensors: A Survey of Applications and Methods.
+EuropePMC,29774921,10.1039/c8nr02813c,29774921,2018,Nanoscale,A flexible pressure sensor based on rGO/polyaniline wrapped sponge with tunable sensitivity for human motion detection.
+EuropePMC,35442211,10.2196/29455,35442211,2022,J Med Internet Res,Optimal Treatment Selection in Sequential Systemic and Locoregional Therapy of Oropharyngeal Squamous Carcinomas: Deep Q-Learning With a Patient-Physician Digital Twin Dyad.
+EuropePMC,35509104,10.1186/s12967-022-03389-5,35509104,2022,J Transl Med,ICH-LR2S2: a new risk score for predicting stroke-associated pneumonia from spontaneous intracerebral hemorrhage.
+EuropePMC,31946766,10.1109/embc.2019.8857445,31946766,2019,Annu Int Conf IEEE Eng Med Biol Soc,A Novel Real-time Automatic Angioectasia Detection Method in Wireless Capsule Endoscopy Video Feed.
+EuropePMC,22085802,10.1186/1475-925x-10-100,22085802,2011,Biomed Eng Online,Automatic discrimination between safe and unsafe swallowing using a reputation-based classifier.
+EuropePMC,34009848,10.1097/wnp.0000000000000626,34009848,2021,J Clin Neurophysiol,Auxiliary Tests of Autonomic Functions.
+EuropePMC,34701358,10.1016/j.ijrobp.2021.07.1155,34701358,2021,Int J Radiat Oncol Biol Phys,Recurrence and Quality-of-Life Following Involved Node Radiotherapy for Head and Neck Squamous Cell Carcinoma: Initial Results From the Phase II INRT-Air Trial.
+EuropePMC,31768002,10.1038/s41551-019-0480-6,31768002,2020,Nat Biomed Eng,Mechano-acoustic sensing of physiological processes and body motions via a soft wireless device placed at the suprasternal notch.
+EuropePMC,PPR309968,10.1101/2021.04.07.21255092,,2021,,Optimal policy determination in sequential systemic and locoregional therapy of oropharyngeal squamous carcinomas: A patient-physician digital twin dyad with deep Q-learning for treatment selection
+EuropePMC,23416253,10.1016/j.neuroimage.2013.01.037,23416253,2013,Neuroimage,Functional connectivity of the cortical swallowing network in humans.
+EuropePMC,30470467,10.1016/j.jcms.2018.05.033,30470467,2019,J Craniomaxillofac Surg,The fitting accuracy of pre-bend reconstruction plates and their impact on the temporomandibular joint.
+EuropePMC,23125873,10.1016/j.bspc.2012.03.005,23125873,2012,Biomed Signal Process Control,Automatic food intake detection based on swallowing sounds.
+EuropePMC,31811966,10.1016/j.wneu.2019.11.167,31811966,2020,World Neurosurg,C3-C5 Chordoma Resection and Reconstruction with a Three-Dimensional Printed Titanium Patient-Specific Implant.
+EuropePMC,30441303,10.1109/embc.2018.8513380,30441303,2018,Annu Int Conf IEEE Eng Med Biol Soc,A Novel Approach for Swallow Detection by Fusing Throat Acceleration and PPG Signal.
+EuropePMC,32095570,10.1016/j.tipsro.2018.01.002,32095570,2018,Tech Innov Patient Support Radiat Oncol,Predicting acute odynophagia during lung cancer radiotherapy using observations derived from patient-centred nursing care.
+EuropePMC,25345998,10.1111/jerd.12117,25345998,2015,J Esthet Restor Dent,Functional evaluation of a CAD/CAM prosthesis for immediate defect repair after total maxillectomy: a case series of 18 patients with maxillary sinus cancer.
+EuropePMC,23070810,10.1002/lary.23655,23070810,2013,Laryngoscope,Artificial neural network classification of pharyngeal high-resolution manometry with impedance data.
+EuropePMC,21096991,10.1109/iembs.2010.5627796,21096991,2010,Annu Int Conf IEEE Eng Med Biol Soc,Detection of periods of food intake using Support Vector Machines.
+EuropePMC,28537378,10.1021/acsami.7b05204,28537378,2017,ACS Appl Mater Interfaces,"Self-Healing, Highly Sensitive Electronic Sensors Enabled by Metal-Ligand Coordination and Hierarchical Structure Design."
+EuropePMC,19789095,10.1109/tbme.2009.2033037,19789095,2010,IEEE Trans Biomed Eng,Automatic detection of swallowing events by acoustical means for applications of monitoring of ingestive behavior.
+EuropePMC,21145433,10.1016/j.resp.2010.12.002,21145433,2011,Respir Physiol Neurobiol,The effects of lesions in the dorsolateral pons on the coordination of swallowing and breathing in awake goats.
+EuropePMC,23263812,10.1007/s12272-012-1215-3,23263812,2012,Arch Pharm Res,Fast disintegrating films containing anastrozole as a dosage form for dysphagia patients.
+EuropePMC,23728150,10.1177/0194599813489506,23728150,2013,Otolaryngol Head Neck Surg,Classification of high-resolution manometry data according to videofluoroscopic parameters using pattern recognition.
+EuropePMC,28111533,10.1007/s40846-016-0181-5,28111533,2016,J Med Biol Eng,Analyzing Breathing Signals and Swallow Sequence Locality for Solid Food Intake Monitoring.
+EuropePMC,25976926,10.1016/j.neuroimage.2015.05.007,25976926,2015,Neuroimage,fMRI and MRS measures of neuroplasticity in the pharyngeal motor cortex.
+EuropePMC,20938958,10.1002/lary.21125,20938958,2010,Laryngoscope,Cortical activation during swallowing rehabilitation maneuvers: a functional MRI study of healthy controls.
+EuropePMC,26175085,10.1007/s10266-015-0210-9,26175085,2015,Odontology,Functional salivary gland regeneration as the next generation of organ replacement regenerative therapy.
+EuropePMC,30860866,10.1200/cci.18.00058,30860866,2019,JCO Clin Cancer Inform,Utility of a Clinical Decision Support System in Weight Loss Prediction After Head and Neck Cancer Radiotherapy.
+EuropePMC,25943959,10.1097/moo.0000000000000163,25943959,2015,Curr Opin Otolaryngol Head Neck Surg,Teaching laryngeal endoscopy skills to speech and language therapists: applying learning theory to optimize practical skills mastery.
+EuropePMC,24796191,,24796191,2014,Zhongguo Xiu Fu Chong Jian Wai Ke Za Zhi,[Clinical research of resection of mandibular benign tumors and primary reconstruction with autogenous bone graft via an intraoral approach].
+EuropePMC,23029949,,23029949,2012,J Indian Med Assoc,Prevention of voice prosthesis biofilms: current scenario and future trends in prolonging prosthesis lifetime.
+EuropePMC,24618565,10.1038/pr.2014.42,24618565,2014,Pediatr Res,Deficits of brainstem and spinal cord functions after neonatal hypoxia-ischemia in mice.
+EuropePMC,22232390,10.1044/1092-4388(2011/11-0088),22232390,2012,J Speech Lang Hear Res,Application of classification models to pharyngeal high-resolution manometry.
+EuropePMC,23417441,10.1002/lary.23987,23417441,2013,Laryngoscope,Three-dimensional analysis of pharyngeal high-resolution manometry data.
+EuropePMC,25912989,10.1016/j.compbiomed.2015.02.001,25912989,2015,Comput Biol Med,Classification of laryngeal disorders based on shape and vascular defects of vocal folds.
+EuropePMC,US2012041915,,,2012,,METHOD FOR DIAGNOSING URTICARIA AND ANGIOEDEMA
+EuropePMC,20069667,10.1002/uog.7519,20069667,2010,Ultrasound Obstet Gynecol,Measurement of fetal urine production to differentiate causes of increased amniotic fluid volume.
+EuropePMC,21868227,10.1016/j.jocn.2011.03.005,21868227,2011,J Clin Neurosci,Comparison of cerebral activation involved in oral and manual stereognosis.

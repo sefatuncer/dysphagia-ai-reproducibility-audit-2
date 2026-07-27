@@ -1,0 +1,32 @@
+{
+  "title": "Available but not executable: transparency-audit and containerized re-execution artifacts for open-source dysphagia and swallowing AI",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "version": "v1.0.0",
+  "description": "<p>Reproducibility artifacts for the meta-research study <em>&quot;Available but not executable: a transparency audit and containerized re-execution of open-source artificial-intelligence models for dysphagia and swallowing.&quot;</em></p><p>We audited whether published swallowing/dysphagia-AI code is not only <strong>available</strong> but <strong>re-runnable</strong>, and we release the full measurement pipeline so the audit is itself reproducible (&quot;we practice what we audit&quot;). Contents: multi-source open-API search &amp; enrichment scripts (01&ndash;06), repository discovery / intake / code-link mining / census synthesis (07&ndash;10), a blind screening-reliability re-coding (11); the transparency rubric, codebook, and RS1&ndash;RS6 clinical reference-standard taxonomy; the containerized re-execution harness (Dockerfile templates) with per-repository build/run logs and verdicts; the OSF protocol, PRISMA-ScR checklist, and minimum-reporting recommendation set; and record-level bibliographic corpus metadata.</p><p><strong>Non-distributive:</strong> only artifacts produced by the authors are included. Audited third-party repositories&mdash;their code, trained weights, and any human-derived (e.g. VFSS/FEES) data&mdash;are not re-hosted; each is referenced to its original repository/DOI. <strong>Dual license:</strong> code (scripts/, harness) under MIT (LICENSE-CODE); data &amp; text under CC-BY-4.0 (LICENSE-DATA).</p>",
+  "creators": [
+    {
+      "name": "Tunçer, Sefa",
+      "orcid": "0000-0001-6672-3605",
+      "affiliation": "Independent Researcher"
+    },
+    {
+      "name": "Kapan Tunçer, Nazife",
+      "affiliation": "Department of Physical Medicine and Rehabilitation, Faculty of Medicine, Kırşehir Ahi Evran University, Kırşehir, Türkiye"
+    }
+  ],
+  "keywords": [
+    "deglutition disorders",
+    "dysphagia",
+    "swallowing",
+    "artificial intelligence",
+    "reproducibility of results",
+    "computational reproducibility",
+    "research software",
+    "open science",
+    "containerization",
+    "meta-research"
+  ]
+}

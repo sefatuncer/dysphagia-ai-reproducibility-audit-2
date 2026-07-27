@@ -1,0 +1,10 @@
+doi,from_review,source,year,venue,title,include_screen1,exclude_reason
+10.1016/j.artmed.2011.03.002,Kwok-45,backward_citation,2011,Artificial Intelligence in Medicine,Classification of healthy and abnormal swallows based on accelerometry and nasal airflow signals,,
+10.1109/taslp.2022.3203235,Kwok-40,backward_citation,2022,"IEEE/ACM Transactions on Audio, Speech, and Language Processing",Multi-Scale Spatial and Temporal Speech Associations to Swallowing for Dysphagia Screening,,
+10.1109/icassp48485.2024.10447365,Kwok-41,backward_citation,2024,"ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",Multi-Band Speech Tensor Decomposition for Interactive Feature Extraction in Early Dysphagia Screening,,
+10.1016/j.bspc.2022.104533,Kwok-50,backward_citation,2023,Biomedical Signal Processing and Control,Analysis of electrophysiological and mechanical dimensions of swallowing by non-invasive biosignals,,
+10.1016/j.dsp.2022.103815,Kwok-51,backward_citation,2023,Digital Signal Processing,Swallowing disorders analysis using surface EMG biomarkers and classification models,,
+10.1007/s00455-018-09974-5,Kwok-56,backward_citation,2019,Dysphagia,Development of a Non-invasive Device for Swallow Screening in Patients at Risk of Oropharyngeal Dysphagia: Results from a Prospective Exploratory Study,,
+10.1109/iscas51556.2021.9401353,Kwok-57,backward_citation,2021,2021 IEEE International Symposium on Circuits and Systems (ISCAS),Smart Dysphagia Detection System with Adaptive Boosting Analysis of Throat Signals,,
+10.1038/s41598-023-34999-8,CODAS,backward_citation,2023,Scientific Reports,Machine learning predictive model for aspiration screening in hospitalized patients with acute stroke,,
+10.1109/access.2020.3019532,CODAS,backward_citation,2020,IEEE Access,Online Learning for the Hyoid Bone Tracking During Swallowing With Neck Movement Adjustment Using Semantic Segmentation,,

@@ -1,0 +1,37 @@
+# Dockerfile.template — Layer B genel CPU re-run ortamı
+# Kullanım: <REPO-ID> için kopyala; base + kurulum satırlarını repoya göre uyarla.
+# İlke: ÖNCE "as-declared" (reponun kendi environment.yml/requirements'ı) dene → başarısızlığı belgele.
+# Bu şablon, as-declared başarısız olunca "best-effort" düzeltmeleri UYGULAYAN varyanttır;
+# her sapma AŞAĞIDA yorum olarak numaralandırılır (= nicelleştirilmiş sürtünme).
+
+# --- Base: reponun beyan ettiği python; yoksa 3.10 (CPU) ---
+FROM python:3.10-slim
+
+# Sistem bağımlılıkları (görüntü/sinyal repoları sık ister; repoya göre kırp)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git build-essential ffmpeg libgl1 libglib2.0-0 \
+ && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /work/repo
+
+# --- Bağımlılıklar ---
+# TERCİH 1 (as-declared): COPY requirements.txt . && pip install -r requirements.txt
+# TERCİH 2 (conda): micromamba/conda env create -f environment.yml
+# TERCİH 3 (best-effort düzeltme — SAPMALARI BURAYA YAZ):
+#   # FIX-1: numpy pinlendi (dep_conflict: kütüphane X≥1.24 vs Y<1.24) -> numpy==1.23.5
+#   # FIX-2: undeclared_dependency eklendi -> pydicom
+#   # FIX-3: typo_package -> 'spicy' yerine scipy
+#   # FIX-4: code_bug -> patch uygula (ör. missing 'from pathlib import Path')
+# RUN pip install --no-cache-dir numpy==1.23.5 scipy ...
+
+# CPU torch (GPU wheel'lerini ÖNLE)
+# RUN pip install --no-cache-dir torch==2.0.1 --index-url https://download.pytorch.org/whl/cpu
+
+COPY . /work/repo
+
+# Kod-hatası patch'leri (varsa) — her biri log'da FIX-N olarak
+# RUN patch -p1 < /work/fixes/FIX-4-pathlib.patch
+
+# Entrypoint repoya göre (çıkarım komutu). Örnek:
+# ENTRYPOINT ["python", "run.py"]
+CMD ["bash"]

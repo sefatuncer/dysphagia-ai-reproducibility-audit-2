@@ -1,0 +1,32 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Sefa Tunçer and Nazife Kapan Tunçer
+
+SCOPE: This CC BY 4.0 license covers the DATA and TEXT components of this
+archive — the transparency rubric and templates, codebook and coding guide,
+the RS1–RS6 reference-standard taxonomy and its coding, the statistical
+analysis plan, the re-execution build/run logs and verdicts, the protocol and
+checklists, the minimum-reporting recommendation set, and the record-level
+bibliographic corpus metadata. The CODE (scripts/, harness templates) is
+licensed separately under the MIT License; see LICENSE-CODE.
+
+You are free to:
+  - Share — copy and redistribute the material in any medium or format.
+  - Adapt — remix, transform, and build upon the material for any purpose,
+    even commercially.
+
+Under the following term:
+  - Attribution — You must give appropriate credit, provide a link to the
+    license, and indicate if changes were made. You may do so in any
+    reasonable manner, but not in any way that suggests the licensor endorses
+    you or your use.
+
+No warranties are given. The full, legally binding license text is available
+at:  https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary:  https://creativecommons.org/licenses/by/4.0/
+
+NOTE (non-distributive): This archive contains only artifacts produced by the
+authors. Third-party audited repositories — their code, trained weights, and
+any human-derived data — are NOT redistributed here; each is referenced to its
+original repository/DOI, with its own license recorded in the corresponding
+re-execution/logs/.../verdikt.md.

@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use these materials, please cite both the article and this archive."
+title: "Available but not executable: transparency-audit and containerized re-execution artifacts for open-source dysphagia and swallowing AI"
+abstract: "Reproducibility artifacts (search, transparency-audit, and containerized re-execution pipeline) for a meta-research study of open-source dysphagia/swallowing AI models."
+type: software
+version: v1.0.0
+date-released: 2026-07-27
+license:
+  - MIT
+  - CC-BY-4.0
+authors:
+  - family-names: "Tunçer"
+    given-names: "Sefa"
+    orcid: "https://orcid.org/0000-0001-6672-3605"
+    affiliation: "Independent Researcher"
+  - family-names: "Kapan Tunçer"
+    given-names: "Nazife"
+    affiliation: "Department of Physical Medicine and Rehabilitation, Faculty of Medicine, Kırşehir Ahi Evran University, Kırşehir, Türkiye"
+keywords:
+  - dysphagia
+  - swallowing
+  - artificial intelligence
+  - computational reproducibility
+  - research software
+  - open science
+  - meta-research
+# identifiers:
+#   - type: doi
+#     value: "10.5281/zenodo.XXXXXXX"   # <- add the Zenodo DOI after first release

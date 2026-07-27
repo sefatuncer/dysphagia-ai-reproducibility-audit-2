@@ -1,0 +1,29 @@
+# Virtual environments / installed packages — never archive
+**/venv/
+**/venv_fixed/
+**/env/
+**/__pycache__/
+*.pyc
+
+# Third-party audited artifacts — referenced, NOT re-hosted (non-distributive)
+*.pkl
+*.h5
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.xlsx
+*.avi
+*.AVI
+*.nii
+*.nii.gz
+reference_outputs/
+
+# Large caches / working files (sources noted in the manuscript / MANIFEST)
+*-cache.jsonl
+combined-corpus-enriched.csv
+tarama-calisma-sayfasi.csv
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

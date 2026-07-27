@@ -1,0 +1,67 @@
+# Layer B re-run — PRIMARY reproducibility finding (repo C-repo-001, VFSS_analysis)
+# Date: 2026-07-13 | Best-effort CPU container (documented env deviations) | log: pilot-run/rerun.log
+
+## What ran
+- Step 1 Preprocessing: OK (246 frames, 28.7 s).
+- Step 2 Inference (nnU-Net v1, 5-fold, CPU): COMPLETED — 246/246 cases predicted in
+  14135.82 s (~3.9 h). "inference done."
+  - WARNING (deviation): "Cannot run postprocessing because the postprocessing file is
+    missing. Make sure to run consolidate_folds..." → the distributed model lacks
+    postprocessing.json → the pipeline's postprocessing step was SILENTLY SKIPPED.
+- Step 3 Creating labeled videos: **CRASHED** ↓
+
+## The crash (as-published code does NOT run end-to-end)
+  Traceback (most recent call last):
+    File "/work/repo/run.py", line 148, in <module>
+    ...
+    key = Path(test_file).stem
+  NameError: name 'Path' is not defined. Did you mean: 'math'?
+
+- Root cause: `VFSS_functions.py` uses `Path(...)` (lines 403, 412, 414) but never does
+  `from pathlib import Path`. The published code therefore crashes at Step 3 →
+  Step 4 (parameter extraction) NEVER RUNS → the output parameter CSVs are never produced.
+
+## Verdict (AS PUBLISHED): NOT REPRODUCIBLE out-of-the-box
+Even AFTER resolving the *unsatisfiable declared dependencies* (numpy conflict → forced
+downgrades of numpy/scikit-image/MedPy + adding the undeclared `pydicom` and the typo
+package `spicy`), the code still fails to run to completion because of a `NameError`
+(missing `pathlib.Path` import) plus a missing postprocessing artifact.
+
+## Interventions required to make it run (documented deviations = the quantified friction)
+  1. numpy 2.1.3 → 1.23.5           (declared env unsatisfiable: scikit-image 0.25 & MedPy 0.5.2 need numpy≥1.24; nnU-Net v1 needs <1.24)
+  2. scikit-image 0.25.0 → 0.19.3
+  3. MedPy 0.5.2 → 0.4.0
+  4. add `spicy==0.16.0` (declared in environment.yml but is a scipy TYPO-package) + `pydicom` (imported but UNDECLARED)
+  5. add `from pathlib import Path` to VFSS_functions.py  [code bug fix]
+  (+ postprocessing skipped: missing postprocessing.json in the distributed weights)
+
+## Note
+After applying fix #5 (Path import), re-running (inference cached → fast) regenerates the
+CSVs; the numeric comparison vs the authors' provided reference CSVs is the SECONDARY
+result (does it reproduce the numbers, given postprocessing was skipped + env deviations).
+See compare.log. But the PRIMARY, headline finding stands: **the published artifact does
+not execute end-to-end without undocumented environment surgery AND a source-code fix.**
+
+## SECONDARY RESULT — numeric comparison (after all 5 fixes; inference cached, re-ran Steps 3-4)
+compare.py (regenerated CSVs vs authors' provided reference; atol=1e-6, rtol=1e-3):
+  [OK  ] LUMI.csv           246/246 rows  max_abs_diff = 5      (area ~5000 → within ~0.1%)
+  [DIFF] PCM_movement.csv   246/246 rows  max_abs_diff = 1.429
+  [DIFF] SSO_opening.csv    246/246 rows  max_abs_diff = 2.149
+  [DIFF] STASES_SSO.csv     246/246 rows  max_abs_diff = 6
+  [DIFF] STASES_VAL.csv     246/246 rows  max_abs_diff = 1
+  [DIFF] hyoid_elevation    246/246 rows  max_abs_diff = 1.195
+  [DIFF] tongue_movement    246/246 rows  max_abs_diff = 0.6419
+  VERDICT: NOT REPRODUCED / PARTIAL
+
+Interpretation: STRUCTURAL reproduction YES (all 7 parameter series, 246 frames each).
+NUMERIC reproduction PARTIAL — pixel-area parameters match within ~0.1%, but distance/
+landmark parameters diverge by up to ~6 units (a few % relative). Most plausible causes,
+all documented deviations: (a) postprocessing SKIPPED (missing postprocessing.json in the
+distributed weights — the reference was likely produced WITH it); (b) environment
+deviations (numpy/scikit-image/MedPy downgrades; torch 2.0.1 CPU vs the authors' CUDA
+build) → CPU-vs-GPU + library-version floating-point differences.
+
+## Overall repo-#1 verdict
+NOT reproducible out-of-the-box; reproducible-with-substantial-effort (5 documented fixes)
+to STRUCTURALLY identical, NUMERICALLY approximate outputs. This is the realistic middle
+ground — exactly the kind of finding the audit quantifies across the corpus.

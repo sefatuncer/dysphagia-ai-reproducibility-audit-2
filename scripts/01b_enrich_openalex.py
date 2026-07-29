@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-01b_enrich_openalex.py — DOI-only kayıtlar için abstract kapsamını yükselt.
+01b_enrich_openalex.py - raise abstract coverage for DOI-only records.
 
-Europe PMC PMID kayıtlarını %97 kapladı; DOI-only (medRxiv/IEEE/ACM/OpenAlex) düşük.
-OpenAlex abstract_inverted_index'ten abstract'ı yeniden kurar. Yalnız abstract'ı
-BOŞ olan satırları doldurur (mevcut Europe PMC abstract'larına dokunmaz).
+Europe PMC covered 97% of the PMID records but few of the DOI-only ones (medRxiv, IEEE,
+ACM, OpenAlex). This script reconstructs the abstract from the OpenAlex
+abstract_inverted_index. It fills only rows whose abstract is EMPTY and never touches an
+existing Europe PMC abstract.
 
-Girdi/çıktı: kaynaklar/arama-sonuclari/combined-corpus-enriched.csv (yerinde günceller)
-Önbellek   : analiz/openalex-cache.jsonl
+Input/output: kaynaklar/arama-sonuclari/combined-corpus-enriched.csv (updated in place)
+Cache      : analiz/openalex-cache.jsonl
 """
 import csv, json, os, sys, time, urllib.request, urllib.parse
 
@@ -57,7 +58,7 @@ def main():
             if r.get("doi", "").strip() and not r.get("abstract", "").strip()
             and r["doi"].strip().lower() not in cache]
     todo = sorted(set(todo))
-    print(f"OpenAlex: {len(todo)} DOI (abstract bos) cekilecek")
+    print(f"OpenAlex: {len(todo)} DOIs with an empty abstract to fetch")
     for i in range(0, len(todo), BATCH):
         batch = todo[i:i+BATCH]
         data = fetch(batch)
@@ -71,7 +72,7 @@ def main():
         for d in batch:
             rec = got.get(d, {"doi": d, "abstract": "", "type": ""})
             cf.write(json.dumps(rec, ensure_ascii=False) + "\n"); cf.flush()
-        print(f"  {i+len(batch)}/{len(todo)} (abstract bulunan bu batch={sum(1 for d in batch if got.get(d,{}).get('abstract'))})")
+        print(f"  {i+len(batch)}/{len(todo)} (abstracts found in this batch={sum(1 for d in batch if got.get(d,{}).get('abstract'))})")
         time.sleep(DELAY)
     cf.close()
 
@@ -89,7 +90,7 @@ def main():
     with open(ENR, "w", encoding="utf-8", newline="") as fo:
         w = csv.DictWriter(fo, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
     tot = sum(1 for r in rows if r["has_abstract"] == "yes")
-    print(f"OpenAlex ekledi: +{n_new} abstract. TOPLAM abstract: {tot}/{len(rows)} ({100*tot//len(rows)}%). BITTI.")
+    print(f"OpenAlex added +{n_new} abstracts. TOTAL with abstract: {tot}/{len(rows)} ({100*tot//len(rows)}%). DONE.")
 
 if __name__ == "__main__":
     main()

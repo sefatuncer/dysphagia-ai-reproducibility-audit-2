@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """
-07_repo_discovery.py — kod-açık disfaji/yutma AI repolarını TEKRARLANABİLİR keşfet.
+07_repo_discovery.py - discover code-available dysphagia and swallowing AI repositories REPRODUCIBLY.
 
-Nesnel dahil-ölçütü (makine-kontrol): (i) disfaji/yutma AI, (ii) halka açık kod deposu.
-Kaynaklar: GitHub Search API + Papers with Code API. Öznel tarama YOK.
-Çıktı: analiz/repo-envanteri-ham.csv (insan/agent vet eder → repo-envanteri.csv).
+Objective, machine-checkable inclusion criterion: (i) dysphagia or swallowing AI, and
+(ii) a publicly available code repository. Sources: the GitHub Search API and the Papers
+with Code API. NO subjective screening.
+Output: analiz/repo-envanteri-ham.csv, which is then vetted into repo-envanteri.csv.
 
-Not: kimliksiz GitHub search limiti ~10/dk → terimler arası time.sleep.
+Note: unauthenticated GitHub search is limited to about 10 requests per minute, hence the
+sleep between query terms.
 """
 import csv, json, sys, time, urllib.request, urllib.parse
 try: sys.stdout.reconfigure(encoding="utf-8")
@@ -15,7 +17,7 @@ except Exception: pass
 OUT = "analiz/repo-envanteri-ham.csv"
 UA = {"User-Agent": "MakaleC-repro/1.0 (mailto:tuncersefa@gmail.com)"}
 
-# disfaji/yutma × AI arama terimleri (GitHub full-text repo search)
+# dysphagia/swallowing x AI search terms (GitHub full-text repository search)
 GH_QUERIES = [
     "dysphagia deep learning", "dysphagia machine learning", "dysphagia segmentation",
     "swallowing deep learning", "swallowing segmentation", "swallowing classification",
@@ -54,7 +56,7 @@ def github():
                     "found_via": q, "paper": "", "include": "", "notes": "",
                 }
                 n += 1
-        print(f"  GH  [{q[:34]:34s}] +{n}  (toplam {len(rows)})")
+        print(f"  GH  [{q[:34]:34s}] +{n}  (total {len(rows)})")
         time.sleep(7)  # rate limit
     return rows
 
@@ -80,12 +82,12 @@ def pwc(rows):
                     "found_via": f"pwc:{q}", "paper": paper[:120], "include": "", "notes": "",
                 }
                 n += 1
-        print(f"  PWC [{q[:34]:34s}] +{n}  (toplam {len(rows)})")
+        print(f"  PWC [{q[:34]:34s}] +{n}  (total {len(rows)})")
         time.sleep(2)
     return rows
 
 def main():
-    print("=" * 64); print("REPO KEŞFİ — GitHub + Papers with Code"); print("=" * 64)
+    print("=" * 64); print("REPOSITORY DISCOVERY - GitHub and Papers with Code"); print("=" * 64)
     rows = github()
     rows = pwc(rows)
     cols = ["source", "repo", "url", "stars", "license", "archived", "pushed_at",
@@ -94,8 +96,8 @@ def main():
     with open(OUT, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols); w.writeheader(); w.writerows(out)
     print("-" * 64)
-    print(f"TOPLAM {len(out)} benzersiz aday repo → {OUT}")
-    print("NOT: `include` boş → nesnel dahil-ölçütüyle vet edilecek (disfaji/yutma AI + kod-açık).")
+    print(f"TOTAL {len(out)} unique candidate repositories -> {OUT}")
+    print("NOTE: `include` is empty; each candidate is vetted against the objective criterion (dysphagia/swallowing AI plus available code).")
 
 if __name__ == "__main__":
     main()

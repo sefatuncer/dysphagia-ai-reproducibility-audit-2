@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """
-08_repo_intake.py — kod-açık repolar için NESNEL intake (şeffaflık rubriği + verdikt-iskeleti).
+08_repo_intake.py - OBJECTIVE intake for code-available repositories (transparency rubric plus a skeleton verdict).
 
-Her repo için GitHub git-tree'yi çeker; şu NESNEL sinyalleri işaretler:
-lisans · ortam-dosyası (requirements/environment/Dockerfile/pyproject) · eğitilmiş-ağırlık
-(*.pt/pth/h5/ckpt/onnx/pb/pkl veya releases) · veri/örnek dizini · README çalıştırma-yönergesi.
+For each repository it fetches the GitHub git tree and records these OBJECTIVE signals:
+license; environment file (requirements, environment.yml, Dockerfile, pyproject); trained
+weights (*.pt, pth, h5, ckpt, onnx, pb, pkl, or a release asset); a data or example
+directory; and README run instructions.
 
-Bu sinyaller re-execution verdiktinin çoğunu belirler (ağırlık+veri yok → not_attemptable inference).
-Attemptable altküme (ortam+ağırlık var) tam Docker re-run'a alınır.
-Girdi: analiz/repo-envanteri.csv (include ∈ {yes,needs-check})
-Çıktı: analiz/repo-intake-tablosu.csv  (tekrarlanabilir; erişim tarihi kaydeder)
+These signals largely determine the re-execution verdict: with no weights and no data,
+inference is not_attemptable. The attemptable subset, which has both an environment file
+and weights, goes to a full Docker re-run.
+Input : analiz/repo-envanteri.csv (include in {yes, needs-check})
+Output: analiz/repo-intake-tablosu.csv (reproducible; records the access date)
 """
 import csv, json, sys, time, urllib.request
 try: sys.stdout.reconfigure(encoding="utf-8")
@@ -18,7 +20,7 @@ except Exception: pass
 INV = "analiz/repo-envanteri.csv"
 OUT = "analiz/repo-intake-tablosu.csv"
 UA = {"User-Agent": "MakaleC-repro/1.0 (mailto:tuncersefa@gmail.com)"}
-CHECK_DATE = "2026-07-16"   # sabit: tekrarlanabilirlik (erişim tarihi)
+CHECK_DATE = "2026-07-16"   # fixed for reproducibility (the access date)
 
 ENV_FILES = ("requirements.txt", "environment.yml", "environment.yaml", "dockerfile",
              "pyproject.toml", "setup.py", "pipfile", "conda.yaml")
@@ -46,11 +48,11 @@ def intake(repo):
     data = sorted(set(h for h in DATA_HINT if any(h in p for p in lower)))
     readme = any(p.lower() == "readme.md" or p.lower().startswith("readme") for p in lower)
     code_n = sum(1 for p in lower if p.endswith((".py", ".ipynb")))
-    # verdikt-iskeleti (nesnel ön-tahmin; tam Docker re-run doğrular)
+    # skeleton verdict (an objective prediction; the full Docker re-run confirms it)
     if env and weights:
         verdict = "attemptable → Docker re-run"
     elif not weights:
-        verdict = "not_attemptable (inference: ağırlık YOK)"
+        verdict = "not_attemptable (inference: NO weights)"
     else:
         verdict = "env-undeclared → best-effort"
     return {"repo": repo, "check_date": CHECK_DATE, "default_branch": branch, "license": lic,
@@ -62,7 +64,7 @@ def main():
     rows = list(csv.DictReader(open(INV, encoding="utf-8")))
     todo = [r for r in rows if r["include"] in ("yes", "needs-check")
             and r["category"] not in ("DONE-pilot1", "DONE-pilot2", "duplicate")]
-    print("=" * 70); print(f"REPO INTAKE — {len(todo)} repo (nesnel şeffaflık sinyalleri)"); print("=" * 70)
+    print("=" * 70); print(f"REPOSITORY INTAKE - {len(todo)} repositories (objective transparency signals)"); print("=" * 70)
     out = []
     for r in todo:
         res = intake(r["repo"])
@@ -80,7 +82,7 @@ def main():
     print("-" * 70)
     att = [o for o in out if o.get("verdict_skeleton","").startswith("attemptable")]
     print(f"→ {OUT}")
-    print(f"ATTEMPTABLE (env+ağırlık, tam Docker re-run): {len(att)}  {[o['repo'] for o in att]}")
+    print(f"ATTEMPTABLE (environment plus weights, full Docker re-run): {len(att)}  {[o['repo'] for o in att]}")
 
 if __name__ == "__main__":
     main()

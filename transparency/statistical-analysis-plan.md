@@ -1,57 +1,67 @@
-# İstatistik Analiz Planı (SAP) — Makale C
+> ⚠️ **PLANNED UNDER THE PRE-PIVOT DESIGN, NOT EXECUTED AS DESCRIBED.**
+> This file belongs to the study's earlier systematic-review-style design, which assumed
+> dual independent human screening, a methodologist/librarian third author, PRESS review,
+> and institutional database access. **The study pivoted to a two-author meta-research
+> re-execution census with an objective, machine-checkable inclusion criterion.** None of
+> the methodologist-dependent procedures below were carried out. What was actually done is
+> reported in the manuscript, and screening reliability was instead assessed by a released,
+> blind, rule-based re-coding of every screened record. This file is retained as design
+> history so the change of plan is auditable, not concealed.
 
-> ⚠️ **v2 UYARLAMASI (re-execution census):** Bu SAP kısmen pivot-öncesi (SR/Payda-A/tüm-literatür) dili taşır. **v2 tasarımında payda = kod-açık (keşfedilebilir) set**tir, tüm-literatür değil. Sonuç: **radyoloji ile sayısal iki-oran karşılaştırması (Newcombe) UYGULANMAZ** (payda-uyumsuzluğu; bkz. §5 v2). Radyoloji yalnız kavramsal referans-çerçeve. Birincil analiz Wilson %95 GA (study-düzeyi N=18 birincil, repo-düzeyi N=22 duyarlılık; `09_census_synthesis.py`). RS4 (κ) klinik-güvenilirlik: erişilebilir tam-metin alt-kümesinde raporlanır (§4).
+# Statistical analysis plan (SAP)
 
-**Durum:** ön-kayıt paketine girer (OSF'de dondurulur). Sonuç verisi görülmeden kilitlenir.
-**Yazılım:** Python (`analiz/scripts/03_analysis.py`) — sabit seed, sürümler sabitlenir; tüm figürler script'ten üretilir (makalenin tekrarlanabilirlik tezini kendi analizinde uygular).
+> ⚠️ **v2 ADAPTATION (re-execution census).** This plan partly retains the pre-pivot language of a systematic review over the whole literature ("denominator A"). **In the v2 design the denominator is the code-available, discoverable set**, not the whole literature. Consequently the **numerical two-proportion comparison against radiology (Newcombe) is NOT APPLIED**, because the denominators do not match; see §5 (v2). Radiology serves only as a conceptual reference frame. The primary analysis is the Wilson 95% interval (study level N=18 primary, repository level N=22 as sensitivity; `09_census_synthesis.py`). RS4 (κ) clinical reliability is reported for the subset with accessible full text (§4).
 
-## 1. Tahmin hedefleri (estimands)
-**Payda A (şeffaflık, tüm dahil ~N):** her ikili öğe için paylaşım oranı — (a) kod, (b) veri-erişim beyanı/erişilebilir veri, (c) eğitilmiş ağırlık, (d) ortam/bağımlılık dosyası, (e) model kartı, (f) açık lisans. Ek: seed, README-çalıştırma, sürüm-sabitleme, dış-doğrulama, hesaplama-raporlama.
-**Payda B (kod-açık alt-küme):** re-executability verdikti — **oran değil**, betimsel sayım + engel taksonomisi.
+**Status:** part of the pre-registration package, locked before any outcome data were seen.
+**Software:** Python (`scripts/03_analysis.py`) — fixed seed, pinned versions; every figure is produced by script, so that the article's reproducibility thesis is applied to its own analysis.
 
-> **Birincil "kod paylaşımı" estimand'ının PAYI (kilit — hakem D3-M5).** Manşet oran ve radyoloji kıyası için "kod paylaşımı" = **beyan + çözülebilir URL + erişilebilir depo** (`code_stmt ∈ {yes, explicit_url}` VE `repo_accessible = yes`). **Salt-beyan** (URL ölü/yok) ikincil raporlanır. Bu tanım, Venkatesh 2022'nin ölçtüğü **"source-code availability" (erişilebilir kod)** ile kavramsal olarak eşlenir. **v2:** payda-uyumsuzluğu nedeniyle Newcombe sayısal-kıyası uygulanmaz; radyoloji yalnız kavramsal çerçeve (bkz. §5 v2).
-> **Öğe-başı uygulanabilir payda.** TRIPOD+AI tüm dahil çalışmalara; **CLAIM yalnız görüntüleme-N**, **STARD yalnız tanısal-N**, **TRIPOD prediksiyon-modeli-N** alt-kümesine uygulanır. Her raporlama-standardı öğesi kendi uygulanabilir paydasıyla raporlanır (§2'deki "payda açıkça" kuralı bunu içerir).
+## 1. Estimands
+**Denominator A (transparency, all included studies):** the sharing rate for each binary item — (a) code, (b) a data-access statement or accessible data, (c) trained weights, (d) an environment or dependency file, (e) a model card, (f) an open license. Additionally: seed, README run instructions, version pinning, external validation, compute reporting.
+**Denominator B (the code-available subset):** the re-executability verdict — **not a proportion**, but a descriptive count plus a barrier taxonomy.
 
-## 2. Birincil analiz
-- Her öğe için **oran + Wilson %95 GA** (küçük payda + uç oranlar için Wilson doğru seçim; normal-yaklaşım DEĞİL).
-- Öğe başına payda **açıkça** raporlanır; "not reported" = **ayrı kategori** (impute YOK).
-- **Çoklu-karşılaştırma / güç (hakem D3):** Bu bir **kestirim (estimation)** çalışmasıdır — doğrulayıcı hipotez testi YOK; GA'lar yalnız kesinliği niceler, katmanlar arası hiçbir kontrast inferansiyel yorumlanmaz → klasik multiplicity düzeltmesi **uygulanmaz** (bu metinde açıkça yazılır). **v2:** doğrulayıcı karşılaştırma yok (radyoloji-Newcombe kaldırıldı, §5). Çalışma uygun literatürün **sayımı (census)** olduğundan **a priori güç hesabı N/A**; Wilson GA genişlikleri elde edilen kesinliği iletir.
+> **NUMERATOR of the primary code-sharing estimand.** For the headline rate and the radiology comparison, "code sharing" means **a statement plus a resolvable URL plus an accessible repository** (`code_stmt ∈ {yes, explicit_url}` AND `repo_accessible = yes`). **Statement only**, where the URL is dead or absent, is reported separately as a secondary figure. This definition maps conceptually onto the "source-code availability" measured by Venkatesh 2022. **v2:** because the denominators do not match, the Newcombe numerical comparison is not applied and radiology is used only as a conceptual frame (see §5, v2).
+> **Applicable denominator per item.** TRIPOD+AI applies to all included studies; **CLAIM only to the imaging subset**, **STARD only to the diagnostic subset**, **TRIPOD to the prediction-model subset**. Every reporting-standard item is reported against its own applicable denominator, which is what the "state the denominator explicitly" rule in §2 requires.
 
-## 3. Katmanlandırma (ön-belirli, fishing YOK)
-Yalnız şu katmanlar: **modalite** (VFSS/FEES/akustik/sEMG/HRM/giyilebilir/klinik) · **yıl-bandı** (2010-19 / 2020-22 / 2023-26) · **dergi tipi** (klinik / mühendislik-CS / informatik) · **görev** (tanı/tarama/şiddet/izlem). Alt-hücre <5 ise yalnız betimsel (GA geniş; yorumlanmaz).
+## 2. Primary analysis
+- For every item, a **proportion with a Wilson 95% interval** (Wilson is the correct choice for small denominators and extreme proportions; the normal approximation is not used).
+- The denominator is stated **explicitly** for every item, and "not reported" is a **separate category** — nothing is imputed.
+- **Multiplicity and power.** This is an **estimation** study with no confirmatory hypothesis test. Intervals quantify precision only, no contrast between strata is interpreted inferentially, and therefore no classical multiplicity correction is applied; the manuscript states this explicitly. **v2:** there is no confirmatory comparison at all, the radiology–Newcombe test having been removed (§5). Because the study is a **census** of the eligible literature, an a-priori power calculation is not applicable; the widths of the Wilson intervals convey the precision obtained.
 
-## 4. Güvenilirlik (κ)
-- **Tarama κ:** her **bağımsız** çift için Cohen κ (Sefa↔Metodolog; Nazife↔Metodolog) — evli-çift değil (bkz. metodolog paketi). **%95 GA (bootstrap, `03_analysis.py:cohen_kappa_ci`, sabit seed) + Landis-Koch yorumu.**
-- **Rubrik κ:** kalibrasyon setinde çift-kodlama → öğe-bazlı κ; <0.6 ise kod defteri netleştirilip yeniden kalibre. **Kalibrasyon N ve çift-kodlama kapsamı = OSF §8 ile TEK forma sabitlenir** (kalibrasyon ~8-10 → sonra dahil-setin **≥%20'si** çift-kodlanır; makale §2.5 buna göre düzeltilir).
-- **Ölçek-tipine göre κ:** **ordinal** öğeler (RS3 PAS/DIGEST/FOIS) → **ağırlıklı κ** (lineer/kuadratik; komşu-kategori anlaşmazlığı tam-anlaşmazlık sayılmaz); **nominal** öğeler → ağırlıksız Cohen κ.
-- **κ paradoksu (çarpık marjinal):** uç taban-oranlı öğelerde (ör. model-kartı ~herkeste "no") yüksek gözlem-uyumu olsa bile κ paradoksal-düşük çıkabilir → κ yanında **gözlem-uyumu (po) + PABAK** raporlanır; Landis-Koch etiketi bu bağlamda temkinli yorumlanır.
+## 3. Stratification (pre-specified, no fishing)
+Only these strata: **modality** (VFSS/FEES/acoustic/sEMG/HRM/wearable/clinical) · **year band** (2010–19 / 2020–22 / 2023–26) · **venue type** (clinical / engineering and computer science / informatics) · **task** (diagnosis / screening / severity / monitoring). Where a sub-cell contains fewer than 5 studies, it is reported descriptively only; the interval is wide and is not interpreted.
 
-## 5. Kıyas analizi (radyoloji) — v2 (KAVRAMSAL, sayısal Newcombe YOK)
-⚠️ **v2 KARAR (hakem D3/H4):** Bu çalışmanın paydası **kod-açık (keşfedilebilir) set**tir; radyoloji figürleri ise **koşulsuz** (tüm-çalışma) oranlardır — Venkatesh 2022 (%34, 73/218) ve Lee 2025 (%39.9, 107/268). Paydalar uyumsuz olduğundan **iki-oran farkı + Newcombe %95 GA testi UYGULANMAZ ve raporlanmaz.**
-- Radyoloji yalnızca **kavramsal availability-vs-executability çerçevesi** olarak kullanılır (Giriş): "komşu-alanda erişilebilirlik ~%34-40; erişilebilirlik gerekli ama yeterli değil; biz aşağı-akış adımını (executability) ölçüyor ve onun ≈0'a çöktüğünü buluyoruz." **Sayısal fark iddiası yok.**
-- Manşet = disfaji executability sonucunun kendisi (0/18 kutu-dışı re-executable, Wilson GA); radyoloji Introduction'da niteliksel bağlam.
-- ❌ **"DL ~%11.5" kıyası KALDIRILDI** (Lee 2025 gerçekte %39.9; doğru atıf + kavramsal kullanım). Tek doğrulanmış komşu-alan çapaları: Venkatesh %34, Lee %39.9 — ikisi de yalnız kavramsal.
+## 4. Reliability (κ)
+- **Screening κ:** Cohen κ for each **independent** pair (S.T. ↔ methodologist; N.K.T. ↔ methodologist) rather than for the married co-author pair. **A 95% interval (bootstrap, `03_analysis.py:cohen_kappa_ci`, fixed seed) plus the Landis–Koch interpretation.**
+- **Rubric κ:** double coding on a calibration set giving item-wise κ; any item below 0.6 triggers clarification of the codebook and re-calibration. **The calibration N and the extent of double coding are fixed in a single form** (calibration of 8–10 studies, after which **at least 20%** of the included set is double coded).
+- **κ by scale type:** **ordinal** items (RS3 PAS/DIGEST/FOIS) take a **weighted κ** (linear or quadratic, so that a disagreement between adjacent categories does not count as a full disagreement); **nominal** items take an unweighted Cohen κ.
+- **The κ paradox (skewed marginals):** for items with an extreme base rate — a model card, for example, is absent almost everywhere — κ can be paradoxically low even when observed agreement is high. Therefore **observed agreement (po) and PABAK** are reported alongside κ, and the Landis–Koch label is interpreted cautiously in that context.
 
-## 6. Layer B (re-run) — betimsel
-- Verdikt sayımı: **re-executable / partial / not-reproduced / not-attemptable** + engel taksonomisi frekansı (dep-çelişkisi, GPU-only, eksik ağırlık, eksik veri, kod-hatası, eksik postprocessing…).
-- **Oran iddiası YOK** (N küçük, seçilim yanlı). Çerçeve: **"en-iyi-durum alt-kümesi bile kutu-dışı çökmüyor"** = güçlü alt-sınır + engel derinliği. Pilot repo #1 tam vaka olarak sunulur.
-- **Örneklem = census (ön-kayıtlı):** kod-açık beyanı + çözülebilir URL'si olan **TÜM** dahil çalışmalar re-execution'a alınır (öznel "apparently runnable" kapısı YOK → seçilim yanlılığı önlenir; koşulamayanlar `not_attemptable` verdiktiyle bilgi üretir). İki ön-kayıt-öncesi pilot birincil sayımdan **ayrı** "feasibility" olarak raporlanır.
-- **Donanım-nötr vs donanım-nedenli ayrımı (hakem D5-M4):** CPU-only harness'ta **GPU-only** verdikti ayrı raporlanır; **alt-sınır iddiası yalnız donanım-nötr başarısızlıklara** (dep-çelişkisi, eksik ağırlık, kod-hatası, lisanssızlık) dayandırılır. F4 verdiktleri donanım-nedenli/nötr diye stratifiye edilir.
-- **RQ3 metrik-üretim toleransı — çıktı-tipine göre (ön-kayıtlı, hakem D3-M4):**
-  (a) **sınıflama metriği** (accuracy/AUC/F1) → mutlak **±5 puan** veya raporlanan **%95 GA** içinde;
-  (b) **sürekli çıktı** (alan/mesafe/piksel-mm) → **bağıl ±%5** veya raporlanan ölçüm-hatası/tekrarlanabilirlik payı içinde;
-  (c) referans metrik/GA/örnek-veri yoksa → **"metrik-üretimi denenemez"** (impute YOK). Öncelik daima re-executability; metrik-üretim ikincil.
+## 5. Comparison analysis (radiology) — v2 (CONCEPTUAL, no numerical Newcombe)
+⚠️ **v2 DECISION.** The denominator of this study is the **code-available, discoverable set**, whereas the radiology figures are **unconditional** rates over all studies — Venkatesh 2022 (34%, 73/218) and Lee 2025 (39.9%, 107/268). Because the denominators do not match, **the two-proportion difference with a Newcombe 95% interval is NOT APPLIED and NOT REPORTED.**
+- Radiology is used only as a **conceptual availability-versus-executability frame** in the Introduction: availability in a neighbouring field is roughly 34–40%; availability is necessary but not sufficient; we measure the downstream step, executability, and find that it collapses to approximately zero. **No numerical difference is claimed.**
+- The headline is the dysphagia executability result itself (0/18 re-executable out of the box, with a Wilson interval); radiology is qualitative context in the Introduction.
+- ❌ **The "deep learning about 11.5%" comparison was REMOVED** (Lee 2025 in fact reports 39.9%; the citation was corrected and the use made conceptual). The only verified neighbouring-field anchors are Venkatesh 34% and Lee 39.9%, both conceptual only.
 
-## 7. Triyaj validasyonu (hakem-riski kapatır)
-Rastgele ~200 kayıt insan-gold taraması → deterministik regex bayraklarının (`t_bucket`, `t_review_like`, `t_has_ai`) **sensitivite/spesifisite/PPV**'si + karışıklık matrisi. Amaç: triyajın **hiçbir uygun çalışmayı elemediğini** göstermek (yüksek recall kanıtı). Triyaj **PRISMA'da eleme kutusu değil**, organizasyon aracıdır.
+## 6. Layer B (re-run) — descriptive
+- Verdict counts: **re-executable / partial / not-reproduced / not-attemptable**, plus the frequency of each barrier category (dependency conflict, GPU only, missing weights, missing data, code error, missing post-processing, and so on).
+- **No proportion is claimed** (N is small and selection is non-random). The framing is that **even a best-case subset does not run out of the box**, which is a strong lower bound plus evidence on the depth of the barriers. Pilot repository #1 is presented as a full case.
+- **Sample = census:** **every** included study with a code-sharing statement and a resolvable URL enters re-execution. There is no subjective "apparently runnable" gate, which would introduce selection bias; repositories that cannot be run still produce information, via a `not_attemptable` verdict. The two pilots that preceded the plan are reported **separately** as feasibility work rather than inside the primary count.
+- **Hardware-neutral against hardware-caused failure:** in a CPU-only harness the **GPU-only** verdict is reported separately, and **the lower-bound claim rests only on hardware-neutral failures** (dependency conflict, missing weights, code error, absent license). F4 verdicts are stratified into hardware-caused and hardware-neutral.
+- **Tolerance for metric reproduction, by output type:**
+  (a) **classification metrics** (accuracy, AUC, F1) → within an absolute **±5 points** or within the reported **95% interval**;
+  (b) **continuous output** (area, distance, pixel-mm) → within a relative **±5%** or within the reported measurement error or repeatability margin;
+  (c) where no reference metric, interval or example data exist → **"metric reproduction not attemptable"**, with nothing imputed. Re-executability always takes priority; metric reproduction is secondary.
 
-## 8. Duyarlılık analizleri (ön-belirli)
-(a) preprint'leri hariç tut · (b) sağlıklı-sadece kohortları hariç tut · (c) yıl-yarısına göre · (d) yalnız ≥3-kaynak yüksek-güven çekirdek. Ana sonuç bunlara dayanıklı mı?
+## 7. Triage validation
+A random sample of about 200 records is screened against a human gold standard to establish the **sensitivity, specificity and PPV** of the deterministic regex flags (`t_bucket`, `t_review_like`, `t_has_ai`), together with a confusion matrix. The purpose is to show that triage **excluded no eligible study**, that is, to provide evidence of high recall. Triage is an organizational device, not an exclusion box in the flow diagram.
 
-## 9. Eksik veri & sapma
-- "not reported" ≠ "no" ayrımı korunur; her ikisi ayrı raporlanır.
-- Protokol-sapması olursa OSF'de **zaman-damgalı amendment** + makalede beyan.
+## 8. Sensitivity analyses (pre-specified)
+(a) excluding preprints · (b) excluding healthy-only cohorts · (c) by half of the year range · (d) restricted to the high-confidence core found in at least 3 sources. Is the main result robust to each?
 
-## 10. Çıktı figürleri (script üretir)
-F1 PRISMA-ScR akış · F2 öğe-bazlı oran + Wilson GA (forest) · F3 modalite×yıl ısı-haritası (**her hücrede N yazılır; N<5 hücreler gri/işaretli — renk yoğunluğu gürültü olarak okunmaz**) · F4 re-run verdikt + engel taksonomisi (**donanım-nötr vs GPU-only stratifiye**) · T1 radyoloji kavramsal-bağlam (yalnız kendi Wilson GA'lı oranlar; **Newcombe farkı YOK**, v2 §5) · T2 klinik taksonomi (RS1-6) dağılımı (RS-uygulanabilir alt-küme).
-> **Figür üretimi:** tüm figürler `03_analysis.py` (sabit seed, stdlib-only) + gerçek rubrik verisinden üretilir; %11.5 kıyası kaldırıldı, radyoloji paydası 73/218 doğrulandı, κ %95 GA (bootstrap) eklendi.
+## 9. Missing data and deviations
+- The distinction between "not reported" and "no" is preserved, and both are reported separately.
+- Any deviation from the protocol is recorded as a **time-stamped amendment** and declared in the article.
+
+## 10. Output figures (produced by script)
+F1 flow diagram · F2 item-wise proportions with Wilson intervals (forest) · F3 modality × year heat map (**N is printed in every cell; cells with N<5 are greyed or flagged so that colour intensity is not read as signal**) · F4 re-run verdicts and barrier taxonomy (**stratified into hardware-neutral and GPU-only**) · T1 radiology conceptual context (its own proportions with Wilson intervals; **no Newcombe difference**, v2 §5) · T2 distribution of the clinical taxonomy (RS1–RS6) over the RS-applicable subset.
+> **Figure production:** every figure is generated by `03_analysis.py` (fixed seed, standard library only) from the real rubric data; the 11.5% comparison was removed, the radiology denominator 73/218 was verified, and a bootstrap 95% interval was added for κ.

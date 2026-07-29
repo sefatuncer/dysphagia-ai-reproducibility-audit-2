@@ -1,52 +1,53 @@
-# Census Intake Bulguları — kod-açık yutma-AI repoları (NESNEL, re-execution merkezli)
+# Census intake findings — code-available swallowing-AI repositories (objective, re-execution centred)
 
-> ## ⬆️ v2 GÜNCELLEME (16 Tem — code-mining sonrası; BU BÖLÜM GÜNCELDİR)
-> Aşağıdaki v1 bölümü **N=17**'ye aittir. **Script 10 (OA-tam-metin code-link mining) → +5 in-scope repo → census N: 17 → 22 repo / 18 ayrık çalışma** (kümelenme: scut-jol×2, tsukagoshi×3, Yash+Tanishq×2). Ayrıntı: `code-mining-vetting.md`. **Birincil = study-düzeyi (N=18); repo-düzeyi (N=22) duyarlılık — uyuşuyor.**
-> - **Güncel study-düzeyi (Wilson %95 GA):** açık lisans **3/18** [0.06, 0.39] · ağırlık DEPODA **1/18** [0.01, 0.26] · ağırlık dış-dahil **2/18** [0.03, 0.33] · ortam **6/18** [0.16, 0.56] · örnek-veri **4/18** [0.09, 0.45] · **inference-attemptable 2/18** [0.03, 0.33] · **kutu-dışı re-executable 0/18** [üst 0.18].
-> - **Verdikt:** re_executable **0**, partial **2** (VFSS_analysis + **enoch0307 fiili re-run**, `C-repo-003-enoch0307/`), not_attemptable **16** (study) / 20 (repo).
-> - **enoch0307 (pilot #3):** ağırlığı DEPODA paylaşan tek repo (`Binary.pkl`/`Multi.pkl`) → kutu-dışı yine çöküyor (sabitlemesiz ortam: sklearn 1.6.1→1.9.0 → `Multi.pkl` `ModuleNotFoundError:_loss`) → 1 pin düzeltmesiyle çalışır = **partial.** Fiili Docker + venv, çapraz-platform doğrulandı.
-> - **KLİNİK 2. eksen:** RS1-6 uygulandı (`rs-taksonomi-kodlama.csv`) → **~0/18 rater κ raporluyor**; heterojen+vekil referans-standart → **birleşik tez: hesaplamalı+klinik provenans ikisi de eksik.**
+> ## ⬆️ v2 UPDATE (16 July, after code-link mining; THIS SECTION IS CURRENT)
+> The v1 section below describes **N=17**. Script 10 (code-link mining over open-access full texts) added **5 in-scope repositories**, taking the census from **17 to 22 repositories covering 18 distinct studies** (clustering: scut-jol ×2, tsukagoshi ×3, Yash and Tanishq ×2). Details in `code-mining-vetting.md`. **The primary level is the study (N=18); the repository level (N=22) is reported as sensitivity, and the two agree.**
+> - **Current study-level figures (Wilson 95% intervals):** open license **3/18** [0.06, 0.39] · weights **in the repository** **1/18** [0.01, 0.26] · weights including external hosting **2/18** [0.03, 0.33] · environment file **6/18** [0.16, 0.56] · example data **4/18** [0.09, 0.45] · **inference attemptable 2/18** [0.03, 0.33] · **re-executable out of the box 0/18** [upper bound 0.18].
+> - **Verdicts:** re_executable **0**, partial **2** (VFSS_analysis and the actual re-run of **enoch0307**, in `C-repo-003-enoch0307/`), not_attemptable **16** at study level (20 at repository level).
+> - **enoch0307 (case #3):** the only repository that deposits its weights (`Binary.pkl`, `Multi.pkl`) still crashes out of the box, because the environment is unpinned (sklearn 1.6.1 → 1.9.0 gives `ModuleNotFoundError: _loss` on `Multi.pkl`); one pin makes it run, hence **partial**. Verified in both an actual Docker container and a virtual environment, across platforms.
+> - **The clinical second axis:** RS1–RS6 were applied (`rs-taxonomy-coding.csv`) → **approximately 0/18 report rater κ**, and the reference standards are heterogeneous proxies → **the combined thesis: computational and clinical provenance are both missing.**
 
 ---
 
-## (v1 — N=17, tarihsel; yukarıdaki v2 geçerlidir)
-**Tarih/erişim:** 2026-07-16 · **Yöntem:** tekrarlanabilir keşif (`07_repo_discovery.py`: GitHub + PwC) → nesnel dahil (`repo-envanteri.csv`) → nesnel intake (`08_repo_intake.py`: git-tree + releases + README dış-host taraması). **Öznel tarama YOK.**
+## (v1 — N=17, historical; the v2 section above supersedes it)
 
-## Census kapsamı
-- Keşif: GitHub çok-terimli arama → **18 ham aday** + Video-SwinUNet (scoping) + 2 pilot (VFSS_analysis, masa).
-- Elenen: `devilalreddy/Learnings` (çalışma değil). Dedup: SheenZhang721×2 = MinghaoSam MICCAI2024 (1 çalışma); tsukagoshi56×3, scut-jol×2, YashC1308+TanishqJoshi = grup-içi varyantlar.
-- **İntake edilen: 15 repo** (pilot+dedup hariç) + **2 pilot derinlemesine re-run**.
+**Date of access:** 2026-07-16 · **Method:** reproducible discovery (`07_repo_discovery.py`: GitHub plus Papers with Code) → objective inclusion (`repo-inventory.csv`) → objective intake (`08_repo_intake.py`: git tree, releases, and a README scan for externally hosted weights). **No subjective screening.**
 
-## NESNEL şeffaflık sinyalleri (15 intake reposu)
-| Sinyal | Sonuç | Oran |
+## Scope of the census
+- Discovery: a multi-term GitHub search returned **18 raw candidates**, plus Video-SwinUNet from scoping and the 2 pilots (VFSS_analysis, masa).
+- Excluded: `devilalreddy/Learnings` (not a study). Deduplication: SheenZhang721 ×2 is the same study as MinghaoSam MICCAI 2024; tsukagoshi56 ×3, scut-jol ×2 and YashC1308 with TanishqJoshi are within-group variants.
+- **Taken to intake: 15 repositories** (excluding the pilots and duplicates), plus **2 pilots re-run in depth**.
+
+## Objective transparency signals (the 15 intake repositories)
+| Signal | Result | Rate |
 |---|---|---|
-| **Depoda eğitilmiş ağırlık** (*.pt/pth/h5/ckpt/onnx…) | **0 / 15** | %0 |
-| **Releases'te ağırlık asset'i** | **0 / 15** | %0 |
-| **Açık lisans** (OSI/present) | **1 / 15** (yalnız MinghaoSam MIT) | %7 |
-| **Ortam dosyası** (requirements/Dockerfile/environment) | **4 / 15** (aht4005, tsukagoshi/liquid, tsukagoshi/ssl_gru, Video-SwinUNet) | %27 |
-| **README dış-host ağırlık linki** | Video-SwinUNet (Google Drive); zhengfj1994 "pretrained/checkpoint" = **resume/backbone**, shipped ağırlık değil | ~0 |
-| **Kutu-dışı inference ATTEMPTABLE** | **0 / 15** (ağırlık+veri yok) | %0 |
+| **Trained weights in the repository** (*.pt / pth / h5 / ckpt / onnx …) | **0 / 15** | 0% |
+| **Weights as a release asset** | **0 / 15** | 0% |
+| **Open license** (OSI or present) | **1 / 15** (MinghaoSam, MIT) | 7% |
+| **Environment file** (requirements / Dockerfile / environment.yml) | **4 / 15** (aht4005, tsukagoshi/liquid, tsukagoshi/ssl_gru, Video-SwinUNet) | 27% |
+| **Externally hosted weights linked from the README** | Video-SwinUNet (Google Drive); the "pretrained/checkpoint" in zhengfj1994 is a **resume or backbone file**, not shipped weights | approximately 0 |
+| **Inference ATTEMPTABLE out of the box** | **0 / 15** (no weights and no data) | 0% |
 
-## Pilotlar (derinlemesine re-run, ayrı raporlanır)
-- **VFSS_analysis** (Cubero, CBM 2025): **TEK** repo ağırlık (Zenodo 6.1 GB CC-BY) + örnek veri sağladı → attemptable → **partial** (kutu-dışı çökme → 5 düzeltme; yapısal-birebir, sayısal-kısmi). Lisans YOK.
-- **masa** (Saab, Front Neurosci 2023): taşınamaz local-path wheel → **not_re_executable (env)**; ağırlık/veri yok → **not_attemptable (inference)**. Lisans VAR.
+## Pilots (re-run in depth, reported separately)
+- **VFSS_analysis** (Cubero, Comput Biol Med 2025): the **only** repository that supplied weights (Zenodo, 6.1 GB, CC-BY) together with example data, so inference was attemptable → **partial** (crashed out of the box, then ran after 5 repairs; structurally identical output, numerically partial). No license.
+- **masa** (Saab, Front Neurosci 2023): a non-portable local-path wheel gives **not_re_executable** for the environment; no weights and no data give **not_attemptable** for inference. A license is present.
 
-## MANŞET (nesnel, otonom-üretilmiş)
-> **17 kod-açık yutma-AI reposunun (15 keşif + 2 pilot) yalnızca 1'i (VFSS_analysis) modelini çalıştırmak için gereken eğitilmiş ağırlıkları + örnek veriyi sağladı — ve o bile kutu-dışı çalışmadı (5 düzeltme → kısmi). Hiçbir repo ağırlığı depoya veya releases'e koymadı (1'i dış arşivde barındırdı). Lisans ~15/17'de, ortam-spesifikasyonu ~12/17'de yoktu.**
+## HEADLINE (objective)
+> **Of 17 code-available swallowing-AI repositories (15 from discovery plus 2 pilots), only one (VFSS_analysis) supplied both the trained weights and the example data needed to run its model — and even that one did not run out of the box (5 repairs → partial). No repository placed weights in the repository or in its releases; one hosted them in an external archive. A license was absent in roughly 15 of 17, and an environment specification in roughly 12 of 17.**
 >
-> Yani kod-açık yutma-AI literatürünün **fiili hesaplamalı tekrarlanabilirliği kutu-dışı ≈ 0'dır** — kod başarısız olduğu için değil, **eğitilmiş ağırlık, veri ve lisans sistematik olarak eksik** olduğu için. Bu, "kod paylaşımı" (URL çözülüyor mu) ile "yeniden-çalıştırılabilirlik" (fiilen koşuyor mu) arasındaki **uçurumu** nicel gösterir.
+> The effective computational reproducibility of the code-available swallowing-AI literature is therefore **approximately zero out of the box** — not because the code fails, but because **trained weights, data and licenses are systematically missing**. This quantifies the **gap** between code sharing, meaning that a URL resolves, and re-executability, meaning that the artifact actually runs.
 
-## Engel taksonomisi (frekans, census)
-| Engel | Frekans (17) |
+## Barrier taxonomy (frequency across the census)
+| Barrier | Frequency (of 17) |
 |---|---|
-| **missing_weights** (eğitilmiş ağırlık yok) | 16/17 (VFSS hariç) |
-| **absent_license** | ~15/17 |
-| **missing_data** (örnek/test verisi yok; çoğu mahrem) | ~15/17 |
-| **env_undeclared** (ortam dosyası yok) | ~12/17 |
-| **GPU-oriented** (3D-CNN/video/segmentasyon) | çoğunluk (donanım-nötr ayrımı: ağırlık-yokluğu zaten donanım-öncesi engel) |
-| dep_conflict / hardcoded_local_path / NameError | pilotlarda (VFSS: dep+NameError+postproc; masa: taşınamaz wheel) |
+| **missing_weights** (no trained weights) | 16/17 (all but VFSS) |
+| **absent_license** | approximately 15/17 |
+| **missing_data** (no example or test data; most are confidential) | approximately 15/17 |
+| **env_undeclared** (no environment file) | approximately 12/17 |
+| **GPU-oriented** (3D CNN, video, segmentation) | the majority. On the hardware-neutral distinction: the absence of weights is a barrier that precedes hardware entirely |
+| dep_conflict / hardcoded_local_path / NameError | in the pilots (VFSS: dependency conflict, NameError, missing post-processing; masa: a non-portable wheel) |
 
-## Not (dürüstlük)
-- "not_attemptable (inference)" = ağırlık+veri olmadan **çıkarım denenemez**; bazıları **eğitilebilir** (mahrem veri + GPU ile) ama bu kapsam-dışı (GPU-yeniden-eğitim + mahrem veri).
-- İntake git-tree + releases + README-dış-host taradı; **canlı Google Drive linkleri elle teyit edilmedi** (Video-SwinUNet) — submission öncesi bir-iki dış-host teyidi eklenebilir, ama census manşetini değiştirmez.
-- Study-düzeyi dedup (grup-varyantları) sentervde uygulanır; repo-düzeyi ve study-düzeyi N ayrı raporlanır.
+## Notes on honesty
+- "not_attemptable (inference)" means that **inference cannot be attempted** without weights and data. Some of these models could be **retrained**, given confidential data and a GPU, but that is out of scope here.
+- Intake scanned the git tree, the releases and the README for external hosting; **live Google Drive links were not verified by hand** (Video-SwinUNet). Verifying one or two external hosts would not change the census headline.
+- Study-level deduplication of within-group variants is applied at synthesis, and the repository-level and study-level N are reported separately.

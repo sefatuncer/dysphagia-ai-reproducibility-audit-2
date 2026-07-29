@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-06_backward_additions.py — geriye-atıf eksiklerini metadata ile korpusa hazırla.
+06_backward_additions.py - prepare the backward-citation absences for the corpus, with metadata.
 
-Kwok + CODAS geriye-atıf kontrolünde bulunan KAPSAM-İÇİ eksik çalışmaların DOI'lerini
-OpenAlex (Crossref fallback) ile zenginleştir → backward-citation-additions.csv.
-Kurumsal arama sonrası birleşik korpusa source=backward_citation olarak eklenir.
+Enrich the DOIs of the IN-SCOPE studies found missing by the Kwok and CoDAS
+backward-citation check, using Crossref with OpenAlex as a fallback, and write
+backward-citation-additions.csv. These are added to the combined corpus as
+source=backward_citation after the institutional search.
 """
 import csv, json, sys, time, urllib.request, urllib.parse
 try: sys.stdout.reconfigure(encoding="utf-8")
@@ -18,7 +19,7 @@ DOIS = [
     ("10.1016/j.dsp.2022.103815", "Kwok-51"),
     ("10.1007/s00455-018-09974-5", "Kwok-56"),
     ("10.1109/iscas51556.2021.9401353", "Kwok-57"),
-    ("10.1038/s41598-023-34999-8", "CODAS"),  # düzeltildi: -x → -8 (Crossref/OpenAlex 404; başlıkla doğrulandı, Sci Rep 2023;13:7835)
+    ("10.1038/s41598-023-34999-8", "CODAS"),  # corrected: -x -> -8 (the truncated DOI 404s at Crossref and OpenAlex; verified by title, Sci Rep 2023;13:7835)
     ("10.1109/access.2020.3019532", "CODAS"),
 ]
 OUT = "kaynaklar/arama-sonuclari/backward-citation-additions.csv"
@@ -49,8 +50,9 @@ def crossref(doi):
 def main():
     rows = []
     for doi, review in DOIS:
-        # Crossref = DOI tescil otoritesi → bibliyografik metadata için kanonik (title/year/venue).
-        # OpenAlex fallback; OpenAlex'in s41598-023-34999-8 için kaydı bozuktu (1968 kataliz makalesine bağlı).
+        # Crossref is the DOI registration authority, so it is canonical for bibliographic
+        # metadata (title, year, venue). OpenAlex is the fallback: its record for
+        # s41598-023-34999-8 was corrupt, linked to a 1968 catalysis article.
         meta = crossref(doi) or openalex(doi) or {"title": "", "year": "", "venue": "", "type": ""}
         rows.append({"doi": doi, "from_review": review, "source": "backward_citation",
                      "year": meta["year"], "venue": meta["venue"], "title": meta["title"],
@@ -61,7 +63,7 @@ def main():
         w = csv.DictWriter(f, fieldnames=["doi", "from_review", "source", "year", "venue", "title",
                                           "include_screen1", "exclude_reason"])
         w.writeheader(); w.writerows(rows)
-    print(f"\n{len(rows)} kayıt → {OUT}")
+    print(f"\n{len(rows)} records -> {OUT}")
 
 if __name__ == "__main__":
     main()

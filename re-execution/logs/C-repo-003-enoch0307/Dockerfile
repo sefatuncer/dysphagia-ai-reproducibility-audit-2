@@ -1,5 +1,5 @@
 # enoch0307/streamlitapp_cn — clean CPU container, AS-DECLARED environment.
-# requirements.txt sürüm-sabitlemesiz → box-out re-execution testi (Docker).
+# requirements.txt carries no version pins -> an out-of-the-box re-execution test in Docker.
 FROM python:3.11-slim
 WORKDIR /app
 COPY repo/requirements.txt /app/requirements.txt

@@ -1,38 +1,49 @@
-# Geriye-Dönük Atıf Taraması — Korpus Tamlık Kontrolü (İş #3)
+> ⚠️ **PLANNED UNDER THE PRE-PIVOT DESIGN, NOT EXECUTED AS DESCRIBED.**
+> This file belongs to the study's earlier systematic-review-style design, which assumed
+> dual independent human screening, a methodologist/librarian third author, PRESS review,
+> and institutional database access. **The study pivoted to a two-author meta-research
+> re-execution census with an objective, machine-checkable inclusion criterion.** None of
+> the methodologist-dependent procedures below were carried out. What was actually done is
+> reported in the manuscript, and screening reliability was instead assessed by a released,
+> blind, rule-based re-coding of every screened record. This file is retained as design
+> history so the change of plan is auditable, not concealed.
 
-**Amaç:** OSF kaydını kilitlemeden önce, bilinen disfaji-AI derlemelerinin dahil-çalışma listelerini korpusla karşılaştırıp eksik var mı bak. **Durum: Kwok + CODAS TAMAMLANDI (niceliksel); 633-biblio = insan (WoS).**
+# Backward-citation screening — corpus completeness check
 
-## Kaynak 1 — Wong/Kwok et al. JMIR 2025;27:e65551 ✅ TAMAMLANDI
-- **Başlık:** "Current Technological Advances in Dysphagia Screening: A Systematic Scoping Review" (HK PolyU). Kapsam: disfaji **TARAMA**, **24 çalışma** (ref [35]-[58]), 2979 katılımcı. QUADAS-2+M + TRIPOD+AI 5. AI-alanı.
-- **Modalite (Kwok):** akustik 54% (13/24), vibratuar 38% (9/24), nazal-akış 8%, EMG 8%, strain/motion 8%, optik 4%; multimodal 25%.
-- Tam metin: https://www.jmir.org/2025/1/e65551 · PDF: PolyU IRA 10397/115215 · PMID 40324167.
+**Purpose:** to compare the corpus against the study lists of known dysphagia-AI reviews and see what is missing. **Status: Kwok and CoDAS completed quantitatively; the 633-record bibliometric list requires institutional Web of Science access and remains human work.**
 
-### Eşleşme sonucu (`kwok-24-eslesme.csv`)
-**Kwok 24 → korpusta VAR = 13 · YOK = 11.** Eksik 11'in kırılımı:
-| Durum | Ref | Not |
+## Source 1 — Wong/Kwok et al. JMIR 2025;27:e65551 ✅ COMPLETED
+- **Title:** "Current Technological Advances in Dysphagia Screening: A Systematic Scoping Review" (HK PolyU). Scope: dysphagia **screening**, **24 studies** (refs [35]–[58]), 2979 participants. QUADAS-2+M and TRIPOD+AI, 5 AI domains.
+- **Modalities (Kwok):** acoustic 54% (13/24), vibratory 38% (9/24), nasal airflow 8%, EMG 8%, strain or motion 8%, optical 4%; multimodal 25%.
+- Full text: https://www.jmir.org/2025/1/e65551 · PDF: PolyU IRA 10397/115215 · PMID 40324167.
+
+### Matching result
+**Of the 24 Kwok studies, 13 are present in the corpus and 11 are not.** The 11 absences break down as:
+
+| Status | Ref | Note |
 |---|---|---|
-| **Kapsam-dışı (pre-2010, tasarımca doğru)** | 35(2008), 44(2004), 54(2008), 55(2009) | 2010–2026 filtresi dışında → eksiklik değil |
-| **KAPSAM-İÇİ EKSİK (eklenecek)** | 45(2011 ArtifMed), 40(2022 IEEE TASLP), 41(2024 ICASSP), 50(2023 BSPC), 51(2023 DSP), 56(2019 **Dysphagia** s00455), 57(2021 ISCAS) | **7 çalışma** |
+| **Out of scope (pre-2010, correctly excluded by design)** | 35 (2008), 44 (2004), 54 (2008), 55 (2009) | Outside the 2010–2026 filter, so not a gap |
+| **IN SCOPE AND MISSING (to be added)** | 45 (2011 Artif Med), 40 (2022 IEEE TASLP), 41 (2024 ICASSP), 50 (2023 BSPC), 51 (2023 DSP), 56 (2019 **Dysphagia** s00455), 57 (2021 ISCAS) | **7 studies** |
 
-### Yorum (önemli bulgu)
-- Kapsam-içi 20 Kwok çalışmasından **13'ü (65%) korpusta** → açık-API araması makul ama tam değil.
-- **7 eksiğin 6'sı IEEE/mühendislik venue'su** (TASLP, ICASSP, ISCAS, DSP, BSPC) → **"kurumsal IEEE Xplore/Scopus araması şart" tezini NİCELİKSEL kanıtlar** (protokol §3.3 + metodolog paketi). Açık-API'ler CS-venue'ları kısmen kaçırıyor.
-- 1 eksik (ref 56, Dysphagia s00455 2019) PubMed-indeksli olmasına rağmen kaçmış → arama-dizesi terim-duyarlılığı kütüphaneci/PRESS ile gözden geçirilmeli.
-- **Aksiyon:** 7 kapsam-içi eksik, kurumsal arama sonrası korpusa `source=backward_citation` ile eklenecek → PRISMA "other methods" kolu. (Çoğu kurumsal IEEE aramasıyla zaten gelecek.)
+### Interpretation (an important finding)
+- Of the 20 in-scope Kwok studies, **13 (65%) are in the corpus**, so the open-API search is reasonable but not complete.
+- **Six of the seven missing studies are in IEEE or engineering venues** (TASLP, ICASSP, ISCAS, DSP, BSPC), which gives **quantitative support to the claim that an institutional IEEE Xplore and Scopus search is required**. Open APIs partly miss computer-science venues.
+- One missing record (ref 56, Dysphagia s00455, 2019) is PubMed-indexed and was still missed, so the term sensitivity of the search string needs librarian and PRESS review.
+- **Action:** the 7 in-scope absences are to be added after the institutional search with `source=backward_citation`, forming the "other methods" arm of the flow diagram. Most would arrive from an institutional IEEE search in any case.
 
-## Kaynak 2 — CODAS 2025 scoping ✅ TAMAMLANDI
-- **Künye:** Silva et al., "Artificial intelligence in the diagnosis and management of dysphagia: a scoping review." **CoDAS 2025;37(4):e20240305** (DOI 10.1590/2317-1782/e20240305en). 61 dahil çalışma; EMBASE/LILACS/Livivo/PubMed/Scopus/Cochrane/WoS + gri. Referans-standart çoğunlukla VFSS; DL baskın. Açık PDF (codas.org.br).
-- **Eşleşme (`codas-eslesme.csv`):** kaynakçadan **64 benzersiz DOI → korpusta VAR=44 (%69)**; korpusta olmayan 20'nin 16'sı arka-plan/belirsiz, **4'ü AI-disfaji**; bunların 2'si pre-2010 (kapsam-dışı, doğru) → **2 gerçek kapsam-içi boşluk:**
-  - `10.1038/s41598-023-34999-8` — Sci Rep 2023;13:7835, "Machine learning predictive model for aspiration screening in hospitalized patients with acute stroke" (PubMed-indeksli → arama-dizesi duyarlılığı sorusu). ⚠️ **DOI düzeltmesi (16 Tem):** ilk çıkarımda son karakter kesilip `-x` yazılmıştı (Crossref/OpenAlex 404); başlıkla doğru DOI `-8` teyit edildi. Ayrıca OpenAlex bu DOI için **bozuk kayıt** döndü (1968 kataliz makalesine bağlı) → `06_backward_additions.py` Crossref-öncelikli yapıldı (DOI tescil otoritesi = kanonik metadata). Küçük ama ironik meta-bulgu: metadata altyapısının kendisi de tekrarlanabilirlik hatası taşıyor.
-  - `10.1109/access.2020.3019532` — IEEE Access 2020, semantik segmentasyon (yine **IEEE** boşluğu).
+## Source 2 — CoDAS 2025 scoping review ✅ COMPLETED
+- **Citation:** Silva et al., "Artificial intelligence in the diagnosis and management of dysphagia: a scoping review." **CoDAS 2025;37(4):e20240305** (DOI 10.1590/2317-1782/e20240305en). 61 included studies; EMBASE, LILACS, Livivo, PubMed, Scopus, Cochrane, Web of Science plus grey literature. The reference standard is mostly VFSS and deep learning predominates. Open PDF at codas.org.br.
+- **Matching:** **64 unique DOIs taken from its reference list** — note that this is the review's bibliography, not its list of included studies — of which **44 (69%) are present in the corpus**. Of the 20 absent, 16 are background or unclear and **4 concern dysphagia AI**; two of those are pre-2010 and correctly out of scope, leaving **2 genuine in-scope gaps**:
+  - `10.1038/s41598-023-34999-8` — Sci Rep 2023;13:7835, "Machine learning predictive model for aspiration screening in hospitalized patients with acute stroke" (PubMed-indexed, so again a question of search-string sensitivity). ⚠️ **DOI correction (16 Jul):** the first extraction truncated the final character and produced `-x`, which returns 404 at Crossref and OpenAlex; the correct DOI ending in `-8` was confirmed from the title. OpenAlex additionally returned a **corrupt record** for this DOI, linked to a 1968 catalysis article, so `06_backward_additions.py` was changed to prefer Crossref, the DOI registration authority being the canonical source of metadata. A small but pointed meta-finding: the metadata infrastructure itself carries reproducibility errors.
+  - `10.1109/access.2020.3019532` — IEEE Access 2020, semantic segmentation (again an **IEEE** gap).
 
-## Kaynak 3 — 633-bibliyometri (WoS 2000–2025) ⏳ İNSAN (WoS erişimi)
-Geniş liste; çekirdek referans çapraz-kontrolü **kurumsal WoS** gerektirir → insan.
+## Source 3 — the 633-record bibliometric list (Web of Science 2000–2025) ⏳ HUMAN (WoS access)
+A broad list; cross-checking its core references requires **institutional Web of Science** and is therefore human work.
 
-## SONUÇ (iki gold-derleme birleşik)
-- **Korpus tamlığı ~%65-70** (Kwok kapsam-içi 13/20; CODAS 44/64) → açık-API araması makul ama tam değil.
-- **Boşluklar sistematik olarak IEEE/mühendislik venue'larında** (TASLP, ICASSP, ISCAS, DSP, IEEE Access) → **kurumsal IEEE Xplore + Scopus araması PAZARLIKSIZ** (protokol §3.3; metodolog paketi). Bu artık **niceliksel kanıtlı.**
-- **Eklenecek kapsam-içi eksikler:** Kwok'tan 7 + CODAS'tan 2 ≈ **~9 çalışma** (çoğu kurumsal IEEE aramasıyla zaten gelecek) → `source=backward_citation`, PRISMA "other methods" kolu. Listeler: `kwok-24-eslesme.csv`, `codas-eslesme.csv`.
+## Conclusion (the two reviews combined)
+- **Corpus completeness is roughly 65–70%** (Kwok in-scope 13/20; CoDAS 44/64), so the open-API search is reasonable but not complete.
+- **The gaps are systematically in IEEE and engineering venues** (TASLP, ICASSP, ISCAS, DSP, IEEE Access), which makes an **institutional IEEE Xplore and Scopus search non-negotiable** for a formal review. This is now quantitatively evidenced.
+- **In-scope absences to add:** 7 from Kwok plus 2 from CoDAS, about **9 studies** (most of which an institutional IEEE search would return anyway), entered as `source=backward_citation` in the "other methods" arm.
 
-## Yöntem (tekrarlanabilir)
-Kwok PDF → PyMuPDF metin → ref [35]-[58] `[doi:]`/`[Medline:]` regex → `combined-corpus.csv` DOI+PMID eşleme. Aynı akış CODAS/633 için tekrar kullanılır. Ham: `scratchpad/kwok-text.txt`, sonuç: `kwok-24-eslesme.csv`.
+## Method (reproducible)
+The Kwok PDF was converted to text with PyMuPDF, references [35]–[58] were parsed with a `[doi:]` and `[Medline:]` regex, and the results were matched against `combined-corpus.csv` on DOI and PMID. The same pipeline is reused for CoDAS and for the 633-record list.

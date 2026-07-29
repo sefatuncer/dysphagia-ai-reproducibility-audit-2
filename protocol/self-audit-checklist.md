@@ -1,0 +1,64 @@
+# Minimum-reporting checklist, applied to this study
+
+No EQUATOR reporting guideline fits a meta-research execution-prerequisite audit
+with an embedded re-execution case series, and the manuscript says so rather than
+claiming conformance to one that does not apply. This file closes that gap in the
+only way that is consistent with the paper's own argument: we take the
+minimum-reporting recommendation set the study proposes and apply it to the study
+itself, item by item, with a pointer to where each item is met.
+
+Every "where" below resolves either to a section of the manuscript or to a file in
+this archive. Nothing is marked met on the strength of an intention.
+
+## A. Execution prerequisites (the four conjuncts the paper measures)
+
+| # | Item | Status | Where |
+|---|---|---|---|
+| A1 | Pinned environment for the analysis code | **Met** | Analysis scripts are standard-library only, with no third-party dependency to pin. Stated in `README.md`; the re-execution harness ships its own `Dockerfile` templates in `re-execution/harness/`. |
+| A2 | Trained weights archived with a persistent DOI | **Not applicable** | This study trains no model. No weights exist to archive. |
+| A3 | Runnable sample with expected output | **Met** | Every analysis script runs to completion against the released data files and prints its own results; the printed output is what the manuscript reports. |
+| A4 | Open license | **Met** | Dual: MIT for code (`LICENSE-CODE`), CC-BY-4.0 for data and text (`LICENSE-DATA`). |
+
+## B. Provenance and reproducibility of the measurement
+
+| # | Item | Status | Where |
+|---|---|---|---|
+| B1 | Inclusion rule stated before the reader sees the results | **Met** | Manuscript §2.2; OSF registration form. |
+| B2 | Full candidate list released, included **and** excluded, with reasons | **Met** | `search/`, plus the inventory and code-mining vetting files. |
+| B3 | Raw discovery-API responses archived, date-stamped | **Met** | `search/corpus-metadata/`. The manuscript states that the live APIs drift and that re-running discovery later may surface a different pool. |
+| B4 | Analysis fixed-seed and re-runnable | **Met** | All statistics come from released scripts over the frozen snapshot. No randomness is used. |
+| B5 | Verdict definitions pre-stated, not fitted after the fact | **Met** | Manuscript §2.6. Four mutually exclusive verdicts with explicit criteria. |
+| B6 | Observed failures kept distinct from inferred ones | **Met** | Manuscript §2.6 and §3.3. The 15 not-attemptable verdicts are never merged with the 1 observed build failure. |
+| B7 | Reliability of the one subjective step measured and released | **Met** | Blind rule-based re-coding of all 181 screened records, full contingency tables, both rule versions. |
+| B8 | Mid-course changes to the method disclosed with their effect | **Met** | The screening rule was revised after its first run; the manuscript reports the revision and its numerical effect (κ 0.49 → 0.79 on the mining channel). |
+| B9 | Sensitivity analyses for the discovery limitations | **Met** | Two: excluding the two non-scripted repositories (0/16 unchanged), and full-pagination re-run of every GitHub term (the per-term cutoff never bound). |
+
+## C. Reporting honesty
+
+| # | Item | Status | Where |
+|---|---|---|---|
+| C1 | Denominators stated explicitly; "not reported" never imputed | **Met** | Manuscript §2.7. |
+| C2 | Interval estimates interpreted in line with the sampling design | **Met** | Wilson intervals reported as small-sample fragility bands, not as inference to the wider literature. |
+| C3 | Clustering acknowledged and handled | **Met** | Study level primary; repository level reported as sensitivity and explicitly not corrected for within-team clustering. |
+| C4 | Registration timing stated without over-claiming | **Met** | The protocol is publicly posted and transparently dated. The manuscript makes **no** claim of temporal precedence over the analysis. |
+| C5 | Competing interests disclosed, including non-financial ones | **Met** | The two joint first authors are married; declared. |
+| C6 | Generative-AI use disclosed, separating method use from writing use | **Met** | Declaration section. |
+| C7 | Named third parties notified and offered a right to respond | **Human step, before submission** | Template and recipient list in the manuscript repository. To be dated in §Ethics at submission. |
+
+## D. Clinical axis
+
+| # | Item | Status | Where |
+|---|---|---|---|
+| D1 | Reference-standard type stated per study | **Met (k=6)** | `transparency/rs-taxonomy-coding.csv`; manuscript Table 4. |
+| D2 | Label scale and any binarization loss recorded | **Met (k=6)** | Same. |
+| D3 | Rater reliability (κ or ICC) recorded, with "not reported" kept distinct from "weak" | **Met (k=6)** | Same. This is the item the audited literature fails: 0/6. |
+| D4 | Applicable appraisal instrument named, without producing an unsupported rating | **Met** | Table 4 names the instrument that would apply and states that no formal QUADAS-2 or PROBAST+AI assessment was produced. |
+| D5 | Which studies are in which axis, made explicit | **Met** | Table 4 records whether each study is also in the computational set, with a footnote that k=6 is not a subset of a common denominator. |
+
+## What this checklist does not claim
+
+It is a self-audit against a recommendation set this study proposes, not
+certification against an external standard. The recommendation set has not been
+through a consensus process, and we say so in the manuscript. Two items above
+(A2, C7) are not met by the study text alone: A2 does not apply, and C7 is a human
+step that must be completed and dated before submission.

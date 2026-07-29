@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-02_triage.py — tarama-ÖNCESİ deterministik triyaj (insan taramasına yardımcı)
+02_triage.py - deterministic PRE-screening triage (an aid to human screening)
 
-⚠️ Bu betik KARAR VERMEZ. include_screen1 boş kalır → çift-bağımsız insan taraması + Cohen κ.
-Amaç: 2171 kaydı ŞEFFAF regex kurallarıyla ön-sıralamak (eleme-formu.md kuralları),
-review/editoryal/AI-yok gibi bariz-hariçleri işaretlemek, olası-dahilleri öne almak.
-Tüm kurallar bu dosyada açık → tam denetlenebilir (makalenin açık-bilim ethos'una uygun).
+This script DECIDES NOTHING. include_screen1 is left empty for dual independent human screening plus Cohen kappa.
+Purpose: to pre-sort the 2171 records with TRANSPARENT regular-expression rules (the rules of the screening form),
+flagging obvious excludes such as reviews, editorials and records with no AI, and bringing likely includes to the front.
+Every rule is visible in this file, so the pre-sort is fully auditable.
 
-Girdi : kaynaklar/arama-sonuclari/combined-corpus-enriched.csv
-Çıktı : analiz/tarama-calisma-sayfasi.csv  (Rayyan/Covidence'a hazır; screener1/2 kolonları boş)
-        + stdout özet (bucket sayıları → PRISMA identification/screening)
+Input : kaynaklar/arama-sonuclari/combined-corpus-enriched.csv
+Output: analiz/tarama-calisma-sayfasi.csv (ready for Rayyan or Covidence; the screener1 and screener2 columns are empty)
+        plus a stdout summary (bucket counts feeding the flow diagram)
 """
 import csv, re, sys
 from collections import Counter
@@ -24,7 +24,7 @@ OUT = "analiz/tarama-calisma-sayfasi.csv"
 def rx(terms):
     return re.compile("|".join(terms), re.I)
 
-# --- AI/ML/DL sinyali ---
+# --- AI / machine-learning / deep-learning signal ---
 AI = rx([r"\bartificial intelligence\b", r"\bmachine learning\b", r"\bdeep learning\b",
     r"\bneural network", r"\bconvolutional", r"\bcnn\b", r"\brnn\b", r"\blstm\b", r"\bgru\b",
     r"\btransformer", r"\bu-?net\b", r"\bnnu-?net\b", r"\bresnet", r"\bvgg\b", r"\bdensenet",
@@ -37,7 +37,7 @@ AI = rx([r"\bartificial intelligence\b", r"\bmachine learning\b", r"\bdeep learn
     r"\breinforcement learning", r"\bnatural language processing", r"\bnlp\b",
     r"\blarge language model", r"\bfoundation model", r"\bpredicti(ve|on) model",
     r"\bfeature extraction", r"\bfeature selection", r"\bdata-?driven model"])
-# zayıf sinyaller (tek başına AI saymaz, not düşer)
+# weak signals: not counted as AI on their own, but noted
 AI_WEAK = rx([r"\blogistic regression", r"\bregression model", r"\bstatistical model", r"\balgorithm"])
 
 # --- review / non-primary ---
@@ -51,7 +51,7 @@ REVIEW_PT = {"review", "systematic review", "meta-analysis", "editorial", "comme
 CASE_PT = {"case reports", "openalex:case-report"}
 CASE_TXT = rx([r"\bcase report\b", r"\ba case of\b", r"\bcase series\b"])
 
-# --- klinik alan sinyali ---
+# --- clinical-domain signal ---
 DYS = rx([r"\bdysphagi", r"\bdeglutit", r"\bswallow", r"\baspiration", r"\bpenetrat",
     r"\bbolus", r"\bvfss\b", r"\bvideofluoroscop", r"\bfees\b", r"\boropharyng",
     r"\bpharyngeal", r"\bmbss\b", r"\bmodified barium", r"\bpiecemeal deglutition"])
@@ -96,7 +96,7 @@ def main():
         dys = bool(DYS.search(t))
         mods = modalities(t)
 
-        # --- bucket (öncelik sırası) ---
+        # --- bucket assignment (in priority order) ---
         if review_like:
             bucket, code = "likely_exclude_review", "E2"
         elif case_like and not has_ai:
@@ -110,10 +110,10 @@ def main():
                 bucket, code = "likely_exclude_no_AI", "E1/E3"
             else:
                 bucket, code = "needs_review_no_abstract", ""
-        else:  # has_ai ama dysphagia sinyali zayıf/yok
+        else:  # has_ai but the dysphagia signal is weak or absent
             bucket, code = "needs_review", ""
         if bucket.startswith("likely_exclude") and not has_abs and not review_like and not (pts & REVIEW_PT):
-            # abstract yoksa bariz-hariç kararını insana bırak (başlık-tek yetersiz)
+            # with no abstract, leave even an obvious exclude to a human (a title alone is not enough)
             bucket, code = "needs_review_no_abstract", ""
 
         out.append({
@@ -130,7 +130,7 @@ def main():
             "screener1_decision": "", "screener2_decision": "", "screener_notes": "",
         })
 
-    # öncelik sırala: include > needs_review > needs_review_no_abstract > excludes
+    # sort by priority: include > needs_review > needs_review_no_abstract > excludes
     order = {"likely_include": 0, "needs_review": 1, "needs_review_no_abstract": 2,
              "likely_exclude_esophageal": 3, "likely_exclude_case_report": 4,
              "likely_exclude_no_AI": 5, "likely_exclude_review": 6}
@@ -139,25 +139,25 @@ def main():
     with open(OUT, "w", encoding="utf-8", newline="") as fo:
         w = csv.DictWriter(fo, fieldnames=list(out[0].keys())); w.writeheader(); w.writerows(out)
 
-    # --- özet ---
+    # --- summary ---
     bc = Counter(x["t_bucket"] for x in out)
     print("=" * 60)
-    print(f"TRİYAJ ÖZETİ — toplam {len(out)} kayıt  →  {OUT}")
+    print(f"TRIAGE SUMMARY - {len(out)} records total  ->  {OUT}")
     print("-" * 60)
     for b in sorted(bc, key=lambda k: order.get(k, 9)):
         print(f"  {b:32s} {bc[b]:5d}")
     print("-" * 60)
     incl = bc["likely_include"]; nr = bc["needs_review"] + bc["needs_review_no_abstract"]
     exc = sum(v for k, v in bc.items() if k.startswith("likely_exclude"))
-    print(f"  Olası-DAHİL         : {incl}")
-    print(f"  İnsan-bakmalı (gri) : {nr}")
-    print(f"  Olası-HARİÇ         : {exc}  (insan doğrular; κ)")
-    print(f"  → İnsan çift-taraması öncelikle {incl+nr} kayda odaklanır (2171 yerine).")
+    print(f"  Likely INCLUDE      : {incl}")
+    print(f"  Needs a human (grey): {nr}")
+    print(f"  Likely EXCLUDE      : {exc}  (confirmed by a human; kappa reported)")
+    print(f"  -> Dual human screening focuses first on {incl+nr} records rather than all 2171.")
     mc = Counter(m for x in out if x["t_bucket"] == "likely_include" for m in x["t_modality"].split("; ") if m)
     print("-" * 60)
-    print("  Olası-dahillerde modalite dağılımı:", dict(mc.most_common()))
+    print("  Modality distribution among likely includes:", dict(mc.most_common()))
     print("=" * 60)
-    print("NOT: include_screen1 BİLEREK boş. Karar = çift-bağımsız insan + Cohen κ.")
+    print("NOTE: include_screen1 is DELIBERATELY empty. The decision is dual independent human screening plus Cohen kappa.")
 
 if __name__ == "__main__":
     main()

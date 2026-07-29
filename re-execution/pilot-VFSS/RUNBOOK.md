@@ -1,58 +1,57 @@
-# RUNBOOK — Layer B Pilot (BSEL-UC3M/VFSS_analysis)
+# RUNBOOK — Layer B pilot (BSEL-UC3M/VFSS_analysis)
 
-Amaç: Docker re-run yönteminin (Makale C, Layer B) tek repoda çalıştığını kanıtlamak ve
-tekrarlanabilirlik sürtünmesini **kanıtla** belgelemek. Repo zaten klonlu (`./VFSS_analysis`),
-referans çıktılar yedekli (`./reference_outputs`).
+Purpose: to demonstrate on a single repository that the Docker re-run method (Layer B) works, and
+to document reproducibility friction **with evidence**. The repository is cloned into
+`./VFSS_analysis` and the reference outputs are backed up in `./reference_outputs`.
+*(Neither directory is redistributed in this archive: the repository is third-party code and the
+reference outputs are its own output. Both are reconstructed by the steps below.)*
 
-## Ön koşullar
-- **Docker Desktop çalışır durumda** (bu makinede kurulu: Docker 29.6.1).
-- ~15 GB boş disk (6.1 GB ağırlık + imaj + ara dosyalar), internet.
-- Windows: `run_pilot.ps1`; Git Bash/WSL: `run_pilot.sh`.
+## Prerequisites
+- **Docker Desktop running** (the audit machine had Docker 29.6.1).
+- About 15 GB free disk (6.1 GB of weights plus the image and intermediate files), and an internet connection.
+- Windows: `run_pilot.ps1`; Git Bash or WSL: `run_pilot.sh`.
 
-## Bu klasördeki dosyalar
-| Dosya | İş |
+## Files in this folder
+| File | Role |
 |---|---|
-| `VFSS_analysis/` | Klonlanmış repo (kod, örnek `healthy_001` AVI, sağlanan çıktılar) |
-| `reference_outputs/` | Sağlanan çıktı CSV/AVI'lerinin **yedeği** (run.py bunları üzerine yazar → kıyas için saklandı) |
-| `Dockerfile` | Best-effort CPU ortamı (sapmalar yorumlarda) |
-| `download_weights.sh` | Zenodo 6.1 GB ağırlıkları indir + `models/`'e aç |
-| `run_pilot.sh` / `.ps1` | build → run.py (CPU) → compare (tek komut) |
-| `compare.py` | Yeniden üretilen CSV'leri referansla karşılaştır → verdikt |
-| `rerun.log`, `compare.log` | Çalıştırınca oluşur (kanıt) |
+| `VFSS_analysis/` | The cloned repository (code, the example `healthy_001` AVI, and the supplied outputs) |
+| `reference_outputs/` | A **backup** of the supplied output CSV and AVI files, kept for comparison because run.py overwrites them |
+| `Dockerfile` | The best-effort CPU environment, with the deviations noted in comments |
+| `download_weights.sh` | Downloads the 6.1 GB weights from Zenodo and unpacks them into `models/` |
+| `run_pilot.sh` / `.ps1` | build → run.py (CPU) → compare, as a single command |
+| `compare.py` | Compares the regenerated CSVs against the reference and issues a verdict |
+| `rerun.log`, `compare.log` | Created by the run itself, as evidence |
 
-## Yeniden-üretim hedefi ve tolerans
-run.py 4 adım koşar (ön-işleme → nnU-Net çıkarım → etiketli video → 21 parametre). Karşılaştırma:
-**yeniden üretilen `data/output_data/.../*.csv`** ↔ **`reference_outputs/.../*.csv`**. Segmentasyon→parametre
-deterministik olmalı → tam reprodüksiyon = değerler ~birebir (compare.py: atol 1e-6, rtol 1e-3).
-*(Not: ±5 pp/%95 GA eşiği doğruluk-metrikleri içindir; buradaki sürekli parametre serilerinde yakın-eşitlik testi kullanılır.)*
+## Reproduction target and tolerance
+run.py executes four steps (pre-processing → nnU-Net inference → labelled video → 21 parameters). The comparison is between the **regenerated `data/output_data/.../*.csv`** and **`reference_outputs/.../*.csv`**. The path from segmentation to parameters should be deterministic, so full reproduction means values that agree almost exactly (compare.py uses atol 1e-6, rtol 1e-3).
+*(Note: the ±5 percentage point or 95% interval tolerance applies to accuracy metrics; for the continuous parameter series used here, a near-equality test is applied instead.)*
 
-## A) "As-declared" (faithful) denemesi — KANIT için önce bunu dene
-Amaç: çalışmanın **beyan edildiği gibi** kurulup kurulmadığını test etmek. **Beklenti: BAŞARISIZ.**
+## A) The "as-declared" (faithful) attempt — run this first, for the evidence
+The aim is to test whether the study installs **as declared**. **Expectation: it fails.**
 ```bash
 docker run --rm -v "$PWD/VFSS_analysis":/work/repo -w /work/repo \
   continuumio/miniconda3:24.9.2-0 \
   bash -lc "conda env create -f environment.yml && conda run -n VFSS_env pip install -e . && echo BUILD_OK"
 ```
-**Tam hata mesajını `analiz/` altına kaydet.** Beklenen kırılmalar (statik ön-denetim):
-1. `environment.yml` içsel tutarsız: `python=3.10` ama `python_abi=3.13` → conda solve hatası olabilir.
-2. **Bağımlılık çelişkisi (headline bulgu):** `scikit-image==0.25.0` → numpy≥1.24; `nnunet==1.7.1` → numpy<1.24 (kaldırılmış `np.bool/np.int`). Aynı anda sağlanamaz.
-3. `torch` setup.py'de **sabitlenmemiş** + env nvidia-cu12 (CUDA) wheel'leri taşıyor → sürüm kayması.
-4. `setup.py`: `find_namespace_packages(include=["VFSS"])` ama repoda `VFSS/` paketi yok → kurulum boş paket.
+**Save the complete error message.** The failures anticipated by the static pre-audit were:
+1. `environment.yml` is internally inconsistent: `python=3.10` alongside `python_abi=3.13`, which can break the conda solve.
+2. **A dependency conflict (the headline finding):** `scikit-image==0.25.0` requires numpy ≥ 1.24, while `nnunet==1.7.1` requires numpy < 1.24 (it uses the removed `np.bool` and `np.int`). The two cannot be satisfied at once.
+3. `torch` is **unpinned** in setup.py while the environment carries nvidia-cu12 (CUDA) wheels, which gives version drift.
+4. `setup.py` calls `find_namespace_packages(include=["VFSS"])` but the repository has no `VFSS/` package, so the installation produces an empty package.
 
-## B) Best-effort CPU çalıştırma — yöntemi göstermek için
+## B) Best-effort CPU run — to demonstrate the method
 ```bash
-bash download_weights.sh          # 6.1 GB (bir kez)
+bash download_weights.sh          # 6.1 GB, once
 bash run_pilot.sh                 # build → run → compare
-# Windows: powershell -File run_pilot.ps1   (ağırlık indirmeyi Git Bash'te yap)
+# Windows: powershell -File run_pilot.ps1   (fetch the weights from Git Bash)
 ```
-Dockerfile'daki **sapmalar** (numpy 1.23.5, scikit-image 0.19.3, CPU torch) tam da (2)-(3) çelişkisini
-aşmak için yapıldı → **bunlar raporun bulgusu**: "çalışmayı koşturmak için beyan edilen ortamdan şu sapmalar gerekti."
+The **deviations** in the Dockerfile (numpy 1.23.5, scikit-image 0.19.3, CPU torch) exist precisely to get past conflicts (2) and (3), and **those deviations are themselves the finding**: this is the set of departures from the declared environment that running the study required.
 
-## Beklenen sonuç ve kanıtladığı
-- En olası verdikt: **kısmen / non-trivial ortam cerrahisiyle** reproducible → yöntem çalışır + gerçek bir "reproducibility friction" anlatısı.
-- **Ağırlık layout'u (DOĞRULANDI):** zip `models/models_VFSS/nnUNet/2d/TaskXXX` olarak açılır; ama run.py `RESULTS_FOLDER=repo/models` sabitler (senin -e'ini ezer) → **`models/models_VFSS/nnUNet` → `models/nnUNet`** taşı (sonuç: `models/nnUNet/2d/Task010_VFSS/nnUNetTrainerV2__nnUNetPlansv2.1/fold_0..4 + plans.pkl`).
-- nnU-Net v1 CPU çıkarımı yavaş; tek örnekte kabul edilebilir.
+## Result and what it demonstrates
+- The verdict was **partial**: reproducible only after non-trivial environment surgery, which both shows that the method works and yields a concrete account of reproducibility friction.
+- **Weights layout (verified):** the zip unpacks as `models/models_VFSS/nnUNet/2d/TaskXXX`, but run.py hard-codes `RESULTS_FOLDER=repo/models`, overriding any environment variable, so **`models/models_VFSS/nnUNet` must be moved to `models/nnUNet`**, giving `models/nnUNet/2d/Task010_VFSS/nnUNetTrainerV2__nnUNetPlansv2.1/fold_0..4` plus `plans.pkl`.
+- CPU inference with nnU-Net v1 is slow but acceptable for a single example (246 frames took about 3.9 hours).
 
-## Kaydedilecek provenance (kanıt zinciri)
-- `models_VFSS.zip.sha256` · build loglarındaki `pip freeze` (gerçek kurulan sürümler) · `rerun.log` · `compare.log` · faithful-deneme hata çıktısı.
-- Hepsi `../analiz/rerun-loglari/` altına; rubrik satırı `../analiz/seffaflik-rubrigi.csv`'de (C-repo-001).
+## Provenance to record (the evidence chain)
+- `models_VFSS.zip.sha256` · the `pip freeze` from the build logs (the versions actually installed) · `rerun.log` · `compare.log` · the error output of the faithful attempt.
+- All of these are stored under `../logs/`, and the rubric row is C-repo-001 in `../../transparency/transparency-rubric.csv`.

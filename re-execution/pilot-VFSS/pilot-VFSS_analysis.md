@@ -1,73 +1,68 @@
-# Layer B Pilotu — BSEL-UC3M/VFSS_analysis (fizibilite + plan)
+# Layer B pilot — BSEL-UC3M/VFSS_analysis (feasibility, plan and outcome)
 
-**Tarih:** 13 Tem 2026 · **Amaç:** Docker re-run yönteminin (Layer B) gerçekten yürüdüğünü tek repoda kanıtlamak.
-**Repo:** https://github.com/BSEL-UC3M/VFSS_analysis · **Ağırlıklar:** Zenodo 10.5281/zenodo.17191973 · **Kaynak makale:** Comput Biol Med 2025, doi:10.1016/j.compbiomed.2025.109759
+**Date:** 13 July 2026 · **Purpose:** to demonstrate on a single repository that the Docker re-run method (Layer B) actually works.
+**Repository:** https://github.com/BSEL-UC3M/VFSS_analysis · **Weights:** Zenodo 10.5281/zenodo.17191973 · **Source article:** Comput Biol Med 2025, doi:10.1016/j.compbiomed.2025.109759
 
-## Web incelemesi — doğrulanan gerçekler
-| Öğe | Bulgu |
+## Web inspection — verified facts
+| Item | Finding |
 |---|---|
-| Dil / bağımlılık | Python (%100); **conda `environment.yml`** + `setup.py` |
-| Çerçeve | **nnU-Net v1** (eğitim + çıkarım) |
-| GPU/CPU | CPU-uyumu **açıkça belirtilmemiş** (nnU-Net v1 GPU yoksa CPU'ya düşer, ama yavaş; bazı yollar `.cuda()` sabit olabilir) |
-| Model ağırlıkları | **Var, halka açık:** Zenodo `models_VFSS.zip` **6.1 GB**, **CC-BY-4.0**; `models/` klasörüne konur (Task010 varsayılan, Task008 alt) |
-| Örnek veri | ✅ **DAHİL:** `data/raw_VFSS/test/healthy_001` (AVI) + **manuel etiketler + predictions + parametreler** |
-| Çalıştırma | clone → `conda env create -f environment.yml` → `pip install -e .` → pipeline (ön-işleme → nnU-Net çıkarım → etiketli video → 21 disfaji parametresi) |
-| Metrik | README'de yok; kaynak makalede |
-| **Kod lisansı** | ⚠️ **YOK (belirtilmemiş)** — repo'da LICENSE dosyası yok |
-| Dockerfile | Yok |
+| Language / dependencies | Python (100%); a conda `environment.yml` plus `setup.py` |
+| Framework | **nnU-Net v1** (training and inference) |
+| GPU / CPU | CPU compatibility is **not stated explicitly** (nnU-Net v1 falls back to CPU when no GPU is present, but slowly, and some paths may hard-code `.cuda()`) |
+| Model weights | **Present and public:** Zenodo `models_VFSS.zip`, **6.1 GB**, **CC-BY-4.0**; placed in `models/` (Task010 default, Task008 secondary) |
+| Example data | ✅ **Included:** `data/raw_VFSS/test/healthy_001` (AVI) plus **manual labels, predictions and parameters** |
+| How it runs | clone → `conda env create -f environment.yml` → `pip install -e .` → pipeline (pre-processing → nnU-Net inference → labelled video → 21 dysphagia parameters) |
+| Metrics | not in the README; in the source article |
+| **Code license** | ⚠️ **ABSENT (not stated)** — there is no LICENSE file in the repository |
+| Dockerfile | none |
 
-## Fizibilite verdikti: ✅ YÜKSEK — neredeyse en-iyi-durum pilot
-- ✅ **Örnek veri dahil** → özel hasta verisi olmadan çıkarım koşulabilir (en büyük engel kalkıyor).
-- ✅ **Ağırlıklar halka açık (CC-BY)** → indirilebilir.
-- ✅ **Sağlanan predictions + parametreler = hazır yeniden-üretim hedefi** → bizim re-run çıktımızı repo'nun kendi çıktısına karşı tolerans içinde kıyaslarız (segmentasyon + 21 parametre).
-- ✅ conda `environment.yml` → konteynerize edilebilir.
-- ⚠️ **nnU-Net v1 CPU çıkarımı** mümkün ama yavaş + belgelenmemiş → CPU'ya zorlamak gerekebilir (`CUDA_VISIBLE_DEVICES=""`); `.cuda()` sabit yolları çıkarsa küçük yama gerekir → **bu bizzat bir tekrarlanabilirlik bulgusu** (rubriğe işlenir).
-- ⚠️ 6.1 GB ağırlık indirmesi + eski nnU-Net v1 bağımlılık zinciri (Python 3.7-3.9 / eski PyTorch) → sürüm sabitleme şart.
+## Feasibility verdict: ✅ HIGH — close to a best-case pilot
+- ✅ **Example data are included**, so inference can be run without private patient data, which removes the largest barrier.
+- ✅ **Weights are public (CC-BY)** and can be downloaded.
+- ✅ **The supplied predictions and parameters give a ready reproduction target**: our re-run output can be compared against the repository's own output within tolerance (segmentation plus the 21 parameters).
+- ✅ The conda `environment.yml` can be containerized.
+- ⚠️ **CPU inference with nnU-Net v1** is possible but slow and undocumented, so CPU may have to be forced (`CUDA_VISIBLE_DEVICES=""`); if hard-coded `.cuda()` paths appear, a small patch is needed — **which is itself a reproducibility finding** and is recorded in the rubric.
+- ⚠️ A 6.1 GB weights download plus the old nnU-Net v1 dependency chain (Python 3.7–3.9, an old PyTorch) makes version pinning essential.
 
-## İki kayda değer YAN BULGU (rapora malzeme)
-1. **Kaynak makale Computers in Biology and Medicine'de** — ki bizim §5 listemizde **17 Kas 2025'te WoS'tan çıkarılmış (delisted)** dergi. Kod/model hâlâ duruyor, repo geçerli; ama "delisted dergide yayımlanmış AI çalışmasının reprodüklenebilirliği" ilginç bir vaka → tartışmada kullanılır.
-2. **Kod lisansı yok** → varsayılan telif (tüm haklar saklı). Bizim *araştırma amaçlı çalıştırmamız* sorun değil, ama **redistribütasyon yapma**; ve bu, şeffaflık rubriğinde "lisans: yok" olarak ilk somut veri noktamız.
-3. Çalışma **baş-boyun kanseri** VFSS'i (inme değil) — ama kapsamımız "disfaji AI (her etiyoloji)" olduğu için **dahil**.
+## Three side findings worth recording
+1. **The source article is in Computers in Biology and Medicine**, which was **delisted from Web of Science on 17 November 2025**. The code and model are still available and the repository is valid, but the reproducibility of an AI study published in a delisted journal is an interesting case and is used in the discussion.
+2. **There is no code license**, so default copyright applies (all rights reserved). Running it for research is not a problem, but it must not be redistributed; and this is the first concrete data point for "license: absent" in the transparency rubric.
+3. The study concerns VFSS in **head-and-neck cancer** rather than stroke, but since the scope is dysphagia AI of any aetiology, it is **included**.
 
-## Somut konteynerizasyon planı (taslak Dockerfile mantığı)
+## Containerization plan (draft Dockerfile logic)
 ```
 FROM continuumio/miniconda3
-# 1) repo + ortam
+# 1) repository and environment
 RUN git clone https://github.com/BSEL-UC3M/VFSS_analysis.git /app
 WORKDIR /app
-RUN conda env create -f environment.yml        # sürümleri LOGLA (pip freeze → kanıt)
+RUN conda env create -f environment.yml        # LOG the resolved versions (pip freeze as evidence)
 SHELL ["conda","run","-n","<env>","/bin/bash","-c"]
 RUN pip install -e .
-# 2) ağırlıklar (build dışında da olabilir; 6.1 GB)
-#    Zenodo models_VFSS.zip → /app/models/ ; SHA256 kaydet
-# 3) CPU'ya zorla
+# 2) weights (may be fetched outside the build; 6.1 GB)
+#    Zenodo models_VFSS.zip → /app/models/ ; record the SHA256
+# 3) force CPU
 ENV CUDA_VISIBLE_DEVICES=""
-ENV nnUNet_* ...   # nnU-Net v1 yol değişkenleri
-# 4) örnek üzerinde çıkarım
-#    data/raw_VFSS/test/healthy_001 → preprocess → nnU-Net predict → parametreler
+ENV nnUNet_* ...   # nnU-Net v1 path variables
+# 4) inference on the example
+#    data/raw_VFSS/test/healthy_001 → preprocess → nnU-Net predict → parameters
 ```
-**Yeniden-üretim hedefi:** re-run'ın ürettiği segmentasyon + 21 parametreyi repo'daki **sağlanan `predictions` + `parameters`** ile karşılaştır → verdikt (**±5 pp / %95 GA** eşiğiyle: tam / kısmi / üretilemez).
+**Reproduction target:** compare the segmentation and 21 parameters produced by the re-run against the **supplied `predictions` and `parameters`** in the repository, giving a verdict of full, partial or not reproduced against a tolerance of ±5 percentage points or the reported 95% interval.
 
-## Beklenen sonuç ve kanıtladığı şey
-- **En olası:** "çalışır ama küçük ortam/CPU yamaları gerekti" → *kısmen–tam reproducible*; yöntemin işlediğini kanıtlar + gerçek bir "reproducibility friction" anlatısı verir.
-- Bu pilot başarılıysa, aynı boru hattı diğer 4-14 repoya (Video-SwinUNet, MEPDNet, PECI-Net, masa-open-source) ölçeklenir.
+## Static pre-audit findings (repository cloned; from the real files — this is rubric row C-repo-001)
+The repository was cloned and `environment.yml`, `setup.py`, `run.py` and `paths_repository.py` were read. Even before running it, these **reproducibility findings** emerged:
 
-## Statik ön-denetim bulguları (repo klonlandı — gerçek dosyalardan; = rubrik satırı C-repo-001)
-Repo `pilot-run/VFSS_analysis`'e klonlandı; `environment.yml`, `setup.py`, `run.py`, `paths_repository.py` okundu. Çalıştırmadan önce bile şu **tekrarlanabilirlik bulguları** çıktı:
-1. **🔴 HEADLINE — Beyan edilen bağımlılıklar içsel olarak SAĞLANAMAZ (EMPİRİK DOĞRULANDI):** nnU-Net v1.7.1 numpy<1.24 gerektirir (kaldırılmış `np.bool/np.int`); ama beyan edilen ortamda **EN AZ İKİ paket** numpy≥1.24 ister — `scikit-image==0.25.0` **ve** `MedPy==0.5.2`. Gerçek build'de pip `ResolutionImpossible` verdi → çalışmayı koşturmak **üç zorunlu düşürme** gerektirdi (numpy 2.1.3→1.23.5, scikit-image 0.25→0.19.3, MedPy 0.5.2→0.4.0). Kanıt: `rerun-loglari/dep-conflict-pip-resolver.txt`. Çalışma "beyan edildiği gibi" reprodüklenemez.
-2. **environment.yml tutarsız:** `python=3.10` ama `python_abi=3.13` (bozuk `conda env export`).
-3. **`torch` sabitlenmemiş** (setup.py) ama env nvidia-cu12 (CUDA) wheel'leri taşıyor → sürüm kayması + GPU varsayımı.
-4. **Lisans YOK** (repo'da LICENSE dosyası yok) → varsayılan telif; redistribütasyon yapma.
-5. `setup.py`: `find_namespace_packages(include=["VFSS"])` ama repoda `VFSS/` paketi yok → `pip install -e .` boş paket kurar; çalışma `python run.py` ile cwd'den modül import ederek yürür.
-6. **Kaynak makale Comput Biol Med'de** — 17 Kas 2025'te WoS'tan **delisted** (§5). Kohort **baş-boyun kanseri** (inme değil ama disfaji-AI → kapsamda).
-7. **Sağlanan yeniden-üretim hedefi:** `data/output_data/.../*.csv` (7 parametre serisi) → `reference_outputs/`'a yedeklendi.
+1. **🔴 HEADLINE — the declared dependencies are internally UNSATISFIABLE (empirically confirmed):** nnU-Net v1.7.1 requires numpy < 1.24 (it uses the removed `np.bool` and `np.int`), yet **at least two packages in the declared environment** require numpy ≥ 1.24 — `scikit-image==0.25.0` **and** `MedPy==0.5.2`. In a real build pip returned `ResolutionImpossible`, so running the study required **three mandatory downgrades** (numpy 2.1.3 → 1.23.5, scikit-image 0.25 → 0.19.3, MedPy 0.5.2 → 0.4.0). Evidence: `logs/dep-conflict-pip-resolver.txt`. The study cannot be reproduced "as declared".
+2. **`environment.yml` is internally inconsistent:** it specifies `python=3.10` alongside `python_abi=3.13`, the signature of a broken `conda env export`.
+3. **`torch` is unpinned** in setup.py while the environment carries nvidia-cu12 (CUDA) wheels, which gives both version drift and an implicit GPU assumption.
+4. **No license** (there is no LICENSE file), so default copyright applies and the code must not be redistributed.
+5. `setup.py` calls `find_namespace_packages(include=["VFSS"])` but the repository contains no `VFSS/` package, so `pip install -e .` installs an empty package; the study actually runs through `python run.py`, importing modules from the working directory.
+6. **The source article is in Comput Biol Med**, delisted from Web of Science on 17 November 2025. The cohort is **head-and-neck cancer** — not stroke, but dysphagia AI and therefore in scope.
+7. **A supplied reproduction target exists:** `data/output_data/.../*.csv` (7 parameter series), which was copied to `reference_outputs/`.
+8. **🔴 Obscure, fragile and undeclared dependencies:** `VFSS_functions.py` contains `import spicy` — `spicy` being the well-known typo package for scipy — and `environment.yml` duly pins `spicy==0.16.0`; without it the import fails with `ModuleNotFoundError`. In addition `pydicom` is imported at module level but **is not listed in setup.py**, an undeclared dependency.
 
-8. **🔴 Obskür/kırılgan + eksik-beyan bağımlılıklar:** `VFSS_functions.py` `import spicy` yapıyor — `spicy`, scipy'nin ünlü **typo-paketi**, environment.yml'de `spicy==0.16.0` diye pinlenmiş; kurulmazsa `ModuleNotFoundError`. Ayrıca `pydicom` modül-seviyesinde import ediliyor ama **setup.py'de listelenmemiş** (eksik-beyan bağımlılık).
+**Actual re-run (live, 13 July):** the best-effort image **built and its imports work** (numpy 1.23.5 / torch 2.0.1+cpu / skimage 0.19.3 / nnunet 1.7.1 / batchgenerators 0.25.3; provenance in `logs/pip-freeze-best-effort.txt`). The weights (6.1 GB, CC-BY) were downloaded and the layout corrected (`models_VFSS/nnUNet` → `models/nnUNet`). **Five-fold CPU inference completed** (246 frames, about 3.9 hours). **Result:** the code **did not run out of the box** — the declared environment is unsatisfiable (three downgrades plus spicy and pydicom), there is a **NameError crash** (`pathlib.Path` is never imported, in step 3), and post-processing is missing (`postprocessing.json` is absent) → **five documented interventions** were required. After the repairs it ran, and `compare.py` shows **structurally identical output** (7 parameters × 246 frames) but **numerically close rather than identical** (areas within about 0.1%; landmark and distance parameters deviating by up to 6 units), attributable to the skipped post-processing and to environment and CPU-versus-GPU differences. **VERDICT: PARTIAL, not reproducible out of the box.** Evidence: `logs/rerun-crash-findings.txt` and the comparison log; the `rerun_verdict` for C-repo-001 in the rubric was updated accordingly.
 
-**Fiili re-run (canlı, 13 Tem):** Best-effort imaj **kuruldu ve import'lar çalışıyor** (numpy 1.23.5 / torch 2.0.1+cpu / skimage 0.19.3 / nnunet 1.7.1 / batchgenerators 0.25.3; provenance: `rerun-loglari/pip-freeze-best-effort.txt`). Ağırlıklar (6.1 GB, CC-BY) indirildi; layout düzeltildi (`models_VFSS/nnUNet` → `models/nnUNet`). **5-fold CPU inference tamamlandı** (246 kare, ~3.9 saat). **SONUÇ:** kod **kutu-dışı çalışmadı** — beyan-ortamı çözülemez (3 düşürme + spicy/pydicom) + **NameError çökme** (`pathlib.Path` import edilmemiş, Step 3'te) + postprocessing eksik (`postprocessing.json` yok) → **5 belgelenmiş müdahale** gerekti. Düzeltmelerden sonra çalıştı; `compare.py`: **yapısal birebir** (7 parametre × 246 kare) ama **sayısal yakın-ama-birebir-değil** (alanlar ~%0.1 içinde; landmark/mesafe parametreleri ≤6 birim sapma) → postprocessing atlanması + ortam/CPU-vs-GPU sapmaları. **VERDİKT: PARTIAL / kutu-dışı-tekrarlanamaz.** Kanıt: `rerun-loglari/rerun-crash-findings.txt` + `compare.log`; rubrik `rerun_verdict` (C-repo-001) güncellendi.
+**The script set is available** in this folder: `Dockerfile`, `download_weights.sh`, `run_pilot.sh` / `.ps1`, `compare.py` and `RUNBOOK.md`. The heavy part — a 6.1 GB download plus CPU inference — runs as a single command; see the RUNBOOK.
 
-**Betik seti hazır** (`pilot-run/`): `Dockerfile`, `download_weights.sh`, `run_pilot.sh`/`.ps1`, `compare.py`, `RUNBOOK.md`. Ağır kısım (6.1 GB indirme + CPU çıkarım) tek komut; Sefa çalıştırır (bkz. RUNBOOK).
-
-## Sonraki eylem
-- [ ] Sefa: `environment.yml`'yi çek, nnU-Net v1 CPU çıkarım yolunu doğrula (küçük yama gerekli mi); Dockerfile'ı yaz; `healthy_001` üzerinde çıkarımı koştur; çıktıyı sağlanan predictions ile kıyasla. Logları `rerun-loglari/`'na koy.
-- [ ] Not: bu repo aynı zamanda Layer B örnekleminin **1. kaydı** olur.
+## Outcome
+This repository is the **first record** of the Layer B sample, and the pipeline demonstrated here was subsequently applied to the other candidates.

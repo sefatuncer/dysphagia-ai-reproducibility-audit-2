@@ -1,78 +1,85 @@
-# Klinik Tekrarlanabilirlik Konstrüktü + Disfaji-Özgü Referans-Standart & Etiket-Kalitesi Taksonomisi
+# Clinical reproducibility construct and a dysphagia-specific reference-standard and label-quality taxonomy (RS1–RS6)
 
-**Sahip:** Nazife (eş-birinci, klinik eksen) · **Durum:** TASLAK → **Nazife onayı gerekir** (bu, onun eş-birinciliğini savunan entelektüel çekirdek).
-**Amaç:** Hakem uyarısını kapatmak — "referans-standart geçerliliği + spektrum yanlılığı" **tek başına QUADAS-2 ile örtüşür** (Kwok/JMIR 2025 zaten uyguladı). Bu doküman, QUADAS-2'yi **AŞAN**, disfaji-AI'a **özgü**, dış-kaynaklanamaz bir klinik katkı tanımlar; rubriğe kodlama bloğu, makale tezine çapa ve **asgari-raporlama önerilerinin klinik yarısı** olarak girer.
-
----
-
-## 1. Neden QUADAS-2 yetmez (konstrüktün gerekçesi)
-QUADAS-2 jeneriktir: referans-standart alanını **ikili risk-yargısıyla** (düşük/yüksek/belirsiz) geçer ve "referans standart hedef durumu doğru sınıflar mı?" diye sorar. Disfaji-AI'ın **asıl** kırılganlıklarını sorgulamaz:
-- Yutma değerlendirmesinde **altın standart bile gürültülüdür** (VFSS/FEES skorlamasının rater-arası güvenilirliği bilinen biçimde ılımlı) — QUADAS-2 bunu nicelemez.
-- Ordinal skalaların (PAS 8-puan, DIGEST, FOIS) **ikiliye ezilmesi** = bilgi kaybı + hedef-kaymasını QUADAS-2 görmez.
-- "Sağlıklı gönüllü yutması" ile "klinik disfaji" arasındaki **spektrum kontaminasyonu** QUADAS-2 alan-1'de kabaca geçer.
-- **Vekil-sızıntısı** (modelin enstrümantal altın-standart yerine EAT-10/bedside vekilini tahmin etmesi) QUADAS-2 kapsamı dışıdır.
-
-**Tez uzantısı (makalenin klinik çapası):** *"Konteynerize yeniden-koşulabilirlik (Sefa ekseni) GEREKLİdir ama YETERLİ değildir. Klinik tekrarlanabilirlik ayrıca **etiket-provenansı** ve **spektrum temsiliyeti** ister — kusursuz tekrarlanan bir model zayıf/önyargılı etiketlere dayanıyorsa klinik olarak tekrarlanabilir değildir."*
+**Status:** the taxonomy design and the clinical judgements are the work of N.K.T. (clinical axis). Rows marked `[NKT]` in the accompanying coding table are clinical judgements; rows marked `inventory-only` await full-text coding. Final clinical sign-off is pending, and the article states this in the same terms.
+**Purpose:** reference-standard validity and spectrum bias, taken alone, are already covered by QUADAS-2 and were applied to this literature by Kwok and Wong (JMIR 2025). This document defines a clinical construct that goes **beyond** QUADAS-2 and is **specific to dysphagia AI**: it enters the audit as a coding block in the rubric, as the clinical anchor of the article's thesis, and as the clinical half of the minimum-reporting recommendations.
 
 ---
 
-## 2. Taksonomi — kodlama bloğu (rubriğe eklenecek klinik kolonlar)
-Her dahil edilen çalışma için kodlanır. Kategoriler + serbest not. QUADAS-2/STARD/TRIPOD+AI çapası ve **nerede aştığı** işaretli.
+## 1. Why QUADAS-2 is not sufficient (rationale for the construct)
 
-| # | Öğe | Kategoriler | Çapa & AŞMA |
+QUADAS-2 is generic. It passes over the reference-standard domain with a three-level risk judgement (low / high / unclear) and asks whether the reference standard correctly classifies the target condition. It does not interrogate the failure modes that actually matter in dysphagia AI:
+
+- In swallowing assessment **even the gold standard is noisy** — inter-rater reliability of VFSS and FEES scoring is known to be no better than moderate — and QUADAS-2 does not quantify this.
+- **Collapsing ordinal scales** (8-point PAS, DIGEST, FOIS) **into binary labels** loses information and shifts the target; QUADAS-2 does not see it.
+- **Spectrum contamination** between healthy-volunteer swallows and clinical dysphagia is treated only coarsely in QUADAS-2 domain 1.
+- **Proxy leakage** — a model predicting an EAT-10 or bedside proxy rather than the instrumental gold standard — falls outside QUADAS-2 entirely.
+
+**Thesis extension (the clinical anchor of the article):** *containerized re-executability is necessary but not sufficient. Clinical reproducibility additionally requires **label provenance** and **spectrum representativeness**: a model that re-runs perfectly is not clinically reproducible if it rests on weak or unreported labels.*
+
+---
+
+## 2. The taxonomy — coding block (clinical columns added to the rubric)
+
+Coded for every included study, as categories plus a free-text note. The anchor guideline is given, together with the point at which the item goes beyond it.
+
+| # | Item | Categories | Anchor and extension |
 |---|---|---|---|
-| **RS1** | **Referans-standart tipi** | instrumental-gold (VFSS/MBSS·FEES) / klinik-muayene (bedside, 3-oz) / tarama-vekili (EAT-10, GUSS, Yale) / hasta-bildirimli / diğer-AI-türevli | STARD-uyumlu; disfaji-özgü katalog |
-| **RS2** | **Hedef geçerliliği & vekil-sızıntısı** | model enstrümantal altın-standardı mı yoksa **vekili** mi tahmin ediyor? etiket ile hedef aynı mı? | **QUADAS-2 ötesi** — vekil-sızıntısı jenerik araçta yok |
-| **RS3** | **Etiket skalası & granülarite** | PAS(8) / DIGEST / FOIS / MBSImP / Yale Pharyngeal Residue / ikili-aspirasyon / özel; **ikiliye indirgeme var mı** (bilgi kaybı) | **QUADAS-2 ötesi** — ordinal granülarite kaybı |
-| **RS4** | **Etiket güvenilirliği** (Aşil topuğu) | rater κ/ICC raporlandı mı · rater sayısı · körleme · konsensüs vs tek-rater vs sağlanan-anotasyon | **QUADAS-2 ötesi** — yutma-skorlamasının düşük güvenilirliği tam burada |
-| **RS5** | **Spektrum matrisi** | etiyoloji (inme/Parkinson/baş-boyun-kanseri/presbifaji/karışık) × şiddet dağılımı × **sağlıklı-kontrol kontaminasyonu** (sağlıklı gönüllü oranı) × örnekleme (ardışık vs uygun) | **QUADAS-2 ötesi** — çok-boyutlu matris; klinik-anlam |
-| **RS6** | **Klinik uygulanabilirlik** | dağıtım ortamı (yatan/ayaktan/tele) · kullanıcı (SLP/hekim/otomatik) · karar-noktası; "tekrarlanabilirliğin klinik anlamı" yorumu | TRIPOD+AI klinik-yarar çerçevesi |
+| **RS1** | **Reference-standard type** | instrumental gold (VFSS/MBSS, FEES) / clinical examination (bedside, 3-oz) / screening proxy (EAT-10, GUSS, Yale) / patient-reported / derived from another AI | STARD-compatible; a dysphagia-specific catalogue |
+| **RS2** | **Target validity and proxy leakage** | does the model predict the instrumental gold standard or a **proxy** for it? is the label the same construct as the target? | **beyond QUADAS-2** — proxy leakage has no place in the generic tool |
+| **RS3** | **Label scale and granularity** | PAS(8) / DIGEST / FOIS / MBSImP / Yale Pharyngeal Residue / binary aspiration / bespoke; **is it reduced to binary** (information loss) | **beyond QUADAS-2** — loss of ordinal granularity |
+| **RS4** | **Label reliability** (the weak point) | is rater κ or ICC reported · number of raters · blinding · consensus vs single rater vs supplied annotation | **beyond QUADAS-2** — this is exactly where the low reliability of swallowing scoring sits |
+| **RS5** | **Spectrum matrix** | aetiology (stroke / Parkinson / head-and-neck cancer / presbyphagia / mixed) × severity distribution × **healthy-control contamination** (proportion of healthy volunteers) × sampling (consecutive vs convenience) | **beyond QUADAS-2** — a multi-dimensional matrix with clinical meaning |
+| **RS6** | **Clinical applicability** | deployment setting (inpatient / outpatient / telehealth) · user (SLP / physician / automated) · decision point; interpretation of what reproducibility means clinically | TRIPOD+AI clinical-utility framing |
 
 ---
 
-## 3. Çıktıya nasıl bağlanır (üç yerde iş görür)
-1. **Rubrik (Layer A):** RS1–RS6, `seffaflik-rubrigi.csv`'ye klinik blok olarak eklenir → tüm ~60 çalışmada kodlanır (Nazife + gerçek bağımsız 3. tarayıcı; κ).
-2. **Analiz/sentez:** kaç çalışma vekil-sızıntısı yapıyor · kaçında rater κ raporlu · sağlıklı-kontrol kontaminasyon oranı · etiyoloji dağılımı → **klinik tekrarlanabilirlik haritası** (Sefa'nın hesaplamalı haritasının yanında ikinci eksen).
-3. **Asgari-raporlama önerileri (klinik yarısı):** her çalışma şunu raporlamalı — referans-standart tipi, kullanılan ordinal skala + granülarite, rater κ/ICC + rater sayısı + körleme, etiyoloji karışımı, sağlıklı-kontrol oranı, ardışık-vs-uygun örnekleme. **Bu klinik yarıyı Nazife üretir** (teknik yarıyı Sefa).
+## 3. How the construct is used (three places)
+
+1. **Rubric (Layer A):** RS1–RS6 are added to `transparency-rubric.csv` as a clinical block and coded across the census.
+2. **Analysis and synthesis:** how many studies exhibit proxy leakage · how many report rater κ · the rate of healthy-control contamination · the distribution of aetiologies → a **clinical reproducibility map** that sits alongside the computational one as a second axis.
+3. **Minimum-reporting recommendations (clinical half):** every study should report the reference-standard type, the ordinal scale used and its granularity, rater κ or ICC with the number of raters and the blinding procedure, the aetiological mix, the proportion of healthy controls, and whether sampling was consecutive or by convenience.
 
 ---
 
-## 4. Eş-birincilik testi (dürüst)
-- **Bu taksonominin TASARIMI** ne metodoloğun (SR tekniği) ne Sefa'nın (yazılım) yapabileceği iştir → yapılırsa **eş-birincilik otantik.**
-- Yürütmede sığ kalırsa (sadece "değerlendirme" tekrarı olursa) → Nazife **güçlü katkıda-bulunan**; kariyer zararı yok çünkü birinci-yazarlık ihtiyacı başka çalışmayla zaten karşılanıyor. (Bu bir izole-C notu değil; genel ilke.)
-- **Ölçüt:** RS2/RS3/RS4/RS5 gerçekten kodlanıp analiz edilip **ayrı bir bulgu** üretiyorsa (ör. "%X çalışma rater güvenilirliği raporlamıyor; %Y sağlıklı-kontrol kontaminasyonu var") → eş-birincilik savunulur.
+## 4. Open methodological questions
 
-## 5. Nazife'ye sorular (onaydan önce netleşmeli)
-1. RS3 skala listesi tam mı? (Türkiye/klinik pratikte ek ölçek?)
-2. RS4 için eşik: "yeterli güvenilirlik" tanımı (κ≥0.6? ICC≥0.75?) — literatür-dayanaklı.
-3. RS5 etiyoloji kategorileri disfaji-AI literatürüne uygun mu?
-4. Bu taksonomiyi **eş-birinci olarak sahiplenmeye** hazır mı, yoksa güçlü-katkıda-bulunan mı tercih?
+These are recorded here rather than silently resolved, because they bear on how RS4 and RS5 are interpreted.
+
+1. Is the RS3 scale list complete for the instruments in current clinical use?
+2. What threshold defines adequate label reliability for RS4 (κ ≥ 0.6? ICC ≥ 0.75?), and on what published basis?
+3. Are the RS5 aetiology categories the right partition for the dysphagia-AI literature?
 
 ---
 
-## 6. UYGULAMA — census çalışmalarına ilk-geçiş kodlama (16 Tem 2026)
-**Durum:** `analiz/rs-taksonomi-kodlama.csv` oluşturuldu (18 çalışma × RS1-6). **Dürüst iş bölümü:**
-- **NESNEL sütunlar (ben — metinden doğrulanabilir, Nazife teyit eder):** RS1 referans-standart tipi · RS3 ölçek + binarizasyon · RS4 rater-güvenilirliği **raporlanmış mı** (κ/ICC evet/hayır).
-- **KLİNİK-YORUM sütunları (Nazife — otantik klinik yargı, `[NAZIFE]` işaretli):** RS2 vekil-sızıntısı yargısı · RS5 spektrum-riski · RS4 "yeterli κ" eşiği · borderline kapsam (F/R/K).
-- Kanıt-düzeyi her satırda: `abstract+fulltext` (6 çalışma, sağlam) vs `inventory-only` (paper eşleşmedi → Nazife tam-metinden kodlamalı).
+## 5. Application — first-pass coding of the census studies (16 July 2026)
 
-### NESNEL ön-bulgular (2. manşet çekirdeği — hepsi denetlenebilir)
-1. **Rater-güvenilirliği (κ/ICC) neredeyse HİÇ raporlanmıyor: ~0/18** erişilebilir metinde. Çarpıcı olan: sorunu **kabul eden** çalışmalar bile kendi etiket güvenilirliğini vermiyor — *masa/Saab*: "even VFSS by SLP has ... **poor inter-rater reliability**"; *MITI*: manuel uzman anotasyonu "**prone to errors**". Yani sorun biliniyor ama nicelenmiyor.
-2. **Referans-standart HETEROJEN + standartsız:** enstrümantal-altın (VFSS: A,E,G,M,O · manometri: N · CT/MRI-seg: D,F) / klinik-bedside (B) / **vekil-sonuç** (Q tüp-besleme+pnömoni · R CTCAE-toksisite · C postop-sonuç) / fiziksel (H viskozite) / belirsiz-düşük-provenans (I,J,K,L,P). Ortak bir referans yok.
-3. **Vekil-sızıntısı (RS2) yaygın [Nazife teyit]:** birkaç model enstrümantal altın-standardı DEĞİL bir **vekili** tahmin ediyor — *B* (ses→bedside-tarama), *Q* (ses→klinik-sonuç), *O* (klinik+ses→VFSS-teyitli disfaji), *R* (doz→toksisite). Model "disfajiyi" değil, disfajinin bir gölgesini öğreniyor.
-4. **Kod-açık alt-küme düşük-etiket-provenansına eğik:** I/J/K/L gibi çalışmaların yayın-bağı/referans-standardı belirsiz → "kod paylaşan" repolar aynı zamanda etiket-provenansı en zayıf olanlar olabilir.
+`rs-taxonomy-coding.csv` codes 18 studies against RS1–RS6. The division of labour is recorded explicitly:
 
-### DIŞ DOĞRULAMA (bağımsız kanıt)
-Kwok/Wong scoping (JMIR 2025, PMC12089864) tam-metni: disfaji-AI çalışmalarının **18/24'ü (%75) örnekleme yaklaşımını tanımlamadı veya vaka-kontrol etiketlerinin körlenip körlenmediğini belirtmedi.** → Bizim "etiket-provenansı sistematik olarak eksik-raporlu" bulgumuzu bağımsızca doğrular.
+- **Objective columns** (verifiable from the text): RS1 reference-standard type · RS3 scale and binarization · RS4 whether rater reliability **is reported** (κ/ICC yes or no).
+- **Clinical-interpretation columns** (marked `[NKT]`): the RS2 proxy-leakage judgement · RS5 spectrum risk · the RS4 threshold for adequate reliability · borderline scope decisions.
+- The evidence level is given for every row: `abstract+fulltext` (6 studies, firm) against `inventory-only` (no paper match, so the row requires full-text coding).
 
-### 🎯 BİRLEŞİK TEZ (iki eksen, tek argüman — otantik iki-yazar gerekçesi)
-> Disfaji-AI **ne hesaplamalı ne de klinik olarak tekrarlanabilir** — çünkü **iki provenans da sistematik olarak yok:**
-> - **Hesaplamalı provenans (Sefa ekseni):** ağırlık/ortam/lisans eksik → 0/18 kutu-dışı re-executable.
-> - **Klinik/etiket provenansı (Nazife ekseni):** rater-güvenilirliği/spektrum/referans-standart eksik-raporlu → 0/18 etiket κ raporluyor; heterojen vekil-etiketler.
+### Objective preliminary findings (all auditable)
+
+1. **Rater reliability (κ / ICC) is almost never reported: approximately 0/18** in the accessible text. What makes this striking is that even studies that **acknowledge** the problem do not quantify their own label reliability — *masa/Saab* notes that "even VFSS by SLP has … poor inter-rater reliability"; *MITI* describes manual expert annotation as "prone to errors". The problem is known but not measured.
+2. **The reference standard is heterogeneous and unstandardized:** instrumental gold (VFSS: A, E, G, M, O · manometry: N · CT/MRI segmentation: D, F) / clinical bedside (B) / **proxy outcome** (Q tube feeding and pneumonia · R CTCAE toxicity · C postoperative outcome) / physical (H viscosity) / unclear and low-provenance (I, J, K, L, P). There is no common reference.
+3. **Proxy leakage (RS2) is common** `[NKT]`: several models predict not the instrumental gold standard but a **proxy** for it — *B* (voice → bedside screen), *Q* (voice → clinical outcome), *O* (clinical and voice → VFSS-confirmed dysphagia), *R* (dose → toxicity). The model learns a shadow of dysphagia rather than dysphagia.
+4. **The code-available subset skews toward low label provenance:** for studies such as I, J, K and L the publication link and the reference standard are unclear, so the repositories that share code may also be those with the weakest label provenance.
+
+### External validation (independent evidence)
+
+The full text of the Kwok and Wong scoping review (JMIR 2025, PMC12089864) reports that **18 of 24 dysphagia-AI studies (75%) either did not describe the sampling approach or did not state whether case-control labels were blinded** — independent confirmation of the finding that label provenance is systematically under-reported.
+
+### Combined thesis (two axes, one argument)
+
+> Dysphagia AI is **reproducible neither computationally nor clinically**, because **both kinds of provenance are systematically missing**:
+> - **Computational provenance:** weights, environment and license are absent → 0/18 re-executable out of the box.
+> - **Clinical and label provenance:** rater reliability, spectrum and reference standard are under-reported → 0/18 report label κ, and the labels themselves are heterogeneous proxies.
 >
-> Kusursuz tekrarlanan bir model bile zayıf/raporlanmamış etiketlere dayanıyorsa **klinik olarak tekrarlanabilir değildir.** Bu birleşik çerçeve, her iki eksenin **gerçekten gerekli** olduğunu gösterir → eş-birincilik otantik; katkı "bir denetim daha"yı aşar.
+> Even a model that re-runs perfectly is **not clinically reproducible** if it rests on weak or unreported labels. Each axis is necessary, so the contribution is more than one further audit.
 
-### Kalan (Nazife — insan)
-- `inventory-only` satırları (D,E,F,G,H,I,J,K,L,M,C) tam-metinden kodla (özellikle RS4 κ, RS5 spektrum).
-- `[NAZIFE]` sütunlarındaki klinik yargıları onayla/düzelt; RS4 "yeterli güvenilirlik" eşiğini literatürle sabitle.
-- §5 sorularını yanıtla → nesnel ön-bulgular + klinik yorum = §3.4 nihai.
+### Outstanding (pending clinical sign-off)
+
+- Code the `inventory-only` rows (C, D, E, F, G, H, I, J, K, L, M) from full text, in particular RS4 κ and RS5 spectrum.
+- Confirm or correct the clinical judgements in the `[NKT]` columns, and fix the RS4 threshold for adequate reliability against published sources.
+- Answer the open questions in §4, so that the objective preliminary findings and the clinical interpretation can be finalized together.

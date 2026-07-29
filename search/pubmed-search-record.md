@@ -1,11 +1,19 @@
-# Arama Kaydı — PubMed/MEDLINE (Makale C)
+> **NOTE ON SCOPE.** Sections 1–4 of this file are the live search record referenced by the
+> manuscript: the queries, dates and counts are what was actually run. The closing "next
+> steps" section belongs to the study's earlier systematic-review-style design and was **not
+> executed as written** — no institutional database search, no dual independent human
+> screening and no PRISMA-conformant flow was carried out, and the manuscript neither claims
+> them nor reports a PRISMA-ScR-conformant search. That section is retained as design history
+> so the change of plan is auditable rather than invisible.
 
-**Veritabanı:** PubMed/MEDLINE (NCBI E-utilities `esearch`)
-**Arama tarihi:** 2026-07-13
-**Tarih filtresi:** 2010–2026 (`2010:2026[pdat]`)
-**Toplam sonuç:** **865 kayıt** → PMID listesi: `pubmed-pmids.txt`
+# Search record — PubMed/MEDLINE
 
-## Kullanılan sorgu (birebir)
+**Database:** PubMed/MEDLINE (NCBI E-utilities `esearch`)
+**Search date:** 2026-07-13
+**Date filter:** 2010–2026 (`2010:2026[pdat]`)
+**Total results:** **865 records** → the PMID list is the `pmid` column of `corpus-metadata/pubmed-metadata.csv`
+
+## 1. Query as run (verbatim)
 ```
 ("Deglutition Disorders"[Mesh] OR dysphagia[tiab] OR deglutition[tiab] OR swallow*[tiab])
 AND
@@ -15,48 +23,43 @@ AND
  OR "computer-aided"[tiab] OR "computer aided"[tiab])
 AND 2010:2026[pdat]
 ```
-PubMed'in çeviri kaydı (translation) `esearchresult.querytranslation`'da; MeSH genişletmesi otomatik uygulandı.
+PubMed's own translation is returned in `esearchresult.querytranslation`; MeSH expansion was applied automatically.
 
-## Yıllara göre dağılım (indikatif büyüme trendi)
-| Dönem | Kayıt (yıl) |
+## 2. Distribution by year (indicative growth trend)
+| Period | Records per year |
 |---|---|
-| 2010–2019 | 12–37/yıl (durağan, ~20-30) |
+| 2010–2019 | 12–37 per year (flat, around 20–30) |
 | 2020 | 51 · 2021: 64 · 2022: 92 · 2023: 95 |
-| 2024 | 128 · 2025: 192 · 2026 (kısmi, ~7 ay): 146 |
+| 2024 | 128 · 2025: 192 · 2026 (partial, about 7 months): 146 |
 
-**Yorum:** Disfaji-AI yayınları 2020 sonrası ~8-10× arttı → makale için güçlü "neden şimdi" gerekçesi (tekrarlanabilirlik denetimi tam da bu patlama anında kritik).
-*(Not: per-yıl `[pdat]` sayımları toplamı ~1008; aralık sorgusu 865 → fark PubMed tarih-alanı eşleşme nüansından. **Otoriter figür = 865** aralık-toplamı; yıl sayıları yalnızca trend içindir.)*
+**Comment:** dysphagia-AI publications grew roughly eight- to tenfold after 2020, which is the "why now" argument for the study: a reproducibility audit matters most during exactly such an expansion.
+*(Note: the per-year `[pdat]` counts sum to about 1008 while the range query returns 865. The difference comes from how PubMed matches date fields. **The authoritative figure is 865**, the range total; the per-year counts serve only to show the trend.)*
 
-## Durum ve kısıtlar
-- ⚠️ **Yalnızca PubMed.** Protokoldeki diğer kaynaklar (**Scopus/Embase, Web of Science, IEEE Xplore, ACM DL**) kurumsal erişim/API-anahtarı ister → **Sefa/Nazife'nin kurumsal erişimiyle** aynı sorgu mantığı uyarlanarak koşulacak (kütüphaneci/PRESS gözden geçirmesiyle).
-- Bu 865, **dedup öncesi ham havuzdur.** Radyoterapi-toksisite tahmini, baş-boyun kanseri tedavi-planlama, derleme/editöryal vb. **tarama aşamasında** hariç tutulunca çekirdek **tanı+değerlendirme** evreni ~60'a inecek (scoping tahminiyle tutarlı; 633 bibliyometri WoS 2000-2025 idi).
-- Geriye-dönük tarama (backward citation): Kwok e65551 (24) + CODAS scoping (61) + 633-bibliyometri referansları eklenecek.
+## 3. Corpus composition (informs screening) — `pubmed-metadata.csv`
+The PMID, year, journal, publication type and title of all 865 records are in `pubmed-metadata.csv`, with empty `include_screen1` and `exclude_reason` columns so that the file is ready for screening.
+- **Most frequent venues:** Sci Rep (28) · Dysphagia (22) · IEEE EMBC (18) · Neurogastroenterol Motil (17) · Sensors (16) · Surg Endosc (15) · Laryngoscope (14) · Diagnostics (13) · Comput Biol Med (10).
+- **Publication types:** 853 journal articles; about **110 reviews plus 23 systematic reviews, roughly 133 reviews to be excluded**; 32 case reports; 14 validation studies; 20 multicentre studies.
+- **Screening signal:** removing the roughly 133 reviews and the head-and-neck cancer surgery and radiotherapy cluster (Surg Endosc, Head Neck, Radiother Oncol) brings the core diagnosis-and-assessment set close to 60, consistent with the scoping estimate.
 
-## Havuz kompozisyonu (elemeye ışık tutar) — `pubmed-metadata.csv`
-865 kaydın PMID/yıl/dergi/yayın-tipi/başlık'ı `pubmed-metadata.csv`'de; boş `include_screen1` + `exclude_reason` kolonlarıyla → Rayyan/Zotero/Excel'de **doğrudan elemeye hazır**.
-- **En sık dergiler:** Sci Rep (28) · Dysphagia (22) · IEEE EMBC (18) · Neurogastroenterol Motil (17) · Sensors (16) · Surg Endosc (15) · Laryngoscope (14) · Diagnostics (13) · Comput Biol Med (10).
-- **Yayın tipi:** 853 Journal Article; **~110 Review + 23 Systematic Review ≈ 133 derleme → HARİÇ**; 32 Case Reports; 14 Validation Study; 20 Multicenter.
-- **Eleme sinyali:** ~133 derleme + baş-boyun kanseri cerrahi/radyoterapi kümesi (Surg Endosc, Head Neck, Radiother Oncol) çıkınca çekirdek **tanı+değerlendirme ~60**'a yaklaşır (scoping tahminiyle tutarlı).
-
-## Çok-kaynaklı arama (açık API, 13 Tem — "çok-veritabanı" engelini adresler)
-| Kaynak | Sonuç | Not |
+## 4. Multi-source search (open APIs, 13 July)
+| Source | Results | Note |
 |---|---|---|
-| PubMed/MEDLINE (tiab) | **865** | çekirdek |
-| Semantic Scholar (bulk boolean) | **391** | CS/mühendislik venue kapsamı (IEEE/ACM/arXiv) — PubMed'in kaçırdıkları |
-| Europe PMC (TITLE/ABSTRACT-kısıtlı) | **513** | PubMed + preprint. **Ders:** alan-kısıtsız sorgu tam-metinde **10.686 gürültü** verdi → title/abstract'a kısıtlandı (PRESS ile kütüphaneci finalize eder) |
-| OpenAlex (title/abstract union) | **1890** | geniş breadth (Scopus/WoS-benzeri); "swallowing" üzerinden over-retrieve → taramada daralır |
+| PubMed/MEDLINE (tiab) | **865** | the core |
+| Semantic Scholar (bulk boolean) | **391** | coverage of computer-science and engineering venues (IEEE, ACM, arXiv) that PubMed misses |
+| Europe PMC (restricted to TITLE/ABSTRACT) | **513** | PubMed plus preprints. **Lesson:** an unrestricted query matched full text and returned 10,686 noisy records, so the search was restricted to title and abstract |
+| OpenAlex (title and abstract union) | **1890** | broad coverage comparable to Scopus or Web of Science; over-retrieves on "swallowing" and narrows at screening |
 
-Kayıtlar `semanticscholar-records.csv`, `europepmc-records.csv`, `openalex-records.csv`'de. Birleştirme+dedup İş #2'de. **Kurumsal Scopus/WoS/IEEE** formal PRISMA için insan tarafında eklenir; ama açık kaynaklar (özellikle S2 + OpenAlex) CS-venue kapsamını büyük ölçüde sağlar → Q1 "çok-veritabanı" beklentisi büyük ölçüde karşılanır.
+The records are in `semanticscholar-records.csv`, `europepmc-records.csv` and `openalex-records.csv`. Institutional Scopus, Web of Science and IEEE searches would be added by hand for a formal review; the open sources, in particular Semantic Scholar and OpenAlex, already supply much of the computer-science venue coverage.
 
-## Birleşik korpus (dedup, İş #2) — `combined-corpus.csv`
-- 4 kaynak → ham 3659 satır → **2171 benzersiz** (normalize-başlık dedup).
-- **Çok-kaynağın GERÇEK katkısı:** PubMed'de olmayıp S2/EuropePMC'de olan **177 yüksek-güvenli kayıt** — venue'ları tam da PubMed/MEDLINE'ın kaçırdıkları: **medRxiv (8) · Research Square (14) · bioRxiv (2)** [preprint] + **IEEE Sensors Journal (5) · IEEE Access (3) · ACM IMWUT (3) · Biomedical Signal Processing & Control (3)** [CS/mühendislik]. → "çok-veritabanı" engeli açık API'lerle **somut karşılandı.**
-- **446 kayıt ≥3 kaynakta** (yüksek-güven ilgili çekirdek). OpenAlex-only **1131** = geniş-eşleşme gürültüsü (taramada elenir).
-- **Auto-flag:** 195 muhtemel **derleme** (HARİÇ) · 241 **kanser/RT** (klinik karar — post-RT disfaji tahmini kapsamda olabilir). `combined-corpus.csv`: `sources`, `n_sources`, `likely_review`, `likely_cancer_rt` + boş `include_screen1`/`exclude_reason` → **elemeye hazır.**
-- **Kaba aday havuzu:** 2171 − 195 derleme − ~1131 OpenAlex-gürültü ≈ **~850 gerçek aday** → başlık/özet + tam-metin tarama sonrası çekirdek **tanı+değerlendirme ~60** (scoping tahminiyle tutarlı).
+### Combined corpus (after deduplication) — `combined-corpus.csv`
+- Four sources → 3659 raw rows → **2171 unique** (deduplicated on normalized title).
+- **What the extra sources genuinely add:** **177 high-confidence records** that are absent from PubMed but present in Semantic Scholar or Europe PMC, in exactly the venues PubMed and MEDLINE miss — **medRxiv (8) · Research Square (14) · bioRxiv (2)** among preprints, plus **IEEE Sensors Journal (5) · IEEE Access (3) · ACM IMWUT (3) · Biomedical Signal Processing and Control (3)** among computer-science and engineering venues.
+- **446 records appear in at least 3 sources**, forming a high-confidence relevant core. The **1131** OpenAlex-only records are broad-match noise and drop out at screening.
+- **Automatic flags:** 195 probable **reviews** (to be excluded) · 241 **cancer or radiotherapy** records (a clinical decision, since prediction of post-radiotherapy dysphagia can be in scope). `combined-corpus.csv` carries `sources`, `n_sources`, `likely_review` and `likely_cancer_rt` alongside the empty `include_screen1` and `exclude_reason` columns.
+- **Rough candidate pool:** 2171 minus 195 reviews minus about 1131 OpenAlex noise ≈ **850 real candidates**, narrowing after title, abstract and full-text screening to a core diagnosis-and-assessment set of about 60, consistent with the scoping estimate.
 
-## Sonraki adımlar
-1. Diğer veritabanlarını koş (kurumsal) → tüm kayıtları birleştir.
-2. Rayyan/Covidence'a aktar, **dedup**.
-3. **Çift-bağımsız** başlık/özet → tam-metin eleme + **Cohen κ** (Nazife klinik, Sefa açık-bilim).
-4. PRISMA akış diyagramı sayıları buradan doldurulur.
+## 5. Next steps (pre-pivot design, not executed)
+1. Run the remaining databases with institutional access and merge all records.
+2. Import into Rayyan or Covidence and deduplicate.
+3. **Dual independent** title-and-abstract and then full-text screening with **Cohen κ**.
+4. Fill the flow-diagram counts from that process.

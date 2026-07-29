@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-04_prisma_counts.py — PRISMA-ScR akış sayılarını TEKRARLANABİLİR üret.
+04_prisma_counts.py — produce the flow-diagram counts REPRODUCIBLY.
 
-Identification (kaynak-bazlı) + dedup + triyaj bucket dağılımı (makine ön-sıralaması,
-ELEME DEĞİL) → taslak/prisma-akis-veriler.json + stdout. Screening/eligibility/included
-sayıları İNSAN taramasından sonra doldurulur (bilerek boş).
+Identification (per source) plus deduplication plus the triage bucket distribution (a
+machine pre-sort, NOT an exclusion step) → taslak/prisma-akis-veriler.json and stdout.
+The screening, eligibility and included counts are filled in after HUMAN screening and
+are deliberately left empty here.
 """
 import csv, json, os
 try:
@@ -30,7 +31,7 @@ def main():
     combined = nrows(AS+"combined-corpus.csv")
     dupes = raw_total - combined if combined else None
 
-    # triyaj bucket dağılımı
+    # triage bucket distribution
     buckets = {}
     wf = "analiz/tarama-calisma-sayfasi.csv"
     if os.path.exists(wf):
@@ -41,32 +42,32 @@ def main():
         "identification": {
             "sources_open_api": sources,
             "raw_total_open_api": raw_total,
-            "institutional_scopus_wos_ieee": "TBD (insan — PRESS sonrası)",
-            "backward_citation": "TBD (İş #3)",
+            "institutional_scopus_wos_ieee": "TBD (human, after PRESS)",
+            "backward_citation": "TBD",
         },
         "deduplication": {"raw": raw_total, "after_dedup": combined, "duplicates_removed": dupes},
         "triage_presort_NOT_exclusion": buckets,
         "screening": {"title_abstract_screened": combined,
-                      "note": "Triyaj = organizasyon aracı; ELEME insan çift-tarama + κ ile. Sayılar tarama sonrası."},
+                      "note": "Triage is an organizational device; exclusion is by human dual screening with kappa. Counts follow screening."},
         "eligibility": {"full_text_assessed": "TBD", "excluded_with_reasons": "TBD"},
-        "included": {"total": "TBD (~60 beklenen)", "layer_b_code_available": "TBD (~5-15)"},
+        "included": {"total": "TBD (about 60 expected)", "layer_b_code_available": "TBD (about 5-15)"},
     }
     with open("taslak/prisma-akis-veriler.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
     print("="*58)
-    print("PRISMA-ScR — TANIMLAMA & DEDUP (tekrarlanabilir)")
+    print("IDENTIFICATION AND DEDUPLICATION (reproducible)")
     print("="*58)
     for k, v in sources.items(): print(f"  {k:22s}: {v}")
-    print(f"  {'HAM TOPLAM (açık-API)':22s}: {raw_total}")
-    print(f"  {'dedup sonrası':22s}: {combined}   (çıkarılan {dupes})")
-    print(f"  {'kurumsal DB':22s}: TBD (insan)")
+    print(f"  {'RAW TOTAL (open API)':22s}: {raw_total}")
+    print(f"  {'after deduplication':22s}: {combined}   ({dupes} removed)")
+    print(f"  {'institutional DBs':22s}: TBD (human)")
     print("-"*58)
-    print("Triyaj ön-sıralama (ELEME DEĞİL):")
+    print("Triage pre-sort (NOT exclusion):")
     for b, n in sorted(buckets.items(), key=lambda x: -x[1]):
         print(f"  {b:30s}: {n}")
     print("="*58)
-    print("→ taslak/prisma-akis-veriler.json yazıldı. Screening/included = insan sonrası.")
+    print("-> taslak/prisma-akis-veriler.json written. Screening and included counts follow human screening.")
 
 if __name__ == "__main__":
     main()

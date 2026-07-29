@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """
-05_triage_validation.py — triyaj bayraklarını insan-gold'a karşı doğrula.
+05_triage_validation.py — validate the triage flags against a human gold standard.
 
-İKİ MOD:
-1) Örnek YOKsa → tarama-calisma-sayfasi.csv'den katmanlı rastgele ~200 kayıt çek
-   (hariç-bucket'lara TABAN — asıl risk yanlış-hariç) → analiz/triyaj-validasyon-ornek.csv
-   (boş `human_gold_include` kolonu; iki insan bağımsız doldurur).
-2) Örnek VARsa ve human_gold dolu → triyajın implied dahil/hariç kararının
-   sensitivite/spesifisite/PPV'si + karışıklık matrisi.
+TWO MODES:
+1) If no sample exists → draw a stratified random sample of about 200 records from the
+   screening worksheet, with a FLOOR on the exclude buckets (the real risk being a false
+   exclusion) → analiz/triyaj-validasyon-ornek.csv, which carries an empty
+   `human_gold_include` column for two humans to fill in independently.
+2) If the sample exists and human_gold is filled in → the sensitivity, specificity and PPV
+   of the include/exclude decision implied by triage, plus the confusion matrix.
 
-Sabit seed → tekrarlanabilir.
+The seed is fixed, so the sample is reproducible.
 """
 import csv, os, random
 random.seed(2026)
@@ -20,13 +21,13 @@ except Exception: pass
 WF = "analiz/tarama-calisma-sayfasi.csv"
 SAMPLE = "analiz/triyaj-validasyon-ornek.csv"
 TARGET = 200
-FLOOR_EXCL = 25   # her hariç-bucket'tan en az (yanlış-hariç avı)
+FLOOR_EXCL = 25   # minimum drawn from each exclude bucket (hunting for false excludes)
 FLOOR_OTHER = 15
 
 INCLUDE_BUCKETS = {"likely_include", "needs_review", "needs_review_no_abstract"}
 
 def implied_triage_include(bucket):
-    return bucket in INCLUDE_BUCKETS  # gri = insana → dahil-tarafı sayılır (recall lehine)
+    return bucket in INCLUDE_BUCKETS  # grey buckets go to a human, so they count as include-side (favouring recall)
 
 def build_sample():
     rows = list(csv.DictReader(open(WF, encoding="utf-8")))
@@ -48,16 +49,16 @@ def build_sample():
         for r in picked:
             r = dict(r); r["human_gold_include"] = ""; r["reviewer"] = ""; r["notes"] = ""
             w.writerow(r)
-    print(f"Örnek üretildi: {len(picked)} kayıt → {SAMPLE}")
+    print(f"Sample generated: {len(picked)} records -> {SAMPLE}")
     from collections import Counter
-    print("  bucket dağılımı:", dict(Counter(x["t_bucket"] for x in picked)))
-    print("  İKİ İNSAN `human_gold_include`'ı bağımsız doldurur (yes/no) → tekrar koş.")
+    print("  bucket distribution:", dict(Counter(x["t_bucket"] for x in picked)))
+    print("  TWO HUMANS fill in `human_gold_include` (yes/no) independently, then re-run.")
 
 def score():
     rows = [r for r in csv.DictReader(open(SAMPLE, encoding="utf-8"))
             if r.get("human_gold_include", "").strip().lower() in ("yes", "no")]
     if len(rows) < 20:
-        print(f"human_gold dolu {len(rows)} kayıt (<20) → henüz skorlanmıyor.")
+        print(f"{len(rows)} records have human_gold filled in (fewer than 20) -> not scored yet.")
         return
     tp = fp = tn = fn = 0
     for r in rows:
@@ -66,18 +67,18 @@ def score():
         if gold and pred: tp += 1
         elif not gold and pred: fp += 1
         elif not gold and not pred: tn += 1
-        else: fn += 1  # gold-include ama triyaj-hariç = YANLIŞ-HARİÇ (kritik)
+        else: fn += 1  # gold says include but triage excludes = FALSE EXCLUSION (the critical error)
     sens = tp/(tp+fn) if tp+fn else float("nan")
     spec = tn/(tn+fp) if tn+fp else float("nan")
     ppv = tp/(tp+fp) if tp+fp else float("nan")
     print("="*50)
-    print(f"TRİYAJ VALİDASYONU (N={len(rows)})")
+    print(f"TRIAGE VALIDATION (N={len(rows)})")
     print(f"  TP={tp} FP={fp} TN={tn} FN={fn}")
-    print(f"  Sensitivite (recall) = {sens:.3f}   ← 1.0'a yakın olmalı (uygun çalışma elenmedi)")
-    print(f"  Spesifisite          = {spec:.3f}")
+    print(f"  Sensitivity (recall) = {sens:.3f}   <- should be close to 1.0 (no eligible study dropped)")
+    print(f"  Specificity          = {spec:.3f}")
     print(f"  PPV                  = {ppv:.3f}")
     if fn > 0:
-        print(f"  ⚠️ {fn} YANLIŞ-HARİÇ → triyaj kuralları gevşetilmeli (recall öncelik).")
+        print(f"  WARNING: {fn} FALSE EXCLUSIONS -> the triage rules should be loosened (recall takes priority).")
     print("="*50)
 
 def main():

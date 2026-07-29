@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-10_code_link_mining.py — açık-erişim TAM-METİNLERDEN kod-deposu linklerini çıkar (census genişletme).
+10_code_link_mining.py - extract code-repository links from open-access FULL TEXTS (to widen the census).
 
-GitHub-arama makalelere-gömülü repoları kaçırır. Europe PMC OA tam-metinlerinde
-(dysphagia/swallow × AI × kod-hosting) arayıp fullTextXML'den github/gitlab/zenodo/osf
-URL'lerini regex ile çıkarır → mevcut envantere karşı dedup → yeni adaylar.
-Tekrarlanabilir; paywall YOK (yalnız OA tam-metin).
+A GitHub search misses repositories that are only cited inside articles. This script
+searches Europe PMC open-access full texts (dysphagia/swallowing x AI x code hosting),
+extracts github, gitlab, zenodo and osf URLs from the full text by regular expression,
+deduplicates them against the existing inventory, and reports the new candidates.
+Reproducible, and behind no paywall: open-access full text only.
 
-Çıktı: analiz/repo-envanteri-ek.csv (yeni adaylar) + stdout özet.
+Output: analiz/repo-envanteri-ek.csv (the new candidates) plus a stdout summary.
 """
 import csv, json, re, sys, time, urllib.request, urllib.parse
 try: sys.stdout.reconfigure(encoding="utf-8")
@@ -26,7 +27,7 @@ QUERY = ('(dysphagia OR deglutition OR swallowing) '
 RX = re.compile(r'(?:https?://)?(?:www\.)?(github\.com|gitlab\.com|zenodo\.org|osf\.io|codeocean\.com)/'
                 r'([A-Za-z0-9_.\-/]+)', re.I)
 BIOC = "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json"
-# yaygın altyapı/araç repoları (çalışmanın kendi reposu DEĞİL) — elenir
+# common infrastructure and tool repositories (NOT a study's own repository) - excluded
 TOOL_DENY = {"pytorch","tensorflow","keras-team","huggingface","scikit-learn","scikit","numpy",
     "pandas","matplotlib","opencv","ultralytics","open-mmlab","google-research","facebookresearch",
     "nnunet","mic-dkfz","pyradiomics","monai","project-monai","streamlit","pallets","python",
@@ -63,8 +64,8 @@ def main():
             existing.add(r["repo"].lower())
     except Exception: pass
 
-    print("=" * 68); print("KOD-LİNK MINING — Europe PMC OA tam-metin"); print("=" * 68)
-    # 1) arama (birkaç sayfa)
+    print("=" * 68); print("CODE-LINK MINING - Europe PMC open-access full text"); print("=" * 68)
+    # 1) search (a few pages)
     pmcids = []
     token = "*"; pages = 0
     while pages < 4:
@@ -74,11 +75,12 @@ def main():
             if res.get("pmcid") and res.get("inEPMC") == "Y":
                 pmcids.append((res["pmcid"], res.get("title", "")[:80]))
         nxt = d.get("nextCursorMark")
-        print(f"  arama sayfa {pages+1}: +{len(d['resultList'].get('result', []))} sonuç, {len(pmcids)} OA-PMC")
+        print(f"  search page {pages+1}: +{len(d['resultList'].get('result', []))} results, {len(pmcids)} open-access PMC")
         if not nxt or nxt == token: break
         token = nxt; pages += 1; time.sleep(1)
 
-    # 2) her OA tam-metinde repo linki ara (NCBI BioC PMC-OA — fullTextXML yeni makalelerde boş)
+    # 2) look for repository links in each open-access full text (via NCBI BioC PMC-OA;
+    #    fullTextXML is empty for the most recent articles)
     found = {}
     for i, (pmcid, title) in enumerate(pmcids):
         txt = get(f"{BIOC}/{pmcid}/unicode", as_json=False)
@@ -95,10 +97,10 @@ def main():
             else:
                 found.setdefault(r, {"repo": r, "type": "archive/data", "pmcid": pmcid, "paper": title})
         if (i + 1) % 20 == 0:
-            print(f"  ...{i+1}/{len(pmcids)} tam-metin tarandı, {len(found)} link")
+            print(f"  ...{i+1}/{len(pmcids)} full texts scanned, {len(found)} links")
         time.sleep(0.4)
 
-    # 3) yalnız code-repo (github/gitlab), envanterde olmayan, YENİ adaylar
+    # 3) keep only code repositories (github/gitlab) that are NEW, i.e. absent from the inventory
     new_code = {k: v for k, v in found.items()
                 if v["type"] == "code" and k.lower() not in existing}
     cols = ["repo", "type", "pmcid", "paper", "include", "notes"]
@@ -107,9 +109,9 @@ def main():
         for v in sorted(found.values(), key=lambda x: (x["type"], x["repo"])):
             v["include"] = ""; v["notes"] = ""; w.writerow(v)
     print("-" * 68)
-    print(f"Taranan OA tam-metin: {len(pmcids)} · toplam link: {len(found)} · YENİ code-repo: {len(new_code)}")
+    print(f"Open-access full texts scanned: {len(pmcids)} · total links: {len(found)} · NEW code repositories: {len(new_code)}")
     for r in sorted(new_code): print(f"  + {r}")
-    print(f"→ {OUT}  (tüm linkler; yeni code-repolar `include` ile vet edilecek)")
+    print(f"-> {OUT}  (all links; the new code repositories are vetted via `include`)")
 
 if __name__ == "__main__":
     main()

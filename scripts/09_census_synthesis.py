@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 """
-09_census_synthesis.py — re-execution census sentezi (GERÇEK Results).
+09_census_synthesis.py — synthesis of the re-execution census (the real Results).
 
-repo-intake-tablosu.csv (15) + 2 derinlemesine pilot → 17 repo (v1).
-v2 (2026-07-16): OA-tam-metin kod-madenciliği (script 10) → +5 in-scope repo → N=22.
-Yeni: ResearchgroupMITI/swallow-detection (Comms Med, CC0), enoch0307/streamlitapp_cn
-(iScience, ATTEMPTABLE — env+ağırlık .pkl), yonghunsong/throat (npj Digit Med),
-ruaeh/Dysphagia-ML (Sci Rep — BOŞ repo: linked-but-empty), PRI2MA/DL_NTCP_Dysphagia (borderline).
-Üretir: verdikt dağılımı · şeffaflık oranları + Wilson %95 GA · engel taksonomisi frekansı.
-Sabit, denetlenebilir kodlama (her repo'nun nesnel sinyali aşağıda; kaynak: intake + pilot verdiktleri).
+repo-intake table (15 repositories) plus the 2 in-depth pilots gave 17 repositories (v1).
+v2 (2026-07-16): code-link mining over open-access full texts (script 10) added 5 in-scope
+repositories, giving N=22: ResearchgroupMITI/swallow-detection (Comms Med, CC0),
+enoch0307/streamlitapp_cn (iScience, ATTEMPTABLE — environment file plus .pkl weights),
+yonghunsong/throat (npj Digit Med), ruaeh/Dysphagia-ML (Sci Rep — an EMPTY repository, the
+"linked but empty" case), and PRI2MA/DL_NTCP_Dysphagia (borderline).
+
+Produces: the verdict distribution, transparency rates with Wilson 95% intervals, and the
+frequency of each barrier category. The coding is fixed and auditable: the objective signal
+for every repository is listed below, sourced from intake and the pilot verdicts.
 """
 import csv, math, os, sys
 try: sys.stdout.reconfigure(encoding="utf-8")
@@ -22,43 +25,53 @@ def wilson(k, n):
     h = (Z*math.sqrt(p*(1-p)/n + Z*Z/(4*n*n)))/d
     return p, max(0, c-h), min(1, c+h)
 
-# 22 repo × nesnel sinyaller. alanlar: license, weights_in_repo, weights_anywhere(dış dahil),
-#   env_file, sample_data_usable, attemptable, verdict, STUDY_ID (kümelenme/dedup için).
-# STUDY_ID: aynı ekip/çalışmanın repo-varyantları aynı id → study-düzeyi payda (bağımsızlık).
-#   scut-jol×2, tsukagoshi×3, Yash+Tanishq×2 kümeleniyor → 22 repo = 18 ayrık çalışma.
+# 22 repositories x objective signals. Fields: license, weights_in_repo,
+#   weights_anywhere (including external hosting), env_file, sample_data_usable,
+#   attemptable, verdict, STUDY_ID (used for clustering and deduplication).
+# STUDY_ID: repository variants from the same team or study share an id, so that the
+#   study-level denominator respects independence.
+#   scut-jol x2, tsukagoshi x3, Yash+Tanishq x2 cluster, so 22 repositories = 18 distinct studies.
 REPOS = [
  # repo, lic, w_repo, w_any, env, data, attempt, verdict, study_id
- ("VFSS_analysis(pilot1)", 0,0,1,1,1,1,"partial",         "A"),  # ağırlık Zenodo; 5 düzeltme→kısmi
- ("masa(pilot2)",          1,0,0,1,0,0,"not_attemptable", "B"),   # taşınamaz wheel; ağırlık/veri yok
+ ("VFSS_analysis(pilot1)", 0,0,1,1,1,1,"partial",         "A"),  # weights on Zenodo; 5 repairs -> partial
+ ("masa(pilot2)",          1,0,0,1,0,0,"not_attemptable", "B"),   # non-portable wheel; no weights or data
  ("aht4005-risk-calc",     0,0,0,1,0,0,"not_attemptable", "C"),
- ("MinghaoSam-MICCAI24",   1,0,0,0,0,0,"not_attemptable", "D"),   # MIT ama ağırlık yok
+ ("MinghaoSam-MICCAI24",   1,0,0,0,0,0,"not_attemptable", "D"),   # MIT licensed but no weights
  ("scut-jol/CFSCNet",      0,0,0,0,0,0,"not_attemptable", "E"),
- ("scut-jol/swallow_seg",  0,0,0,0,0,0,"not_attemptable", "E"),   # ↑ aynı çalışma (CFSCNet grubu)
+ ("scut-jol/swallow_seg",  0,0,0,0,0,0,"not_attemptable", "E"),   # same study as above (CFSCNet group)
  ("kwahid/ABAS",           0,0,0,0,0,0,"not_attemptable", "F"),
  ("tsukagoshi/liquid",     0,0,0,1,0,0,"not_attemptable", "G"),
- ("tsukagoshi/meanteacher",0,0,0,0,0,0,"not_attemptable", "G"),   # ↑ aynı ekip
- ("tsukagoshi/ssl_gru",    0,0,0,1,0,0,"not_attemptable", "G"),   # ↑ aynı ekip
+ ("tsukagoshi/meanteacher",0,0,0,0,0,0,"not_attemptable", "G"),   # same team as above
+ ("tsukagoshi/ssl_gru",    0,0,0,1,0,0,"not_attemptable", "G"),   # same team as above
  ("zhengfj1994-viscosity", 0,0,0,0,0,0,"not_attemptable", "H"),
  ("arivv22-sound",         0,0,0,0,0,0,"not_attemptable", "I"),
  ("Kai-Washino",           0,0,0,0,0,0,"not_attemptable", "J"),
- ("YashC1308-sEMG",        0,0,0,0,1,0,"not_attemptable", "K"),   # data/ var ama ağırlık yok
- ("TanishqJoshi-sEMG",     0,0,0,0,1,0,"not_attemptable", "K"),   # ↑ aynı sEMG çalışması
+ ("YashC1308-sEMG",        0,0,0,0,1,0,"not_attemptable", "K"),   # has data/ but no weights
+ ("TanishqJoshi-sEMG",     0,0,0,0,1,0,"not_attemptable", "K"),   # same sEMG study as above
  ("20206666-chew-swallow", 0,0,0,0,0,0,"not_attemptable", "L"),
- ("Video-SwinUNet",        0,0,0,1,1,0,"not_attemptable", "M"),   # Drive link (teyit edilmedi)
- # --- v2: OA-tam-metin kod-madenciliği (script 10) ile eklenen 5 in-scope repo ---
- ("swallow-detection(MITI)",1,0,0,0,1,0,"not_attemptable","N"),   # Comms Med; CC0 + datasets/ ama ağırlık YOK
- ("enoch0307-screening",    0,1,1,1,0,1,"partial",        "O"),   # iScience; FİİLİ RE-RUN: box-out çökme (sklearn drift)→1 pin düzeltmesiyle→kısmi
- ("yonghunsong-throat",     0,0,0,0,0,0,"not_attemptable","P"),   # npj Digit Med; ağırlık/env/lisans YOK
- ("ruaeh-DysphagiaML(bos)", 0,0,0,0,0,0,"not_attemptable","Q"),   # Sci Rep; repo BOŞ = linked-but-empty
- ("PRI2MA-DL_NTCP(border)", 0,0,0,0,0,0,"not_attemptable","R"),   # Radiother Oncol; RT-NTCP prognostik borderline
+ ("Video-SwinUNet",        0,0,0,1,1,0,"not_attemptable", "M"),   # Drive link (not verified)
+ # --- v2: the 5 in-scope repositories added by code-link mining (script 10) ---
+ ("swallow-detection(MITI)",1,0,0,0,1,0,"not_attemptable","N"),   # Comms Med; CC0 and datasets/ but NO weights
+ ("enoch0307-screening",    0,1,1,1,0,1,"partial",        "O"),   # iScience; ACTUAL RE-RUN: crashes out of the box (sklearn drift) -> one pin -> partial
+ ("yonghunsong-throat",     0,0,0,0,0,0,"not_attemptable","P"),   # npj Digit Med; no weights, environment or license
+ ("ruaeh-DysphagiaML(empty)",0,0,0,0,0,0,"not_attemptable","Q"),  # Sci Rep; repository EMPTY = linked but empty
+ ("PRI2MA-DL_NTCP(border)", 0,0,0,0,0,0,"not_attemptable","R"),   # Radiother Oncol; RT-NTCP prognostic, borderline
 ]
 FIELDS = ["license","weights_in_repo","weights_anywhere","env_file","sample_data","attemptable"]
 
-def study_level(field_idx):
-    """Study-düzeyi OR-aggregation: bir çalışma, repo-varyantlarından HERHANGİ biri
-    sinyali taşıyorsa sinyali taşır (en-cömert; açık-bilim pratiği takım-düzeyi özellik)."""
+# Two repositories that emerged from NONE of the scripted discovery channels and were
+# carried forward from the earlier manual selection. The sensitivity analysis excludes
+# them, to answer the objection that they are a 9% hole in the claim of reproducible
+# discovery. The other 20 came from GitHub and Papers with Code (15) or from
+# open-access mining (5).
+CARRIED_FORWARD = ("masa(pilot2)", "Video-SwinUNet")
+
+def study_level(field_idx, repos=None):
+    """Study-level OR aggregation: a study carries a signal if ANY of its repository
+    variants carries it (the most generous reading, since open-science practice is a
+    team-level attribute)."""
     studies = {}
-    for r in REPOS:
+    for r in (REPOS if repos is None else repos):
         sid = r[8]
         studies[sid] = studies.get(sid, 0) or r[field_idx]
     return sum(studies.values()), len(studies)
@@ -70,18 +83,18 @@ def rate_row(label, k, n):
 def main():
     n = len(REPOS); n_studies = len(set(r[8] for r in REPOS))
     idx = {f: i+1 for i, f in enumerate(FIELDS)}
-    labels = {"license":"Açık lisans","weights_in_repo":"Ağırlık DEPODA",
-              "weights_anywhere":"Ağırlık (dış dahil)","env_file":"Ortam dosyası",
-              "sample_data":"Örnek veri (kullanılır)","attemptable":"Inference attemptable"}
+    labels = {"license":"Open license","weights_in_repo":"Weights in repo",
+              "weights_anywhere":"Weights (any host)","env_file":"Environment file",
+              "sample_data":"Usable sample data","attemptable":"Inference attemptable"}
 
-    # ---- BİRİNCİL: STUDY/EKİP DÜZEYİ (bağımsızlık; repo-varyantları kümelenmez) ----
-    print("="*70); print(f"RE-EXECUTION CENSUS — ⭐BİRİNCİL: STUDY-DÜZEYİ (N={n_studies} ayrık çalışma)"); print("="*70)
-    print("  (repo-varyantları kümelendi: scut-jol×2, tsukagoshi×3, Yash+Tanishq×2 → aynı çalışma)")
-    print(f"{'Şeffaflık öğesi':22s}{'k/N':>9s}{'oran':>8s}{'  Wilson %95 GA':>18s}")
+    # ---- PRIMARY: STUDY / TEAM LEVEL (independence; repository variants clustered) ----
+    print("="*70); print(f"RE-EXECUTION CENSUS - PRIMARY: STUDY LEVEL (N={n_studies} distinct studies)"); print("="*70)
+    print("  (repository variants clustered: scut-jol x2, tsukagoshi x3, Yash+Tanishq x2 = one study each)")
+    print(f"{'Transparency item':22s}{'k/N':>9s}{'rate':>8s}{'  Wilson 95% CI':>18s}")
     print("-"*70)
     for f in FIELDS:
         ks, ns = study_level(idx[f]); rate_row(labels[f], ks, ns)
-    # study-düzeyi verdikt: bir çalışma en-iyi repo-verdiktiyle etiketlenir
+    # study-level verdict: a study is labelled with the best verdict among its repositories
     order = {"re_executable":3,"partial":2,"not_reproduced":1,"not_attemptable":0,"attemptable_pending_rerun":1}
     best = {}
     for r in REPOS:
@@ -89,31 +102,53 @@ def main():
     from collections import Counter
     vcs = Counter(best.values())
     full_s = vcs.get("re_executable",0)
-    rate_row("→ Kutu-dışı re-exec.", full_s, n_studies)
+    rate_row("-> Re-exec. out of box", full_s, n_studies)
     print("-"*70)
-    print(f"  study-düzeyi verdikt: re_executable={vcs.get('re_executable',0)} · partial={vcs.get('partial',0)} · not_attemptable={vcs.get('not_attemptable',0)}")
+    print(f"  study-level verdicts: re_executable={vcs.get('re_executable',0)} · partial={vcs.get('partial',0)} · not_attemptable={vcs.get('not_attemptable',0)}")
 
-    # ---- DUYARLILIK: REPO DÜZEYİ (kümelenmemiş; robustluk kontrolü) ----
-    print("\n"+"="*70); print(f"DUYARLILIK: REPO-DÜZEYİ (N={n} repo; kümelenme düzeltmesiz)"); print("="*70)
-    print(f"{'Şeffaflık öğesi':22s}{'k/N':>9s}{'oran':>8s}{'  Wilson %95 GA':>18s}")
+    # ---- SENSITIVITY: REPOSITORY LEVEL (unclustered; robustness check) ----
+    print("\n"+"="*70); print(f"SENSITIVITY: REPOSITORY LEVEL (N={n} repositories; no clustering correction)"); print("="*70)
+    print(f"{'Transparency item':22s}{'k/N':>9s}{'rate':>8s}{'  Wilson 95% CI':>18s}")
     print("-"*70)
     for f in FIELDS:
         k = sum(r[idx[f]] for r in REPOS); rate_row(labels[f], k, n)
     print("-"*70)
     vc = Counter(r[7] for r in REPOS)
-    print("REPO verdikt dağılımı:")
+    print("REPOSITORY verdict distribution:")
     for v in ["re_executable","partial","not_reproduced","not_attemptable"]:
         print(f"  {v:20s}: {vc.get(v,0)}")
     full = sum(1 for r in REPOS if r[7]=="re_executable")
-    rate_row("→ Kutu-dışı re-exec.", full, n)
+    rate_row("-> Re-exec. out of box", full, n)
     print("="*70)
-    print("MANŞET (iki-katmanlı, dürüst):")
-    print(f"  • TRANSPARENCY katmanı: {n_studies} çalışmanın ~{study_level(idx['weights_anywhere'])[0]}'i herhangi yerde ağırlık,")
-    print(f"    {study_level(idx['license'])[0]}'i açık lisans, {study_level(idx['env_file'])[0]}'i ortam dosyası paylaşıyor (çoğu sistematik eksik).")
-    print(f"  • EXECUTION katmanı: yalnız {study_level(idx['attemptable'])[0]}/{n_studies} çalışma inference-attemptable;")
-    print(f"    FİİLEN re-run edilen 2 vaka (VFSS_analysis + enoch0307) → İKİSİ DE 'partial' (kutu-dışı çökme→düzeltme);")
-    print(f"    kutu-dışı düzeltmesiz TAM re-executable = 0 (hem study hem repo düzeyi; Wilson üst-sınır ~0.15-0.18).")
-    print("  • Oranlar study↔repo düzeyinde SAĞLAM (kümelenme manşeti değiştirmez) — robustluk kanıtı.")
+    print("HEADLINE (two layers):")
+    print(f"  - TRANSPARENCY layer: of {n_studies} studies, {study_level(idx['weights_anywhere'])[0]} share weights anywhere,")
+    print(f"    {study_level(idx['license'])[0]} an open license, and {study_level(idx['env_file'])[0]} an environment file (most are systematically absent).")
+    print(f"  - EXECUTION layer: only {study_level(idx['attemptable'])[0]}/{n_studies} studies are inference-attemptable;")
+    print(f"    the 2 cases ACTUALLY re-run (VFSS_analysis and enoch0307) are BOTH 'partial' (crash out of the box, then repair);")
+    print(f"    fully re-executable out of the box without repair = 0 (at both study and repository level; Wilson upper bound 0.15-0.18).")
+    print("  - The rates are STABLE between study and repository level (clustering does not change the headline).")
+
+    # ---- SENSITIVITY: EXCLUDING the carried-forward repositories (scripted-only census) ----
+    kept = [r for r in REPOS if r[0] not in CARRIED_FORWARD]
+    ks_n = len(set(r[8] for r in kept))
+    print("\n" + "="*70)
+    print(f"SENSITIVITY 2: SCRIPTED-ONLY ({len(CARRIED_FORWARD)} carried-forward repositories excluded)")
+    print("="*70)
+    print(f"  Excluded: {', '.join(CARRIED_FORWARD)} — neither emerged from any scripted channel.")
+    print(f"  Remaining: {len(kept)} repositories / {ks_n} studies (GitHub and Papers with Code plus open-access mining only).")
+    print(f"{'Transparency item':22s}{'k/N':>9s}{'rate':>8s}{'  Wilson 95% CI':>18s}")
+    print("-"*70)
+    for f in FIELDS:
+        ks, _ = study_level(idx[f], kept); rate_row(labels[f], ks, ks_n)
+    best_k = {}
+    for r in kept:
+        if r[8] not in best_k or order.get(r[7],0) > order.get(best_k[r[8]],0): best_k[r[8]] = r[7]
+    vck = Counter(best_k.values())
+    rate_row("-> Re-exec. out of box", vck.get("re_executable",0), ks_n)
+    print("-"*70)
+    print(f"  verdicts: re_executable={vck.get('re_executable',0)} · partial={vck.get('partial',0)} · "
+          f"not_attemptable={vck.get('not_attemptable',0)}")
+    print("  CONCLUSION: the headline (0 re-executable out of the box) is INDEPENDENT of the carried-forward repositories.")
 
 if __name__ == "__main__":
     main()

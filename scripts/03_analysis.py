@@ -1,25 +1,27 @@
 #!/usr/bin/env python3
 """
-03_analysis.py — SAP'in tekrarlanabilir uygulaması (Makale C).
+03_analysis.py — a reproducible implementation of the statistical analysis plan.
 
-Bağımsız istatistik yardımcıları (scipy gerektirmez): Wilson GA, Newcombe iki-oran
-farkı GA, Cohen κ. seffaflik-rubrigi.csv'yi okur; henüz yeterli veri yoksa (yalnız
-pilot repo #1) SENTETİK demo satırlarıyla çalıştığını KANITLAR — gerçek veri gelince
-aynı script koşar. Sabit seed → tekrarlanabilir (makalenin tezi).
+Self-contained statistical helpers (no scipy required): Wilson intervals, the Newcombe
+interval for a difference of two proportions, and Cohen κ. The script reads the
+transparency rubric; while the rubric holds too few rows to analyse (only pilot
+repository #1), it DEMONSTRATES that the pipeline works using SYNTHETIC demo rows, and
+switches to the real data automatically once enough rows exist. The seed is fixed, so
+the run is reproducible — which is the article's own thesis applied to itself.
 
-Kullanım: PYTHONIOENCODING=utf-8 python analiz/scripts/03_analysis.py
+Usage: PYTHONIOENCODING=utf-8 python analiz/scripts/03_analysis.py
 """
 import csv, math, os, random
 random.seed(42)
-Z = 1.959963985  # %95
+Z = 1.959963985  # 95%
 
 RUBRIC = "analiz/seffaflik-rubrigi.csv"
-BINARY_ITEMS = {  # kolon -> "paylaşım/olumlu" sayılan değerler
+BINARY_ITEMS = {  # column -> the values counted as sharing / positive
     "code_stmt": {"yes", "explicit-url"},
     "repo_accessible": {"yes"},
-    "license": None,   # özel: NONE dışı = var
+    "license": None,   # special case: anything other than NONE counts as present
     "readme_run_instructions": {"yes", "partial"},
-    "dependency_file": None,  # boş/none dışı = var
+    "dependency_file": None,  # special case: anything other than empty/none counts as present
     "random_seed": {"yes"},
     "model_weights": {"yes"},
     "model_card": {"yes"},
@@ -35,7 +37,7 @@ def wilson(k, n):
     return p, max(0, c-h), min(1, c+h)
 
 def newcombe_diff(k1, n1, k2, n2):
-    """iki oran farkı (p1-p2) için Newcombe %95 GA."""
+    """Newcombe 95% interval for the difference of two proportions (p1 - p2)."""
     p1, l1, u1 = wilson(k1, n1)
     p2, l2, u2 = wilson(k2, n2)
     diff = p1 - p2
@@ -44,7 +46,7 @@ def newcombe_diff(k1, n1, k2, n2):
     return diff, lo, hi
 
 def cohen_kappa(pairs):
-    """pairs: [(rater1, rater2), ...] kategorik."""
+    """pairs: [(rater1, rater2), ...], categorical."""
     n = len(pairs)
     if n == 0: return float("nan")
     cats = sorted(set(a for a, _ in pairs) | set(b for _, b in pairs))
@@ -55,9 +57,10 @@ def cohen_kappa(pairs):
     return (po - pe) / (1 - pe) if pe != 1 else 1.0
 
 def cohen_kappa_ci(pairs, B=2000):
-    """Cohen κ + yüzdelik bootstrap %95 GA (SAP §4: κ %95 GA + Landis-Koch).
-    Sabit seed (random.seed(42)) → tekrarlanabilir. Küçük kalibrasyon setinde
-    κ'nin belirsizliğini gösterir (dar sette nokta-κ yanıltıcı olabilir)."""
+    """Cohen κ plus a percentile bootstrap 95% interval (SAP §4: a 95% interval for κ
+    with the Landis-Koch label). The seed is fixed (random.seed(42)), so the result is
+    reproducible. On a small calibration set this shows the uncertainty in κ, where a
+    point estimate alone can mislead."""
     k = cohen_kappa(pairs)
     n = len(pairs)
     if n == 0: return (float("nan"), float("nan"), float("nan"))
@@ -65,7 +68,7 @@ def cohen_kappa_ci(pairs, B=2000):
     for _ in range(B):
         sample = [pairs[random.randrange(n)] for _ in range(n)]
         kb = cohen_kappa(sample)
-        if kb == kb:  # NaN değilse
+        if kb == kb:  # i.e. not NaN
             boots.append(kb)
     boots.sort()
     if not boots: return (k, float("nan"), float("nan"))
@@ -92,7 +95,7 @@ def load_rows():
         rows = [r for r in rows if r.get("study_id", "").strip()]
         if len(rows) >= 10:
             return rows, False
-    # yetersiz veri → sentetik demo (gerçek veri gelince otomatik devre-dışı)
+    # not enough data -> synthetic demo (disabled automatically once real data arrive)
     demo = []
     for i in range(40):
         demo.append({
@@ -113,9 +116,9 @@ def main():
     rows, synthetic = load_rows()
     n = len(rows)
     print("="*66)
-    print(f"MAKALE C — ŞEFFAFLIK ANALİZİ  (N={n})" + ("  [SENTETİK DEMO — gerçek veri bekleniyor]" if synthetic else "  [GERÇEK VERİ]"))
+    print(f"TRANSPARENCY ANALYSIS  (N={n})" + ("  [SYNTHETIC DEMO - awaiting real data]" if synthetic else "  [REAL DATA]"))
     print("="*66)
-    print(f"{'Öğe':26s}{'k/N':>10s}{'oran':>8s}{'  %95 Wilson GA':>18s}")
+    print(f"{'Item':26s}{'k/N':>10s}{'rate':>8s}{'  Wilson 95% CI':>18s}")
     print("-"*66)
     results = {}
     for col in BINARY_ITEMS:
@@ -125,24 +128,25 @@ def main():
         print(f"{col:26s}{f'{k}/{n}':>10s}{p:>8.2f}{f'[{lo:.2f}, {hi:.2f}]':>18s}")
     print("-"*66)
 
-    # radyoloji kıyası (kod paylaşımı) — TEK doğrulanmış çapa: Venkatesh 2022 = 73/218 (%34).
-    # NOT: "DL ~%11.5 (2025)" figürü kaldırıldı — kaynaklanamadı + Lee/Eur Radiol 2025'e yanlış
-    # atıflıydı (o çalışma %39.9 rapor ediyor). Bkz. taslak/referanslar-iskelet.md ⚠️.
+    # Radiology comparison (code sharing). The one verified anchor is Venkatesh 2022 = 73/218 (34%).
+    # NOTE: the "deep learning about 11.5% (2025)" figure was removed: it could not be sourced and
+    # was misattributed to Lee/Eur Radiol 2025, which in fact reports 39.9%.
     k_code, _ = results["code_stmt"]
-    kr, nr = 73, 218  # Venkatesh 2022, Radiol Artif Intell — erişilebilir kod paylaşan çalışma oranı
+    kr, nr = 73, 218  # Venkatesh 2022, Radiol Artif Intell - share of studies with accessible code
     pr, rlo, rhi = wilson(kr, nr)
-    print(f"Referans (Venkatesh 2022, radyoloji): {kr}/{nr} = {pr:.2f}  [{rlo:.2f}, {rhi:.2f}]")
+    print(f"Reference (Venkatesh 2022, radiology): {kr}/{nr} = {pr:.2f}  [{rlo:.2f}, {rhi:.2f}]")
     d, lo, hi = newcombe_diff(k_code, n, kr, nr)
-    print(f"Kod-paylaşımı farkı vs radyoloji %34: Δ={d:+.2f}  Newcombe95=[{lo:+.2f}, {hi:+.2f}]  (bağlamsal, nedensel değil; tanım-eşlemesi: 'erişilebilir kod')")
+    print(f"Code-sharing difference vs radiology 34%: delta={d:+.2f}  Newcombe95=[{lo:+.2f}, {hi:+.2f}]  (contextual, not causal; definition matched on 'accessible code')")
     print("-"*66)
 
-    # κ demo (kalibrasyon) — %95 bootstrap GA ile (SAP §4)
+    # Demo κ (calibration) with a 95% bootstrap interval (SAP §4)
     demo_pairs = [(random.choice(["incl","excl"]), random.choice(["incl","excl","excl"])) for _ in range(50)]
     k, klo, khi = cohen_kappa_ci(demo_pairs)
-    print(f"κ demo (kalibrasyon örneği): κ={k:.2f}  %95GA=[{klo:.2f}, {khi:.2f}]  ({landis_koch(k)})  — gerçek tarama verisiyle değişecek")
+    print(f"Demo κ (calibration example): κ={k:.2f}  95% CI=[{klo:.2f}, {khi:.2f}]  ({landis_koch(k)})  - will change with real screening data")
     print("="*66)
-    print("NOT: sentetik satırlar YALNIZ pipeline'ı doğrular; gerçek rubrik ≥10 satır olunca")
-    print("     otomatik gerçek-veriye geçer. Wilson/Newcombe/κ SAP §2-5 uygular.")
+    print("NOTE: the synthetic rows ONLY verify the pipeline; the script switches to real data")
+    print("      automatically once the rubric holds at least 10 rows. Wilson, Newcombe and κ")
+    print("      implement SAP §2-5.")
 
 if __name__ == "__main__":
     try:

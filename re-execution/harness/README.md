@@ -1,35 +1,36 @@
-# Layer B — Genel Docker Re-run Harness (repo #2..N için)
+# Layer B — the general Docker re-run harness (repositories #2..N)
 
-Pilotu (repo #1, VFSS_analysis) **tekrar-kullanılabilir** protokole genelleştirir. Amaç: her kod-açık çalışmayı AYNI, denetlenebilir adımlarla yeniden koşmak → tutarlı verdikt + engel taksonomisi. **⚠️ Sistematik uygulama KAYIT SONRASI** (dahil-set kesinleşince); şablon şimdi hazırlanır.
+This generalizes the pilot (repository #1, VFSS_analysis) into a **reusable** protocol. The aim is to re-run every code-available study through the SAME auditable steps, so that verdicts are consistent and the barriers can be classified.
 
-**Donanım:** 32 GB / 16 çekirdek / Docker 29 / **CPU** (GPU-ölçekli yeniden-eğitim kapsam DIŞI — belgeli sınır).
+**Hardware:** 32 GB RAM / 16 cores / Docker 29 / **CPU only**. GPU-scale retraining is out of scope, and that limit is documented rather than implicit.
 
-## Adımlar (her repo)
-### 0. Intake (önce vet et — `repo-intake.md` doldur)
-Lisans · CPU-uyumu · örnek/sağlanan veri · bağımlılık dosyası · ağırlık DOI. **Lisans yoksa** = ilk şeffaflık bulgusu (yeniden-kullanım yasal engeli), yine de re-executability denenir.
+## Steps (for each repository)
 
-### 1. "As-declared" (faithful) deneme — BİRİNCİL BULGU
-Repoyu **belgelendiği gibi** kur/koş. Amaç: *kutu-dışı çalışıyor mu?* (re-executability). **Tam hata mesajını kaydet** → `rerun-loglari/<repo-id>/as-declared.log`. Çoğu repoda BAŞARISIZ beklenir; başarısızlık **manşet bulgudur**.
+### 0. Intake (vet first — fill in `repo-intake.md`)
+License · CPU compatibility · example or supplied data · dependency file · weights DOI. **An absent license** is itself the first transparency finding, a legal barrier to reuse; re-executability is still attempted.
 
-### 2. Best-effort minimal düzeltmeler — SÜRTÜNME TAKSONOMİSİ
-Çalışması için gereken HER müdahale numaralandırılır (bağımlılık downgrade, eksik-beyansız paket, kod-hatası fix, eksik artefakt). Bunlar **nicelleştirilmiş sürtünme** = ikinci bulgu.
+### 1. The "as-declared" (faithful) attempt — THE PRIMARY FINDING
+Install and run the repository **exactly as documented**. The question is whether it runs out of the box, that is, re-executability. **Record the complete error message** in `logs/<repo-id>/as-declared.log`. Failure is expected for most repositories, and that failure is the headline finding.
 
-### 3. Çıkarım (CPU) — eğitim DEĞİL
-Sağlanan/örnek veriyle çıkarımı koştur. GPU-only işlem varsa CPU-yaması dene; olmazsa `not_attemptable(GPU-only)`.
+### 2. Best-effort minimal repairs — THE FRICTION TAXONOMY
+Every intervention needed to make it run is numbered (dependency downgrade, an undeclared package, a code fix, a missing artifact). These constitute **quantified friction**, the second finding.
 
-### 4. Karşılaştırma — re-executability ÖNCE, metrik SONRA
-- **Önce:** artefakt çalışıp **kendi belgelenen çıktısını** üretti mi?
-- **Sonra (yalnız örnek/referans veri varsa):** raporlanan metrik tolerans içinde mi (±5 pp/%95 GA; sürekli seri için yakın-eşitlik atol/rtol).
-- Mahrem test kohortu = metrik-repro yapısal olarak imkânsız → bunu **bulgu** olarak kaydet.
+### 3. Inference (CPU) — not training
+Run inference on the supplied or example data. If an operation is GPU-only, attempt a CPU patch; if that fails, the verdict is `not_attemptable (GPU-only)`.
 
-### 5. Verdikt + log
-`re_executable / partial / not_reproduced / not_attemptable` + engel taksonomisi + düzeltme sayısı → `verdikt-log.template.md` doldur → `rerun-loglari/<repo-id>/`.
+### 4. Comparison — re-executability first, metrics second
+- **First:** did the artifact run and produce **its own documented output**?
+- **Then**, only where example or reference data exist: is the reported metric within tolerance (±5 percentage points or the reported 95% interval; for continuous series, near-equality within an absolute and relative tolerance)?
+- A confidential test cohort makes metric reproduction structurally impossible; record that as a **finding**.
 
-## Engel taksonomisi (sabit kategoriler — sentez için)
-`dep_conflict` · `unpinned_versions` · `undeclared_dependency` · `typo_package` · `code_bug` (import/path) · `missing_weights` · `missing_postprocessing_artifact` · `gpu_only_op` · `missing_data` · `undocumented_step` · `license_absent`.
+### 5. Verdict and log
+`re_executable / partial / not_reproduced / not_attemptable`, plus the barrier taxonomy and the number of repairs → fill in `verdict-log.template.md` → store under `logs/<repo-id>/`.
 
-## Dosyalar
-- `Dockerfile.template` — parametrik CPU ortamı (base/py-sürümü değiştir).
-- `verdikt-log.template.md` — repo başına standart verdikt (rerun-crash-findings.txt deseni).
-- `repo-intake.md` — repo başına vet formu (İş #6 ile ortak).
-- Referans desen: `../../pilot-run/` (repo #1 tam vaka) + `../rerun-loglari/`.
+## Barrier taxonomy (fixed categories, for synthesis)
+`dep_conflict` · `unpinned_versions` · `undeclared_dependency` · `typo_package` · `code_bug` (import or path) · `missing_weights` · `missing_postprocessing_artifact` · `gpu_only_op` · `missing_data` · `undocumented_step` · `license_absent`.
+
+## Files
+- `Dockerfile.template` — a parametric CPU environment (change the base image and Python version).
+- `verdict-log.template.md` — the standard verdict form, one per repository.
+- `repo-intake.md` — the vetting form, one per repository.
+- Reference pattern: `../pilot-VFSS/` (repository #1 as a full case) and `../logs/`.

@@ -1,6 +1,6 @@
 # Dysphagia-AI Minimum Reporting & Reproducibility, Recommendation Set, v0.2 (empirically grounded)
 
-> ⚠️ **Terminoloji (hakem düzeltmesi):** Bu bir **öneri setidir (recommendation set)**, konsensüs *standardı* veya resmî *checklist* DEĞİL (formal standart Delphi/konsensüs gerektirir; bizde yok). Makale §2.8 ile birebir tutarlı. "standard/checklist" kelimeleri overclaim → kullanılmaz.
+> ⚠️ **Terminology.** This is a **recommendation set**, NOT a consensus *standard* and not a formal *checklist*: a formal standard would require a Delphi or consensus process, which this study did not run. The wording is identical to §2.8 of the article, and the words "standard" and "checklist" are avoided as overclaims.
 
 **Purpose.** A domain-specific reporting/transparency **recommendation set** (not a consensus standard; no Delphi) for artificial-intelligence studies in dysphagia (diagnosis, screening, severity, rehabilitation monitoring). It is the constructive deliverable of Makale C, proposing how to fix irreproducibility rather than only measuring it.
 

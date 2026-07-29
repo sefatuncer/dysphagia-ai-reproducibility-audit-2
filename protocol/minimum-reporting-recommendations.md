@@ -1,52 +1,52 @@
-# Disfaji-AI Asgari-Raporlama ÖNERİ SETİ — v0.2
+# Minimum-reporting RECOMMENDATION SET for dysphagia AI — v0.2
 
-> ⚠️ **Bu bir "standart" veya "checklist" DEĞİL, ÖNERİ setidir.** Formal bir standart Delphi/konsensüs süreci gerektirir (bizde yok). Hakem düzeltmesi: "checklist/standart" iddiası overclaim → **"recommendations"** olarak sunulur. Nihai sürüm, denetim sonrası **en sık ihlal edilen** maddeler öne çıkarılarak sabitlenir.
+> ⚠️ **This is a set of RECOMMENDATIONS, not a "standard" or a "checklist".** A formal standard would require a Delphi or consensus process, which this study did not run. Calling it a checklist or a standard would be an overclaim, so it is presented as recommendations throughout. The final version is fixed after the audit, foregrounding the items that are **violated most often**.
 
-**Amaç.** Makale C'nin **yapıcı çıktısı**: sadece tekrarlanamazlığı ölçmek değil, çözümü önermek. Disfaji-AI çalışmaları için alana-özgü raporlama/şeffaflık önerileri.
+**Purpose.** The **constructive output** of the study: not only to measure irreproducibility but to propose a remedy. These are field-specific reporting and transparency recommendations for dysphagia-AI studies.
 
-**Türetim & çapa.** Her madde mevcut kılavuzlara **açıkça çapalanır** (TRIPOD+AI, CLAIM, STARD, QUADAS-2, FAIR/model-cards); disfaji-özgü maddeler jenerik kılavuzların **sustuğu** yerdedir → katkı budur. Kaynak sütunu her maddede.
+**Derivation and anchoring.** Every item is **explicitly anchored** to an existing guideline (TRIPOD+AI, CLAIM, STARD, QUADAS-2, FAIR, model cards). The dysphagia-specific items sit exactly where the generic guidelines are **silent**, and that is where the contribution lies. The anchor is given for every item.
 
-**İki-yazar yapısı:** Part A (mühendislik/açık-bilim = **Sefa**) × Part B (klinik/disfaji-özgü = **Nazife**, `referans-standart-taksonomisi.md` RS1-6'dan türer) × Part C (değerlendirme, ortak). Bu ikili yapı, jenerik bir radyoloji-AI checklist'inin disfaji için sağlayamayacağı şeydir.
+**Two-part structure:** Part A (engineering and open science, S.T.) × Part B (clinical and dysphagia-specific, N.K.T., derived from RS1–RS6 in `reference-standard-taxonomy-RS1-RS6.md`) × Part C (evaluation, shared). This pairing is what a generic radiology-AI checklist cannot supply for dysphagia.
 
-**Kullanım:** submission eki; her madde = Raporlandı (sayfa/bölüm) / Uygulanamaz (gerekçe) / Raporlanmadı.
-
----
-
-## Part A — Tekrarlanabilirlik & Açık Bilim (mühendislik ekseni · Sefa)
-| # | Madde | Kaynak çapası | Neden (pilot kanıtı) |
-|---|---|---|---|
-| A1 ⭐ | **Kaynak kod halka açık** (kalıcı URL, "on request" değil) | TRIPOD+AI 20; FAIR | "on request" ≈ yok |
-| A2 ⭐ | **Kodda açık lisans** (OSI) | FAIR; disfaji-özgü boşluk | Lisanssız = yasal yeniden-kullanılamaz (pilot: yoktu) |
-| A3 ⭐ | **Ortam/bağımlılık dosyası + SABİT sürümler** (requirements/environment.yml/**Dockerfile**) | TRIPOD+AI; disfaji-özgü | Pilot: beyan edilen bağımlılıklar **karşılıklı çözülemez** idi |
-| A4 | **Rasgele seed sabit + raporlu** | TRIPOD+AI | Non-determinizm exact-repro'yu bozar |
-| A5 ⭐ | **Veri-erişim beyanı + rota** (açık/kontrollü/gerekçeli-kısıtlı) | STARD; TRIPOD+AI | VFSS/FEES mahrem → rotayı dürüst belirt, atlama |
-| A6 | **Eğitilmiş ağırlıklar arşivli** (kalıcı DOI, Zenodo) | FAIR | Yeniden-eğitimsiz çıkarım |
-| A7 | **Model kartı/datasheet** (amaç, eğitim verisi, sınırlar) | Model Cards (Mitchell 2019) | Kapsam + hata modları |
-| A8 | **Hesaplama/donanım raporlu + CPU-çıkarım fizibil/belgeli** | disfaji-özgü (bizim Layer B) | Repro yazarın tam GPU'sunu gerektirmemeli |
-| A9 | **Çalışan minimal örnek** (örnek girdi + beklenen çıktı) | disfaji-özgü iyi-pratik | Mahrem-veri olmadan doğrulama (pilot bunu iyi yaptı) |
-
-## Part B — Klinik geçerlilik & disfaji-özgü (klinik ekseni · Nazife, RS1-6)
-| # | Madde | Kaynak çapası | Taksonomi |
-|---|---|---|---|
-| B1 ⭐ | **Referans-standart belirt + gerekçelendir** (enstrümantal VFSS/FEES vs klinik/tarama vekili) | STARD; QUADAS-2 alan-3 | RS1 |
-| B2 ⭐ | **Referans-etiket rater güvenilirliği** (κ/ICC; rater sayısı; körleme) | **QUADAS-2 ötesi** (jenerik araç sormaz) | RS4 |
-| B3 ⭐ | **Hasta spektrumu & seçimi** (etiyoloji; şiddet; sağlıklı-vs-hasta; ardışık-vs-uygun) | QUADAS-2 alan-1; **matris = disfaji-özgü** | RS5 |
-| B4 | **Vekil-sızıntısı beyanı** (model altın-standardı mı vekili mi tahmin ediyor) | **QUADAS-2 ötesi** | RS2 |
-| B5 | **Etiket skalası & granülarite** (PAS/DIGEST/FOIS; ikiliye indirgeme kaybı) | **disfaji-özgü** | RS3 |
-| B6 | **Bolus/görev standardizasyonu** (IDDSI kıvam, hacim, protokol) | disfaji-özgü | — |
-| B7 | **Modalite-özgü akizisyon** (VFSS: kare-hızı/ROI/doz; FEES: skop; akustik: mik/SNR; sEMG: elektrot; HRM: kateter) | CLAIM (görüntü); disfaji-özgü genişletme | — |
-| B8 ⭐ | **Klinik sonuç tanımı** (PAS/aspirasyon/penetrasyon/şiddet — açık, klinik-anlamlı) | STARD; TRIPOD+AI | RS6 |
-| B9 ⭐ | **Dürüst amaç-beyanı** (tarama/tanı/izlem; dış-doğrulama yoksa "deployment-ready" DEME) | TRIPOD+AI | RS6 |
-
-## Part C — Değerlendirme titizliği (ortak)
-| # | Madde | Kaynak çapası | Neden |
-|---|---|---|---|
-| C1 ⭐ | **Dış/bağımsız doğrulama** (ikinci kohort veya açık veri) | TRIPOD+AI; STARD | Tek-kohort AUC ≠ genellenebilir; #1 kabul-ayıracı (Kwok: 0/24) |
-| C2 ⭐ | **Denek-bazlı (LOSO) CV** — kayıt-düzeyi sızıntı yok | disfaji/biyosinyal-özgü | Kare/kayıt-düzeyi bölme sızdırır → şişik metrik |
-| C3 | **Dokunulmamış ayrık test seti** | TRIPOD+AI | İyimser sapmayı önler |
-| C4 | **Kalibrasyon + klinik yarar** (kalibrasyon eğrisi, karar-eğrisi/net-fayda) | TRIPOD+AI | AUC klinik karar-değerini yok sayar |
-| C5 | **Belirsizlik** (GA; uygun testler, DeLong) | TRIPOD+AI | Nokta-tahmin kesinliği abartır |
-| C6 | **Güçlü baseline + ablasyon** (klinik skor + iyi-ayarlı klasik ML) | disfaji-özgü iyi-pratik | "DL for its own sake"e karşı korur |
+**Use:** as a submission supplement, where each item is marked Reported (page or section) / Not applicable (with a reason) / Not reported.
 
 ---
-*DRAFT → denetim sonuçlarına göre sonlandırılır: ~60 çalışmada en sık ihlal edilen maddeler çekirdek yapılır. Kaynak çapaları hakem güvenilirliği içindir. Delphi YOK → "öneri", "standart" değil.*
+
+## Part A — Reproducibility and open science (engineering axis, S.T.)
+| # | Item | Anchor | Why (evidence from the pilots) |
+|---|---|---|---|
+| A1 ⭐ | **Source code publicly available** at a persistent URL, not "on request" | TRIPOD+AI 20; FAIR | "On request" is equivalent to unavailable |
+| A2 ⭐ | **An open license on the code** (OSI-approved) | FAIR; a dysphagia-specific gap | Without a license the code cannot be legally reused (the pilot had none) |
+| A3 ⭐ | **An environment or dependency file with PINNED versions** (requirements / environment.yml / **Dockerfile**) | TRIPOD+AI; dysphagia-specific | In the pilot the declared dependencies **could not be resolved against each other** |
+| A4 | **A fixed random seed, reported** | TRIPOD+AI | Non-determinism defeats exact reproduction |
+| A5 ⭐ | **A data-access statement and route** (open / controlled / restricted with a reason) | STARD; TRIPOD+AI | VFSS and FEES data are confidential; state the route honestly rather than omitting it |
+| A6 | **Trained weights archived** under a persistent DOI (Zenodo) | FAIR | Inference without retraining |
+| A7 | **A model card or datasheet** (intended use, training data, limits) | Model Cards (Mitchell 2019) | Scope and failure modes |
+| A8 | **Compute and hardware reported, with CPU inference feasible or documented** | dysphagia-specific (our Layer B) | Reproduction should not require the authors' exact GPU |
+| A9 | **A working minimal example** (sample input plus expected output) | dysphagia-specific good practice | Verification without confidential data (the pilot did this well) |
+
+## Part B — Clinical validity, dysphagia-specific (clinical axis, N.K.T., RS1–RS6)
+| # | Item | Anchor | Taxonomy |
+|---|---|---|---|
+| B1 ⭐ | **State and justify the reference standard** (instrumental VFSS/FEES against a clinical or screening proxy) | STARD; QUADAS-2 domain 3 | RS1 |
+| B2 ⭐ | **Rater reliability of the reference label** (κ or ICC; number of raters; blinding) | **beyond QUADAS-2**, which does not ask | RS4 |
+| B3 ⭐ | **Patient spectrum and selection** (aetiology; severity; healthy against patient; consecutive against convenience) | QUADAS-2 domain 1; **the matrix is dysphagia-specific** | RS5 |
+| B4 | **A proxy-leakage statement** (does the model predict the gold standard or a proxy for it) | **beyond QUADAS-2** | RS2 |
+| B5 | **Label scale and granularity** (PAS/DIGEST/FOIS; the loss incurred by reducing to binary) | **dysphagia-specific** | RS3 |
+| B6 | **Bolus and task standardization** (IDDSI consistency, volume, protocol) | dysphagia-specific | — |
+| B7 | **Modality-specific acquisition** (VFSS: frame rate, ROI, dose; FEES: scope; acoustic: microphone, SNR; sEMG: electrodes; HRM: catheter) | CLAIM (imaging), extended for dysphagia | — |
+| B8 ⭐ | **A clinical outcome definition** (PAS, aspiration, penetration, severity — explicit and clinically meaningful) | STARD; TRIPOD+AI | RS6 |
+| B9 ⭐ | **An honest statement of intended use** (screening, diagnosis, monitoring; do not claim deployment-readiness without external validation) | TRIPOD+AI | RS6 |
+
+## Part C — Evaluation rigour (shared)
+| # | Item | Anchor | Why |
+|---|---|---|---|
+| C1 ⭐ | **External or independent validation** (a second cohort or open data) | TRIPOD+AI; STARD | A single-cohort AUC does not generalize; this is the leading acceptance discriminator (Kwok reports 0/24) |
+| C2 ⭐ | **Subject-wise (LOSO) cross-validation**, with no record-level leakage | dysphagia and biosignal specific | Frame- or record-level splitting leaks and inflates the metric |
+| C3 | **An untouched, separate test set** | TRIPOD+AI | Prevents optimistic bias |
+| C4 | **Calibration and clinical utility** (calibration curve, decision curve, net benefit) | TRIPOD+AI | AUC ignores clinical decision value |
+| C5 | **Uncertainty** (intervals; appropriate tests such as DeLong) | TRIPOD+AI | A point estimate overstates precision |
+| C6 | **A strong baseline plus ablation** (a clinical score and a well-tuned classical ML model) | dysphagia-specific good practice | Guards against deep learning for its own sake |
+
+---
+*Draft, to be finalized against the audit results: the items violated most often across the census become the core. The anchors are given for reviewer confidence. There was no Delphi process, so these are recommendations rather than a standard.*

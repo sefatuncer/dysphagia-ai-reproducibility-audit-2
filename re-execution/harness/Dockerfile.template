@@ -1,37 +1,39 @@
-# Dockerfile.template — Layer B genel CPU re-run ortamı
-# Kullanım: <REPO-ID> için kopyala; base + kurulum satırlarını repoya göre uyarla.
-# İlke: ÖNCE "as-declared" (reponun kendi environment.yml/requirements'ı) dene → başarısızlığı belgele.
-# Bu şablon, as-declared başarısız olunca "best-effort" düzeltmeleri UYGULAYAN varyanttır;
-# her sapma AŞAĞIDA yorum olarak numaralandırılır (= nicelleştirilmiş sürtünme).
+# Dockerfile.template — the general Layer B CPU re-run environment
+# Usage: copy for a given <REPO-ID> and adapt the base image and install lines to the repository.
+# Principle: FIRST attempt the repository "as declared" (its own environment.yml or
+# requirements.txt) and document the failure.
+# This template is the variant that APPLIES the best-effort repairs once the as-declared
+# attempt has failed; every deviation is numbered as a comment BELOW, which is what turns
+# friction into a quantity.
 
-# --- Base: reponun beyan ettiği python; yoksa 3.10 (CPU) ---
+# --- Base: the Python the repository declares; 3.10 (CPU) if it declares none ---
 FROM python:3.10-slim
 
-# Sistem bağımlılıkları (görüntü/sinyal repoları sık ister; repoya göre kırp)
+# System dependencies (image and signal repositories often need these; trim per repository)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git build-essential ffmpeg libgl1 libglib2.0-0 \
  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /work/repo
 
-# --- Bağımlılıklar ---
-# TERCİH 1 (as-declared): COPY requirements.txt . && pip install -r requirements.txt
-# TERCİH 2 (conda): micromamba/conda env create -f environment.yml
-# TERCİH 3 (best-effort düzeltme — SAPMALARI BURAYA YAZ):
-#   # FIX-1: numpy pinlendi (dep_conflict: kütüphane X≥1.24 vs Y<1.24) -> numpy==1.23.5
-#   # FIX-2: undeclared_dependency eklendi -> pydicom
-#   # FIX-3: typo_package -> 'spicy' yerine scipy
-#   # FIX-4: code_bug -> patch uygula (ör. missing 'from pathlib import Path')
+# --- Dependencies ---
+# OPTION 1 (as declared): COPY requirements.txt . && pip install -r requirements.txt
+# OPTION 2 (conda): micromamba/conda env create -f environment.yml
+# OPTION 3 (best-effort repair — RECORD EVERY DEVIATION HERE):
+#   # FIX-1: numpy pinned (dep_conflict: library X requires >=1.24 while Y requires <1.24) -> numpy==1.23.5
+#   # FIX-2: undeclared_dependency added -> pydicom
+#   # FIX-3: typo_package -> scipy instead of 'spicy'
+#   # FIX-4: code_bug -> apply a patch (e.g. a missing 'from pathlib import Path')
 # RUN pip install --no-cache-dir numpy==1.23.5 scipy ...
 
-# CPU torch (GPU wheel'lerini ÖNLE)
+# CPU torch (AVOID the GPU wheels)
 # RUN pip install --no-cache-dir torch==2.0.1 --index-url https://download.pytorch.org/whl/cpu
 
 COPY . /work/repo
 
-# Kod-hatası patch'leri (varsa) — her biri log'da FIX-N olarak
+# Patches for code bugs, if any — each logged as FIX-N
 # RUN patch -p1 < /work/fixes/FIX-4-pathlib.patch
 
-# Entrypoint repoya göre (çıkarım komutu). Örnek:
+# The entrypoint depends on the repository (its inference command). For example:
 # ENTRYPOINT ["python", "run.py"]
 CMD ["bash"]

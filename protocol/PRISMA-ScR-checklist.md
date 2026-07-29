@@ -2,7 +2,10 @@
 > The study pivoted from a systematic-review design to a **meta-research re-execution census**.
 > The manuscript now states explicitly: *"It is not a systematic review and makes no PRISMA-ScR claim."*
 > This checklist is therefore **inconsistent with the submitted paper** and is kept only as design history.
-> The submitted supplement is `latex/supplement.tex` (Tables S1–S3).
+> No supplementary file is submitted with the manuscript: the material once planned for a
+> supplement — the full screening-reliability contingency tables, the mapping of RS1–RS6 onto
+> QUADAS-2 and PROBAST+AI, and the provenance of the census — is in the body of the paper,
+> and the per-study coding is in `transparency/` in this archive.
 
 # PRISMA-ScR checklist (pre-pivot supplement S1)
 

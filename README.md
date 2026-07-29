@@ -10,10 +10,10 @@ We audited whether published swallowing/dysphagia-AI code is not just **availabl
 | Folder | Contents |
 |---|---|
 | `scripts/` | Discovery, intake, and analysis scripts, numbered **01–18**: multi-source open-API search & enrichment (01–06), repository discovery / intake / code-link mining / census synthesis (07–10), the blind screening-reliability re-coding (11), and post-hoc robustness checks (12–18: search-truncation measurement, backward-citation coverage, reference audit, DOI verification, and verification of every reference's full author list against Crossref). Statistics are fixed-seed and standard-library only (Wilson and Newcombe intervals, Cohen's κ with clipped asymptotic intervals, and positive/negative specific agreement). |
-| `transparency/` | Transparency rubric + blank template, codebook, coding guide, the **RS1–RS6** clinical reference-standard taxonomy and its coding, and the statistical analysis plan. |
+| `transparency/` | Transparency rubric + blank template, codebook, coding guide, the **RS1–RS6** clinical reference-standard taxonomy and its coding, the objective per-repository intake table (the machine-recorded license, environment, weights and data signals behind each verdict), and the statistical analysis plan. |
 | `re-execution/` | The containerized re-execution harness (Dockerfile template, intake & verdict templates), the VFSS pilot write-up, and per-repository build/run logs and verdicts for the attempted case studies. |
 | `protocol/` | The study protocol (`protocol.md`: inclusion rule, rubric, analysis plan), the PRISMA-ScR checklist (transparently declined, with rationale), the minimum-reporting recommendation set, and `self-audit-checklist.md`, that recommendation set applied item by item to this study itself. |
-| `search/` | Search records, screening form, institutional search strings, backward-citation check, and record-level bibliographic corpus metadata. |
+| `search/` | Search records, screening form, institutional search strings, backward-citation check, record-level bibliographic corpus metadata, and the **candidate-repository inventory** at three stages: raw discovery output, the code-link-mining additions, and the vetted inventory with the inclusion decision and reason for every candidate. |
 
 ## Design history (read this before the `search/` and `transparency/` planning files)
 

@@ -33,6 +33,20 @@ Coded for every included study, as categories plus a free-text note. The anchor 
 
 ---
 
+### Mapping onto the established appraisal instruments
+
+The applicable instrument depends on what a study predicts, so the taxonomy maps onto two
+different tools rather than one. This is the mapping the article refers to.
+
+| Target of the study | Applicable instrument | Items of this taxonomy that refine it | Items that fall outside it |
+|---|---|---|---|
+| **Diagnostic** (the model predicts a current condition, e.g. VFSS-confirmed dysphagia) | QUADAS-2 | RS1 (reference-standard domain, at dysphagia-specific granularity), RS5 (patient selection and spectrum), RS6 (applicability) | RS3 and RS4, which concern the machine-learning label and its measurement rather than the index test |
+| **Prognostic** (the model predicts a future outcome, e.g. late toxicity or tube feeding) | PROBAST+AI | RS1 (outcome definition), RS5 (participants), RS6 (intended use) | RS3 and RS4, for the same reason; RS2, since proxy leakage is about construct substitution |
+
+Neither instrument asks for rater reliability of the label (RS4), for the loss incurred by
+binarizing an ordinal swallowing scale (RS3), or for proxy leakage (RS2), which is why those
+three items are the specific contribution and are reported separately.
+
 ## 3. How the construct is used (three places)
 
 1. **Rubric (Layer A):** RS1–RS6 are added to `transparency-rubric.csv` as a clinical block and coded across the census.

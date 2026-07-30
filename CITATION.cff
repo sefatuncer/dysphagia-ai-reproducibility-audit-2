@@ -27,6 +27,9 @@ keywords:
   - meta-research
 identifiers:
   - type: doi
+    value: "10.5281/zenodo.21629516"
+    description: "Concept DOI: cites all versions of this archive and resolves to the most recent one. Prefer this when no specific version is required."
+  - type: doi
     value: "10.5281/zenodo.21629517"
     description: "Version DOI for v1.0.0. Zenodo mints the v1.1.0 version DOI when this release is published; it is recorded here and in the manuscript once minted."
 repository-code: "https://github.com/sefatuncer/dysphagia-ai-reproducibility-audit-2"

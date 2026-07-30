@@ -1,6 +1,7 @@
 # Study protocol
 
-*Released with the artifact archive (Zenodo DOI 10.5281/zenodo.21629517) for the
+*Released with the artifact archive (Zenodo concept DOI 10.5281/zenodo.21629516, which
+resolves to the most recent version) for the
 meta-research audit "Available but not executable: a transparency and
 execution-prerequisite audit of open-source dysphagia and swallowing
 artificial-intelligence models, with three containerized re-execution case
@@ -43,7 +44,8 @@ studies."*
 **Archive:** This document is released as part of the artifact archive on Zenodo, alongside the
 scripts, rubric, codebook and re-execution logs it describes. It first appears in release
 v1.1.0; the first release, v1.0.0, is DOI 10.5281/zenodo.21629517 and predates this document.
-Cite the version DOI of the release you are reading, or the concept DOI for all versions.
+The concept DOI 10.5281/zenodo.21629516 covers all versions and resolves to the most recent
+one; cite it, or the version DOI of the release you are actually reading.
 
 **Remaining steps:** finalize the RS1–RS6 clinical sign-off → notify the authors of the audited
 repositories and offer a right to respond → submit. No external registry entry is made; §2.1 of

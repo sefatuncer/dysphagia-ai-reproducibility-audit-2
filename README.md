@@ -56,9 +56,15 @@ This archive contains only artifacts **the authors produced**. The audited third
 ## Citation
 
 If you use these materials, please cite both the article and this archive. Each release is
-archived on Zenodo with its own version DOI; see `CITATION.cff` and the Zenodo record.
+archived on Zenodo with its own version DOI; the concept DOI
+[10.5281/zenodo.21629516](https://doi.org/10.5281/zenodo.21629516) cites all versions and
+resolves to the most recent one. See `CITATION.cff` and the Zenodo record.
 
 ## Version history
+
+All versions share the concept DOI
+[10.5281/zenodo.21629516](https://doi.org/10.5281/zenodo.21629516), which always resolves to
+the most recent release.
 
 - **v1.1.0** — adds the dated protocol document and the self-audit checklist the manuscript
   cites as archived; replaces the census-synthesis and screening-reliability scripts with the

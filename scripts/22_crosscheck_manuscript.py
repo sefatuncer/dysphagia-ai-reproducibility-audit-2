@@ -3,8 +3,15 @@
 
 The manuscript and the archive are edited separately, so a number can drift in one
 without the other. This reads the released result files and asserts that each value
-appears in the LaTeX source, which is the check a reader would otherwise have to do
-by hand.
+appears in the manuscript source, which is the check a reader would otherwise have to
+do by hand. It also asserts the absence of six claims withdrawn during revision, so a
+reverted edit cannot quietly reinstate them.
+
+**This check runs at authoring time, not from inside the published archive.** The
+archive holds the study's artifacts, not the paper, so the manuscript source it needs
+is deliberately absent there. It is published anyway, because a reader is entitled to
+see how the numbers in the paper were tied to the released files rather than take it
+on trust. Run it from a working copy that has both.
 """
 
 import json
@@ -12,17 +19,38 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-TEX = (ROOT / "taslak" / "latex" / "makale-IJMI.tex").read_text(encoding="utf-8")
-AN = ROOT / "analiz"
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+import paths  # noqa: E402
+
+# The manuscript lives outside the archive; look for it in the working-tree layout.
+_TEX = paths.BASE / "taslak" / "latex" / "makale-IJMI.tex"
+if not _TEX.exists():
+    sys.exit(
+        "manuscript source not found at " + str(_TEX) + "\n"
+        "  This check compares the paper against the released results, so it needs\n"
+        "  both. The published archive contains the artifacts, not the paper, so this\n"
+        "  script is expected to stop here when run from inside the archive. Run it\n"
+        "  from a working copy that also holds taslak/latex/makale-IJMI.tex."
+    )
+TEX = _TEX.read_text(encoding="utf-8")
+AN = paths.RESULTS
 
 
 def load(name):
     return json.loads((AN / name).read_text(encoding="utf-8"))
 
 
+def _flat(s):
+    """Collapse whitespace, so a needle still matches after LaTeX reflows a line."""
+    return re.sub(r"\s+", " ", s)
+
+
+FLAT = _flat(TEX)
+
+
 def check(label, needle, must=True):
-    hit = needle in TEX
+    hit = _flat(needle) in FLAT
     ok = hit if must else not hit
     print(f"  [{'OK ' if ok else 'FAIL'}] {label:52s} {needle!r}")
     return ok
@@ -39,7 +67,7 @@ def main():
     c = env["study_level_2x2"]
     ok &= check("pinned & portable = 0", "absent in all 18")
     ok &= check("pinned, not portable = 2", "pinned and not portable")
-    ok &= check("not pinned, portable = 4", "the remaining four are portable and")
+    ok &= check("not pinned, portable = 4", "four are portable and unpinned")
     ok &= check("studies with an env file = 6", "six environment specifications")
     assert c["pinned_portable"] == 0 and c["pinned_not_portable"] == 2 \
         and c["not_pinned_portable"] == 4 and env["studies_with_env_file"] == 6

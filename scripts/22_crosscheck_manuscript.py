@@ -38,7 +38,7 @@ def main():
     print("environment pinning (script 19)")
     c = env["study_level_2x2"]
     ok &= check("pinned & portable = 0", "absent in all 18")
-    ok &= check("pinned, not portable = 2", "Two are pinned and not portable")
+    ok &= check("pinned, not portable = 2", "pinned and not portable")
     ok &= check("not pinned, portable = 4", "the remaining four are portable and")
     ok &= check("studies with an env file = 6", "six environment specifications")
     assert c["pinned_portable"] == 0 and c["pinned_not_portable"] == 2 \

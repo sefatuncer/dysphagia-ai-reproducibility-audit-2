@@ -37,7 +37,10 @@ counts large enough for a normal approximation, which two of the three tables he
 plainly violate (the GitHub channel has an empty cell and n=18). The bootstrap is
 BCa over 2,000 resamples with a fixed seed; where the resampling distribution is
 degenerate the interval is reported as not estimable rather than printed as a
-number.
+number. All three intervals are written to the result file. The manuscript quotes
+the widest, because BCa's normalizing assumption is the weakest of the three with
+only four positive cells, and none of them supports a usable precision claim
+anyway; reporting the narrowest would imply a precision the data do not carry.
 
 An important limitation, stated here because it belongs with the numbers: the rule
 specification was revised AFTER observing the agreement it produced (see the

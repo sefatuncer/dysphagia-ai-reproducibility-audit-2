@@ -12,7 +12,7 @@
 
 > ⚠️ **v2 ADAPTATION (re-execution census).** This plan partly retains the pre-pivot language of a systematic review over the whole literature ("denominator A"). **In the v2 design the denominator is the code-available, discoverable set**, not the whole literature. Consequently the **numerical two-proportion comparison against radiology (Newcombe) is NOT APPLIED**, because the denominators do not match; see §5 (v2). Radiology serves only as a conceptual reference frame. The primary analysis is the Wilson 95% interval (study level N=18 primary, repository level N=22 as sensitivity; `09_census_synthesis.py`). RS4 (κ) clinical reliability is reported for the subset with accessible full text (§4).
 
-**Status:** part of the pre-registration package, locked before any outcome data were seen.
+**Status:** design document, published with the archive for audit. It is **not** a timestamped pre-registration and **no claim is made that it predates the analysis**; no registry entry exists. The manuscript states the same in its Design and registration section. (Corrected in v1.1.0: this line previously read "locked before any outcome data were seen", a temporal-priority claim the study does not make and cannot evidence.)
 **Software:** Python (`scripts/03_analysis.py`) — fixed seed, pinned versions; every figure is produced by script, so that the article's reproducibility thesis is applied to its own analysis.
 
 ## 1. Estimands

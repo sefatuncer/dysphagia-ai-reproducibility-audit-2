@@ -1,0 +1,168 @@
+{
+  "mining_flow": {
+    "records_screened": 163,
+    "archive_data_links": 20,
+    "candidate_code_repositories": 143,
+    "excluded_automated_triage": 134,
+    "excluded_individually_with_reason": 3,
+    "individual_reasons": [
+      {
+        "repo": "Safnov/1",
+        "reason": "OUT: stroke-assoc pneumonia (SAP) prediction, not dysphagia"
+      },
+      {
+        "repo": "chirlu/soxr",
+        "reason": "TOOL(resampler) cite; paper PMC12950097 in-scope but shared NO own repo"
+      },
+      {
+        "repo": "jhc050998/Strokeformer",
+        "reason": "OUT: stroke thrombolysis prognosis, not dysphagia"
+      }
+    ],
+    "flagged_in_scope": 6,
+    "dropped_at_intake_vetting": 1,
+    "entered_census": 5
+  },
+  "github_flow": {
+    "candidates": 18,
+    "not_a_study": 1,
+    "deduplicated": 2,
+    "entered_census": 15
+  },
+  "transparency": {
+    "Open license": {
+      "k": 3,
+      "n": 18,
+      "p": 0.16666666666666666,
+      "wilson_lo": 0.05836576804502552,
+      "wilson_hi": 0.3922203810980989,
+      "note": ""
+    },
+    "Trained weights in repository": {
+      "k": 1,
+      "n": 18,
+      "p": 0.05555555555555555,
+      "wilson_lo": 0.009875190975044607,
+      "wilson_hi": 0.25757300788245463,
+      "note": ""
+    },
+    "Trained weights anywhere": {
+      "k": 2,
+      "n": 18,
+      "p": 0.1111111111111111,
+      "wilson_lo": 0.03101952263725774,
+      "wilson_hi": 0.32799765136305414,
+      "note": ""
+    },
+    "Environment specification": {
+      "k": 6,
+      "n": 18,
+      "p": 0.3333333333333333,
+      "wilson_lo": 0.16278774748019156,
+      "wilson_hi": 0.5625053270913707,
+      "note": ""
+    },
+    "Usable sample or test data": {
+      "k": 4,
+      "n": 18,
+      "p": 0.2222222222222222,
+      "wilson_lo": 0.09000928106734643,
+      "wilson_hi": 0.4521458432185905,
+      "note": ""
+    },
+    "Model card or datasheet": {
+      "k": 0,
+      "n": 18,
+      "p": 0.0,
+      "wilson_lo": 1.3877787807814457e-17,
+      "wilson_hi": 0.17587922371468662,
+      "note": ""
+    },
+    "Run instructions (RQ1e)": {
+      "k": 7,
+      "n": 18,
+      "p": 0.3888888888888889,
+      "wilson_lo": 0.2030524656891159,
+      "wilson_hi": 0.6138095840252591,
+      "note": "(README present 15/18)"
+    },
+    "Environment pinned and portable": {
+      "k": 0,
+      "n": 18,
+      "p": 0.0,
+      "wilson_lo": 1.3877787807814457e-17,
+      "wilson_hi": 0.17587922371468662,
+      "note": "binding conjunct"
+    }
+  },
+  "environment_2x2": {
+    "pinned_portable": 0,
+    "pinned_not_portable": 2,
+    "not_pinned_portable": 4,
+    "not_pinned_not_portable": 0
+  },
+  "reexec_0_18": {
+    "k": 0,
+    "n": 18,
+    "wilson_hi": 0.17587922371468662
+  },
+  "reexec": {
+    "relaxed_weights_only": {
+      "k": 0,
+      "n": 2,
+      "p": 0.0,
+      "wilson_lo": 0.0,
+      "wilson_hi": 0.6576197725990219,
+      "note": "no strict pinning required"
+    },
+    "harness": {
+      "k": 0,
+      "n": 3,
+      "p": 0.0,
+      "wilson_lo": 0.0,
+      "wilson_hi": 0.5614970318706057,
+      "note": "2 partial, 1 build-failed"
+    }
+  },
+  "coverage": {
+    "pool": 83,
+    "not_assessable": 44,
+    "assessable": 39,
+    "no_repository": 36,
+    "declared_repository": 3,
+    "miss_rate": {
+      "k": 1,
+      "n": 39,
+      "p": 0.02564102564102564,
+      "wilson_lo": 0.004540703099495447,
+      "wilson_hi": 0.13180990173634152,
+      "note": "lower bound, not an estimate"
+    },
+    "code_sharing_own_code": {
+      "k": 2,
+      "n": 39,
+      "p": 0.05128205128205128,
+      "wilson_lo": 0.014177955411471335,
+      "wilson_hi": 0.16885640051432038,
+      "note": "like-for-like with radiology"
+    },
+    "code_sharing_any_declared": {
+      "k": 3,
+      "n": 39,
+      "p": 0.07692307692307693,
+      "wilson_lo": 0.026507395297633962,
+      "wilson_hi": 0.2032107117181125,
+      "note": "includes one third-party teaching repository"
+    }
+  },
+  "clinical": {
+    "rs4_reliability_reported": {
+      "k": 0,
+      "n": 6,
+      "p": 0.0,
+      "wilson_lo": 0.0,
+      "wilson_hi": 0.390334288013856,
+      "note": "exploratory subset"
+    }
+  }
+}

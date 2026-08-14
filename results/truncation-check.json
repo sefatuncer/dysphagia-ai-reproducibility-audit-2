@@ -1,0 +1,112 @@
+{
+  "cutoff": 15,
+  "per_page": 100,
+  "max_pages": 4,
+  "note": "unauthenticated GitHub search: ~10 req/min, 1000-result cap",
+  "per_term": {
+    "dysphagia deep learning": {
+      "retrieved": 3,
+      "total_count": 3,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "dysphagia machine learning": {
+      "retrieved": 1,
+      "total_count": 1,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "dysphagia segmentation": {
+      "retrieved": 0,
+      "total_count": 0,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "swallowing deep learning": {
+      "retrieved": 4,
+      "total_count": 4,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "swallowing segmentation": {
+      "retrieved": 9,
+      "total_count": 9,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "swallowing classification": {
+      "retrieved": 4,
+      "total_count": 4,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "VFSS deep learning": {
+      "retrieved": 1,
+      "total_count": 1,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "videofluoroscopy swallowing": {
+      "retrieved": 0,
+      "total_count": 0,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "FEES swallowing endoscopy": {
+      "retrieved": 0,
+      "total_count": 0,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "swallowing sound classification": {
+      "retrieved": 1,
+      "total_count": 1,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "cervical auscultation swallow": {
+      "retrieved": 0,
+      "total_count": 0,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "swallowing EMG classification": {
+      "retrieved": 2,
+      "total_count": 2,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "deglutition neural network": {
+      "retrieved": 0,
+      "total_count": 0,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "bolus segmentation fluoroscopy": {
+      "retrieved": 0,
+      "total_count": 0,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "hyoid bone tracking swallow": {
+      "retrieved": 0,
+      "total_count": 0,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "penetration aspiration deep learning": {
+      "retrieved": 0,
+      "total_count": 0,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    },
+    "swallow detection accelerometer": {
+      "retrieved": 0,
+      "total_count": 0,
+      "tail_examined": 0,
+      "in_scope_in_tail": 0
+    }
+  },
+  "tail_in_scope_unique": 0,
+  "tail_novel": {}
+}

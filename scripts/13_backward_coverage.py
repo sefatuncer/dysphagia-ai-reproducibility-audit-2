@@ -30,10 +30,9 @@ try:
 except Exception:
     pass
 
-ROOT = Path(__file__).resolve().parents[2]
-ANALIZ = ROOT / "analiz"
-KAYNAK = ROOT / "kaynaklar"
-OUT = ANALIZ / "backward-coverage.json"
+from paths import inp, out as out_path
+
+OUT = out_path("backward-coverage.json")
 UA = {"User-Agent": "MakaleC-repro/1.0 (mailto:tuncersefa@gmail.com)"}
 BIOC = "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json"
 IDCONV = "https://www.ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/"
@@ -69,35 +68,32 @@ def norm(host, path):
 
 def load_review_dois():
     """Return {doi: source} for both reviews, de-duplicated."""
+    # Both files are required. They were previously guarded with if exists(),
+    # which meant a missing comparator pool produced an empty set and a
+    # "zero leakage" result rather than an error.
     dois = {}
-    kw = KAYNAK / "kwok-24-eslesme.csv"
-    if kw.exists():
-        for r in csv.DictReader(open(kw, encoding="utf-8")):
+    for logical, tag in (("kwok-matches", "kwok"), ("codas-matches", "codas")):
+        for r in csv.DictReader(open(inp(logical), encoding="utf-8")):
             d = (r.get("doi") or "").strip().lower()
             if d:
-                dois.setdefault(d, set()).add("kwok")
-    cd = KAYNAK / "codas-eslesme.csv"
-    if cd.exists():
-        for r in csv.DictReader(open(cd, encoding="utf-8")):
-            d = (r.get("doi") or "").strip().lower()
-            if d:
-                dois.setdefault(d, set()).add("codas")
+                dois.setdefault(d, set()).add(tag)
     return dois
 
 
 def load_census():
     """Repository names already in our census (the 22)."""
-    inv = ANALIZ / "repo-envanteri.csv"
-    keep = {"yes", "needs-check"}
-    # greenapple-sea was flagged needs-check but dropped at intake as data-only,
-    # so it is not part of the 22-repository census and must not match here
-    drop = {"greenapple-sea/esophagus-motility-data"}
-    out = set()
-    for r in csv.DictReader(open(inv, encoding="utf-8")):
-        name = (r["repo"] or "").strip().lower()
-        if (r.get("include") or "").strip().lower() in keep and name not in drop:
-            out.add(name)
-    return out
+    # The inventory now carries a closed decision for every candidate, so census
+    # membership is read straight off it: the 22 rows marked yes. It previously
+    # also accepted needs-check and then had to subtract one repository by name
+    # (greenapple-sea, a data deposit dropped at intake), which meant the census
+    # could not be reconstructed from the released file alone.
+    inv = inp("repo-inventory")
+    names = {(r["repo"] or "").strip().lower()
+             for r in csv.DictReader(open(inv, encoding="utf-8"))
+             if (r.get("include") or "").strip().lower() == "yes"}
+    if len(names) != 22:
+        sys.exit(f"census should be 22 repositories, inventory gives {len(names)}")
+    return names
 
 
 def doi_to_pmcid(doi):

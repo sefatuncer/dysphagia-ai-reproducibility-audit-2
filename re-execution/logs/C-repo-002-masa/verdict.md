@@ -11,8 +11,8 @@
 - Result: **BUILD_FAIL** (EXIT=1)
 - Error: `ERROR: pocketsphinx-0.1.15-cp37-cp37m-win_amd64.whl is not a supported wheel on this platform`
 - Root cause: `requirements.txt` pins one dependency **to the developer's local machine**:
-  `pocketsphinx @ file:///C:/Users/ramis/pipwin/pocketsphinx-0.1.15-cp37-cp37m-win_amd64.whl`
-  → (a) the path `file:///C:/Users/ramis/...` exists on no other machine; (b) a cp37 + win_amd64 wheel installs only under Windows Python 3.7. **Non-portable dependency specification.**
+  `pocketsphinx @ file:///C:/Users/[redacted]/pipwin/pocketsphinx-0.1.15-cp37-cp37m-win_amd64.whl`
+  → (a) the path `file:///C:/Users/[redacted]/...` exists on no other machine; (b) a cp37 + win_amd64 wheel installs only under Windows Python 3.7. **Non-portable dependency specification.**
 - Runs out of the box: **no** (fails at the first `pip install` step).
 
 ## 2. Best-effort repairs (friction taxonomy)
@@ -31,7 +31,9 @@ Not attempted, as it is not needed for the primary finding. Had it been required
 - One sentence: *A repository from a reputable journal (Front Neurosci) cannot be installed out of the box because `requirements.txt` pins a non-portable wheel to a developer's local Windows path; since neither weights nor data are shared, inference cannot be attempted either.*
 
 ## 6. Provenance (DO NOT DELETE)
-Raw log: `bieyh2hhx.output` (pip error) · repository clone: scratchpad/masa (shallow) · commit: main@2026-07-11 · `requirements.txt` line 30 (pocketsphinx file://).
+Captured build output: [`as-declared.log`](as-declared.log) (the failing `pip install` and its exit code) · repository clone: shallow clone of the default branch, working copy not retained · accessed 11 July 2026 · `requirements.txt` line 30 (pocketsphinx `file://`).
+
+**Limitation, stated rather than papered over:** we recorded the access date but not the upstream commit SHA at the time of the clone, and the working clone was not kept. A third party can therefore reach *a* state of this repository, but not provably the state we observed. We do not reconstruct a SHA after the fact, because a SHA read today would identify a different state and would be a fabricated record of provenance in a paper whose subject is provenance. The same limitation applies to the other audited repositories and is reported in the manuscript.
 
 ## Audit value
 This yields verdicts covering **two distinct classes of friction in two reputable repositories**:

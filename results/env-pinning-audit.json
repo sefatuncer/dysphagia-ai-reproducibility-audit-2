@@ -1,0 +1,145 @@
+{
+  "access_date": "2026-07-30",
+  "definitions": {
+    "pinned": "every declared dependency carries an exact version (pip '==' / '===' or an exact archive reference; conda '=<version>')",
+    "portable": "no developer-specific absolute path, no local-file dependency source, no platform-locked wheel filename, no machine-specific conda prefix or local channel; resolves unchanged on a third machine"
+  },
+  "repository_level": [
+    {
+      "repo": "BSEL-UC3M/VFSS_analysis",
+      "study": "A",
+      "file": "environment.yml",
+      "access_date": "2026-07-30",
+      "n_dependencies": 72,
+      "pinned": true,
+      "unpinned_examples": [],
+      "portable": false,
+      "non_portable_reasons": [
+        "developer-specific absolute path: /home/lcubero/",
+        "machine-specific conda 'prefix:' entry"
+      ],
+      "pinned_and_portable": false,
+      "status": "assessed"
+    },
+    {
+      "repo": "UofTNeurology/masa-open-source",
+      "study": "B",
+      "file": "requirements.txt",
+      "access_date": "2026-07-30",
+      "n_dependencies": 47,
+      "pinned": true,
+      "unpinned_examples": [],
+      "portable": false,
+      "non_portable_reasons": [
+        "developer-specific absolute path: file:///",
+        "developer-specific absolute path: C:/",
+        "platform-locked wheel filename: -cp37-cp37m-win_amd64.whl"
+      ],
+      "pinned_and_portable": false,
+      "status": "assessed"
+    },
+    {
+      "repo": "aht4005/dysphagia-risk-calculator",
+      "study": "C",
+      "file": "requirements.txt",
+      "access_date": "2026-07-30",
+      "n_dependencies": 1,
+      "pinned": false,
+      "unpinned_examples": [
+        "streamlit>=1.34"
+      ],
+      "portable": true,
+      "non_portable_reasons": [],
+      "pinned_and_portable": false,
+      "status": "assessed"
+    },
+    {
+      "repo": "tsukagoshi56/liquid_swallowing_segmentation",
+      "study": "G",
+      "file": "requirements.txt",
+      "access_date": "2026-07-30",
+      "n_dependencies": 7,
+      "pinned": false,
+      "unpinned_examples": [
+        "torch>=2.0.0",
+        "torchaudio>=2.0.0",
+        "transformers>=4.30.0",
+        "numpy>=1.24.0",
+        "scikit-learn>=1.2.0",
+        "tqdm>=4.65.0"
+      ],
+      "portable": true,
+      "non_portable_reasons": [],
+      "pinned_and_portable": false,
+      "status": "assessed"
+    },
+    {
+      "repo": "tsukagoshi56/swallowing_segmentation_with_ssl_gru",
+      "study": "G",
+      "file": "requirements.txt",
+      "access_date": "2026-07-30",
+      "n_dependencies": 5,
+      "pinned": false,
+      "unpinned_examples": [
+        "torch>=2.0.0",
+        "torchaudio>=2.0.0",
+        "transformers>=4.30.0",
+        "numpy>=1.24.0",
+        "tqdm>=4.65.0"
+      ],
+      "portable": true,
+      "non_portable_reasons": [],
+      "pinned_and_portable": false,
+      "status": "assessed"
+    },
+    {
+      "repo": "SimonZeng7108/Video-SwinUNet",
+      "study": "M",
+      "file": "requirements.txt",
+      "access_date": "2026-07-30",
+      "n_dependencies": 13,
+      "pinned": false,
+      "unpinned_examples": [
+        "torch=1.11.0",
+        "mmcv=1.5.0",
+        "numpy",
+        "tqdm",
+        "tensorboard",
+        "ml-collections"
+      ],
+      "portable": true,
+      "non_portable_reasons": [],
+      "pinned_and_portable": false,
+      "status": "assessed"
+    },
+    {
+      "repo": "enoch0307/streamlitapp_cn",
+      "study": "O",
+      "file": "requirements.txt",
+      "access_date": "2026-07-30",
+      "n_dependencies": 9,
+      "pinned": false,
+      "unpinned_examples": [
+        "streamlit",
+        "xgboost",
+        "scikit-learn",
+        "pandas",
+        "numpy",
+        "catboost"
+      ],
+      "portable": true,
+      "non_portable_reasons": [],
+      "pinned_and_portable": false,
+      "status": "assessed"
+    }
+  ],
+  "study_level_2x2": {
+    "pinned_portable": 0,
+    "pinned_not_portable": 2,
+    "not_pinned_portable": 4,
+    "not_pinned_not_portable": 0
+  },
+  "studies_with_env_file": 6,
+  "pinned_and_portable_studies": 0,
+  "undetermined": []
+}

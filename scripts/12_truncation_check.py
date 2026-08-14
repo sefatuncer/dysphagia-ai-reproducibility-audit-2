@@ -21,8 +21,9 @@ try:
 except Exception:
     pass
 
-ANALIZ = Path(__file__).resolve().parents[1]
-OUT = ANALIZ / "truncation-check.json"
+from paths import inp, out
+
+OUT = out("truncation-check.json")
 UA = {"User-Agent": "MakaleC-repro/1.0 (mailto:tuncersefa@gmail.com)"}
 PER_PAGE = 100
 ORIGINAL_CUTOFF = 15          # what 07_repo_discovery.py actually kept per term
@@ -70,7 +71,7 @@ def get(url):
 
 def main():
     known = set()
-    ham = ANALIZ / "repo-envanteri-ham.csv"
+    ham = inp("repo-inventory-raw")
     if ham.exists():
         import csv
         known = {(r["repo"] or "").strip().lower()

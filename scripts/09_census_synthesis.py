@@ -34,7 +34,13 @@ def wilson(k, n):
 REPOS = [
  # repo, lic, w_repo, w_any, env, data, attempt, verdict, study_id
  ("VFSS_analysis(pilot1)", 0,0,1,1,1,1,"partial",         "A"),  # weights on Zenodo; 5 repairs -> partial
- ("masa(pilot2)",          1,0,0,1,0,0,"not_attemptable", "B"),   # non-portable wheel; no weights or data
+ # masa: the one repository entered into the harness OUTSIDE the pre-stated entry rule
+ # (it ships neither weights nor data, so `attemptable` is 0 and inference was never
+ # reachable). A build WAS attempted and observed to fail on a non-portable wheel, so its
+ # verdict is not_reproduced at the build stage, which is evidence the inventory could not
+ # have produced. The two stages are reported separately in the manuscript and must not be
+ # merged: attemptable=0 is the inference stage, verdict=not_reproduced is the build stage.
+ ("masa(pilot2)",          1,0,0,1,0,0,"not_reproduced",  "B"),   # non-portable wheel; observed build failure
  ("aht4005-risk-calc",     0,0,0,1,0,0,"not_attemptable", "C"),
  ("MinghaoSam-MICCAI24",   1,0,0,0,0,0,"not_attemptable", "D"),   # MIT licensed but no weights
  ("scut-jol/CFSCNet",      0,0,0,0,0,0,"not_attemptable", "E"),
@@ -104,7 +110,11 @@ def main():
     full_s = vcs.get("re_executable",0)
     rate_row("-> Re-exec. out of box", full_s, n_studies)
     print("-"*70)
-    print(f"  study-level verdicts: re_executable={vcs.get('re_executable',0)} · partial={vcs.get('partial',0)} · not_attemptable={vcs.get('not_attemptable',0)}")
+    print(f"  study-level verdicts: re_executable={vcs.get('re_executable',0)} · "
+          f"partial={vcs.get('partial',0)} · not_reproduced={vcs.get('not_reproduced',0)} · "
+          f"not_attemptable={vcs.get('not_attemptable',0)}")
+    print("    (not_reproduced = a build was attempted and observed to fail; not_attemptable =")
+    print("     no build was attempted, because weights and data are both absent)")
 
     # ---- SENSITIVITY: REPOSITORY LEVEL (unclustered; robustness check) ----
     print("\n"+"="*70); print(f"SENSITIVITY: REPOSITORY LEVEL (N={n} repositories; no clustering correction)"); print("="*70)

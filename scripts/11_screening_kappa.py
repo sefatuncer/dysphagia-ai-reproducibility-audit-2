@@ -24,28 +24,46 @@ Rater 2 = an INDEPENDENT, BLIND, rule-based re-application of the pre-stated
           (record type, repository name, paper title, repository description)
           and NOT the recorded decisions or the reviewer's free-text notes.
 
-Reports simple agreement (Po), Cohen's kappa with asymptotic 95% CI, PABAK, and
+Reports simple agreement (Po), Cohen's kappa with both an asymptotic and a
+bootstrap BCa 95% CI, PABAK, the prevalence and bias indices (PI, BI), and
 positive/negative specific agreement (Ppos/Pneg). Ppos is reported because kappa
 is marginal-driven under the extreme exclusion prevalence of the OA channel
 (the "kappa paradox"); Ppos measures agreement on the decision-relevant class
-without a chance correction that the skewed marginals distort.
+without a chance correction that the skewed marginals distort. PI and BI make the
+paradox explicit rather than leaving it to a verbal caveat.
+
+v3 (2026-07-30) adds the bootstrap. The asymptotic (Fleiss) interval assumes cell
+counts large enough for a normal approximation, which two of the three tables here
+plainly violate (the GitHub channel has an empty cell and n=18). The bootstrap is
+BCa over 2,000 resamples with a fixed seed; where the resampling distribution is
+degenerate the interval is reported as not estimable rather than printed as a
+number.
+
+An important limitation, stated here because it belongs with the numbers: the rule
+specification was revised AFTER observing the agreement it produced (see the
+sensitivity section below), so the reported kappa is an in-sample measure of how
+well a stated rule fits the recorded decisions, and is expected to be optimistic.
 
 This is an AUTOMATED reliability check, reported honestly as such, not as a
-second human reader. Fixed and deterministic; no randomness.
+second human reader. Deterministic: the bootstrap uses a fixed seed.
 """
-import csv, json, math, sys
+import csv, json, math, random, sys
 from pathlib import Path
+
+BOOT_N = 2000
+BOOT_SEED = 20260730
 
 try:
     sys.stdout.reconfigure(encoding="utf-8")
 except Exception:
     pass
 
-ANALIZ = Path(__file__).resolve().parents[1]
-EK = ANALIZ / "repo-envanteri-ek.csv"      # OA full-text code-link mining channel
-HAM = ANALIZ / "repo-envanteri-ham.csv"    # GitHub Search API + Papers with Code channel
-ENV = ANALIZ / "repo-envanteri.csv"        # consolidated inventory (recorded decisions)
-OUT = ANALIZ / "screening-reliability.json"
+from paths import inp, out
+
+EK = inp("repo-inventory-extra")   # OA full-text code-link mining channel
+HAM = inp("repo-inventory-raw")    # GitHub Search API + Papers with Code channel
+ENV = inp("repo-inventory")        # consolidated inventory (recorded decisions)
+OUT = out("screening-reliability.json")
 
 # ---------------------------------------------------------------- blind rule
 # Objective operationalization of the pre-stated inclusion rule, applied blind
@@ -112,13 +130,138 @@ def agreement(a, b):
     # specific agreement (Cicchetti-Feinstein): chance-uncorrected, per class
     ppos = 2 * both1 / (2 * both1 + a1b0 + a0b1) if (2 * both1 + a1b0 + a0b1) else float("nan")
     pneg = 2 * both0 / (2 * both0 + a1b0 + a0b1) if (2 * both0 + a1b0 + a0b1) else float("nan")
+    # prevalence index and bias index (Byrt et al.): the two quantities that make the
+    # "kappa paradox" explicit. A high PI with high Po is why kappa can collapse even
+    # when the raters almost always agree.
+    pi = abs(both1 - both0) / n
+    bi = abs(a1b0 - a0b1) / n
     return dict(n=n, both1=both1, both0=both0, a1b0=a1b0, a0b1=a0b1,
                 r1_include=both1 + a1b0, r2_include=both1 + a0b1,
                 po=po, pe=pe, kappa=kappa, kappa_se=se, kappa_lo=lo, kappa_hi=hi,
-                pabak=2 * po - 1, ppos=ppos, pneg=pneg)
+                pabak=2 * po - 1, ppos=ppos, pneg=pneg, pi=pi, bi=bi)
 
 
-def report(title, k, note=""):
+def _kappa_of(pairs):
+    """Cohen's kappa for a list of (rater1, rater2) pairs; nan when undefined."""
+    n = len(pairs)
+    if n == 0:
+        return float("nan")
+    b1 = sum(1 for x, y in pairs if x == 1 and y == 1)
+    b0 = sum(1 for x, y in pairs if x == 0 and y == 0)
+    a10 = sum(1 for x, y in pairs if x == 1 and y == 0)
+    a01 = sum(1 for x, y in pairs if x == 0 and y == 1)
+    po = (b1 + b0) / n
+    p_a1, p_b1 = (b1 + a10) / n, (b1 + a01) / n
+    pe = p_a1 * p_b1 + (1 - p_a1) * (1 - p_b1)
+    return (po - pe) / (1 - pe) if pe != 1 else float("nan")
+
+
+def _phi(z):
+    return 0.5 * (1 + math.erf(z / math.sqrt(2)))
+
+
+def _phi_inv(p):
+    """Acklam's rational approximation of the standard normal quantile."""
+    if p <= 0 or p >= 1:
+        return float("-inf") if p <= 0 else float("inf")
+    a = [-3.969683028665376e+01, 2.209460984245205e+02, -2.759285104469687e+02,
+         1.383577518672690e+02, -3.066479806614716e+01, 2.506628277459239e+00]
+    b = [-5.447609879822406e+01, 1.615858368580409e+02, -1.556989798598866e+02,
+         6.680131188771972e+01, -1.328068155288572e+01]
+    c = [-7.784894002430293e-03, -3.223964580411365e-01, -2.400758277161838e+00,
+         -2.549732539343734e+00, 4.374664141464968e+00, 2.938163982698783e+00]
+    d = [7.784695709041462e-03, 3.224671290700398e-01, 2.445134137142996e+00,
+         3.754408661907416e+00]
+    pl, ph = 0.02425, 1 - 0.02425
+    if p < pl:
+        q = math.sqrt(-2 * math.log(p))
+        return (((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) / ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1)
+    if p > ph:
+        q = math.sqrt(-2 * math.log(1 - p))
+        return -(((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) / ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1)
+    q = p - 0.5
+    r = q * q
+    return (((((a[0]*r+a[1])*r+a[2])*r+a[3])*r+a[4])*r+a[5])*q / (((((b[0]*r+b[1])*r+b[2])*r+b[3])*r+b[4])*r+1)
+
+
+def bootstrap_kappa(a, b, n_boot=BOOT_N, seed=BOOT_SEED, alpha=0.05):
+    """BCa bootstrap CI for Cohen's kappa, resampling records with replacement.
+
+    Small, sparse tables make the asymptotic interval unreliable, so this is the
+    interval we report. When the resampling distribution is degenerate (kappa
+    undefined in a large share of replicates, or no variation at all), no number is
+    invented: the interval is returned as not estimable, with the diagnostics.
+    """
+    pairs = list(zip(a, b))
+    n = len(pairs)
+    theta = _kappa_of(pairs)
+    rng = random.Random(seed)
+    reps, undefined = [], 0
+    for _ in range(n_boot):
+        sample = [pairs[rng.randrange(n)] for _ in range(n)]
+        k = _kappa_of(sample)
+        if k != k:                                   # nan
+            undefined += 1
+        else:
+            reps.append(k)
+    out = {"n_boot": n_boot, "seed": seed, "undefined_replicates": undefined,
+           "method": "BCa", "lo": float("nan"), "hi": float("nan"), "estimable": False}
+    if theta != theta or len(reps) < 0.5 * n_boot or not reps:
+        out["reason"] = ("kappa is undefined in %d of %d replicates; the resampling "
+                         "distribution is degenerate" % (undefined, n_boot))
+        return out
+    reps.sort()
+    # the plain percentile interval is reported alongside BCa, because where the two
+    # diverge the divergence is itself information about how unstable the estimate is
+    out["percentile_lo"] = reps[max(0, int(math.floor((alpha / 2) * len(reps))))]
+    out["percentile_hi"] = reps[min(len(reps) - 1, int(math.ceil((1 - alpha / 2) * len(reps))) - 1)]
+    n_less = sum(1 for r in reps if r < theta)
+    prop = n_less / len(reps)
+    if prop <= 0 or prop >= 1:
+        # bias correction is not computable; fall back to the percentile interval
+        lo = reps[max(0, int(math.floor((alpha / 2) * len(reps))))]
+        hi = reps[min(len(reps) - 1, int(math.ceil((1 - alpha / 2) * len(reps))) - 1)]
+        out.update(method="percentile (BCa bias correction not computable)",
+                   lo=lo, hi=hi, estimable=True)
+        return out
+    z0 = _phi_inv(prop)
+    # jackknife acceleration
+    jack = []
+    for i in range(n):
+        k = _kappa_of(pairs[:i] + pairs[i + 1:])
+        if k == k:
+            jack.append(k)
+    if len(jack) < 2:
+        acc = 0.0
+    else:
+        m = sum(jack) / len(jack)
+        num = sum((m - x) ** 3 for x in jack)
+        den = 6 * (sum((m - x) ** 2 for x in jack) ** 1.5)
+        acc = num / den if den else 0.0
+    za_lo, za_hi = _phi_inv(alpha / 2), _phi_inv(1 - alpha / 2)
+    def adj(za):
+        d = 1 - acc * (z0 + za)
+        return _phi(z0 + (z0 + za) / d) if d != 0 else float("nan")
+    a_lo, a_hi = adj(za_lo), adj(za_hi)
+    if a_lo != a_lo or a_hi != a_hi:
+        return out
+    lo = reps[max(0, min(len(reps) - 1, int(math.floor(a_lo * len(reps)))))]
+    hi = reps[max(0, min(len(reps) - 1, int(math.ceil(a_hi * len(reps))) - 1))]
+    out.update(lo=lo, hi=hi, estimable=True, z0=z0, acceleration=acc)
+    return out
+
+
+def fmt_boot(b):
+    if not b.get("estimable"):
+        return "not estimable (%s)" % b.get("reason", "degenerate resampling distribution")
+    s = "%.2f to %.2f  [%s, %d resamples]" % (b["lo"], b["hi"], b["method"], b["n_boot"])
+    if "percentile_lo" in b:
+        s += "\n                          plain percentile: %.2f to %.2f" % (
+            b["percentile_lo"], b["percentile_hi"])
+    return s
+
+
+def report(title, k, note="", boot=None):
     print("=" * 68)
     print(title)
     if note:
@@ -131,8 +274,12 @@ def report(title, k, note=""):
     print(f"  n = {k['n']}   rater1 includes = {k['r1_include']}   rater2 includes = {k['r2_include']}")
     print(f"  observed agreement  Po = {k['po']:.3f} ({100*k['po']:.1f}%)")
     print(f"  chance agreement    Pe = {k['pe']:.3f}")
-    print(f"  Cohen's kappa          = {k['kappa']:.3f}  (95% CI {k['kappa_lo']:.2f} to {k['kappa_hi']:.2f})")
-    print(f"  PABAK                  = {k['pabak']:.3f}  (marginal-driven; not the headline)")
+    print(f"  Cohen's kappa          = {k['kappa']:.3f}  (asymptotic 95% CI "
+          f"{k['kappa_lo']:.2f} to {k['kappa_hi']:.2f})")
+    if boot is not None:
+        print(f"     bootstrap 95% CI    : {fmt_boot(boot)}")
+    print(f"  PABAK                  = {k['pabak']:.3f}")
+    print(f"  prevalence index PI    = {k['pi']:.3f}   bias index BI = {k['bi']:.3f}")
     print(f"  positive specific agreement Ppos = {k['ppos']:.3f}")
     print(f"  negative specific agreement Pneg = {k['pneg']:.3f}")
     print()
@@ -179,13 +326,23 @@ def main():
     k_gh = agreement(gh1, gh2)
     k_all = agreement(oa1 + gh1, oa2 + gh2)
 
+    b_oa = bootstrap_kappa(oa1, oa2)
+    b_gh = bootstrap_kappa(gh1, gh2)
+    b_all = bootstrap_kappa(oa1 + gh1, oa2 + gh2)
+
     report(f"CHANNEL 1 — open-access full-text code-link mining (n={k_oa['n']} records)",
-           k_oa, "143 code repositories + 20 archive/data links; extreme exclusion prevalence")
+           k_oa, "143 code repositories + 20 archive/data links; extreme exclusion prevalence.\n"
+                 "  20 of the 163 are archive/data links that BOTH raters exclude on record type\n"
+                 "  alone, so that share of the agreement is free of any scope judgment.",
+           b_oa)
     report(f"CHANNEL 2 — GitHub Search API + Papers with Code (n={k_gh['n']} repositories)",
            k_gh, "scope-enriched by construction; the discriminative burden is de-duplication "
-                 "and\n  is-this-a-study, which an objective rule cannot see")
+                 "and\n  is-this-a-study, which an objective rule cannot see", b_gh)
     report(f"POOLED — both scripted channels (n={k_all['n']} screened records)", k_all,
-           "the 2 carried-forward repositories are excluded: they were not screening decisions")
+           "the 2 carried-forward repositories are excluded: they were not screening decisions.\n"
+           "  UNIT WARNING: these are screened RECORDS, not the 22 repositories or 18 studies\n"
+           "  of the census; the pooled figure mixes two channels with opposite prevalence and\n"
+           "  should be read with the per-channel values, not alone.", b_all)
 
     # -------------------------------------------------- rule-revision sensitivity
     _, oaA1, oaA2 = load_oa("A")
@@ -234,9 +391,25 @@ def main():
     print("        GitHub channel, so it is counted there and is not a carried-forward repo.")
     print("=" * 68)
 
+    print("=" * 68)
+    print("IN-SAMPLE STATUS (reported with the numbers, not only in the limitations)")
+    print("=" * 68)
+    print("  The rule specification was revised after observing the agreement it produced,")
+    print("  so every kappa above is an IN-SAMPLE measure of how well a stated rule fits the")
+    print("  recorded decisions. It is expected to be optimistic and is not an out-of-sample")
+    print("  reliability estimate. Both rule variants are released.")
+    print("=" * 68)
+
     OUT.write_text(json.dumps(
         {"rule_B_primary": {"oa_mining": k_oa, "github_pwc": k_gh, "pooled": k_all},
+         "bootstrap_rule_B": {"oa_mining": b_oa, "github_pwc": b_gh, "pooled": b_all},
          "rule_A_sensitivity": {"oa_mining": kA_oa, "github_pwc_degenerate": kA_gh},
+         "in_sample": True,
+         "in_sample_note": ("the rule specification was revised after observing the "
+                            "agreement it produced; the reported kappa is an in-sample "
+                            "measure of rule fit and is expected to be optimistic"),
+         "free_agreement_note": ("20 of the 163 mining-channel records are archive/data "
+                                 "links excluded by both raters on record type alone"),
          "census": {"from_oa_mining": 5, "from_github_pwc": 15, "carried_forward": 2,
                     "repositories": 22, "studies": 18}},
         indent=2), encoding="utf-8")

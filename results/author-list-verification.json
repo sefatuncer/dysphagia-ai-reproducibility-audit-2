@@ -1,0 +1,297 @@
+[
+  {
+    "key": "kwok2025",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 8,
+    "n_crossref": 8
+  },
+  {
+    "key": "codas2025",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 9,
+    "n_crossref": 9
+  },
+  {
+    "key": "venkatesh2022",
+    "status": "ok",
+    "truncated": true,
+    "n_named": 1,
+    "n_crossref": 4
+  },
+  {
+    "key": "lee2025",
+    "status": "ok",
+    "truncated": true,
+    "n_named": 1,
+    "n_crossref": 5
+  },
+  {
+    "key": "probastai2025",
+    "status": "ok",
+    "truncated": true,
+    "n_named": 6,
+    "n_crossref": 28
+  },
+  {
+    "key": "tripodai2024",
+    "status": "ok",
+    "truncated": true,
+    "n_named": 2,
+    "n_crossref": 34
+  },
+  {
+    "key": "claim2020",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 3,
+    "n_crossref": 3
+  },
+  {
+    "key": "stard2015",
+    "status": "ok",
+    "truncated": true,
+    "n_named": 1,
+    "n_crossref": 17
+  },
+  {
+    "key": "quadas2",
+    "status": "ok",
+    "truncated": true,
+    "n_named": 1,
+    "n_crossref": 10
+  },
+  {
+    "key": "modelcards2019",
+    "status": "ok",
+    "truncated": true,
+    "n_named": 1,
+    "n_crossref": 9
+  },
+  {
+    "key": "wilson1927",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 1,
+    "n_crossref": 1
+  },
+  {
+    "key": "cohen1960",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 1,
+    "n_crossref": 1
+  },
+  {
+    "key": "goodman2016",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 3,
+    "n_crossref": 3
+  },
+  {
+    "key": "nasem2019",
+    "status": "ok_corporate",
+    "bib_authors": [
+      "national academies of sciences",
+      "medicine"
+    ]
+  },
+  {
+    "key": "strobe2007",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 6,
+    "n_crossref": 6
+  },
+  {
+    "key": "prisma2020",
+    "status": "ok",
+    "truncated": true,
+    "n_named": 6,
+    "n_crossref": 26
+  },
+  {
+    "key": "cubero2025",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 8,
+    "n_crossref": 8
+  },
+  {
+    "key": "saab2023",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 12,
+    "n_crossref": 12
+  },
+  {
+    "key": "haibekains2020",
+    "status": "ok",
+    "truncated": true,
+    "n_named": 4,
+    "n_crossref": 32
+  },
+  {
+    "key": "mcdermott2021",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 6,
+    "n_crossref": 6
+  },
+  {
+    "key": "trisovic2022",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 4,
+    "n_crossref": 4
+  },
+  {
+    "key": "enoch2026",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 7,
+    "n_crossref": 7
+  },
+  {
+    "key": "martino2005",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 6,
+    "n_crossref": 6
+  },
+  {
+    "key": "baijens2016",
+    "status": "ok",
+    "truncated": true,
+    "n_named": 1,
+    "n_crossref": 13
+  },
+  {
+    "key": "collberg2016",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 2,
+    "n_crossref": 2
+  },
+  {
+    "key": "raff2019",
+    "status": "no_doi",
+    "bib_authors": [
+      "raff"
+    ]
+  },
+  {
+    "key": "gundersen2018",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 2,
+    "n_crossref": 2
+  },
+  {
+    "key": "stodden2018",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 3,
+    "n_crossref": 3
+  },
+  {
+    "key": "wilkinson2016",
+    "status": "ok",
+    "truncated": true,
+    "n_named": 3,
+    "n_crossref": 53
+  },
+  {
+    "key": "barker2022",
+    "status": "ok",
+    "truncated": true,
+    "n_named": 3,
+    "n_crossref": 11
+  },
+  {
+    "key": "beaulieujones2017",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 2,
+    "n_crossref": 2
+  },
+  {
+    "key": "acm2020",
+    "status": "no_doi",
+    "bib_authors": [
+      "machinery"
+    ]
+  },
+  {
+    "key": "iyer2022",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 12,
+    "n_crossref": 12
+  },
+  {
+    "key": "park2022",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 6,
+    "n_crossref": 6
+  },
+  {
+    "key": "geiger2025",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 5,
+    "n_crossref": 5
+  },
+  {
+    "key": "song2025",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 5,
+    "n_crossref": 5
+  },
+  {
+    "key": "devette2025",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 13,
+    "n_crossref": 13
+  },
+  {
+    "key": "serghiou2021",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 6,
+    "n_crossref": 6
+  },
+  {
+    "key": "gabelica2022",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 3,
+    "n_crossref": 3
+  },
+  {
+    "key": "hardwicke2018",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 14,
+    "n_crossref": 14
+  },
+  {
+    "key": "federer2018",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 7,
+    "n_crossref": 7
+  },
+  {
+    "key": "wallach2018",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 3,
+    "n_crossref": 3
+  }
+]

@@ -1,0 +1,65 @@
+doi,in_corpus,ai_dysphagia_gap,ctx
+10.1590/2317-1782/e20240305en,YES,,Original Article Silva et al. CoDAS 2025;37(4):e20240305 DOI:
+10.1016/j.eswa.2022.117496,YES,,", Zhang Z, et al. Dysphagia diagnosis system with integrated speech analysis from throat vibration. Expert Syst Appl. 2022;204:117496. http://doi.org/"
+10.1016/j.bspc.2021.103122,YES,, poor quality signals as a pre-processing scheme in the analysis of sEMG in swallowing. Biomed Signal Process Control. 2022;71:103122. http://doi.org/
+10.1590/s0004-2803.202000000-66,YES,,"Y, Mahoney AS, Coyle JL. Artificial intelligence and dysphagia: novel solutions to old problems. Arq Gastroenterol. 2020;57(4):343-6. http:// doi.org/"
+10.1038/s41378-023-00591-3,YES,,HD-sEMG electrodes for accurate recognition of swallowing activities on complex epidermal surfaces. Microsyst Nanoeng. 2023;9(1):115. http:// doi.org/
+10.3390/math11143081,YES,,utional networks with different activation functions for swallow classification using depth video data. Mathematics. 2023;11(14):3081. http://doi.org/
+10.1098/rsos.181982,YES,,"onohue C, Coyle JL, Sejdic E. Neck sensor- supported hyoid bone movement tracking during swallowing. R Soc Open Sci. 2019;6(7):181982. http://doi.org/"
+10.3390/app10186179,YES,,"m HI, Choi S-I. Automatic detection of airway invasion from videofluoroscopy via deep learning technology. Appl Sci. 2020;10(18):6179. http://doi.org/"
+10.1007/s00455-021-10317-0,YES,,ts across the lifespan in healthy community dwelling adults using high-resolution cervical auscultation. Dysphagia. 2022;37(3):664-75. http://doi.org/
+10.1044/2020_ajslp-19-00155,YES,,esolution cervical auscultation and data science: new tools to address an old problem. Am J Speech Lang Pathol. 2020;29(2S):992- 1000. http://doi.org/
+10.1111/nmo.12730,YES,, pharyngeal swallow dysfunction in dysphagia through artificial neural network modeling. Neurogastroenterol Motil. 2016;28(3):336-44. http:// doi.org/
+10.1002/lary.23655,YES,,tificial neural network classification of pharyngeal high-resolution manometry with impedance data. Laryngoscope. 2013;123(3):713-20. http:// doi.org/
+10.1177/0194599813489506,YES,,on manometry data according to videofluoroscopic parameters using pattern recognition. Otolaryngol Head Neck Surg. 2013;149(1):126-33. http://doi.org/
+10.1038/s41598-022-25618-z,YES,,ection during flexible endoscopic evaluation of swallowing with artificial intelligence-assisted diagnosis. Sci Rep. 2022;12(1):21689. http://doi.org/
+10.3390/diagnostics11020300,YES,,mmed videofluoroscopic swallowing study using transfer learning with deep convolutional neural networks. Diagnostics. 2021;11(2):300. http:// doi.org/
+10.3390/healthcare8020103,YES,," K, Moritani S, Sakamoto SI, Sakai O. Classifying dysphagic swallowing sounds with support vector machines. Healthcare. 2020;8(2):103. http://doi.org/"
+10.1038/s41598-020-65492-1,YES,,n-invasive identification of swallows via deep learning in high resolution cervical auscultation recordings. Sci Rep. 2020;10(1):8704. http://doi.org/
+10.1186/1743-0003-9-34,YES,,"jdić E, Berall G, Chau T. Quantitative classification of pediatric swallowing through accelerometry. J Neuroeng Rehabil. 2012;9(1):34. http://doi.org/"
+10.3390/jcm10122681,YES,,examiners for detection of laryngeal penetration or aspiration in videofluoroscopic swallowing studies. J Clin Med. 2021;10(12):2681. http:// doi.org/
+10.1109/tbme.2018.2807487,YES,,"ory flow, laryngeal motion, and swallowing sounds to classify safe and unsafe swallowing. IEEE Trans Biomed Eng. 2018;65(11):2529- 41. http://doi.org/"
+10.1159/000517144,YES,, machine learning tools to monitor biomarkers of dysphagia: a wearable sensor proof-of-concept study. Digit Biomark. 2021;5(2):167-75. http://doi.org/
+10.1044/2020_persp-20-00073,YES,,estibule closure duration using high- resolution cervical auscultation signals. Perspect ASHA Spec Interest Groups. 2020;5(6):1647-56. http://doi.org/
+10.1109/aisp.2017.8324095,YES,,"017 Artificial Intelligence and Signal Processing Conference (AISP); 2017; Shiraz, Iran. Proceedings. New York: IEEE; 2017. p. 268-74. http://doi.org/"
+10.1002/cre2.531,YES,,sment of swallowing sound using an electronic stethoscope and an artificial intelligence system. Clin Exp Dent Res. 2022;8(1):225-30. http:// doi.org/
+10.1109/jbhi.2020.3000057,YES,,ith convolutional recurrent neural networks in high resolution cervical auscultation. IEEE J Biomed Health Inform. 2021;25(2):493-503. http://doi.org/
+10.1161/strokeaha.119.027439,YES,,overy after ischemic stroke. Silva et al. CoDAS 2025;37(4):e20240305 DOI: 10.1590/2317-1782/e20240305en 7/33 Stroke. 2020;51(2):440-8. http://doi.org/
+10.1016/j.cmpb.2021.106248,YES,,e learning based analysis of speech dimensions in functional oropharyngeal dysphagia. Comput Methods Programs Biomed. 2021;208:106248. http://doi.org/
+10.1016/j.cmpb.2016.07.010,YES,,", Lee WH, Kim HC, Han TR, Oh BM. Computer-assisted detection of swallowing difficulty. Comput Methods Programs Biomed. 2016;134:79-88. http://doi.org/"
+10.1097/md.0000000000028112,YES,," Yang CK, Yeh CY, Lee J. Measurement of laryngeal elevation by automated segmentation using Mask R-CNN. Medicine. 2021;100(51):e28112. http://doi.org/"
+10.3390/s22145227,YES,, et al. Automated Chicago Classification for esophageal motility disorder diagnosis using machine learning. Sensors. 2022;22(14):5227. http://doi.org/
+10.1109/embc.2019.8857937,YES,," of the IEEE Engineering in Medicine and Biology Society (EMBC); 2019; Berlin, Germany. Proceedings. New York: IEEE; 2019. p. 2584-8. http:// doi.org/"
+10.1044/2021_jslhr-21-00134,YES,,on cervical auscultation signals and temporal and spatial swallow kinematic measurements. J Speech Lang Hear Res. 2021;64(9):3416-31. http:// doi.org/
+10.1002/tee.22572,YES,,mpt of swallowing discrimination by heart rate variability using machine learning. IEEJ Trans Electr Electron Eng. 2017;12(S2):S137-8. http://doi.org/
+10.1038/s41598-020-71713-4,YES,,automatically measure response time of pharyngeal swallowing reflex in videofluoroscopic swallowing study. Sci Rep. 2020;10(1):14735. http:// doi.org/
+10.1007/s00455-022-10547-w,YES,,intelligence screening method for oropharyngeal dysphagia: improving diagnosis through risk management. Dysphagia. 2023;38(4):1224-37. http://doi.org/
+10.1109/isbi45749.2020.9098510,YES,,"E 17th International Symposium on Biomedical Imaging (ISBI); 2020; Iowa City, IA, USA. Proceedings. New York: IEEE; 2020. p. 1647-50. http:// doi.org/"
+10.1109/embc44109.2020.9176664,YES,,"f the IEEE Engineering in Medicine & Biology Society (EMBC); 2020; Montreal, QC, Canada. Proceedings. New York: IEEE; 2020. p. 2173-7. http://doi.org/"
+10.1038/s41598-022-21530-8,YES,,ep learning study on automatic segmentation of contrast-enhanced bolus in videofluorography of swallowing. Sci Rep. 2022;12(1):18754. http:// doi.org/
+10.1016/j.cmpb.2022.107058,YES,,localization in videofluoroscopic swallowing study: killing two birds with one stone? Comput Methods Programs Biomed. 2022;225:107058. http://doi.org/
+10.1142/s0129065720500562,YES,,ased on deep transfer learning: AlexNet classification of the intracranial electrocorticogram. Int J Neural Syst. 2021;31(11):2050056. http://doi.org/
+10.1088/1361-6560/ac4000,YES,,", Deasy JO, Apte AP. Deep learning-based auto- segmentation of swallowing and chewing structures in CT. Phys Med Biol. 2022;67:024001. http://doi.org/"
+10.15403/jgld-4525,YES,,omatic diagnosis of high-resolution esophageal manometry using artificial intelligence. J Gastrointestin Liver Dis. 2022;31(4):383-9. http:// doi.org/
+10.1109/jsen.2022.3196033,YES,,. Swallowing events recognition method based on complex impedance pharyngography and nyquist plots. IEEE Sens J. 2022;22(18):18076-84. http://doi.org/
+10.1016/j.media.2021.102218,YES,," J, Sejdic E. Automatic annotation of cervical vertebrae in videofluoroscopy images via deep learning. Med Image Anal. 2021;74:102218. http://doi.org/"
+10.1007/pl00009609,NO,GAP,acking using a knowledge-based snake algorithm to construct three-dimensional pharyngeal bolus movement. Dysphagia. 1999;14(4):219-27. http://doi.org/
+10.1038/s41598-023-34999-,NO,GAP,t al. Machine learning predictive model for aspiration screening in hospitalized patients with acute stroke. Sci Rep. 2023;13(1):7835. http://doi.org/
+10.1109/access.2020.3019532,NO,GAP,r the hyoid bone tracking during swallowing with neck movement adjustment using semantic segmentation. IEEE Access. 2020;8:157451-61. http:// doi.org/
+10.1016/j.medengphy.2009.07.001,NO,GAP,"J, Steele CM, Chau T. Swallow segmentation with artificial neural networks and multi-sensor fusion. Med Eng Phys. 2009;31(9):1049-55. http:// doi.org/"
+10.2147/cia.s107750,NO,,ean Union Geriatric Medicine Society white paper: oropharyngeal dysphagia as a geriatric syndrome. Clin Interv Aging. 2016;11:1403-28. http://doi.org/
+10.1044/2020_ajslp-19-00189,NO,,"urray J, Davidson K, Lefton-Greif MA. Best practices in modified barium swallow studies. Am J Speech Lang Pathol. 2020;29(2S):1078-93. http://doi.org/"
+10.1186/s13073-021-00968-x,NO,," Williams ED, Pearson JV, Waddell N. Deep learning in cancer diagnosis, prognosis and treatment selection. Genome Med. 2021;13(1):152. http://doi.org/"
+10.1111/cas.14377,NO,,"86/s13073-021-00968-x. PMid:34579788. 7. Shimizu H, Nakayama KI. Artificial intelligence in oncology. Cancer Sci. 2020;111(5):1452-60. http://doi.org/"
+10.46658/jbimes-24-01,NO,,"l Med. 2019;51(12):1-9. 9. Aromataris E, Munn Z, Porritt K, Pilla B, Jordan Z. JBI manual for evidence synthesis. Adelaide: JBI; 2024. http://doi.org/"
+10.1002/jrsm.1563,NO,,ool for transparent and efficient forward and backward citation chasing in systematic searching. Res Synth Methods. 2022;13(4):533-45. http://doi.org/
+10.1002/jrsm.1689,NO,,. Methods for using Bing’s AI-powered search engine for data extraction for a systematic review. Res Synth Methods. 2024;15(2):347-53. http://doi.org/
+10.1136/bmj.n71,NO,,"I, Hoffmann TC, Mulrow CD, et al. The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. BMJ. 2021;372:n71. http://doi.org/"
+10.1007/978-,NO,," Y, Suk HI, Liu M, editors. Machine learning in medical imaging. Cham: Springer; 2018. p. 328-36. (Lecture Notes in Computer Science). http://doi.org/"
+10.1007/s00455-,NO,,erentiate between swallows from healthy people and swallows from people with neurodegenerative diseases. Dysphagia. 2021;36(4):635-43. http://doi.org/
+10.1007/s00455-021-10358-5,NO,, swallowing as a diagnostic method of dysphagia in individuals affected by stroke: preliminary analysis. Dysphagia. 2022;37(4):724-35. http://doi.org/
+10.1109/iembs.1994.415345,NO,,"rence of the IEEE Engineering in Medicine and Biology Society; 1997; Baltimore, MD, USA. Proceedings. New York: IEEE; 1997. p. 1105-6. http://doi.org/"
+10.3390/polym13183041,NO,,an CH. Artificial intelligence-assisted throat sensor using Ionic Polymer-Metal Composite (IPMC) material. Polymers. 2021;13(18):3041. http://doi.org/
+10.1007/s11265-,NO,,g a convolutional neural network and its performance evaluation. J Signal Process Syst Signal Image Video Technol. 2020;92(3):299-305. http://doi.org/
+10.1590/2317-6431-2021-2498,NO,,ais de ausculta cervical na prática clínica fonoaudiológica: uma revisão integrativa de literatura. Audiol Commun Res. 2021;26:e2498. http:// doi.org/
+10.36660/abc.20200596,NO,,"o RM, Ribeiro MH, Moraes JL, Ribeiro AL. Machine learning in medicine: review and applicability. Arq Bras Cardiol. 2022;118(1):95-102. http://doi.org/"

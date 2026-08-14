@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use these materials, please cite both the article and this archive."
-title: "Available but not executable: transparency-audit and containerized re-execution artifacts for open-source dysphagia and swallowing AI"
-abstract: "Reproducibility artifacts (search, transparency-audit, and containerized re-execution pipeline) for a meta-research study of open-source dysphagia/swallowing AI models."
+title: "Available but not executable: transparency-audit and containerized re-execution artifacts for code-available dysphagia and swallowing AI"
+abstract: "Reproducibility artifacts (search, transparency-audit, and containerized re-execution pipeline) for a meta-research study of code-available dysphagia/swallowing AI models."
 type: software
 version: v1.1.0
 date-released: 2026-07-29

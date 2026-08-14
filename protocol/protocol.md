@@ -3,7 +3,7 @@
 *Released with the artifact archive (Zenodo concept DOI 10.5281/zenodo.21629516, which
 resolves to the most recent version) for the
 meta-research audit "Available but not executable: a transparency and
-execution-prerequisite audit of open-source dysphagia and swallowing
+execution-prerequisite audit of code-available dysphagia and swallowing
 artificial-intelligence models, with three containerized re-execution case
 studies."*
 
@@ -16,7 +16,7 @@ studies."*
 > itself.
 
 
-**Title:** Available but not executable: a transparency and execution-prerequisite audit of open-source dysphagia and swallowing artificial-intelligence models, with three containerized re-execution case studies
+**Title:** Available but not executable: a transparency and execution-prerequisite audit of code-available dysphagia and swallowing artificial-intelligence models, with three containerized re-execution case studies
 
 
 **Contributors / roles:** Sefa Tunçer, PhD — Independent Researcher, Ankara, Türkiye; ORCID 0000-0001-6672-3605; tuncersefa@gmail.com (joint first; reproducibility and software, discovery, intake, analysis, re-execution). Nazife Kapan Tunçer, MD — Department of Physical Medicine and Rehabilitation, Faculty of Medicine, Kırşehir Ahi Evran University, Kırşehir, Türkiye; ORCID 0000-0002-8161-5669 (joint first; clinical validity, RS1–RS6 reference-standard and label appraisal). The candidate pool is machine-generated, and scope and borderline decisions are author judgments applied to a pre-stated rule and released in full for audit. **The two joint first authors are married; this is declared in the manuscript and the primary measurements are script-derived.**

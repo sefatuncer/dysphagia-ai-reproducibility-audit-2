@@ -75,7 +75,7 @@ These are recorded here rather than silently resolved, because they bear on how 
 
 ### Objective preliminary findings (all auditable)
 
-1. **Rater reliability (κ / ICC) is almost never reported: approximately 0/18** in the accessible text. What makes this striking is that even studies that **acknowledge** the problem do not quantify their own label reliability — *masa/Saab* notes that "even VFSS by SLP has … poor inter-rater reliability"; *MITI* describes manual expert annotation as "prone to errors". The problem is known but not measured.
+1. **Rater reliability (κ / ICC) is not reported at all in the studies we could read: 0/6** of the full-text-accessible subset (the other 12 of the 18 have no retrievable full text and are coded *not assessable*, so this is **not** extrapolated to 18). What makes this striking is that even studies that **acknowledge** the problem do not quantify their own label reliability — *masa/Saab* notes that "even VFSS by SLP has … poor inter-rater reliability"; *MITI* describes manual expert annotation as "prone to errors". The problem is known but not measured.
 2. **The reference standard is heterogeneous and unstandardized:** instrumental gold (VFSS: A, E, G, M, O · manometry: N · CT/MRI segmentation: D, F) / clinical bedside (B) / **proxy outcome** (Q tube feeding and pneumonia · R CTCAE toxicity · C postoperative outcome) / physical (H viscosity) / unclear and low-provenance (I, J, K, L, P). There is no common reference.
 3. **Proxy leakage (RS2) is common** `[NKT]`: several models predict not the instrumental gold standard but a **proxy** for it — *B* (voice → bedside screen), *Q* (voice → clinical outcome), *O* (clinical and voice → VFSS-confirmed dysphagia), *R* (dose → toxicity). The model learns a shadow of dysphagia rather than dysphagia.
 4. **The code-available subset skews toward low label provenance:** for studies such as I, J, K and L the publication link and the reference standard are unclear, so the repositories that share code may also be those with the weakest label provenance.
@@ -88,7 +88,7 @@ The full text of the Kwok and Wong scoping review (JMIR 2025, PMC12089864) repor
 
 > Dysphagia AI is **reproducible neither computationally nor clinically**, because **both kinds of provenance are systematically missing**:
 > - **Computational provenance:** weights, environment and license are absent → 0/18 re-executable out of the box.
-> - **Clinical and label provenance:** rater reliability, spectrum and reference standard are under-reported → 0/18 report label κ, and the labels themselves are heterogeneous proxies.
+> - **Clinical and label provenance:** rater reliability, spectrum and reference standard are under-reported → 0/6 of the readable studies report label κ or ICC (not extrapolated to 18), and the labels themselves are heterogeneous proxies.
 >
 > Even a model that re-runs perfectly is **not clinically reproducible** if it rests on weak or unreported labels. Each axis is necessary, so the contribution is more than one further audit.
 

@@ -3,12 +3,23 @@ Creative Commons Attribution 4.0 International (CC BY 4.0)
 Copyright (c) 2026 Sefa Tunçer and Nazife Kapan Tunçer
 
 SCOPE: This CC BY 4.0 license covers the DATA and TEXT components of this
-archive — the transparency rubric and templates, codebook and coding guide,
-the RS1–RS6 reference-standard taxonomy and its coding, the statistical
-analysis plan, the re-execution build/run logs and verdicts, the protocol and
-checklists, the minimum-reporting recommendation set, and the record-level
-bibliographic corpus metadata. The CODE (scripts/, harness templates) is
-licensed separately under the MIT License; see LICENSE-CODE.
+archive that the authors produced — the transparency rubric and templates,
+codebook and coding guide, the RS1–RS6 reference-standard taxonomy and its
+coding, the statistical analysis plan, the re-execution build/run logs and
+verdicts, the protocol and checklists, the minimum-reporting recommendation
+set, the candidate inventories, and the screening decisions recorded against
+third-party records. The CODE (scripts/, harness templates) is licensed
+separately under the MIT License; see LICENSE-CODE.
+
+NOT COVERED: This grant does NOT extend to search/corpus-metadata/ or to the
+bibliographic fields in search/comparator-pool/, which redistribute
+record-level bibliographic metadata retrieved from Europe PMC, OpenAlex,
+Semantic Scholar and PubMed. Those records remain under the terms of the
+service each came from; the authors are in no position to relicense them.
+See search/corpus-metadata/README.md for per-file provenance and retrieval
+dates. Where those files carry our own columns (screening decisions such as
+include_screen1 / exclude_reason, and the in_corpus and ai_dysphagia_gap
+coding), those columns are ours and are covered by this license.
 
 You are free to:
   - Share — copy and redistribute the material in any medium or format.
@@ -25,8 +36,13 @@ No warranties are given. The full, legally binding license text is available
 at:  https://creativecommons.org/licenses/by/4.0/legalcode
 Human-readable summary:  https://creativecommons.org/licenses/by/4.0/
 
-NOTE (non-distributive): This archive contains only artifacts produced by the
-authors. Third-party audited repositories — their code, trained weights, and
-any human-derived data — are NOT redistributed here; each is referenced to its
-original repository/DOI, with its own license recorded in the corresponding
-re-execution/logs/.../verdikt.md.
+NOTE (non-distributive): This archive redistributes no third-party code,
+trained weights, or human-derived data. The audited repositories are NOT
+re-hosted here; each is referenced to its original repository/DOI, with its own
+license recorded in the corresponding re-execution/logs/.../verdict.md.
+
+It does redistribute record-level bibliographic metadata, under the terms set
+out above. It deliberately does NOT redistribute the abstracts returned by the
+bibliographic services: that content is not ours to republish. The exclusion is
+enforced by name in RELEASE/build-archive.ps1 and reported at the end of every
+build run.

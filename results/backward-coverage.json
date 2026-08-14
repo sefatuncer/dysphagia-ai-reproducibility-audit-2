@@ -1,0 +1,620 @@
+{
+  "n_unique_dois": 83,
+  "census_size": 22,
+  "counts": {
+    "in_census": 1,
+    "code_not_in_census": 2,
+    "oa_no_code": 36,
+    "not_assessable": 44
+  },
+  "code_declaring": 3,
+  "detail": {
+    "in_census": [
+      {
+        "doi": "10.3389/fnins.2023.1302132",
+        "src": [
+          "kwok"
+        ],
+        "pmcid": "PMC10734030",
+        "repos": [
+          "UofTNeurology/masa-open-source"
+        ],
+        "matched": [
+          "UofTNeurology/masa-open-source"
+        ]
+      }
+    ],
+    "code_not_in_census": [
+      {
+        "doi": "10.1088/1361-6560/ac4000",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC8911366",
+        "repos": [
+          "cerr/CERR",
+          "cerr/CT_SwallowingAndChewing_DeepLabV3"
+        ]
+      },
+      {
+        "doi": "10.1111/cas.14377",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC7226189",
+        "repos": [
+          "deeponcology/PyTorchMedicalAI"
+        ]
+      }
+    ],
+    "oa_no_code": [
+      {
+        "doi": "10.1002/cre2.531",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC8874105"
+      },
+      {
+        "doi": "10.1002/lary.23655",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC3648989"
+      },
+      {
+        "doi": "10.1007/s00455-018-09974-5",
+        "src": [
+          "kwok"
+        ],
+        "pmcid": "PMC6717605"
+      },
+      {
+        "doi": "10.1007/s00455-020-10177-0",
+        "src": [
+          "kwok"
+        ],
+        "pmcid": "PMC7933315"
+      },
+      {
+        "doi": "10.1007/s00455-021-10317-0",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC10312069"
+      },
+      {
+        "doi": "10.1016/j.cmpb.2022.107058",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC9983708"
+      },
+      {
+        "doi": "10.1016/j.media.2021.102218",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC8560570"
+      },
+      {
+        "doi": "10.1016/j.neucom.2017.12.059",
+        "src": [
+          "kwok"
+        ],
+        "pmcid": "PMC5944858"
+      },
+      {
+        "doi": "10.1021/acsnano.8b02133",
+        "src": [
+          "kwok"
+        ],
+        "pmcid": "PMC6286678"
+      },
+      {
+        "doi": "10.1038/s41378-023-00591-3",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC10507084"
+      },
+      {
+        "doi": "10.1038/s41598-020-65492-1",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC7251089"
+      },
+      {
+        "doi": "10.1038/s41598-020-71713-4",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC7477563"
+      },
+      {
+        "doi": "10.1038/s41598-022-21530-8",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC9637105"
+      },
+      {
+        "doi": "10.1038/s41598-022-25618-z",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC9753025"
+      },
+      {
+        "doi": "10.1044/2020_ajslp-19-00155",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC7844341"
+      },
+      {
+        "doi": "10.1044/2020_ajslp-19-00189",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC7844340"
+      },
+      {
+        "doi": "10.1044/2020_persp-20-00073",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC9355454"
+      },
+      {
+        "doi": "10.1044/2021_jslhr-21-00134",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC8642099"
+      },
+      {
+        "doi": "10.1097/md.0000000000028112",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC8702111"
+      },
+      {
+        "doi": "10.1098/rsos.181982",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC6689594"
+      },
+      {
+        "doi": "10.1109/jbhi.2020.3000057",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC7714702"
+      },
+      {
+        "doi": "10.1136/bmj.n71",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC8005924"
+      },
+      {
+        "doi": "10.1159/000517144",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC8460982"
+      },
+      {
+        "doi": "10.1177/0194599813489506",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC3823556"
+      },
+      {
+        "doi": "10.1186/1475-925x-10-100",
+        "src": [
+          "kwok"
+        ],
+        "pmcid": "PMC3261111"
+      },
+      {
+        "doi": "10.1186/1743-0003-9-34",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC3453511"
+      },
+      {
+        "doi": "10.1186/s13073-021-00968-x",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC8477474"
+      },
+      {
+        "doi": "10.1590/2317-1782/e20240305en",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC12337716"
+      },
+      {
+        "doi": "10.2147/cia.s107750",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC5063605"
+      },
+      {
+        "doi": "10.3390/diagnostics11020300",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC7918932"
+      },
+      {
+        "doi": "10.3390/healthcare8020103",
+        "src": [
+          "codas",
+          "kwok"
+        ],
+        "pmcid": "PMC7349358"
+      },
+      {
+        "doi": "10.3390/jcm10122681",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC8233836"
+      },
+      {
+        "doi": "10.3390/nu13114009",
+        "src": [
+          "kwok"
+        ],
+        "pmcid": "PMC8622012"
+      },
+      {
+        "doi": "10.3390/polym13183041",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC8473105"
+      },
+      {
+        "doi": "10.3390/s22145227",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC9323128"
+      },
+      {
+        "doi": "10.36660/abc.20200596",
+        "src": [
+          "codas"
+        ],
+        "pmcid": "PMC8959062"
+      }
+    ],
+    "not_assessable": [
+      {
+        "doi": "10.1002/jrsm.1563",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1002/jrsm.1689",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1002/tee.22572",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1007/978-",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1007/pl00009609",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1007/s00455-",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1007/s00455-021-10358-5",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1007/s00455-022-10547-w",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1007/s11265-",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1007/s11517-007-0285-8",
+        "src": [
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1016/j.amc.2007.10.065",
+        "src": [
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1016/j.artmed.2011.03.002",
+        "src": [
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1016/j.bspc.2021.103122",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1016/j.bspc.2022.104533",
+        "src": [
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1016/j.bspc.2023.105259",
+        "src": [
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1016/j.cmpb.2016.07.010",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1016/j.cmpb.2021.106248",
+        "src": [
+          "codas",
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1016/j.dsp.2022.103815",
+        "src": [
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1016/j.eswa.2022.117496",
+        "src": [
+          "codas",
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1016/j.medengphy.2009.07.001",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1038/s41598-023-34999-",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1109/access.2020.3019532",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1109/aisp.2017.8324095",
+        "src": [
+          "codas",
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1109/embc.2019.8857937",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1109/embc44109.2020.9176664",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1109/icassp48485.2024.10447365",
+        "src": [
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1109/iembs.1994.415345",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1109/isbi45749.2020.9098510",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1109/iscas51556.2021.9401353",
+        "src": [
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1109/isccsp.2008.4537320",
+        "src": [
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1109/jsen.2022.3196033",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1109/metroind4.0iot51437.2021.9488503",
+        "src": [
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1109/taslp.2022.3203235",
+        "src": [
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1109/tbme.2004.836504",
+        "src": [
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1109/tbme.2018.2807487",
+        "src": [
+          "codas",
+          "kwok"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1111/nmo.12730",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1142/s0129065720500562",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1161/strokeaha.119.027439",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.15403/jgld-4525",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1590/2317-6431-2021-2498",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.1590/s0004-2803.202000000-66",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.3390/app10186179",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.3390/math11143081",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      },
+      {
+        "doi": "10.46658/jbimes-24-01",
+        "src": [
+          "codas"
+        ],
+        "reason": "no PMC id"
+      }
+    ]
+  }
+}

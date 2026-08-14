@@ -1,6 +1,26 @@
-# Minimum-reporting RECOMMENDATION SET for dysphagia AI — v0.2
+# Minimum-reporting RECOMMENDATION SET for dysphagia AI — v1.0 (final)
 
-> ⚠️ **This is a set of RECOMMENDATIONS, not a "standard" or a "checklist".** A formal standard would require a Delphi or consensus process, which this study did not run. Calling it a checklist or a standard would be an overclaim, so it is presented as recommendations throughout. The final version is fixed after the audit, foregrounding the items that are **violated most often**.
+> ⚠️ **This is a set of RECOMMENDATIONS, not a "standard" or a "checklist".** A formal standard would require a Delphi or consensus process, which this study did not run. Calling it a checklist or a standard would be an overclaim, so it is presented as recommendations throughout.
+>
+> **Status: final for v1.1.0 of this archive.** The ordering was fixed against the completed audit, foregrounding the items violated most often. The observed frequency behind that ordering is given below and matches Table 6 of the article.
+
+## Core items, ordered by how often the audit found them missing
+
+| Item | Observed in this audit | Scale |
+|---|---|---|
+| Pinned **and** portable environment specification | **0/18** | study level, N=18 |
+| Trained weights retrievable | **2/18** | study level, N=18 |
+| Open (OSI-approved) license | **3/18** | study level, N=18 |
+| Usable sample or test data | **4/18** | study level, N=18 |
+| Run instructions | **7/18** | study level, N=18 |
+| Rater reliability reported (RS4) | **0/4 applicable** (0/6 counting all) | full-text subset, k=6 |
+| Reference standard stated and justified (RS1, RS2) | heterogeneous; no study reported a single instrumental standard with justification | full-text subset, k=6 |
+| External validation | **not measured in this audit** | — |
+
+The first five are the packaging items and are measured for every included study. The
+two clinical items were assessable only where full text could be retrieved. External
+validation is retained because it is standard in this literature's appraisal, but
+this audit did not measure it and the row says so rather than implying a frequency.
 
 **Purpose.** The **constructive output** of the study: not only to measure irreproducibility but to propose a remedy. These are field-specific reporting and transparency recommendations for dysphagia-AI studies.
 
@@ -8,7 +28,7 @@
 
 **Two-part structure:** Part A (engineering and open science, S.T.) × Part B (clinical and dysphagia-specific, N.K.T., derived from RS1–RS6 in `reference-standard-taxonomy-RS1-RS6.md`) × Part C (evaluation, shared). This pairing is what a generic radiology-AI checklist cannot supply for dysphagia.
 
-**Use:** as a submission supplement, where each item is marked Reported (page or section) / Not applicable (with a reason) / Not reported.
+**Use:** as an author self-audit at submission, extending the data-availability statement many journals already require. Each item is marked Reported (page or section) / Not applicable (with a reason) / Not reported. It is deliberately not framed as a supplementary file to be filed and forgotten; the point is that the author checks before submitting, and that a reader can check the same items afterwards from the archive.
 
 ---
 
@@ -49,4 +69,4 @@
 | C6 | **A strong baseline plus ablation** (a clinical score and a well-tuned classical ML model) | dysphagia-specific good practice | Guards against deep learning for its own sake |
 
 ---
-*Draft, to be finalized against the audit results: the items violated most often across the census become the core. The anchors are given for reviewer confidence. There was no Delphi process, so these are recommendations rather than a standard.*
+*Final for v1.1.0. The core ordering is fixed against the completed audit and is given at the top of this document with the observed frequency behind each item. The anchors are given for reviewer confidence. There was no Delphi process, so these are recommendations rather than a standard, and they should be read as a proposal open to criticism.*

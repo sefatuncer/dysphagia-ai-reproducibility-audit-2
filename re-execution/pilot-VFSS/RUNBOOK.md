@@ -20,7 +20,7 @@ reference outputs are its own output. Both are reconstructed by the steps below.
 | `download_weights.sh` | Downloads the 6.1 GB weights from Zenodo and unpacks them into `models/` |
 | `run_pilot.sh` / `.ps1` | build → run.py (CPU) → compare, as a single command |
 | `compare.py` | Compares the regenerated CSVs against the reference and issues a verdict |
-| `rerun.log`, `compare.log` | Created by the run itself, as evidence |
+| `rerun.log`, `compare.log` | Produced when you run this pilot; **not shipped in the archive** (see Provenance below) |
 
 ## Reproduction target and tolerance
 run.py executes four steps (pre-processing → nnU-Net inference → labelled video → 21 parameters). The comparison is between the **regenerated `data/output_data/.../*.csv`** and **`reference_outputs/.../*.csv`**. The path from segmentation to parameters should be deterministic, so full reproduction means values that agree almost exactly (compare.py uses atol 1e-6, rtol 1e-3).
@@ -52,6 +52,10 @@ The **deviations** in the Dockerfile (numpy 1.23.5, scikit-image 0.19.3, CPU tor
 - **Weights layout (verified):** the zip unpacks as `models/models_VFSS/nnUNet/2d/TaskXXX`, but run.py hard-codes `RESULTS_FOLDER=repo/models`, overriding any environment variable, so **`models/models_VFSS/nnUNet` must be moved to `models/nnUNet`**, giving `models/nnUNet/2d/Task010_VFSS/nnUNetTrainerV2__nnUNetPlansv2.1/fold_0..4` plus `plans.pkl`.
 - CPU inference with nnU-Net v1 is slow but acceptable for a single example (246 frames took about 3.9 hours).
 
-## Provenance to record (the evidence chain)
-- `models_VFSS.zip.sha256` · the `pip freeze` from the build logs (the versions actually installed) · `rerun.log` · `compare.log` · the error output of the faithful attempt.
-- All of these are stored under `../logs/`, and the rubric row is C-repo-001 in `../../transparency/transparency-rubric.csv`.
+## Provenance (the evidence chain, as actually published)
+Stored under `../logs/`:
+- `pip-freeze-best-effort.txt` — the versions actually installed in the best-effort container.
+- `dep-conflict-pip-resolver.txt` — the as-declared attempt: the exact command and the resolver output showing the declared dependency set is unsatisfiable.
+- `rerun-crash-findings.txt` — what ran, what crashed, and the comparison result.
+
+**Not published, stated so the chain is not overclaimed:** we did not record a checksum for the 6.1 GB weights download, and the raw `rerun.log` and `compare.log` are not archived; the crash findings file summarises both. A third party can therefore repeat this run and reach the same verdict, but cannot verify bit-identity with the file we downloaded. The rubric row is C-repo-001 in `../../transparency/transparency-rubric.csv`.

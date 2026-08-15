@@ -1,5 +1,7 @@
 # Layer B re-run — PRIMARY reproducibility finding (repo C-repo-001, VFSS_analysis)
-# Date: 2026-07-13 | Best-effort CPU container (documented env deviations) | log: pilot-run/rerun.log
+# Date: 2026-07-13 | Best-effort CPU container (documented env deviations)
+# The raw rerun.log and compare.log are NOT archived; this file summarises both.
+# See re-execution/pilot-VFSS/RUNBOOK.md for what is and is not published.
 
 ## What ran
 - Step 1 Preprocessing: OK (246 frames, 28.7 s).
@@ -39,7 +41,8 @@ package `spicy`), the code still fails to run to completion because of a `NameEr
 After applying fix #5 (Path import), re-running (inference cached → fast) regenerates the
 CSVs; the numeric comparison vs the authors' provided reference CSVs is the SECONDARY
 result (does it reproduce the numbers, given postprocessing was skipped + env deviations).
-See compare.log. But the PRIMARY, headline finding stands: **the published artifact does
+That comparison is summarised under "What ran" above; the raw compare.log is not
+archived. But the PRIMARY, headline finding stands: **the published artifact does
 not execute end-to-end without undocumented environment surgery AND a source-code fix.**
 
 ## SECONDARY RESULT — numeric comparison (after all 5 fixes; inference cached, re-ran Steps 3-4)

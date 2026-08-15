@@ -1,6 +1,6 @@
 # Minimum-reporting checklist, applied to this study
 
-No EQUATOR reporting guideline fits a meta-research execution-prerequisite audit
+No EQUATOR reporting guideline fits a meta-research audit of execution prerequisites
 with an embedded re-execution case series, and the manuscript says so rather than
 claiming conformance to one that does not apply. This file closes that gap in the
 only way that is consistent with the paper's own argument: we take the

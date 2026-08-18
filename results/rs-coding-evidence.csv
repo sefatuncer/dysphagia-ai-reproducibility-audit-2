@@ -1,0 +1,91 @@
+study_id,study,paper,item,code,recorded_basis,assigned_by,evidence_level
+A,VFSS_analysis/Cubero,Comput Biol Med 2025,RS1 reference-standard type,instrumental reference (VFSS videofluoroscopy),,text-verifiable,abstract+pilot
+A,VFSS_analysis/Cubero,Comput Biol Med 2025,RS2 target validity and surrogate substitution,segmentation mask is the label; the target is anatomical (not a proxy),,clinician judgment,abstract+pilot
+A,VFSS_analysis/Cubero,Comput Biol Med 2025,RS3 label scale and granularity,anatomical segmentation (pixel/structure mask),n/a (segmentation),text-verifiable,abstract+pilot
+A,VFSS_analysis/Cubero,Comput Biol Med 2025,RS4 label reliability,NR,pilot documentation: manual segmentation; no rater kappa or ICC in the accessible text,text-verifiable,abstract+pilot
+A,VFSS_analysis/Cubero,Comput Biol Med 2025,RS5 spectrum,NR (aetiology and severity distribution not reported),,clinician judgment,abstract+pilot
+B,masa/Saab,Front Neurosci 2023,RS1 reference-standard type,clinical/bedside screening (post-stroke),,text-verifiable,abstract+fulltext
+B,masa/Saab,Front Neurosci 2023,RS2 target validity and surrogate substitution,PROXY LEAKAGE: the model predicts a bedside-screening label FROM VOICE (not the instrumental standard),,clinician judgment,abstract+fulltext
+B,masa/Saab,Front Neurosci 2023,RS3 label scale and granularity,binary dysphagia-risk,yes (binary risk),text-verifiable,abstract+fulltext
+B,masa/Saab,Front Neurosci 2023,RS4 label reliability,NR (own label),full text: 'even VFSS by SLP has ... poor inter-rater reliability' (acknowledged),text-verifiable,abstract+fulltext
+B,masa/Saab,Front Neurosci 2023,RS5 spectrum,stroke patients; healthy controls? NR,,clinician judgment,abstract+fulltext
+C,aht4005/risk-calc,needs-check (anti-reflux postoperative),RS1 reference-standard type,clinical-outcome (postoperative dysphagia),,text-verifiable,inventory-only
+C,aht4005/risk-calc,needs-check (anti-reflux postoperative),RS2 target validity and surrogate substitution,clinical-outcome prediction (preoperative tabular -> postoperative dysphagia); not instrumental,,clinician judgment,inventory-only
+C,aht4005/risk-calc,needs-check (anti-reflux postoperative),RS3 label scale and granularity,binary (postoperative dysphagia present/absent),yes (binary),text-verifiable,inventory-only
+C,aht4005/risk-calc,needs-check (anti-reflux postoperative),RS4 label reliability,NR,tabular; the label is a postoperative clinical outcome; no kappa,text-verifiable,inventory-only
+C,aht4005/risk-calc,needs-check (anti-reflux postoperative),RS5 spectrum,anti-reflux surgery (GERD) — NOT neurogenic dysphagia; narrow spectrum,,clinician judgment,inventory-only
+D,MinghaoSam/MICCAI24,MICCAI 2024 (could not be confirmed),RS1 reference-standard type,instrumental (cine-MRI),,text-verifiable,inventory-only
+D,MinghaoSam/MICCAI24,MICCAI 2024 (could not be confirmed),RS2 target validity and surrogate substitution,segmentation-mask label,,clinician judgment,inventory-only
+D,MinghaoSam/MICCAI24,MICCAI 2024 (could not be confirmed),RS3 label scale and granularity,anatomical segmentation (tongue/dorsum),n/a (segmentation),text-verifiable,inventory-only
+D,MinghaoSam/MICCAI24,MICCAI 2024 (could not be confirmed),RS4 label reliability,NR,no paper match; inferred from the modality,text-verifiable,inventory-only
+D,MinghaoSam/MICCAI24,MICCAI 2024 (could not be confirmed),RS5 spectrum,NR,,clinician judgment,inventory-only
+E,scut-jol/CFSCNet,article (could not be confirmed),RS1 reference-standard type,instrumental (VFSS/video),,text-verifiable,inventory-only
+E,scut-jol/CFSCNet,article (could not be confirmed),RS2 target validity and surrogate substitution,segmentation label,,clinician judgment,inventory-only
+E,scut-jol/CFSCNet,article (could not be confirmed),RS3 label scale and granularity,swallow segmentation,n/a (segmentation),text-verifiable,inventory-only
+E,scut-jol/CFSCNet,article (could not be confirmed),RS4 label reliability,NR,no paper match,text-verifiable,inventory-only
+E,scut-jol/CFSCNet,article (could not be confirmed),RS5 spectrum,NR,,clinician judgment,inventory-only
+F,kwahid/ABAS,MD Anderson RT (could not be confirmed),RS1 reference-standard type,instrumental (CT),,text-verifiable,inventory-only
+F,kwahid/ABAS,MD Anderson RT (could not be confirmed),RS2 target validity and surrogate substitution,segmentation (radiotherapy structure); NOT dysphagia assessment (borderline),,clinician judgment,inventory-only
+F,kwahid/ABAS,MD Anderson RT (could not be confirmed),RS3 label scale and granularity,anatomical structure contour,n/a (segmentation),text-verifiable,inventory-only
+F,kwahid/ABAS,MD Anderson RT (could not be confirmed),RS4 label reliability,NR,no paper match; radiotherapy-planning context,text-verifiable,inventory-only
+F,kwahid/ABAS,MD Anderson RT (could not be confirmed),RS5 spectrum,head-and-neck cancer radiotherapy,,clinician judgment,inventory-only
+G,tsukagoshi/liquid,article (could not be confirmed),RS1 reference-standard type,instrumental (VFSS/video),,text-verifiable,inventory-only
+G,tsukagoshi/liquid,article (could not be confirmed),RS2 target validity and surrogate substitution,segmentation label,,clinician judgment,inventory-only
+G,tsukagoshi/liquid,article (could not be confirmed),RS3 label scale and granularity,liquid-swallow segmentation,n/a (segmentation),text-verifiable,inventory-only
+G,tsukagoshi/liquid,article (could not be confirmed),RS4 label reliability,NR,no paper match,text-verifiable,inventory-only
+G,tsukagoshi/liquid,article (could not be confirmed),RS5 spectrum,NR,,clinician judgment,inventory-only
+H,zhengfj1994/viscosity,unclear,RS1 reference-standard type,physical viscosity label (IDDSI?),,text-verifiable,inventory-only
+H,zhengfj1994/viscosity,unclear,RS2 target validity and surrogate substitution,physical-viscosity label (not clinical swallowing),,clinician judgment,inventory-only
+H,zhengfj1994/viscosity,unclear,RS3 label scale and granularity,viscosity categories,unclear,text-verifiable,inventory-only
+H,zhengfj1994/viscosity,unclear,RS4 label reliability,NR,no paper match,text-verifiable,inventory-only
+H,zhengfj1994/viscosity,unclear,RS5 spectrum,NR,,clinician judgment,inventory-only
+N,MITI/swallow-detection,Communications Medicine 2025,RS1 reference-standard type,instrumental (HRM manometry),,text-verifiable,abstract+fulltext
+N,MITI/swallow-detection,Communications Medicine 2025,RS2 target validity and surrogate substitution,the target is a manometric swallow event (instrumental); not a proxy,,clinician judgment,abstract+fulltext
+N,MITI/swallow-detection,Communications Medicine 2025,RS3 label scale and granularity,event detection (swallow vs non-swallow),n/a (detection),text-verifiable,abstract+fulltext
+N,MITI/swallow-detection,Communications Medicine 2025,RS4 label reliability,NR,full text: manual expert annotation described as 'prone to errors' (acknowledged); no kappa or ICC,text-verifiable,abstract+fulltext
+N,MITI/swallow-detection,Communications Medicine 2025,RS5 spectrum,oesophageal-motility patients,,clinician judgment,abstract+fulltext
+O,enoch0307/screening,iScience 2026,RS1 reference-standard type,instrumental reference (VFSS + PAS; 30 FPS),,text-verifiable,fulltext-verified
+O,enoch0307/screening,iScience 2026,RS2 target validity and surrogate substitution,TARGET VALID (not a proxy): the target is VFSS-confirmed dysphagia (instrumental gold standard); the clinical and voice features are input proxies and fall OUTSIDE the scope of RS2,,clinician judgment,fulltext-verified
+O,enoch0307/screening,iScience 2026,RS3 label scale and granularity,5-class NOMINAL anatomical phase (oral/pharyngeal/oesophageal) + binary — NOT ordinal severity,yes (binary + 5-class nominal),text-verifiable,fulltext-verified
+O,enoch0307/screening,iScience 2026,RS4 label reliability,NR (for the label),"full text: Cohen kappa > 0.8 is reported for the GRBAS voice INPUT, not for the label; a blinded second therapist confirmed qualitatively (no number given)",text-verifiable,fulltext-verified
+O,enoch0307/screening,iScience 2026,RS5 spectrum,older adults; 7 hospitals; healthy controls? NR,,clinician judgment,fulltext-verified
+P,yonghunsong/throat,npj Digit Med 2025,RS1 reference-standard type,annotated throat events (reference unclear),,text-verifiable,abstract+fulltext
+P,yonghunsong/throat,npj Digit Med 2025,RS2 target validity and surrogate substitution,wearable sensor; label provenance unclear,,clinician judgment,abstract+fulltext
+P,yonghunsong/throat,npj Digit Med 2025,RS3 label scale and granularity,event classification,unclear,text-verifiable,abstract+fulltext
+P,yonghunsong/throat,npj Digit Med 2025,RS4 label reliability,NR,full text is reference-heavy; label reliability unclear,text-verifiable,abstract+fulltext
+P,yonghunsong/throat,npj Digit Med 2025,RS5 spectrum,unclear,,clinician judgment,abstract+fulltext
+Q,ruaeh/Dysphagia-ML,Scientific Reports 2022 (PMC9537337),RS1 reference-standard type,instrumental test (VFSS/FEES) linked to a downstream outcome,,text-verifiable,fulltext-verified
+Q,ruaeh/Dysphagia-ML,Scientific Reports 2022 (PMC9537337),RS2 target validity and surrogate substitution,"PROGNOSTIC / downstream: the model predicts a clinical OUTCOME (tube feeding, pneumonia) FROM VOICE — not the instrumental scale itself",,clinician judgment,fulltext-verified
+Q,ruaeh/Dysphagia-ML,Scientific Reports 2022 (PMC9537337),RS3 label scale and granularity,binary risk,yes (binary; PAS descriptive only),text-verifiable,fulltext-verified
+Q,ruaeh/Dysphagia-ML,Scientific Reports 2022 (PMC9537337),RS4 label reliability,NR,full text: targets are tube feeding and respiratory complication; the only blinding concerns the phonation recording; no label kappa or ICC,text-verifiable,fulltext-verified
+Q,ruaeh/Dysphagia-ML,Scientific Reports 2022 (PMC9537337),RS5 spectrum,stroke patients; healthy controls? NR,,clinician judgment,fulltext-verified
+R,PRI2MA/DL_NTCP,Radiotherapy & Oncology 2025 (PMC12520315),RS1 reference-standard type,clinician-reported toxicity (CTCAEv4; MDACC PSS-HN) — NOT instrumental,,text-verifiable,fulltext-verified
+R,PRI2MA/DL_NTCP,Radiotherapy & Oncology 2025 (PMC12520315),RS2 target validity and surrogate substitution,PROGNOSTIC: NTCP prediction of late dysphagia toxicity (not diagnosis or assessment); borderline,,clinician judgment,fulltext-verified
+R,PRI2MA/DL_NTCP,Radiotherapy & Oncology 2025 (PMC12520315),RS3 label scale and granularity,ordinal CTCAE 0-4 -> dichotomized at grade >= 2,yes (grade >= 2),text-verifiable,fulltext-verified
+R,PRI2MA/DL_NTCP,Radiotherapy & Oncology 2025 (PMC12520315),RS4 label reliability,NR,"full text: no kappa, ICC or agreement statistic in the published version; the two cohorts use two different scales (heterogeneity)",text-verifiable,fulltext-verified
+R,PRI2MA/DL_NTCP,Radiotherapy & Oncology 2025 (PMC12520315),RS5 spectrum,head-and-neck cancer after radiotherapy,,clinician judgment,fulltext-verified
+I,arivv22/sound,publication unclear (student project?),RS1 reference-standard type,unclear (sound label),,text-verifiable,inventory-only
+I,arivv22/sound,publication unclear (student project?),RS2 target validity and surrogate substitution,unclear,,clinician judgment,inventory-only
+I,arivv22/sound,publication unclear (student project?),RS3 label scale and granularity,unclear,unclear,text-verifiable,inventory-only
+I,arivv22/sound,publication unclear (student project?),RS4 label reliability,NR,no publication link; low label provenance,text-verifiable,inventory-only
+I,arivv22/sound,publication unclear (student project?),RS5 spectrum,unclear,,clinician judgment,inventory-only
+J,Kai-Washino,publication unclear,RS1 reference-standard type,unclear,,text-verifiable,inventory-only
+J,Kai-Washino,publication unclear,RS2 target validity and surrogate substitution,unclear,,clinician judgment,inventory-only
+J,Kai-Washino,publication unclear,RS3 label scale and granularity,unclear,unclear,text-verifiable,inventory-only
+J,Kai-Washino,publication unclear,RS4 label reliability,NR,publication link unclear,text-verifiable,inventory-only
+J,Kai-Washino,publication unclear,RS5 spectrum,unclear,,clinician judgment,inventory-only
+K,YashC1308+Tanishq/sEMG,publication unclear (laryngectomy),RS1 reference-standard type,sEMG larynx function (reference standard unclear),,text-verifiable,inventory-only
+K,YashC1308+Tanishq/sEMG,publication unclear (laryngectomy),RS2 target validity and surrogate substitution,unclear,,clinician judgment,inventory-only
+K,YashC1308+Tanishq/sEMG,publication unclear (laryngectomy),RS3 label scale and granularity,unclear,unclear,text-verifiable,inventory-only
+K,YashC1308+Tanishq/sEMG,publication unclear (laryngectomy),RS4 label reliability,NR,laryngectomy sEMG; unclear whether dysphagia-specific (borderline),text-verifiable,inventory-only
+K,YashC1308+Tanishq/sEMG,publication unclear (laryngectomy),RS5 spectrum,laryngectomy,,clinician judgment,inventory-only
+L,20206666/chew-swallow,publication unclear,RS1 reference-standard type,chewing/swallowing classification,,text-verifiable,inventory-only
+L,20206666/chew-swallow,publication unclear,RS2 target validity and surrogate substitution,unclear,,clinician judgment,inventory-only
+L,20206666/chew-swallow,publication unclear,RS3 label scale and granularity,unclear,unclear,text-verifiable,inventory-only
+L,20206666/chew-swallow,publication unclear,RS4 label reliability,NR,no description; low provenance,text-verifiable,inventory-only
+L,20206666/chew-swallow,publication unclear,RS5 spectrum,unclear,,clinician judgment,inventory-only
+M,Video-SwinUNet,scoping candidate,RS1 reference-standard type,instrumental (VFSS),,text-verifiable,inventory-only
+M,Video-SwinUNet,scoping candidate,RS2 target validity and surrogate substitution,segmentation label,,clinician judgment,inventory-only
+M,Video-SwinUNet,scoping candidate,RS3 label scale and granularity,swallow segmentation,n/a (segmentation),text-verifiable,inventory-only
+M,Video-SwinUNet,scoping candidate,RS4 label reliability,NR,from scoping; label provenance unclear,text-verifiable,inventory-only
+M,Video-SwinUNet,scoping candidate,RS5 spectrum,NR,,clinician judgment,inventory-only

@@ -1,0 +1,372 @@
+{
+  "access_date": "2026-08-18",
+  "rule": "a repository carries usable sample or test data if at least one file under a data-designating directory is non-empty and is not code or documentation; the directory match is deliberately generous",
+  "repositories": [
+    {
+      "repo": "aht4005/dysphagia-risk-calculator",
+      "status": "read",
+      "pushed_at": "2026-05-25",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "MinghaoSam/SwallowingFunctionAnalysis",
+      "status": "read",
+      "pushed_at": "2024-05-29",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 512,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [
+        {
+          "path": "datasets/SagittalTongue_Temporal/Test_Folder/images/crx-0025.jpg",
+          "bytes": 33485
+        },
+        {
+          "path": "datasets/SagittalTongue_Temporal/Test_Folder/images/crx-0026.jpg",
+          "bytes": 33998
+        },
+        {
+          "path": "datasets/SagittalTongue_Temporal/Test_Folder/images/crx-0027.jpg",
+          "bytes": 33800
+        }
+      ],
+      "sample_data_usable": 1
+    },
+    {
+      "repo": "scut-jol/CFSCNet",
+      "status": "read",
+      "pushed_at": "2024-10-29",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "scut-jol/swallow_segment_system",
+      "status": "read",
+      "pushed_at": "2024-09-08",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "kwahid/ABAS_swallowing_structures",
+      "status": "read",
+      "pushed_at": "2025-04-17",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "tsukagoshi56/liquid_swallowing_segmentation",
+      "status": "read",
+      "pushed_at": "2026-03-11",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "tsukagoshi56/swallowing_segmentation_meanteacher",
+      "status": "read",
+      "pushed_at": "2026-03-11",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "tsukagoshi56/swallowing_segmentation_with_ssl_gru",
+      "status": "read",
+      "pushed_at": "2026-03-10",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "zhengfj1994/dysphagia-viscosity-classifier",
+      "status": "read",
+      "pushed_at": "2025-10-28",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "arivv22/ai-swallowing-sound-classification",
+      "status": "read",
+      "pushed_at": "2025-10-12",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "Kai-Washino/swallowing-recognition-DLmachine",
+      "status": "read",
+      "pushed_at": "2024-08-29",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "YashC1308/Larynx-Prediction-using-sEMG-data",
+      "status": "read",
+      "pushed_at": "2024-06-02",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 14,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "TanishqJoshi/Larynx-Function-prediction-using-W-KNN-on-sEMG-data",
+      "status": "read",
+      "pushed_at": "2024-06-02",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 14,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "20206666/Classification-of-chewing-and-swallowing",
+      "status": "read",
+      "pushed_at": "2023-09-12",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "SimonZeng7108/Video-SwinUNet",
+      "status": "read",
+      "pushed_at": "2023-06-13",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 2,
+        "documentation": 1,
+        "placeholder": 3
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "ResearchgroupMITI/swallow-detection",
+      "status": "read",
+      "pushed_at": "2025-08-21",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 1,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "enoch0307/streamlitapp_cn",
+      "status": "read",
+      "pushed_at": "2025-11-04",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "yonghunsong/Throat-related-events-classification",
+      "status": "read",
+      "pushed_at": "2025-01-08",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "ruaeh/Dysphagia-ML",
+      "status": "tree unavailable",
+      "sample_data_usable": null
+    },
+    {
+      "repo": "PRI2MA/DL_NTCP_Dysphagia",
+      "status": "read",
+      "pushed_at": "2025-07-21",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 25,
+        "documentation": 0,
+        "placeholder": 2
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "greenapple-sea/Esophagus-Motility-Data",
+      "status": "read",
+      "pushed_at": "2025-04-10",
+      "intake_date": "2026-07-16",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    },
+    {
+      "repo": "BSEL-UC3M/VFSS_analysis",
+      "status": "read",
+      "pushed_at": "2026-04-27",
+      "intake_date": "2026-07-13",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 20,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [
+        {
+          "path": "data/manual_labels/test/healthy_001/t0/healthy_001_t0_manual_labels.avi",
+          "bytes": 2907110
+        },
+        {
+          "path": "data/output_data/test/healthy_001/t0/LUMI.csv",
+          "bytes": 2017
+        },
+        {
+          "path": "data/output_data/test/healthy_001/t0/PCM_movement.csv",
+          "bytes": 14472
+        }
+      ],
+      "sample_data_usable": 1
+    },
+    {
+      "repo": "UofTNeurology/masa-open-source",
+      "status": "read",
+      "pushed_at": "2026-07-12",
+      "intake_date": "2026-07-14",
+      "changed_since_intake": false,
+      "files_under_data_dirs": {
+        "data": 0,
+        "code": 0,
+        "documentation": 0,
+        "placeholder": 0
+      },
+      "data_file_examples": [],
+      "sample_data_usable": 0
+    }
+  ],
+  "n_usable": 2,
+  "n_repositories": 23,
+  "not_read": [
+    "ruaeh/Dysphagia-ML"
+  ]
+}

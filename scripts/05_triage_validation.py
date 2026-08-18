@@ -13,13 +13,16 @@ TWO MODES:
 The seed is fixed, so the sample is reproducible.
 """
 import csv, os, random
+from paths import require_unarchived, out
 random.seed(2026)
 try:
     import sys; sys.stdout.reconfigure(encoding="utf-8")
 except Exception: pass
 
-WF = "analiz/tarama-calisma-sayfasi.csv"
-SAMPLE = "analiz/triyaj-validasyon-ornek.csv"
+WF = require_unarchived(out("screening-worksheet.csv"),
+                       "it is written by script 02, which reads the unarchived "
+                       "enriched corpus")
+SAMPLE = out("triage-validation-sample.csv")
 TARGET = 200
 FLOOR_EXCL = 25   # minimum drawn from each exclude bucket (hunting for false excludes)
 FLOOR_OTHER = 15

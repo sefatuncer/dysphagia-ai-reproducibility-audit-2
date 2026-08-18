@@ -56,6 +56,10 @@ _INPUTS = {
                              "analiz/repo-envanteri.csv"),
     "repo-intake-table":    ("transparency/repo-intake-table.csv",
                              "analiz/repo-intake-tablosu.csv"),
+    # The clinical coding is authored in Turkish and translated once for release; the
+    # English rendering is the one the manuscript reports, so it is the one read here.
+    "rs-taxonomy-coding":   ("transparency/rs-taxonomy-coding.csv",
+                             "RELEASE/_source-en/transparency/rs-taxonomy-coding.csv"),
     "kwok-matches":         ("search/comparator-pool/kwok-24-matches.csv",
                              "kaynaklar/kwok-24-eslesme.csv"),
     "codas-matches":        ("search/comparator-pool/codas-matches.csv",
@@ -84,6 +88,29 @@ def out(filename):
     """Path to write a result file to, creating the directory if needed."""
     RESULTS.mkdir(parents=True, exist_ok=True)
     return RESULTS / filename
+
+
+def require_unarchived(rel, why):
+    """Guard for an input that is deliberately absent from the published archive.
+
+    The discovery and screening scripts read the enriched corpus, which carries the
+    abstracts the bibliographic services returned and is not ours to republish. Running
+    them from inside the archive therefore cannot work, and the failure must say why:
+    a bare FileNotFoundError invites the reader to assume the archive is broken, when
+    the omission is a stated content policy. The manuscript reports this layer as
+    reissuable from the released queries but not reproducible from a snapshot.
+    """
+    p = BASE / rel if not str(rel).startswith(str(BASE)) else Path(rel)
+    if p.exists():
+        return p
+    sys.exit(f"{Path(rel).name} is not part of the published archive.\n"
+             f"  reason : {why}\n"
+             f"  layout : {LAYOUT}\n"
+             f"  looked : {p}\n"
+             f"  This step can be re-issued from the released queries and retrieval\n"
+             f"  dates, but it cannot be reproduced from the published snapshot. That\n"
+             f"  is stated in the article and in the self-audit checklist; it is not a\n"
+             f"  missing file.")
 
 
 def result(filename, required=True):

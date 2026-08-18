@@ -63,11 +63,11 @@
       "note": ""
     },
     "Usable sample or test data": {
-      "k": 4,
+      "k": 2,
       "n": 18,
-      "p": 0.2222222222222222,
-      "wilson_lo": 0.09000928106734643,
-      "wilson_hi": 0.4521458432185905,
+      "p": 0.1111111111111111,
+      "wilson_lo": 0.03101952263725774,
+      "wilson_hi": 0.32799765136305414,
       "note": ""
     },
     "Model card or datasheet": {
@@ -76,7 +76,7 @@
       "p": 0.0,
       "wilson_lo": 1.3877787807814457e-17,
       "wilson_hi": 0.17587922371468662,
-      "note": ""
+      "note": "(hand-checked)"
     },
     "Run instructions (RQ1e)": {
       "k": 7,

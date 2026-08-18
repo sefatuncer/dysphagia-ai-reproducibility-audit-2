@@ -1,22 +1,24 @@
-repo,check_date,default_branch,license,env_file,weights,data_dir,readme,code_files,n_files,verdict_skeleton,error
-aht4005/dysphagia-risk-calculator,2026-07-16,main,none/not_reported,requirements.txt,NONE,NONE,yes,1,5,not_attemptable (inference: NO weights),
-MinghaoSam/SwallowingFunctionAnalysis,2026-07-16,main,MIT,NONE,NONE,datasets/,yes,26,577,not_attemptable (inference: NO weights),
-scut-jol/CFSCNet,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,14,16,not_attemptable (inference: NO weights),
-scut-jol/swallow_segment_system,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,1,2,not_attemptable (inference: NO weights),
-kwahid/ABAS_swallowing_structures,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,0,1,not_attemptable (inference: NO weights),
-tsukagoshi56/liquid_swallowing_segmentation,2026-07-16,master,none/not_reported,requirements.txt,NONE,NONE,yes,16,21,not_attemptable (inference: NO weights),
-tsukagoshi56/swallowing_segmentation_meanteacher,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,20,27,not_attemptable (inference: NO weights),
-tsukagoshi56/swallowing_segmentation_with_ssl_gru,2026-07-16,main,none/not_reported,requirements.txt,NONE,NONE,yes,3,7,not_attemptable (inference: NO weights),
-zhengfj1994/dysphagia-viscosity-classifier,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,10,11,not_attemptable (inference: NO weights),
-arivv22/ai-swallowing-sound-classification,2026-07-16,master,none/not_reported,NONE,NONE,NONE,yes,1,2,not_attemptable (inference: NO weights),
-Kai-Washino/swallowing-recognition-DLmachine,2026-07-16,main,none/not_reported,NONE,NONE,NONE,no,9,10,not_attemptable (inference: NO weights),
-YashC1308/Larynx-Prediction-using-sEMG-data,2026-07-16,main,none/not_reported,NONE,NONE,data/;demo,yes,17,224,not_attemptable (inference: NO weights),
-TanishqJoshi/Larynx-Function-prediction-using-W-KNN-on-sEMG-data,2026-07-16,main,none/not_reported,NONE,NONE,data/;demo,yes,17,225,not_attemptable (inference: NO weights),
-20206666/Classification-of-chewing-and-swallowing,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,0,4,not_attemptable (inference: NO weights),
-SimonZeng7108/Video-SwinUNet,2026-07-16,master,none/not_reported,requirements.txt,NONE,data/;datasets/,yes,10,57,not_attemptable (inference: NO weights),
-ResearchgroupMITI/swallow-detection,2026-07-16,main,CC0-1.0,NONE,NONE,datasets/,yes,24,41,not_attemptable (inference: NO weights),
-enoch0307/streamlitapp_cn,2026-07-16,main,none/not_reported,requirements.txt,2,NONE,no,2,9,attemptable -> Docker re-run,
-yonghunsong/Throat-related-events-classification,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,12,17,not_attemptable (inference: NO weights),
-ruaeh/Dysphagia-ML,2026-07-16,main,none/not_reported,NONE,NONE,NONE,no,0,0,not_attemptable (inference: NO weights),
-PRI2MA/DL_NTCP_Dysphagia,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,82,154,not_attemptable (inference: NO weights),
-greenapple-sea/Esophagus-Motility-Data,2026-07-16,main,Apache-2.0,NONE,NONE,NONE,yes,0,2,not_attemptable (inference: NO weights),
+repo,check_date,default_branch,license,env_file,weights,data_dir,readme,code_files,n_files,verdict_skeleton,error,study_id,discovery_channel,included,license_open,weights_in_repo,weights_anywhere,env_spec,sample_data,sample_data_basis,verdict,publication_confirmed
+aht4005/dysphagia-risk-calculator,2026-07-16,main,none/not_reported,requirements.txt,NONE,NONE,yes,1,5,not_attemptable (inference: NO weights),,C,github,yes,0,0,0,1,0,no data directory recorded,not_attemptable,no
+MinghaoSam/SwallowingFunctionAnalysis,2026-07-16,main,MIT,NONE,NONE,datasets/,yes,26,577,not_attemptable (inference: NO weights),,D,github,yes,1,0,0,0,1,"datasets/SagittalTongue_Temporal/{Test,Val}_Folder/images holds 512 image files (corrected 2026-08-18: previously coded 0)",not_attemptable,no
+scut-jol/CFSCNet,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,14,16,not_attemptable (inference: NO weights),,E,github,yes,0,0,0,0,0,no data directory recorded,not_attemptable,no
+scut-jol/swallow_segment_system,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,1,2,not_attemptable (inference: NO weights),,E,github,yes,0,0,0,0,0,no data directory recorded,not_attemptable,no
+kwahid/ABAS_swallowing_structures,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,0,1,not_attemptable (inference: NO weights),,F,github,yes,0,0,0,0,0,no data directory recorded,not_attemptable,no
+tsukagoshi56/liquid_swallowing_segmentation,2026-07-16,master,none/not_reported,requirements.txt,NONE,NONE,yes,16,21,not_attemptable (inference: NO weights),,G,github,yes,0,0,0,1,0,no data directory recorded,not_attemptable,no
+tsukagoshi56/swallowing_segmentation_meanteacher,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,20,27,not_attemptable (inference: NO weights),,G,github,yes,0,0,0,0,0,no data directory recorded,not_attemptable,no
+tsukagoshi56/swallowing_segmentation_with_ssl_gru,2026-07-16,main,none/not_reported,requirements.txt,NONE,NONE,yes,3,7,not_attemptable (inference: NO weights),,G,github,yes,0,0,0,1,0,no data directory recorded,not_attemptable,no
+zhengfj1994/dysphagia-viscosity-classifier,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,10,11,not_attemptable (inference: NO weights),,H,github,yes,0,0,0,0,0,no data directory recorded,not_attemptable,no
+arivv22/ai-swallowing-sound-classification,2026-07-16,master,none/not_reported,NONE,NONE,NONE,yes,1,2,not_attemptable (inference: NO weights),,I,github,yes,0,0,0,0,0,no data directory recorded,not_attemptable,no
+Kai-Washino/swallowing-recognition-DLmachine,2026-07-16,main,none/not_reported,NONE,NONE,NONE,no,9,10,not_attemptable (inference: NO weights),,J,github,yes,0,0,0,0,0,no data directory recorded,not_attemptable,no
+YashC1308/Larynx-Prediction-using-sEMG-data,2026-07-16,main,none/not_reported,NONE,NONE,data/;demo,yes,17,224,not_attemptable (inference: NO weights),,K,github,yes,0,0,0,0,0,Compiled_Data/ and Decomposed_Data/ hold only .py and .m sources; the files matching 'demo' belong to a vendored third-party MATLAB toolbox (corrected 2026-08-18: previously coded 1),not_attemptable,no
+TanishqJoshi/Larynx-Function-prediction-using-W-KNN-on-sEMG-data,2026-07-16,main,none/not_reported,NONE,NONE,data/;demo,yes,17,225,not_attemptable (inference: NO weights),,K,github,yes,0,0,0,0,0,same repository content as the paired sEMG repository: no data files (corrected 2026-08-18: previously coded 1),not_attemptable,no
+20206666/Classification-of-chewing-and-swallowing,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,0,4,not_attemptable (inference: NO weights),,L,github,yes,0,0,0,0,0,no data directory recorded,not_attemptable,no
+SimonZeng7108/Video-SwinUNet,2026-07-16,master,none/not_reported,requirements.txt,NONE,data/;datasets/,yes,10,57,not_attemptable (inference: NO weights),,M,carried,yes,0,0,0,1,0,"data/Synapse/{test_vol_h5,train_npz} hold only zero-byte .gitkeep placeholders; the benchmark must be obtained elsewhere (corrected 2026-08-18: previously coded 1)",not_attemptable,no
+ResearchgroupMITI/swallow-detection,2026-07-16,main,CC0-1.0,NONE,NONE,datasets/,yes,24,41,not_attemptable (inference: NO weights),,N,mining,yes,1,0,0,0,0,"datasets/ holds only dataset.py, a loader, and no data (corrected 2026-08-18: previously coded 1)",not_attemptable,yes
+enoch0307/streamlitapp_cn,2026-07-16,main,none/not_reported,requirements.txt,2,NONE,no,2,9,attemptable -> Docker re-run,,O,mining,yes,0,1,1,1,0,no data directory recorded,partial,yes
+yonghunsong/Throat-related-events-classification,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,12,17,not_attemptable (inference: NO weights),,P,mining,yes,0,0,0,0,0,no data directory recorded,not_attemptable,yes
+ruaeh/Dysphagia-ML,2026-07-16,main,none/not_reported,NONE,NONE,NONE,no,0,0,not_attemptable (inference: NO weights),,Q,mining,yes,0,0,0,0,0,no data directory recorded,not_attemptable,yes
+PRI2MA/DL_NTCP_Dysphagia,2026-07-16,main,none/not_reported,NONE,NONE,NONE,yes,82,154,not_attemptable (inference: NO weights),,R,mining,yes,0,0,0,0,0,no data directory recorded,not_attemptable,yes
+greenapple-sea/Esophagus-Motility-Data,2026-07-16,main,Apache-2.0,NONE,NONE,NONE,yes,0,2,not_attemptable (inference: NO weights),,,mining,no,,,,,,,excluded at intake vetting: a manometry data deposit with no model,
+BSEL-UC3M/VFSS_analysis,2026-07-13,main,none/not_reported,environment.yml+setup.py,external (Zenodo),external (Zenodo),yes,,,partial (ran after five documented fixes),,A,github,yes,0,0,1,1,1,"sample data ships in the external Zenodo deposit, which was downloaded (6.1 GB) and used for inference; recorded in the pilot write-up, not read from GitHub",partial,yes
+UofTNeurology/masa-open-source,2026-07-14,main,present,requirements.txt,NONE,NONE,yes,,,not_reproduced (build failed: non-portable local wheel),,B,carried,yes,1,0,0,1,0,ships neither weights nor data; recorded in the harness verdict log,not_reproduced,yes

@@ -13,13 +13,15 @@ Output: analiz/tarama-calisma-sayfasi.csv (ready for Rayyan or Covidence; the sc
 """
 import csv, re, sys
 from collections import Counter
+from paths import require_unarchived, out
 try:
     sys.stdout.reconfigure(encoding="utf-8")
 except Exception:
     pass
 
 ENR = "kaynaklar/arama-sonuclari/combined-corpus-enriched.csv"
-OUT = "analiz/tarama-calisma-sayfasi.csv"
+ENR = require_unarchived(ENR, "the enriched corpus carries the abstracts returned by the bibliographic services and is not ours to republish")
+OUT = out("screening-worksheet.csv")
 
 def rx(terms):
     return re.compile("|".join(terms), re.I)

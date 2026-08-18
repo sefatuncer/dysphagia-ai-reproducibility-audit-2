@@ -1,0 +1,202 @@
+{
+  "unit_primary": "study",
+  "n_studies": 18,
+  "n_repositories": 22,
+  "study_level": {
+    "license_open": {
+      "k": 3,
+      "n": 18,
+      "wilson": [
+        0.0584,
+        0.3922
+      ]
+    },
+    "weights_in_repo": {
+      "k": 1,
+      "n": 18,
+      "wilson": [
+        0.0099,
+        0.2576
+      ]
+    },
+    "weights_anywhere": {
+      "k": 2,
+      "n": 18,
+      "wilson": [
+        0.031,
+        0.328
+      ]
+    },
+    "env_spec": {
+      "k": 6,
+      "n": 18,
+      "wilson": [
+        0.1628,
+        0.5625
+      ]
+    },
+    "sample_data": {
+      "k": 2,
+      "n": 18,
+      "wilson": [
+        0.031,
+        0.328
+      ]
+    },
+    "verdicts": {
+      "re_executable": 0,
+      "partial": 2,
+      "not_reproduced": 1,
+      "not_attemptable": 15
+    },
+    "n": 18
+  },
+  "repository_level": {
+    "license_open": {
+      "k": 3,
+      "n": 22,
+      "wilson": [
+        0.0475,
+        0.3333
+      ]
+    },
+    "weights_in_repo": {
+      "k": 1,
+      "n": 22,
+      "wilson": [
+        0.0081,
+        0.218
+      ]
+    },
+    "weights_anywhere": {
+      "k": 2,
+      "n": 22,
+      "wilson": [
+        0.0253,
+        0.2781
+      ]
+    },
+    "env_spec": {
+      "k": 7,
+      "n": 22,
+      "wilson": [
+        0.1636,
+        0.5268
+      ]
+    },
+    "sample_data": {
+      "k": 2,
+      "n": 22,
+      "wilson": [
+        0.0253,
+        0.2781
+      ]
+    },
+    "verdicts": {
+      "re_executable": 0,
+      "partial": 2,
+      "not_reproduced": 1,
+      "not_attemptable": 19
+    },
+    "n": 22
+  },
+  "scripted_only": {
+    "license_open": {
+      "k": 2,
+      "n": 16,
+      "wilson": [
+        0.035,
+        0.3602
+      ]
+    },
+    "weights_in_repo": {
+      "k": 1,
+      "n": 16,
+      "wilson": [
+        0.0111,
+        0.2833
+      ]
+    },
+    "weights_anywhere": {
+      "k": 2,
+      "n": 16,
+      "wilson": [
+        0.035,
+        0.3602
+      ]
+    },
+    "env_spec": {
+      "k": 4,
+      "n": 16,
+      "wilson": [
+        0.1018,
+        0.495
+      ]
+    },
+    "sample_data": {
+      "k": 2,
+      "n": 16,
+      "wilson": [
+        0.035,
+        0.3602
+      ]
+    },
+    "verdicts": {
+      "re_executable": 0,
+      "partial": 2,
+      "not_reproduced": 0,
+      "not_attemptable": 14
+    },
+    "n": 16
+  },
+  "publication_confirmed": {
+    "license_open": {
+      "k": 2,
+      "n": 7,
+      "wilson": [
+        0.0822,
+        0.6411
+      ]
+    },
+    "weights_in_repo": {
+      "k": 1,
+      "n": 7,
+      "wilson": [
+        0.0257,
+        0.5131
+      ]
+    },
+    "weights_anywhere": {
+      "k": 2,
+      "n": 7,
+      "wilson": [
+        0.0822,
+        0.6411
+      ]
+    },
+    "env_spec": {
+      "k": 3,
+      "n": 7,
+      "wilson": [
+        0.1582,
+        0.7495
+      ]
+    },
+    "sample_data": {
+      "k": 1,
+      "n": 7,
+      "wilson": [
+        0.0257,
+        0.5131
+      ]
+    },
+    "verdicts": {
+      "re_executable": 0,
+      "partial": 2,
+      "not_reproduced": 1,
+      "not_attemptable": 4
+    },
+    "n": 7
+  },
+  "note": "re_executable is 0 at every level; it is a conjunction fixed by its scarcest prerequisite, not a count of observed run failures"
+}

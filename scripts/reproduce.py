@@ -32,8 +32,14 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import paths  # noqa: E402  (needs HERE on the path first)
 
+# Order matters: 09 reads the released intake table and writes the counts that 21
+# consolidates, so it has to run first. It is here because the headline proportions are
+# produced by it, and a re-run that skipped the script behind the headline would be
+# checking everything except the number the paper is about.
 OFFLINE = [
+    ("09_census_synthesis.py", "census-synthesis.json"),
     ("11_screening_kappa.py", "screening-reliability.json"),
+    ("24_rs_coding_evidence.py", "rs-coding-evidence.csv"),
     ("21_reported_numbers.py", "reported-numbers.json"),
 ]
 NETWORK = [
@@ -41,6 +47,7 @@ NETWORK = [
     ("13_backward_coverage.py", "backward-coverage.json"),
     ("19_env_pinning_audit.py", "env-pinning-audit.json"),
     ("20_run_instructions_audit.py", "run-instructions-audit.json"),
+    ("23_sample_data_audit.py", "sample-data-audit.json"),
 ]
 
 # Fields that record when a live read happened. A change in these is expected on
@@ -57,10 +64,15 @@ def strip_volatile(obj):
 
 
 def load(path):
+    """JSON results are compared field by field so that a timestamp does not read as a
+    difference; anything else (a CSV, say) is compared as text."""
     if not path.exists():
         return None
+    text = path.read_text(encoding="utf-8")
+    if path.suffix.lower() != ".json":
+        return text
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
+        return json.loads(text)
     except json.JSONDecodeError:
         return None
 

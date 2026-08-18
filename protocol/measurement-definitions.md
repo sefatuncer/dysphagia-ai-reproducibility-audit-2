@@ -177,3 +177,43 @@ the whole dysphagia-AI literature.
 conjunction rather than a sample quantity, or where the denominator is a purposively
 selected subset rather than a sample. Both cases occur here and both are marked in
 the article.
+
+## Open license
+
+Read from the repository's own license metadata (`license.spdx_id`) by
+`scripts/08_repo_intake.py`, and counted if it is an OSI-approved license or an
+equivalent public-domain dedication. One of the three found is CC0-1.0, which permits
+reuse but is not OSI-approved, so the criterion is "open" and not "OSI-approved". A
+license granted only in prose is not detected, so the count understates.
+
+## Trained weights
+
+Recorded by `scripts/08_repo_intake.py` as two separate signals: weights committed
+inside the repository, and weights retrievable from an external archive. Both are
+carried in the released intake table, and `scripts/09_census_synthesis.py` reads them
+from there. A link that was never resolved does not count as retrievable.
+
+## Usable sample or test data
+
+Decided by `scripts/23_sample_data_audit.py`. A repository carries usable sample or test
+data if at least one file under a data-designating directory is non-empty and is neither
+code nor documentation; the directory match is deliberately generous, so the count can
+only overstate. `scripts/09_census_synthesis.py` cross-checks the intake table against
+that measurement on every run and stops if the two disagree.
+
+Note on a correction. Until August 2026 this signal was carried by a hand-coded literal
+inside script 09, and it was wrong in both directions on five repositories: one shipping
+several hundred image files was coded as having no data, and three whose data
+directories hold only a loader or zero-byte placeholders were coded as having it. The
+study-level count moved from 4/18 to 2/18. None of the repositories involved had been
+pushed since its intake date, so the disagreement was in the coding and not in the
+repositories. The correction, and the evidence for it, are in
+`results/sample-data-audit.json`.
+
+## Study-level aggregation
+
+`scripts/09_census_synthesis.py` clusters repository variants on `study_id` and takes
+the disjunction: a study carries a signal if any of its repositories carries it. That is
+the reading most favourable to the audited literature. The same script writes
+`transparency/included-studies.csv`, which lists all 18 studies with their repositories,
+signals and verdicts.

@@ -1,164 +1,223 @@
 #!/usr/bin/env python3
 """
-09_census_synthesis.py — synthesis of the re-execution census (the real Results).
+09_census_synthesis.py - the transparency and verdict synthesis (v3).
 
-repo-intake table (15 repositories) plus the 2 in-depth pilots gave 17 repositories (v1).
-v2 (2026-07-16): code-link mining over open-access full texts (script 10) added 5 in-scope
-repositories, giving N=22: ResearchgroupMITI/swallow-detection (Comms Med, CC0),
-enoch0307/streamlitapp_cn (iScience, ATTEMPTABLE — environment file plus .pkl weights),
-yonghunsong/throat (npj Digit Med), ruaeh/Dysphagia-ML (Sci Rep — an EMPTY repository, the
-"linked but empty" case), and PRI2MA/DL_NTCP_Dysphagia (borderline).
+WHAT CHANGED IN v3, AND WHY IT MATTERS
+--------------------------------------
+Until v3 the 22 x 6 signal matrix was a literal inside this file. That is the defect
+this study audits, one level up: the headline proportions were re-derived on every run
+from a table nobody could check against the intake record, and the two were free to
+disagree. They did. Two repositories with the identical recorded signal
+(`data_dir=datasets/`) carried opposite sample-data codes, and re-verification found the
+literal wrong in both directions on five repositories.
 
-Produces: the verdict distribution, transparency rates with Wilson 95% intervals, and the
-frequency of each barrier category. The coding is fixed and auditable: the objective signal
-for every repository is listed below, sourced from intake and the pilot verdicts.
+The matrix now lives in the intake table, which is released, and this script reads it.
+Nothing here is hand-entered. Where a signal has its own measurement script, this script
+cross-checks the released measurement against the table and stops on a mismatch rather
+than reporting a number the archive contradicts.
+
+Two units are reported. The study level (N=18) is primary: repository variants from the
+same team are clustered on study_id, and a study carries a signal if any of its
+repositories carries it, which is the reading most favourable to the audited literature.
+The repository level (N=22) is a sensitivity view. A second sensitivity view drops the
+repositories that no scripted channel surfaced.
+
+Input : repo-intake-table (via paths.py); rs-taxonomy-coding for the study labels;
+        sample-data-audit.json for the cross-check, if it has been produced
+Output: census-synthesis.json and included-studies.csv
+Network: none.
 """
-import csv, math, os, sys
-try: sys.stdout.reconfigure(encoding="utf-8")
-except Exception: pass
+import csv
+import json
+import math
+import sys
+from collections import Counter
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
+from paths import inp, out, RESULTS
+
 Z = 1.959963985
 
-def wilson(k, n):
-    if n == 0: return (float("nan"),)*3
-    p = k/n; d = 1 + Z*Z/n
-    c = (p + Z*Z/(2*n))/d
-    h = (Z*math.sqrt(p*(1-p)/n + Z*Z/(4*n*n)))/d
-    return p, max(0, c-h), min(1, c+h)
-
-# 22 repositories x objective signals. Fields: license, weights_in_repo,
-#   weights_anywhere (including external hosting), env_file, sample_data_usable,
-#   attemptable, verdict, STUDY_ID (used for clustering and deduplication).
-# STUDY_ID: repository variants from the same team or study share an id, so that the
-#   study-level denominator respects independence.
-#   scut-jol x2, tsukagoshi x3, Yash+Tanishq x2 cluster, so 22 repositories = 18 distinct studies.
-REPOS = [
- # repo, lic, w_repo, w_any, env, data, attempt, verdict, study_id
- ("VFSS_analysis(pilot1)", 0,0,1,1,1,1,"partial",         "A"),  # weights on Zenodo; 5 repairs -> partial
- # masa: the one repository entered into the harness OUTSIDE the pre-stated entry rule
- # (it ships neither weights nor data, so `attemptable` is 0 and inference was never
- # reachable). A build WAS attempted and observed to fail on a non-portable wheel, so its
- # verdict is not_reproduced at the build stage, which is evidence the inventory could not
- # have produced. The two stages are reported separately in the manuscript and must not be
- # merged: attemptable=0 is the inference stage, verdict=not_reproduced is the build stage.
- ("masa(pilot2)",          1,0,0,1,0,0,"not_reproduced",  "B"),   # non-portable wheel; observed build failure
- ("aht4005-risk-calc",     0,0,0,1,0,0,"not_attemptable", "C"),
- ("MinghaoSam-MICCAI24",   1,0,0,0,0,0,"not_attemptable", "D"),   # MIT licensed but no weights
- ("scut-jol/CFSCNet",      0,0,0,0,0,0,"not_attemptable", "E"),
- ("scut-jol/swallow_seg",  0,0,0,0,0,0,"not_attemptable", "E"),   # same study as above (CFSCNet group)
- ("kwahid/ABAS",           0,0,0,0,0,0,"not_attemptable", "F"),
- ("tsukagoshi/liquid",     0,0,0,1,0,0,"not_attemptable", "G"),
- ("tsukagoshi/meanteacher",0,0,0,0,0,0,"not_attemptable", "G"),   # same team as above
- ("tsukagoshi/ssl_gru",    0,0,0,1,0,0,"not_attemptable", "G"),   # same team as above
- ("zhengfj1994-viscosity", 0,0,0,0,0,0,"not_attemptable", "H"),
- ("arivv22-sound",         0,0,0,0,0,0,"not_attemptable", "I"),
- ("Kai-Washino",           0,0,0,0,0,0,"not_attemptable", "J"),
- ("YashC1308-sEMG",        0,0,0,0,1,0,"not_attemptable", "K"),   # has data/ but no weights
- ("TanishqJoshi-sEMG",     0,0,0,0,1,0,"not_attemptable", "K"),   # same sEMG study as above
- ("20206666-chew-swallow", 0,0,0,0,0,0,"not_attemptable", "L"),
- ("Video-SwinUNet",        0,0,0,1,1,0,"not_attemptable", "M"),   # Drive link (not verified)
- # --- v2: the 5 in-scope repositories added by code-link mining (script 10) ---
- ("swallow-detection(MITI)",1,0,0,0,1,0,"not_attemptable","N"),   # Comms Med; CC0 and datasets/ but NO weights
- ("enoch0307-screening",    0,1,1,1,0,1,"partial",        "O"),   # iScience; ACTUAL RE-RUN: crashes out of the box (sklearn drift) -> one pin -> partial
- ("yonghunsong-throat",     0,0,0,0,0,0,"not_attemptable","P"),   # npj Digit Med; no weights, environment or license
- ("ruaeh-DysphagiaML(empty)",0,0,0,0,0,0,"not_attemptable","Q"),  # Sci Rep; repository EMPTY = linked but empty
- ("PRI2MA-DL_NTCP(border)", 0,0,0,0,0,0,"not_attemptable","R"),   # Radiother Oncol; RT-NTCP prognostic, borderline
+SIGNALS = [
+    ("license_open",     "Open license"),
+    ("weights_in_repo",  "Weights in repo"),
+    ("weights_anywhere", "Weights (any host)"),
+    ("env_spec",         "Environment file"),
+    ("sample_data",      "Usable sample data"),
 ]
-FIELDS = ["license","weights_in_repo","weights_anywhere","env_file","sample_data","attemptable"]
+# Ranked best-first: a study takes the best verdict among its repositories.
+VERDICT_RANK = {"re_executable": 3, "partial": 2, "not_reproduced": 1,
+                "not_attemptable": 0}
 
-# Two repositories that emerged from NONE of the scripted discovery channels and were
-# carried forward from the earlier manual selection. The sensitivity analysis excludes
-# them, to answer the objection that they are a 9% hole in the claim of reproducible
-# discovery. The other 20 came from GitHub and Papers with Code (15) or from
-# open-access mining (5).
-CARRIED_FORWARD = ("masa(pilot2)", "Video-SwinUNet")
 
-def study_level(field_idx, repos=None):
-    """Study-level OR aggregation: a study carries a signal if ANY of its repository
-    variants carries it (the most generous reading, since open-science practice is a
-    team-level attribute)."""
+def wilson(k, n):
+    if n == 0:
+        return float("nan"), float("nan"), float("nan")
+    p = k / n
+    d = 1 + Z * Z / n
+    c = (p + Z * Z / (2 * n)) / d
+    h = (Z * math.sqrt(p * (1 - p) / n + Z * Z / (4 * n * n))) / d
+    return p, max(0.0, c - h), min(1.0, c + h)
+
+
+def load_included():
+    rows = [r for r in csv.DictReader(inp("repo-intake-table").open(encoding="utf-8-sig"))
+            if (r.get("included") or "").strip() == "yes"]
+    if not rows:
+        sys.exit("09: the intake table has no rows marked included=yes")
+    for r in rows:
+        for col, _ in SIGNALS:
+            v = (r.get(col) or "").strip()
+            if v not in ("0", "1"):
+                sys.exit("09: %s has a non-binary %s (%r); the intake table is the "
+                         "source for this signal and must be complete"
+                         % (r["repo"], col, v))
+            r[col] = int(v)
+        if not (r.get("study_id") or "").strip():
+            sys.exit("09: %s has no study_id; clustering cannot be checked" % r["repo"])
+    return rows
+
+
+def crosscheck_sample_data(rows):
+    """The sample-data signal has its own measurement script. If its output is present,
+    the table must agree with it; a silent disagreement between a released measurement
+    and a released table is the failure mode this study reports in others."""
+    path = RESULTS / "sample-data-audit.json"
+    if not path.exists():
+        print("  note: sample-data-audit.json not present, cross-check skipped "
+              "(run script 23 to enable it)")
+        return
+    measured = {}
+    for x in json.loads(path.read_text(encoding="utf-8")).get("repositories", []):
+        if x.get("sample_data_usable") in (0, 1):
+            measured[x["repo"]] = x["sample_data_usable"]
+    bad = [(r["repo"], r["sample_data"], measured[r["repo"]])
+           for r in rows if r["repo"] in measured and r["sample_data"] != measured[r["repo"]]]
+    if bad:
+        for repo, table, meas in bad:
+            print("  MISMATCH %s: table says %d, script 23 measured %d" % (repo, table, meas))
+        sys.exit("09: the intake table disagrees with the released sample-data "
+                 "measurement; fix one of them, do not report either.")
+    print("  cross-check: sample-data coding agrees with script 23 for %d repositories"
+          % sum(1 for r in rows if r["repo"] in measured))
+
+
+def by_study(rows, col):
     studies = {}
-    for r in (REPOS if repos is None else repos):
-        sid = r[8]
-        studies[sid] = studies.get(sid, 0) or r[field_idx]
+    for r in rows:
+        studies[r["study_id"]] = studies.get(r["study_id"], 0) or r[col]
     return sum(studies.values()), len(studies)
 
-def rate_row(label, k, n):
-    p, lo, hi = wilson(k, n)
-    print(f"{label:22s}{f'{k}/{n}':>9s}{p:>8.2f}{f'[{lo:.2f}, {hi:.2f}]':>18s}")
+
+def best_verdicts(rows):
+    best = {}
+    for r in rows:
+        sid, v = r["study_id"], r["verdict"]
+        if sid not in best or VERDICT_RANK.get(v, 0) > VERDICT_RANK.get(best[sid], 0):
+            best[sid] = v
+    return best
+
+
+def report(title, rows, unit):
+    print("\n" + "=" * 70)
+    print("%s  (N=%d %s)" % (title, len(set(r["study_id"] for r in rows))
+                             if unit == "studies" else len(rows), unit))
+    print("=" * 70)
+    print("%-22s%9s%8s%18s" % ("Transparency item", "k/N", "rate", "  Wilson 95% CI"))
+    print("-" * 70)
+    block = {}
+    for col, label in SIGNALS:
+        k, n = by_study(rows, col) if unit == "studies" else (sum(r[col] for r in rows), len(rows))
+        p, lo, hi = wilson(k, n)
+        print("%-22s%9s%8.2f%18s" % (label, "%d/%d" % (k, n), p, "[%.2f, %.2f]" % (lo, hi)))
+        block[col] = {"k": k, "n": n, "wilson": [round(lo, 4), round(hi, 4)]}
+    best = best_verdicts(rows)
+    counts = Counter(best.values()) if unit == "studies" else Counter(r["verdict"] for r in rows)
+    n = len(best) if unit == "studies" else len(rows)
+    print("-" * 70)
+    print("  verdicts: " + " · ".join("%s=%d" % (v, counts.get(v, 0))
+                                      for v in VERDICT_RANK))
+    block["verdicts"] = {v: counts.get(v, 0) for v in VERDICT_RANK}
+    block["n"] = n
+    return block
+
+
+def write_included_studies(rows):
+    """The study-level table the article points at. Without it a reader cannot even
+    enumerate the audited set, which is the objection this file answers."""
+    labels = {}
+    try:
+        for r in csv.DictReader(inp("rs-taxonomy-coding").open(encoding="utf-8-sig")):
+            labels[r["study_id"].strip()] = (r.get("paper", "").strip(),
+                                             r.get("RS1_refstd_type", "").strip())
+    except SystemExit:
+        print("  note: clinical coding not found; study labels left blank")
+
+    best = best_verdicts(rows)
+    per = {}
+    for r in rows:
+        s = per.setdefault(r["study_id"], {"repos": [], "dates": set()})
+        s["repos"].append(r["repo"])
+        if r.get("check_date"):
+            s["dates"].add(r["check_date"])
+        for col, _ in SIGNALS:
+            s[col] = max(s.get(col, 0), r[col])
+        s["channel"] = r.get("discovery_channel", "")
+
+    path = RESULTS / "included-studies.csv"
+    cols = (["study_id", "paper", "reference_standard", "repositories", "n_repositories",
+             "discovery_channel", "access_dates"] + [c for c, _ in SIGNALS] + ["verdict"])
+    with path.open("w", encoding="utf-8", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=cols)
+        w.writeheader()
+        for sid in sorted(per):
+            s = per[sid]
+            paper, refstd = labels.get(sid, ("", ""))
+            row = {"study_id": sid, "paper": paper, "reference_standard": refstd,
+                   "repositories": "; ".join(sorted(s["repos"])),
+                   "n_repositories": len(s["repos"]),
+                   "discovery_channel": s["channel"],
+                   "access_dates": "; ".join(sorted(s["dates"])),
+                   "verdict": best[sid]}
+            row.update({c: s[c] for c, _ in SIGNALS})
+            w.writerow(row)
+    print("  written: %s  (%d studies)" % (path, len(per)))
+    return path
+
 
 def main():
-    n = len(REPOS); n_studies = len(set(r[8] for r in REPOS))
-    idx = {f: i+1 for i, f in enumerate(FIELDS)}
-    labels = {"license":"Open license","weights_in_repo":"Weights in repo",
-              "weights_anywhere":"Weights (any host)","env_file":"Environment file",
-              "sample_data":"Usable sample data","attemptable":"Inference attemptable"}
+    rows = load_included()
+    crosscheck_sample_data(rows)
 
-    # ---- PRIMARY: STUDY / TEAM LEVEL (independence; repository variants clustered) ----
-    print("="*70); print(f"RE-EXECUTION CENSUS - PRIMARY: STUDY LEVEL (N={n_studies} distinct studies)"); print("="*70)
-    print("  (repository variants clustered: scut-jol x2, tsukagoshi x3, Yash+Tanishq x2 = one study each)")
-    print(f"{'Transparency item':22s}{'k/N':>9s}{'rate':>8s}{'  Wilson 95% CI':>18s}")
-    print("-"*70)
-    for f in FIELDS:
-        ks, ns = study_level(idx[f]); rate_row(labels[f], ks, ns)
-    # study-level verdict: a study is labelled with the best verdict among its repositories
-    order = {"re_executable":3,"partial":2,"not_reproduced":1,"not_attemptable":0,"attemptable_pending_rerun":1}
-    best = {}
-    for r in REPOS:
-        if r[8] not in best or order.get(r[7],0) > order.get(best[r[8]],0): best[r[8]] = r[7]
-    from collections import Counter
-    vcs = Counter(best.values())
-    full_s = vcs.get("re_executable",0)
-    rate_row("-> Re-exec. out of box", full_s, n_studies)
-    print("-"*70)
-    print(f"  study-level verdicts: re_executable={vcs.get('re_executable',0)} · "
-          f"partial={vcs.get('partial',0)} · not_reproduced={vcs.get('not_reproduced',0)} · "
-          f"not_attemptable={vcs.get('not_attemptable',0)}")
-    print("    (not_reproduced = a build was attempted and observed to fail; not_attemptable =")
-    print("     no build was attempted, because weights and data are both absent)")
+    study = report("PRIMARY: STUDY LEVEL", rows, "studies")
+    repo = report("SENSITIVITY: REPOSITORY LEVEL", rows, "repositories")
+    scripted = [r for r in rows if r.get("discovery_channel") != "carried"]
+    scr = report("SENSITIVITY: SCRIPTED-ONLY (carried-forward repositories dropped)",
+                 scripted, "studies")
+    # The instrument's unit is a code-linked artifact set, and for most of them we could
+    # not tie the repository to an identified publication. Reporting the subset where we
+    # could is what keeps the phrase "published models" from covering the whole set.
+    published = [r for r in rows if (r.get("publication_confirmed") or "") == "yes"]
+    pub = report("SENSITIVITY: PUBLICATION-CONFIRMED SUBSET", published, "studies")
 
-    # ---- SENSITIVITY: REPOSITORY LEVEL (unclustered; robustness check) ----
-    print("\n"+"="*70); print(f"SENSITIVITY: REPOSITORY LEVEL (N={n} repositories; no clustering correction)"); print("="*70)
-    print(f"{'Transparency item':22s}{'k/N':>9s}{'rate':>8s}{'  Wilson 95% CI':>18s}")
-    print("-"*70)
-    for f in FIELDS:
-        k = sum(r[idx[f]] for r in REPOS); rate_row(labels[f], k, n)
-    print("-"*70)
-    vc = Counter(r[7] for r in REPOS)
-    print("REPOSITORY verdict distribution:")
-    for v in ["re_executable","partial","not_reproduced","not_attemptable"]:
-        print(f"  {v:20s}: {vc.get(v,0)}")
-    full = sum(1 for r in REPOS if r[7]=="re_executable")
-    rate_row("-> Re-exec. out of box", full, n)
-    print("="*70)
-    print("HEADLINE (two layers):")
-    print(f"  - TRANSPARENCY layer: of {n_studies} studies, {study_level(idx['weights_anywhere'])[0]} share weights anywhere,")
-    print(f"    {study_level(idx['license'])[0]} an open license, and {study_level(idx['env_file'])[0]} an environment file (most are systematically absent).")
-    print(f"  - EXECUTION layer: only {study_level(idx['attemptable'])[0]}/{n_studies} studies are inference-attemptable;")
-    print(f"    the 2 cases ACTUALLY re-run (VFSS_analysis and enoch0307) are BOTH 'partial' (crash out of the box, then repair);")
-    print(f"    fully re-executable out of the box without repair = 0 (at both study and repository level; Wilson upper bound 0.15-0.18).")
-    print("  - The rates are STABLE between study and repository level (clustering does not change the headline).")
+    write_included_studies(rows)
 
-    # ---- SENSITIVITY: EXCLUDING the carried-forward repositories (scripted-only census) ----
-    kept = [r for r in REPOS if r[0] not in CARRIED_FORWARD]
-    ks_n = len(set(r[8] for r in kept))
-    print("\n" + "="*70)
-    print(f"SENSITIVITY 2: SCRIPTED-ONLY ({len(CARRIED_FORWARD)} carried-forward repositories excluded)")
-    print("="*70)
-    print(f"  Excluded: {', '.join(CARRIED_FORWARD)} — neither emerged from any scripted channel.")
-    print(f"  Remaining: {len(kept)} repositories / {ks_n} studies (GitHub and Papers with Code plus open-access mining only).")
-    print(f"{'Transparency item':22s}{'k/N':>9s}{'rate':>8s}{'  Wilson 95% CI':>18s}")
-    print("-"*70)
-    for f in FIELDS:
-        ks, _ = study_level(idx[f], kept); rate_row(labels[f], ks, ks_n)
-    best_k = {}
-    for r in kept:
-        if r[8] not in best_k or order.get(r[7],0) > order.get(best_k[r[8]],0): best_k[r[8]] = r[7]
-    vck = Counter(best_k.values())
-    rate_row("-> Re-exec. out of box", vck.get("re_executable",0), ks_n)
-    print("-"*70)
-    print(f"  verdicts: re_executable={vck.get('re_executable',0)} · partial={vck.get('partial',0)} · "
-          f"not_attemptable={vck.get('not_attemptable',0)}")
-    print("  CONCLUSION: the headline (0 re-executable out of the box) is INDEPENDENT of the carried-forward repositories.")
+    payload = {
+        "unit_primary": "study",
+        "n_studies": study["n"], "n_repositories": repo["n"],
+        "study_level": study, "repository_level": repo, "scripted_only": scr,
+        "publication_confirmed": pub,
+        "note": ("re_executable is 0 at every level; it is a conjunction fixed by its "
+                 "scarcest prerequisite, not a count of observed run failures"),
+    }
+    dest = out("census-synthesis.json")
+    dest.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    print("\n  written: %s" % dest)
+
 
 if __name__ == "__main__":
     main()

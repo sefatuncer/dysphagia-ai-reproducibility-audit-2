@@ -9,7 +9,7 @@
 
 # Transparency rubric — CODEBOOK (exact value sets and decision rules)
 
-**Purpose:** to make two independent coders assign the SAME code to every cell. This file extends `coding-guide.md` with exact value sets and decision rules, and adds the RS1–RS6 clinical block defined in `reference-standard-taxonomy-RS1-RS6.md`. The blank form is `transparency-rubric-template.csv`; calibration uses the κ computation in `03_analysis.py`.
+**Purpose:** to make two independent coders assign the SAME code to every cell. This file extends `coding-guide.md` with exact value sets and decision rules, and adds the RS1–RS6 clinical block defined in `reference-standard-taxonomy-RS1-RS6.md`. The blank form is `transparency-rubric-template.csv`, and `transparency-rubric.csv` holds one worked example, the first pilot repository, rather than the full set: the study-level record for all 18 studies is `included-studies.csv`, written by `scripts/09_census_synthesis.py`. Screening agreement is computed by `scripts/11_screening_kappa.py`. [Corrected 2026-08-18: this line previously pointed at `03_analysis.py`, which is no longer archived because it falls back to synthetic rows when the rubric holds too few.]
 
 **General rules:**
 - Evidence: the article text plus the linked repository or supplement. Anything not stated is **`not_reported`** — never assume, and note that this differs from "no" and is reported separately.

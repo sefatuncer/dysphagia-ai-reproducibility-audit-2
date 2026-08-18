@@ -24,7 +24,7 @@ Coded for every included study, as categories plus a free-text note. The anchor 
 
 | # | Item | Categories | Anchor and extension |
 |---|---|---|---|
-| **RS1** | **Reference-standard type** | instrumental gold (VFSS/MBSS, FEES) / clinical examination (bedside, 3-oz) / screening proxy (EAT-10, GUSS, Yale) / patient-reported / derived from another AI | STARD-compatible; a dysphagia-specific catalogue |
+| **RS1** | **Reference-standard type** | instrumental reference (VFSS/MBSS, FEES) / clinical examination (bedside, 3-oz) / screening proxy (EAT-10, GUSS, Yale) / patient-reported / derived from another AI | STARD-compatible; a dysphagia-specific catalogue |
 | **RS2** | **Target validity and proxy leakage** | does the model predict the instrumental gold standard or a **proxy** for it? is the label the same construct as the target? | **beyond QUADAS-2** — proxy leakage has no place in the generic tool |
 | **RS3** | **Label scale and granularity** | PAS(8) / DIGEST / FOIS / MBSImP / Yale Pharyngeal Residue / binary aspiration / bespoke; **is it reduced to binary** (information loss) | **beyond QUADAS-2** — loss of ordinal granularity |
 | **RS4** | **Label reliability** (the weak point) | is rater κ or ICC reported · number of raters · blinding · consensus vs single rater vs supplied annotation | **beyond QUADAS-2** — this is exactly where the low reliability of swallowing scoring sits |
@@ -76,7 +76,7 @@ These are recorded here rather than silently resolved, because they bear on how 
 ### Objective preliminary findings (all auditable)
 
 1. **Rater reliability (κ / ICC) is not reported at all in the studies we could read: 0/6** of the full-text-accessible subset (the other 12 of the 18 have no retrievable full text and are coded *not assessable*, so this is **not** extrapolated to 18). What makes this striking is that even studies that **acknowledge** the problem do not quantify their own label reliability — *masa/Saab* notes that "even VFSS by SLP has … poor inter-rater reliability"; *MITI* describes manual expert annotation as "prone to errors". The problem is known but not measured.
-2. **The reference standard is heterogeneous and unstandardized:** instrumental gold (VFSS: A, E, G, M, O · manometry: N · CT/MRI segmentation: D, F) / clinical bedside (B) / **proxy outcome** (Q tube feeding and pneumonia · R CTCAE toxicity · C postoperative outcome) / physical (H viscosity) / unclear and low-provenance (I, J, K, L, P). There is no common reference.
+2. **The reference standard is heterogeneous and unstandardized:** instrumental reference (VFSS: A, E, G, M, O · manometry: N · CT/MRI segmentation: D, F) / clinical bedside (B) / **proxy outcome** (Q tube feeding and pneumonia · R CTCAE toxicity · C postoperative outcome) / physical (H viscosity) / unclear and low-provenance (I, J, K, L, P). There is no common reference.
 3. **Proxy leakage (RS2) is common** `[NKT]`: several models predict not the instrumental gold standard but a **proxy** for it — *B* (voice → bedside screen), *Q* (voice → clinical outcome), *O* (clinical and voice → VFSS-confirmed dysphagia), *R* (dose → toxicity). The model learns a shadow of dysphagia rather than dysphagia.
 4. **The code-available subset skews toward low label provenance:** for studies such as I, J, K and L the publication link and the reference standard are unclear, so the repositories that share code may also be those with the weakest label provenance.
 

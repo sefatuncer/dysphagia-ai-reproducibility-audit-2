@@ -118,10 +118,21 @@ def main():
     print("2. TRANSPARENCY SIGNALS, STUDY LEVEL (N=18), WILSON 95% CI")
     print("=" * 96)
     rep["transparency"] = {}
-    for label, k in [("Open license", 3), ("Trained weights in repository", 1),
-                     ("Trained weights anywhere", 2), ("Environment specification", 6),
-                     ("Usable sample or test data", 4), ("Model card or datasheet", 0)]:
-        rep["transparency"][label] = line(label, k, 18)
+    # These counts used to be six literals here, which meant this consolidation could
+    # not disagree with the manuscript even when the manuscript was wrong. They now come
+    # from script 09, which reads them from the released intake table.
+    census = load_json("census-synthesis.json")["study_level"]
+    for label, col in [("Open license", "license_open"),
+                       ("Trained weights in repository", "weights_in_repo"),
+                       ("Trained weights anywhere", "weights_anywhere"),
+                       ("Environment specification", "env_spec"),
+                       ("Usable sample or test data", "sample_data")]:
+        cell = census[col]
+        rep["transparency"][label] = line(label, cell["k"], cell["n"])
+    # The model-card signal has no measurement script: it was looked for by hand and
+    # found in none, and the manuscript marks it as the one signal scored that way.
+    rep["transparency"]["Model card or datasheet"] = line(
+        "Model card or datasheet", 0, census["license_open"]["n"], "(hand-checked)")
 
     ri = load_json("run-instructions-audit.json")
     s = ri["study_level"]

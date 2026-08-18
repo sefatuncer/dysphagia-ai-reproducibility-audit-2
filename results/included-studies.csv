@@ -1,0 +1,19 @@
+study_id,paper,reference_standard,repositories,n_repositories,discovery_channel,access_dates,license_open,weights_in_repo,weights_anywhere,env_spec,sample_data,verdict
+A,Comput Biol Med 2025,instrumental reference (VFSS videofluoroscopy),BSEL-UC3M/VFSS_analysis,1,github,2026-07-13,0,0,1,1,1,partial
+B,Front Neurosci 2023,clinical/bedside screening (post-stroke),UofTNeurology/masa-open-source,1,carried,2026-07-14,1,0,0,1,0,not_reproduced
+C,needs-check (anti-reflux postoperative),clinical-outcome (postoperative dysphagia),aht4005/dysphagia-risk-calculator,1,github,2026-07-16,0,0,0,1,0,not_attemptable
+D,MICCAI 2024 (could not be confirmed),instrumental (cine-MRI),MinghaoSam/SwallowingFunctionAnalysis,1,github,2026-07-16,1,0,0,0,1,not_attemptable
+E,article (could not be confirmed),instrumental (VFSS/video),scut-jol/CFSCNet; scut-jol/swallow_segment_system,2,github,2026-07-16,0,0,0,0,0,not_attemptable
+F,MD Anderson RT (could not be confirmed),instrumental (CT),kwahid/ABAS_swallowing_structures,1,github,2026-07-16,0,0,0,0,0,not_attemptable
+G,article (could not be confirmed),instrumental (VFSS/video),tsukagoshi56/liquid_swallowing_segmentation; tsukagoshi56/swallowing_segmentation_meanteacher; tsukagoshi56/swallowing_segmentation_with_ssl_gru,3,github,2026-07-16,0,0,0,1,0,not_attemptable
+H,unclear,physical viscosity label (IDDSI?),zhengfj1994/dysphagia-viscosity-classifier,1,github,2026-07-16,0,0,0,0,0,not_attemptable
+I,publication unclear (student project?),unclear (sound label),arivv22/ai-swallowing-sound-classification,1,github,2026-07-16,0,0,0,0,0,not_attemptable
+J,publication unclear,unclear,Kai-Washino/swallowing-recognition-DLmachine,1,github,2026-07-16,0,0,0,0,0,not_attemptable
+K,publication unclear (laryngectomy),sEMG larynx function (reference standard unclear),TanishqJoshi/Larynx-Function-prediction-using-W-KNN-on-sEMG-data; YashC1308/Larynx-Prediction-using-sEMG-data,2,github,2026-07-16,0,0,0,0,0,not_attemptable
+L,publication unclear,chewing/swallowing classification,20206666/Classification-of-chewing-and-swallowing,1,github,2026-07-16,0,0,0,0,0,not_attemptable
+M,scoping candidate,instrumental (VFSS),SimonZeng7108/Video-SwinUNet,1,carried,2026-07-16,0,0,0,1,0,not_attemptable
+N,Communications Medicine 2025,instrumental (HRM manometry),ResearchgroupMITI/swallow-detection,1,mining,2026-07-16,1,0,0,0,0,not_attemptable
+O,iScience 2026,instrumental reference (VFSS + PAS; 30 FPS),enoch0307/streamlitapp_cn,1,mining,2026-07-16,0,1,1,1,0,partial
+P,npj Digit Med 2025,annotated throat events (reference unclear),yonghunsong/Throat-related-events-classification,1,mining,2026-07-16,0,0,0,0,0,not_attemptable
+Q,Scientific Reports 2022 (PMC9537337),instrumental test (VFSS/FEES) linked to a downstream outcome,ruaeh/Dysphagia-ML,1,mining,2026-07-16,0,0,0,0,0,not_attemptable
+R,Radiotherapy & Oncology 2025 (PMC12520315),clinician-reported toxicity (CTCAEv4; MDACC PSS-HN) — NOT instrumental,PRI2MA/DL_NTCP_Dysphagia,1,mining,2026-07-16,0,0,0,0,0,not_attemptable

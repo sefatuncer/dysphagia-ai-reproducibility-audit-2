@@ -84,8 +84,21 @@ def main():
     ok &= check(f"pool = {bc['n_unique_dois']}", "comparator pool of 83 records")
     ok &= check(f"unretrievable = {cc['not_assessable']}", "unretrievable for 44")
     ok &= check(f"assessable = {assess}", "39 assessable records")
-    ok &= check("own-code rate 2/39", "2/39, or 5.1")
-    ok &= check("any-declared rate 3/39", "3/39, or 7.7")
+    # The two percentages these lines used to require were withdrawn in the August 2026
+    # revision: the comparator pool is 77% reference list, so it cannot carry a
+    # code-sharing rate that is comparable with the curated denominators of the radiology
+    # audits. The counts stay, the rates go, and this check now enforces their absence.
+    ok &= check("no own-code rate 5.1%", "or 5.1", must=False)
+    ok &= check("no any-declared rate 7.7%", "or 7.7", must=False)
+
+    print("\ntransparency counts (script 09, read from the intake table)")
+    cen = load("census-synthesis.json")["study_level"]
+    for label, col, txt in [
+            ("open license", "license_open", "an open license in %d"),
+            ("weights anywhere", "weights_anywhere", "retrievable weights in %d"),
+            ("usable sample data", "sample_data", "usable sample data in %d")]:
+        ok &= check("%s = %d/18" % (label, cen[col]["k"]), txt % cen[col]["k"])
+    assert cen["sample_data"]["k"] == 2, "the sample-data correction is not in the results"
 
     print("\nscreening reliability (script 11)")
     g = kap["rule_B_primary"]["github_pwc"]

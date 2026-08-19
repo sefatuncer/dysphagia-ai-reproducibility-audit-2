@@ -24,14 +24,14 @@ sys.path.insert(0, str(HERE))
 import paths  # noqa: E402
 
 # The manuscript lives outside the archive; look for it in the working-tree layout.
-_TEX = paths.BASE / "taslak" / "latex" / "makale-IJMI.tex"
+_TEX = paths.BASE / "taslak" / "latex" / "makale-AiR.tex"
 if not _TEX.exists():
     sys.exit(
         "manuscript source not found at " + str(_TEX) + "\n"
         "  This check compares the paper against the released results, so it needs\n"
         "  both. The published archive contains the artifacts, not the paper, so this\n"
         "  script is expected to stop here when run from inside the archive. Run it\n"
-        "  from a working copy that also holds taslak/latex/makale-IJMI.tex."
+        "  from a working copy that also holds taslak/latex/makale-AiR.tex."
     )
 TEX = _TEX.read_text(encoding="utf-8")
 AN = paths.RESULTS

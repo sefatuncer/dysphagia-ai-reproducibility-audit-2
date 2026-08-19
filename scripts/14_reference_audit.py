@@ -26,7 +26,7 @@ except Exception:
 
 ROOT = Path(__file__).resolve().parents[2]
 BIB = ROOT / "taslak" / "latex" / "refs.bib"
-TEX = ROOT / "taslak" / "latex" / "makale-IJMI.tex"
+TEX = ROOT / "taslak" / "latex" / "makale-AiR.tex"
 OUT = ROOT / "analiz" / "reference-audit.json"
 UA = {"User-Agent": "MakaleC-refaudit/1.0 (mailto:tuncersefa@gmail.com)"}
 

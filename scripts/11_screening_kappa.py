@@ -300,6 +300,27 @@ def load_oa(rule="B"):
     return rows, r1, r2
 
 
+def load_oa_code_only(rule="B"):
+    """The same channel restricted to the 143 code repositories.
+
+    Twenty of the 163 records are archive or data links that the extraction denylist
+    removes on record type before the scope rule is applied at all. Both raters exclude
+    every one of them, so they sit in the (0,0) cell and inflate observed agreement
+    without any scope judgment having been made. The 143 are the records the scope
+    decision actually ranges over, and reporting kappa on them as well as on the 163
+    is what keeps the reliability figure attached to the decision it describes.
+    """
+    rows = list(csv.DictReader(open(EK, encoding="utf-8")))
+    r1, r2 = [], []
+    for r in rows:
+        rec_type = (r.get("type") or "").strip().lower()
+        if rec_type != "code":
+            continue
+        r1.append(1 if (r.get("include") or "").strip().lower() in ("yes", "borderline", "y") else 0)
+        r2.append(rater2_blind(rec_type, r.get("repo"), r.get("paper"), "", rule))
+    return rows, r1, r2
+
+
 def load_github(rule="B"):
     """GitHub Search API + Papers with Code channel: 18 candidate repositories.
 
@@ -325,11 +346,15 @@ def main():
     oa_rows, oa1, oa2 = load_oa("B")
     gh_rows, gh1, gh2 = load_github("B")
 
+    _, oc1, oc2 = load_oa_code_only("B")
+
     k_oa = agreement(oa1, oa2)
+    k_oc = agreement(oc1, oc2)
     k_gh = agreement(gh1, gh2)
     k_all = agreement(oa1 + gh1, oa2 + gh2)
 
     b_oa = bootstrap_kappa(oa1, oa2)
+    b_oc = bootstrap_kappa(oc1, oc2)
     b_gh = bootstrap_kappa(gh1, gh2)
     b_all = bootstrap_kappa(oa1 + gh1, oa2 + gh2)
 
@@ -338,6 +363,9 @@ def main():
                  "  20 of the 163 are archive/data links that BOTH raters exclude on record type\n"
                  "  alone, so that share of the agreement is free of any scope judgment.",
            b_oa)
+    report(f"CHANNEL 1b — the same channel, code repositories only (n={k_oc['n']})",
+           k_oc, "the 20 archive/data links are dropped before the scope rule applies, so\n"
+                 "  this is the subset the scope decision actually ranges over", b_oc)
     report(f"CHANNEL 2 — GitHub Search API + Papers with Code (n={k_gh['n']} repositories)",
            k_gh, "scope-enriched by construction; the discriminative burden is de-duplication "
                  "and\n  is-this-a-study, which an objective rule cannot see", b_gh)
@@ -404,8 +432,16 @@ def main():
     print("=" * 68)
 
     OUT.write_text(json.dumps(
-        {"rule_B_primary": {"oa_mining": k_oa, "github_pwc": k_gh, "pooled": k_all},
-         "bootstrap_rule_B": {"oa_mining": b_oa, "github_pwc": b_gh, "pooled": b_all},
+        {"rule_B_primary": {"oa_mining": k_oa, "oa_mining_code_only": k_oc,
+                            "github_pwc": k_gh, "pooled": k_all},
+         "bootstrap_rule_B": {"oa_mining": b_oa, "oa_mining_code_only": b_oc,
+                              "github_pwc": b_gh, "pooled": b_all},
+         "denylist_sensitivity_note": (
+             "kappa was recomputed on the 143 code repositories alone, dropping the 20 "
+             "archive/data links that the extraction denylist removes before the scope "
+             "rule applies and that both raters therefore exclude on record type. The "
+             "value is unchanged to two decimals, so the free agreement those records "
+             "contribute is not what carries the figure"),
          "rule_A_sensitivity": {"oa_mining": kA_oa, "github_pwc_degenerate": kA_gh},
          "in_sample": True,
          "in_sample_note": ("the rule specification was revised after observing the "

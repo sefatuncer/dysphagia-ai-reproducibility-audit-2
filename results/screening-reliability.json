@@ -20,6 +20,26 @@
       "pi": 0.9386503067484663,
       "bi": 0.012269938650306749
     },
+    "oa_mining_code_only": {
+      "n": 143,
+      "both1": 4,
+      "both0": 137,
+      "a1b0": 2,
+      "a0b1": 0,
+      "r1_include": 6,
+      "r2_include": 4,
+      "po": 0.986013986013986,
+      "pe": 0.9324172331165337,
+      "kappa": 0.793053545586108,
+      "kappa_se": 0.14530632863243031,
+      "kappa_lo": 0.5082583746739703,
+      "kappa_hi": 1.0,
+      "pabak": 0.9720279720279721,
+      "ppos": 0.8,
+      "pneg": 0.9927536231884058,
+      "pi": 0.9300699300699301,
+      "bi": 0.013986013986013986
+    },
     "github_pwc": {
       "n": 18,
       "both1": 15,
@@ -75,6 +95,19 @@
       "z0": -0.09432662645215062,
       "acceleration": -0.040393586632984986
     },
+    "oa_mining_code_only": {
+      "n_boot": 2000,
+      "seed": 20260730,
+      "undefined_replicates": 2,
+      "method": "BCa",
+      "lo": 0.0,
+      "hi": 1.0,
+      "estimable": true,
+      "percentile_lo": 0.32547169811320714,
+      "percentile_hi": 1.0,
+      "z0": -0.1650954313644687,
+      "acceleration": -0.04095473795852162
+    },
     "github_pwc": {
       "n_boot": 2000,
       "seed": 20260730,
@@ -100,6 +133,7 @@
       "acceleration": -0.05334313247497637
     }
   },
+  "denylist_sensitivity_note": "kappa was recomputed on the 143 code repositories alone, dropping the 20 archive/data links that the extraction denylist removes before the scope rule applies and that both raters therefore exclude on record type. The value is unchanged to two decimals, so the free agreement those records contribute is not what carries the figure",
   "rule_A_sensitivity": {
     "oa_mining": {
       "n": 163,

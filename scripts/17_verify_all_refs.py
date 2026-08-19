@@ -23,7 +23,7 @@ except Exception:
 
 ROOT = Path(__file__).resolve().parents[2]
 BIB = ROOT / "taslak" / "latex" / "refs.bib"
-TEX = ROOT / "taslak" / "latex" / "makale-IJMI.tex"
+TEX = ROOT / "taslak" / "latex" / "makale-AiR.tex"
 OUT = ROOT / "analiz" / "reference-verification.json"
 UA = {"User-Agent": "MakaleC-refaudit/1.0 (mailto:tuncersefa@gmail.com)"}
 STOP = {"a", "an", "the", "of", "for", "and", "in", "on", "with", "to", "is", "are", "an"}

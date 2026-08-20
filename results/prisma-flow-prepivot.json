@@ -1,0 +1,31 @@
+{
+  "identification": {
+    "sources_open_api": {
+      "PubMed/MEDLINE": null,
+      "Semantic Scholar": null,
+      "Europe PMC": null,
+      "OpenAlex": null
+    },
+    "raw_total_open_api": 0,
+    "institutional_scopus_wos_ieee": "TBD (human, after PRESS)",
+    "backward_citation": "TBD"
+  },
+  "deduplication": {
+    "raw": 0,
+    "after_dedup": null,
+    "duplicates_removed": null
+  },
+  "triage_presort_NOT_exclusion": {},
+  "screening": {
+    "title_abstract_screened": null,
+    "note": "Triage is an organizational device; exclusion is by human dual screening with kappa. Counts follow screening."
+  },
+  "eligibility": {
+    "full_text_assessed": "TBD",
+    "excluded_with_reasons": "TBD"
+  },
+  "included": {
+    "total": "TBD (about 60 expected)",
+    "layer_b_code_available": "TBD (about 5-15)"
+  }
+}

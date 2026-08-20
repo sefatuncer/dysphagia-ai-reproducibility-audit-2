@@ -64,6 +64,10 @@ _INPUTS = {
                              "kaynaklar/kwok-24-eslesme.csv"),
     "codas-matches":        ("search/comparator-pool/codas-matches.csv",
                              "kaynaklar/codas-eslesme.csv"),
+    # Written by script 06 rather than read, so it is resolved through dest() below.
+    "backward-citation-additions": (
+        "search/corpus-metadata/backward-citation-additions.csv",
+        "kaynaklar/arama-sonuclari/backward-citation-additions.csv"),
 }
 
 _IDX = 0 if IN_ARCHIVE else 1
@@ -88,6 +92,23 @@ def out(filename):
     """Path to write a result file to, creating the directory if needed."""
     RESULTS.mkdir(parents=True, exist_ok=True)
     return RESULTS / filename
+
+
+def dest(name):
+    """Where a mapped file belongs in this layout, whether or not it exists yet.
+
+    inp() is for reading and refuses to continue when the file is absent. A script that
+    regenerates a published file needs the same two-layout resolution without that
+    check, so that re-running it from inside the archive writes beside the copy it
+    would replace instead of crashing on a working-tree directory that is not there.
+    """
+    try:
+        rel = _INPUTS[name][_IDX]
+    except KeyError:
+        sys.exit(f"paths.py: unknown input name {name!r}")
+    p = BASE / rel
+    p.parent.mkdir(parents=True, exist_ok=True)
+    return p
 
 
 def require_unarchived(rel, why):

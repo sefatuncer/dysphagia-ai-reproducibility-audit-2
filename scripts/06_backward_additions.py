@@ -8,6 +8,7 @@ backward-citation-additions.csv. These are added to the combined corpus as
 source=backward_citation after the institutional search.
 """
 import csv, json, sys, time, urllib.request, urllib.parse
+from paths import dest
 try: sys.stdout.reconfigure(encoding="utf-8")
 except Exception: pass
 
@@ -22,7 +23,9 @@ DOIS = [
     ("10.1038/s41598-023-34999-8", "CODAS"),  # corrected: -x -> -8 (the truncated DOI 404s at Crossref and OpenAlex; verified by title, Sci Rep 2023;13:7835)
     ("10.1109/access.2020.3019532", "CODAS"),
 ]
-OUT = "kaynaklar/arama-sonuclari/backward-citation-additions.csv"
+# Resolved for whichever layout this runs in, so re-running from the published archive
+# writes beside the released copy instead of failing on a working-tree directory.
+OUT = dest("backward-citation-additions")
 MAILTO = "tuncersefa@gmail.com"
 
 def get(url):

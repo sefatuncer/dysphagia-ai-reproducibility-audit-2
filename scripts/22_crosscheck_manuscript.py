@@ -106,6 +106,19 @@ def main():
     ok &= check("rule reproduced 0/3 exclusions", "0 of 3")
     assert g["r1_include"] == 15 and g["r2_include"] == 18
 
+    # Table 1's bootstrap row is three separate numbers that are easy to edit apart from
+    # the results file. One of them had drifted: the GitHub channel was written up as
+    # "not estimable" while the released bootstrap reports an estimable [0.00, 0.00].
+    # Each interval is now read back from the JSON rather than trusted.
+    for chan, label in [("oa_mining", "mining"), ("github_pwc", "GitHub/PwC"),
+                        ("pooled", "pooled")]:
+        b = kap["bootstrap_rule_B"][chan]
+        if not b["estimable"]:
+            ok &= check("%s bootstrap declared not estimable" % label, "not estimable")
+            continue
+        ok &= check("%s bootstrap %.2f--%.2f" % (label, b["lo"], b["hi"]),
+                    "%.2f--%.2f" % (b["lo"], b["hi"]))
+
     print("\nclaims that must NOT be present (withdrawn in revision)")
     ok &= check("no 'a fifth of the rate'", "a fifth of the rate", must=False)
     ok &= check("no 'P_pos is the informative figure'", "informative figure", must=False)

@@ -27,3 +27,6 @@ tarama-calisma-sayfasi.csv
 # OS / editor cruft
 .DS_Store
 Thumbs.db
+
+# Output of the pre-pivot script 04, which the archive deliberately does not publish.
+results/prisma-flow-prepivot.json

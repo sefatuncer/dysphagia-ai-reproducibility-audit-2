@@ -293,5 +293,40 @@
     "truncated": false,
     "n_named": 3,
     "n_crossref": 3
+  },
+  {
+    "key": "icmje",
+    "status": "no_doi",
+    "bib_authors": [
+      "editors"
+    ]
+  },
+  {
+    "key": "cope",
+    "status": "no_doi",
+    "bib_authors": [
+      "ethics"
+    ]
+  },
+  {
+    "key": "byrt1993",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 3,
+    "n_crossref": 3
+  },
+  {
+    "key": "efron1987",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 1,
+    "n_crossref": 1
+  },
+  {
+    "key": "nosek2015",
+    "status": "ok",
+    "truncated": true,
+    "n_named": 6,
+    "n_crossref": 39
   }
 ]

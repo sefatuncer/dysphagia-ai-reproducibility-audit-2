@@ -1,7 +1,7 @@
 # Dysphagia & Swallowing AI — Reproducibility Audit (research artifacts)
 
 Reproducibility artifacts for the meta-research study
-*"Available but not executable: an audit of whether shared code for dysphagia and swallowing artificial intelligence can be re-run."*
+*"Available but not executable: an audit of the execution prerequisites of shared code for dysphagia and swallowing artificial intelligence."*
 
 We audited whether published swallowing/dysphagia-AI code is not just **available** but **re-runnable**, and we release the full measurement pipeline so that the audit is itself reproducible — *we practice what we audit*.
 

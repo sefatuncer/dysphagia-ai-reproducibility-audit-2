@@ -35,7 +35,7 @@
 | **20** | **Conclusions** — interpretation, implications, recommendation set | ⏳ | §5 [POST-DATA] and §2.8, the minimum-reporting recommendations |
 | **21** | **Funding** — sources and role | ✔ | §Declarations (no external funding; no funder role) |
 
-**Additional declarations (Elsevier/IJMI):** Declaration of competing interests ✔ (§Declarations; the co-first authors' marriage is declared, with its mitigation) · Author contributions / CRediT ✔ (§Declarations; methodologist 👤) · Data and code availability ✔ / 👤 (§Declarations; archive DOI and license 👤) · Ethics ✔ (§2.10 plus a non-human-subjects determination 👤) · Highlights and keywords ✔ (after the Abstract).
+**Additional declarations (Elsevier/IJMI):** Declaration of competing interests ✔ (§Declarations; no competing interests to declare) · Author contributions / CRediT ✔ (§Declarations; methodologist 👤) · Data and code availability ✔ / 👤 (§Declarations; archive DOI and license 👤) · Ethics ✔ (§2.10 plus a non-human-subjects determination 👤) · Highlights and keywords ✔ (after the Abstract).
 
 **Other reporting supplements:** the PRISMA 2020 flow diagram (real counts 👤) · PRISMA-S search reporting (after the institutional search and PRESS 👤) · the QUADAS-2 ↔ RS1–RS6 mapping table (supplementary table, §2.6).
 

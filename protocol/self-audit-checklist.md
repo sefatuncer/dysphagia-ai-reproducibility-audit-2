@@ -42,7 +42,7 @@ this archive. Nothing is marked met on the strength of an intention.
 | C2 | Interval estimates interpreted in line with the sampling design | **Met** | Wilson intervals reported as small-sample fragility bands, not as inference to the wider literature. |
 | C3 | Clustering acknowledged and handled | **Met** | Study level primary; repository level reported as sensitivity and explicitly not corrected for within-team clustering. |
 | C4 | Registration timing stated without over-claiming | **Met** | The protocol is publicly posted and transparently dated. The manuscript makes **no** claim of temporal precedence over the analysis. |
-| C5 | Competing interests disclosed, including non-financial ones | **Met** | The two joint first authors are married; declared. |
+| C5 | Competing interests disclosed, including non-financial ones | **Met** | Declared: no prior professional relationship with the authors of any audited study or repository, and no financial interest. |
 | C6 | Generative-AI use disclosed, separating method use from writing use | **Met** | Declaration section. |
 | C7 | Named third parties notified and offered a right to respond | **Human step, before submission** | Template and recipient list in the manuscript repository. To be dated in §Ethics at submission. |
 

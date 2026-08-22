@@ -2,8 +2,8 @@
 
 *Released with the artifact archive (Zenodo concept DOI 10.5281/zenodo.21629516, which
 resolves to the most recent version) for the
-meta-research audit "Available but not executable: an audit of the execution
-prerequisites of shared code for dysphagia and swallowing artificial intelligence."*
+meta-research audit "Available but not executable: an audit of the execution prerequisites of code
+shared in dysphagia and swallowing artificial-intelligence studies."*
 
 > **On timing.** This is a dated record of the inclusion rule, rubric and analysis
 > plan, released so that both can be audited against what was actually done. **We
@@ -14,10 +14,11 @@ prerequisites of shared code for dysphagia and swallowing artificial intelligenc
 > itself.
 
 
-**Title:** Available but not executable: an audit of the execution prerequisites of shared code for dysphagia and swallowing artificial intelligence
+**Title:** Available but not executable: an audit of the execution prerequisites of code
+shared in dysphagia and swallowing artificial-intelligence studies
 
 
-**Contributors / roles:** Sefa Tunçer, PhD — Independent Researcher, Ankara, Türkiye; ORCID 0000-0001-6672-3605; tuncersefa@gmail.com (joint first; reproducibility and software, discovery, intake, analysis, re-execution). Nazife Kapan Tunçer, MD — Department of Physical Medicine and Rehabilitation, Faculty of Medicine, Kırşehir Ahi Evran University, Kırşehir, Türkiye; ORCID 0000-0002-8161-5669 (joint first; clinical validity, RS1–RS6 reference-standard and label appraisal). The candidate pool is machine-generated, and scope and borderline decisions are author judgments applied to a pre-stated rule and released in full for audit. **The two joint first authors are married; this is declared in the manuscript and the primary measurements are script-derived.**
+**Contributors / roles:** Sefa Tunçer, PhD — Independent Researcher, Ankara, Türkiye; ORCID 0000-0001-6672-3605; tuncersefa@gmail.com (joint first; reproducibility and software, discovery, intake, analysis, re-execution). Nazife Kapan Tunçer, MD — Department of Physical Medicine and Rehabilitation, Faculty of Medicine, Kırşehir Ahi Evran University, Kırşehir, Türkiye; ORCID 0000-0002-8161-5669 (joint first; clinical validity, RS1–RS6 reference-standard and label appraisal). The candidate pool is machine-generated, and scope and borderline decisions are author judgments applied to a pre-stated rule and released in full for audit. **The primary measurements are script-derived, so they do not rest on a private judgment; the exploratory clinical axis is single-coder and does not carry that protection.**
 
 **Description (summary):** We measure whether AI models for dysphagia and swallowing can actually be re-run from their published code, the downstream question beyond code availability. By an objective, machine-checkable inclusion (a public, resolvable code repository), we discover the code-available literature reproducibly, record objective transparency signals, and re-execute each repository in clean CPU Docker containers against a fixed barrier taxonomy, together with a dysphagia-specific reference-standard and label-quality lens (RS1–RS6). Prior dysphagia reviews assessed methodological quality (Kwok, JMIR 2025;e65551) or algorithm maps (CoDAS 2025;e20240305) only. Executability has not been measured.
 

@@ -1,6 +1,6 @@
 # Clinical reproducibility construct and a dysphagia-specific reference-standard and label-quality taxonomy (RS1–RS6)
 
-**Status:** the taxonomy design and the clinical judgements are the work of N.K.T. (clinical axis). Rows marked `[NKT]` in the accompanying coding table are clinical judgements; rows marked `inventory-only` await full-text coding. Final clinical sign-off is pending, and the article states this in the same terms.
+**Status:** the taxonomy design and the clinical judgements are the work of N.K.T. (clinical axis). Rows marked `[NKT]` in the accompanying coding table are clinical judgements; rows marked `inventory-only` could not be coded because the full text was not retrieved through the study's channels, which is a finding rather than an outstanding task. The clinical judgements were checked against the source publications on 21-22 August 2026, four were corrected, and the corrected set was reviewed and accepted by the clinician author on 22 August 2026.
 **Purpose:** reference-standard validity and spectrum bias, taken alone, are already covered by QUADAS-2 and were applied to this literature by Kwok and Wong (JMIR 2025). This document defines a clinical construct that goes **beyond** QUADAS-2 and is **specific to dysphagia AI**: it enters the audit as a coding block in the rubric, as the clinical anchor of the article's thesis, and as the clinical half of the minimum-reporting recommendations.
 
 ---
@@ -92,8 +92,8 @@ The full text of the Kwok and Wong scoping review (JMIR 2025, PMC12089864) repor
 >
 > Even a model that re-runs perfectly is **not clinically reproducible** if it rests on weak or unreported labels. Each axis is necessary, so the contribution is more than one further audit.
 
-### Outstanding (pending clinical sign-off)
+### Status of the coding
 
-- Code the `inventory-only` rows (C, D, E, F, G, H, I, J, K, L, M) from full text, in particular RS4 κ and RS5 spectrum.
-- Confirm or correct the clinical judgements in the `[NKT]` columns, and fix the RS4 threshold for adequate reliability against published sources.
-- Answer the open questions in §4, so that the objective preliminary findings and the clinical interpretation can be finalized together.
+- The `inventory-only` rows could not be coded from full text. That is reported as the reason the clinical axis rests on a subset, not carried as work still to do.
+- The `[NKT]` judgements were verified against the source publications on 21-22 August 2026. Four rows were corrected and the change is recorded per row in `correction_2026-08-22`; the corrected set was accepted by the clinician author on 22 August 2026.
+- One row remains outside the assessable subset by decision rather than by necessity: the Cubero row's published version was not retrieved through the study's channels, and a postprint that would make it assessable was identified afterwards. Reopening it would move the subset from six studies to seven and the reliability count from 0 of 6 to 0 of 7. The authors have not taken that step, and the reason is recorded here so the choice is visible.

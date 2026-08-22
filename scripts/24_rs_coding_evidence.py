@@ -41,15 +41,21 @@ OUT = out("rs-coding-evidence.csv")
 # item -> (column holding the code, column holding the recorded basis, who assigned it)
 # RS2 and RS5 carry the clinician marker in the source header, so they are reported as
 # judgment items rather than text-verifiable ones; the manuscript says the same.
+# RS1, RS2 and RS5 used to pass None here, so three of the five items reached the
+# published file with an empty basis, which is 54 of its 90 rows and includes both
+# judgment items. The manuscript states that every code is released beside the basis
+# recorded for it, so that gap made a published claim false. The source now carries an
+# evidence column for each of the three, holding what the paper states rather than a
+# rationale written on the clinician's behalf.
 ITEMS = [
-    ("RS1 reference-standard type", "RS1_refstd_type", None, "text-verifiable"),
+    ("RS1 reference-standard type", "RS1_refstd_type", "RS1_evidence", "text-verifiable"),
     ("RS2 target validity and surrogate substitution",
-     "RS2_proxy_leakage_[NKT]", None, "clinician judgment"),
+     "RS2_proxy_leakage_[NKT]", "RS2_evidence", "clinician judgment"),
     ("RS3 label scale and granularity", "RS3_scale_granularity", "RS3_binarized",
      "text-verifiable"),
     ("RS4 label reliability", "RS4_rater_reliability_reported", "RS4_evidence",
      "text-verifiable"),
-    ("RS5 spectrum", "RS5_spectrum_[NKT]", None, "clinician judgment"),
+    ("RS5 spectrum", "RS5_spectrum_[NKT]", "RS5_evidence", "clinician judgment"),
 ]
 
 
@@ -71,6 +77,9 @@ def main():
                 "recorded_basis": basis,
                 "assigned_by": kind,
                 "evidence_level": r.get("evidence_level", "").strip(),
+                # Corrections travel with the data rather than only in the paper, so a
+                # reader sees what changed without diffing two releases.
+                "correction_2026_08_22": r.get("correction_2026-08-22", "").strip(),
             })
 
     with OUT.open("w", encoding="utf-8", newline="") as fh:

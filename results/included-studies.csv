@@ -14,6 +14,6 @@ L,publication unclear,chewing/swallowing classification,20206666/Classification-
 M,scoping candidate,instrumental (VFSS),SimonZeng7108/Video-SwinUNet,1,carried,2026-07-16,0,0,0,1,0,not_attemptable
 N,Communications Medicine 2025,instrumental (HRM manometry),ResearchgroupMITI/swallow-detection,1,mining,2026-07-16,1,0,0,0,0,not_attemptable
 O,iScience 2026,instrumental reference (VFSS + PAS; 30 FPS),enoch0307/streamlitapp_cn,1,mining,2026-07-16,0,1,1,1,0,partial
-P,npj Digit Med 2025,annotated throat events (reference unclear),yonghunsong/Throat-related-events-classification,1,mining,2026-07-16,0,0,0,0,0,not_attemptable
+P,npj Digit Med 2025,no clinical reference standard; experimenter-cued self-performed events,yonghunsong/Throat-related-events-classification,1,mining,2026-07-16,0,0,0,0,0,not_attemptable
 Q,Scientific Reports 2022 (PMC9537337),instrumental test (VFSS/FEES) linked to a downstream outcome,ruaeh/Dysphagia-ML,1,mining,2026-07-16,0,0,0,0,0,not_attemptable
 R,Radiotherapy & Oncology 2025 (PMC12520315),clinician-reported toxicity (CTCAEv4; MDACC PSS-HN) — NOT instrumental,PRI2MA/DL_NTCP_Dysphagia,1,mining,2026-07-16,0,0,0,0,0,not_attemptable

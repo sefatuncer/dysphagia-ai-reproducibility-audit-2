@@ -98,7 +98,7 @@ resolves to the most recent one. See `CITATION.cff` and the Zenodo record.
 
 All versions share the concept DOI
 [10.5281/zenodo.21629516](https://doi.org/10.5281/zenodo.21629516), which always resolves to
-the most recent release. **v1.1.2 is the current release and the one the article reports**; its version DOI is
+the most recent release. **v1.1.3 is the current release and the one the article reports**; its version DOI is [10.5281/zenodo.22071534](https://doi.org/10.5281/zenodo.22071534). v1.1.2; its version DOI is
 [10.5281/zenodo.22069521](https://doi.org/10.5281/zenodo.22069521), minted when the release
 was published and therefore recorded here from v1.1.3 onward rather than inside v1.1.2
 itself. Earlier version DOIs:

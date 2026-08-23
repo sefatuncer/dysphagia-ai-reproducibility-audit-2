@@ -98,9 +98,10 @@ resolves to the most recent one. See `CITATION.cff` and the Zenodo record.
 
 All versions share the concept DOI
 [10.5281/zenodo.21629516](https://doi.org/10.5281/zenodo.21629516), which always resolves to
-the most recent release. **v1.1.2 is the current release and the one the article reports.**
-Zenodo mints its version DOI when the release is published, so that identifier cannot appear
-inside the release itself; cite the concept DOI, which resolves to it. Earlier version DOIs:
+the most recent release. **v1.1.2 is the current release and the one the article reports**; its version DOI is
+[10.5281/zenodo.22069521](https://doi.org/10.5281/zenodo.22069521), minted when the release
+was published and therefore recorded here from v1.1.3 onward rather than inside v1.1.2
+itself. Earlier version DOIs:
 v1.1.1 is [10.5281/zenodo.22068273](https://doi.org/10.5281/zenodo.22068273); v1.1.0 is
 [10.5281/zenodo.22054994](https://doi.org/10.5281/zenodo.22054994); both are superseded and
 neither is withdrawn. v1.0.0 is

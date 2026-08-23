@@ -40,6 +40,6 @@ identifiers:
     description: "Version DOI for v1.1.1. Superseded but not withdrawn."
 repository-code: "https://github.com/sefatuncer/dysphagia-ai-reproducibility-audit-2"
 
-# The version DOI for this release (v1.1.2) is minted by Zenodo when the release is
-# published and therefore cannot appear inside the release itself. Cite the concept
-# DOI above, which always resolves to the most recent version.
+# A release cannot contain the DOI Zenodo mints for it, so each version DOI is recorded
+# from the following release onward. v1.1.2 is 10.5281/zenodo.22069521. Cite the concept
+# DOI above when no specific version is required; it resolves to the most recent one.

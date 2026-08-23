@@ -119,6 +119,50 @@ def main():
         ok &= check("%s bootstrap %.2f--%.2f" % (label, b["lo"], b["hi"]),
                     "%.2f--%.2f" % (b["lo"], b["hi"]))
 
+    # ---- provenance and re-verification added after external review ----------
+    # Each of these entered the article with the second round of work and must stay tied
+    # to the file that produced it.
+    print("\nprovenance and re-verification (scripts 25-30)")
+
+    cp = load("commit-provenance.json")
+    ok &= check("commit identifiers recovered",
+                "%d of the %d rows" % (cp["n_resolved"], cp["n_rows"]))
+    ok &= check("one empty repository, no commit to record",
+                "%d" % cp["n_empty_repositories"], must=(cp["n_empty_repositories"] == 1))
+
+    iv = load("intake-reverification.json")
+    ok &= check("intake re-read reproduced every signal",
+                "in all %d" % iv["scripted_rows"])
+    if iv["scripted_disagreements"] != 0:
+        print("  [FAIL] scripted-intake disagreements are %d, not 0; the article says the"
+              " re-reading reproduced every signal" % iv["scripted_disagreements"])
+        ok = False
+
+    ss = load("screening-sensitivity.json")
+    ok &= check("screening sensitivity, enlarged denominator",
+                "denominator to %d" % ss["study_level_denominator"]["if_all_admitted"])
+
+    pc = load("publication-confirmed-subset.json")
+    by = {r["signal"]: r for r in pc["rows"]}
+    ok &= check("run instructions in the confirmed subset",
+                "run instructions in %d" % by["Run instructions"]["publication_confirmed"]["k"])
+    if by["Model card or datasheet"]["publication_confirmed"]["k"] != 0:
+        print("  [FAIL] the model-card count for the confirmed subset is not zero")
+        ok = False
+    else:
+        ok &= check("model card in the confirmed subset", "a model card in none")
+
+    ps = load("policy-statement-delivery.json")
+    empty = [s for s in ps["studies"]
+             for p in s.get("pointers_checked", []) if p.get("empty")]
+    if not empty:
+        print("  [FAIL] no statement in the policy mapping names an empty repository, but"
+              " the article reports one")
+        ok = False
+    else:
+        print("  [OK ] %-52s %r" % ("a named repository is empty",
+                                    empty[0]["repo"]))
+
     print("\nclaims that must NOT be present (withdrawn in revision)")
     ok &= check("no 'a fifth of the rate'", "a fifth of the rate", must=False)
     ok &= check("no 'P_pos is the informative figure'", "informative figure", must=False)

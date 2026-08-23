@@ -1,0 +1,17 @@
+{
+  "generated_by": "26_external_deposit_provenance.py",
+  "record": "17191973",
+  "doi": "10.5281/zenodo.17191973",
+  "title": "Automated dysphagia characterization in head and neck cancer patients using videofluoroscopic swallowing studies",
+  "license": "cc-by-4.0",
+  "publication_date": "2025-09-24",
+  "files": [
+    {
+      "filename": "models_VFSS.zip",
+      "size_bytes": 6148375197,
+      "checksum_published_by_depositor": "md5:4eb596ba49fdecf283bf839681369eb0"
+    }
+  ],
+  "what_this_establishes": "The checksum the depositor published for each file in this record. A third party can use it to confirm that the file they download is the file the record holds.",
+  "what_this_does_not_establish": "That the copy we downloaded matched this checksum. We did not hash the file at the time of the run and the copy was deleted afterwards, so no later fetch can prove what we held. The run is repeatable from the record; bit-identity with our copy is not demonstrable."
+}

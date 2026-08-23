@@ -52,10 +52,17 @@ _INPUTS = {
                              "analiz/repo-envanteri-ek.csv"),
     "repo-inventory-raw":   ("search/repo-inventory-raw.csv",
                              "analiz/repo-envanteri-ham.csv"),
+    # These two resolve to the English source rather than the authors' Turkish working
+    # copy, for the same reason rs-taxonomy-coding does: RELEASE/_source-en is what the
+    # archive publishes, so a script that read the Turkish copy would produce numbers the
+    # archive cannot reproduce. Both Turkish copies are behind the English ones (the
+    # inventory lacks the include_reason column; the intake table lacks the "not measured"
+    # correction for the two carried-forward pilots), which is exactly the drift this
+    # arrangement prevents.
     "repo-inventory":       ("search/repo-inventory.csv",
-                             "analiz/repo-envanteri.csv"),
+                             "RELEASE/_source-en/search/repo-inventory.csv"),
     "repo-intake-table":    ("transparency/repo-intake-table.csv",
-                             "analiz/repo-intake-tablosu.csv"),
+                             "RELEASE/_source-en/transparency/repo-intake-table.csv"),
     # The clinical coding is authored in Turkish and translated once for release; the
     # English rendering is the one the manuscript reports, so it is the one read here.
     "rs-taxonomy-coding":   ("transparency/rs-taxonomy-coding.csv",

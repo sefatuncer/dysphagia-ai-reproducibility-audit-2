@@ -1,0 +1,175 @@
+{
+  "generated_by": "25_commit_provenance.py",
+  "n_empty_repositories": 1,
+  "what_this_is": "The tip commit each audited repository pointed at on its logged access date, recovered after the fact from the GitHub commits API. It fixes which tree the reported signals were read from. It does not verify that our reading of that tree was correct.",
+  "n_rows": 23,
+  "n_resolved": 22,
+  "n_unresolved": 1,
+  "repositories": [
+    {
+      "repo": "aht4005/dysphagia-risk-calculator",
+      "access_date": "2026-07-16",
+      "commit": "653dc8b668621c2627f181d07a7db76c614995c9",
+      "commit_date": "2026-05-25T00:03:13Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "MinghaoSam/SwallowingFunctionAnalysis",
+      "access_date": "2026-07-16",
+      "commit": "85942cc6128dc385784d8d575758c187e5034fb8",
+      "commit_date": "2024-05-29T17:14:23Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "scut-jol/CFSCNet",
+      "access_date": "2026-07-16",
+      "commit": "4912e37ee031c2228f7bebec1a15b05d09847878",
+      "commit_date": "2024-10-29T04:40:19Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "scut-jol/swallow_segment_system",
+      "access_date": "2026-07-16",
+      "commit": "72e54312533a26dc4acd0b34d594f6592da8eb8d",
+      "commit_date": "2024-09-08T08:28:50Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "kwahid/ABAS_swallowing_structures",
+      "access_date": "2026-07-16",
+      "commit": "e7d9b5f226d09c5c9f926be7738f90a6bed6b4a3",
+      "commit_date": "2025-04-17T21:39:39Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "tsukagoshi56/liquid_swallowing_segmentation",
+      "access_date": "2026-07-16",
+      "commit": "77deb15a6ed4089dde2c6a278ed2ece30c0d4a88",
+      "commit_date": "2026-03-11T03:59:41Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "tsukagoshi56/swallowing_segmentation_meanteacher",
+      "access_date": "2026-07-16",
+      "commit": "00c1a428c1b84a4278c443c095941fa065731816",
+      "commit_date": "2026-03-11T03:42:10Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "tsukagoshi56/swallowing_segmentation_with_ssl_gru",
+      "access_date": "2026-07-16",
+      "commit": "1457a1710d28b28b75ca80d87d4387db18a4ead5",
+      "commit_date": "2026-03-10T23:49:25Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "zhengfj1994/dysphagia-viscosity-classifier",
+      "access_date": "2026-07-16",
+      "commit": "f72c326d3926b8bb6cda8e8425f4c136566d9fc9",
+      "commit_date": "2025-10-28T06:41:39Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "arivv22/ai-swallowing-sound-classification",
+      "access_date": "2026-07-16",
+      "commit": "809b49c669a00e5b4f3e29728a1f0a96f9a8eb7c",
+      "commit_date": "2025-10-12T13:48:32Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "Kai-Washino/swallowing-recognition-DLmachine",
+      "access_date": "2026-07-16",
+      "commit": "8e561b11ab83f9771f38083a13559be95497f2d7",
+      "commit_date": "2024-08-29T10:59:17Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "YashC1308/Larynx-Prediction-using-sEMG-data",
+      "access_date": "2026-07-16",
+      "commit": "cc1848909a218f4097ce0a5da10eb842d4a8ba63",
+      "commit_date": "2024-06-02T13:33:47Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "TanishqJoshi/Larynx-Function-prediction-using-W-KNN-on-sEMG-data",
+      "access_date": "2026-07-16",
+      "commit": "ea89237fa4604aa6334a5caa93341ccab4ee712e",
+      "commit_date": "2024-06-02T13:31:37Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "20206666/Classification-of-chewing-and-swallowing",
+      "access_date": "2026-07-16",
+      "commit": "6c87acb44f6505517baa2069e88fa27d10b60a6e",
+      "commit_date": "2023-09-12T02:21:35Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "SimonZeng7108/Video-SwinUNet",
+      "access_date": "2026-07-16",
+      "commit": "fb2042b6f0289ed9c9dca0c21176b048d1e4c84e",
+      "commit_date": "2023-06-13T08:46:21Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "ResearchgroupMITI/swallow-detection",
+      "access_date": "2026-07-16",
+      "commit": "7f59838ccec7fc10adf43686af709a1179bd86d4",
+      "commit_date": "2025-08-21T13:16:55Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "enoch0307/streamlitapp_cn",
+      "access_date": "2026-07-16",
+      "commit": "289f7d187dd1b75445bbbae827366592357b6282",
+      "commit_date": "2025-11-04T01:04:22Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "yonghunsong/Throat-related-events-classification",
+      "access_date": "2026-07-16",
+      "commit": "95164d52cdcc54ecab6e0619ad6ca8336a00461c",
+      "commit_date": "2025-01-08T00:13:42Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "ruaeh/Dysphagia-ML",
+      "access_date": "2026-07-16",
+      "commit": null,
+      "commit_date": null,
+      "status": "empty-repository (HTTP 409: no commit exists)",
+      "created_at": "2022-08-08T11:19:19Z",
+      "pushed_at": "2022-08-08T11:19:20Z",
+      "size_kb": 0,
+      "seconds_between_creation_and_last_push": 1
+    },
+    {
+      "repo": "PRI2MA/DL_NTCP_Dysphagia",
+      "access_date": "2026-07-16",
+      "commit": "60bb8b0cb7fb405bac6f34cde900eb7844a6e393",
+      "commit_date": "2025-07-21T09:56:11Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "greenapple-sea/Esophagus-Motility-Data",
+      "access_date": "2026-07-16",
+      "commit": "9572b157067247a98bef88cc676518c29bfdaae1",
+      "commit_date": "2024-12-28T09:04:25Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "BSEL-UC3M/VFSS_analysis",
+      "access_date": "2026-07-13",
+      "commit": "960aa368c4a1c338f19560d4a289397678bdb17c",
+      "commit_date": "2026-04-27T13:56:32Z",
+      "status": "resolved"
+    },
+    {
+      "repo": "UofTNeurology/masa-open-source",
+      "access_date": "2026-07-14",
+      "commit": "4fb83b3325142965fe6994ea22f64666042fc49b",
+      "commit_date": "2026-07-12T03:41:06Z",
+      "status": "resolved"
+    }
+  ]
+}

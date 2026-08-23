@@ -1,0 +1,210 @@
+{
+  "generated_by": "27_intake_reverification.py",
+  "headline": "Across the 20 repositories whose intake the script recorded, re-reading the tree at the access-date commit reproduced every signal exactly: 0 disagreements. The 4 disagreements that exist are confined to the 2 feasibility pilots entered by hand before the scripted intake, and are notation differences or the data-directory rule limitation already corrected and reported in the article.",
+  "scripted_rows": 20,
+  "scripted_disagreements": 0,
+  "hand_entered_rows": [
+    "BSEL-UC3M/VFSS_analysis",
+    "UofTNeurology/masa-open-source"
+  ],
+  "hand_entered_disagreements": 4,
+  "method": "Each signal recomputed from the git tree at the commit that was current on the access date, using the detection rules of 08_repo_intake.py unchanged.",
+  "repositories_checked": 22,
+  "repositories_not_checked": [
+    {
+      "repo": "ruaeh/Dysphagia-ML",
+      "reason": "empty-repository (HTTP 409: no commit exists)"
+    }
+  ],
+  "trees_truncated": [],
+  "agreement_by_signal": {
+    "env_file": {
+      "agree": 21,
+      "disagree": 1,
+      "no_value_recorded": 0
+    },
+    "weights": {
+      "agree": 21,
+      "disagree": 1,
+      "no_value_recorded": 0
+    },
+    "data_dir": {
+      "agree": 20,
+      "disagree": 2,
+      "no_value_recorded": 0
+    },
+    "readme": {
+      "agree": 22,
+      "disagree": 0,
+      "no_value_recorded": 0
+    },
+    "code_files": {
+      "agree": 20,
+      "disagree": 0,
+      "no_value_recorded": 2
+    },
+    "n_files": {
+      "agree": 20,
+      "disagree": 0,
+      "no_value_recorded": 2
+    }
+  },
+  "licence_note": "The GitHub API reports the licence as it stands today, not as it stood on the access date, so the licence signal cannot be re-verified historically and is excluded here.",
+  "positive_control": "data_dir was corrected by hand before this run. Agreement on data_dir indicates the method reproduces a known-good column; disagreement would mean this script is wrong.",
+  "rows": [
+    {
+      "repo": "aht4005/dysphagia-risk-calculator",
+      "commit": "653dc8b668621c2627f181d07a7db76c614995c9",
+      "n_paths": 5,
+      "disagreements": []
+    },
+    {
+      "repo": "MinghaoSam/SwallowingFunctionAnalysis",
+      "commit": "85942cc6128dc385784d8d575758c187e5034fb8",
+      "n_paths": 577,
+      "disagreements": []
+    },
+    {
+      "repo": "scut-jol/CFSCNet",
+      "commit": "4912e37ee031c2228f7bebec1a15b05d09847878",
+      "n_paths": 16,
+      "disagreements": []
+    },
+    {
+      "repo": "scut-jol/swallow_segment_system",
+      "commit": "72e54312533a26dc4acd0b34d594f6592da8eb8d",
+      "n_paths": 2,
+      "disagreements": []
+    },
+    {
+      "repo": "kwahid/ABAS_swallowing_structures",
+      "commit": "e7d9b5f226d09c5c9f926be7738f90a6bed6b4a3",
+      "n_paths": 1,
+      "disagreements": []
+    },
+    {
+      "repo": "tsukagoshi56/liquid_swallowing_segmentation",
+      "commit": "77deb15a6ed4089dde2c6a278ed2ece30c0d4a88",
+      "n_paths": 21,
+      "disagreements": []
+    },
+    {
+      "repo": "tsukagoshi56/swallowing_segmentation_meanteacher",
+      "commit": "00c1a428c1b84a4278c443c095941fa065731816",
+      "n_paths": 27,
+      "disagreements": []
+    },
+    {
+      "repo": "tsukagoshi56/swallowing_segmentation_with_ssl_gru",
+      "commit": "1457a1710d28b28b75ca80d87d4387db18a4ead5",
+      "n_paths": 7,
+      "disagreements": []
+    },
+    {
+      "repo": "zhengfj1994/dysphagia-viscosity-classifier",
+      "commit": "f72c326d3926b8bb6cda8e8425f4c136566d9fc9",
+      "n_paths": 11,
+      "disagreements": []
+    },
+    {
+      "repo": "arivv22/ai-swallowing-sound-classification",
+      "commit": "809b49c669a00e5b4f3e29728a1f0a96f9a8eb7c",
+      "n_paths": 2,
+      "disagreements": []
+    },
+    {
+      "repo": "Kai-Washino/swallowing-recognition-DLmachine",
+      "commit": "8e561b11ab83f9771f38083a13559be95497f2d7",
+      "n_paths": 10,
+      "disagreements": []
+    },
+    {
+      "repo": "YashC1308/Larynx-Prediction-using-sEMG-data",
+      "commit": "cc1848909a218f4097ce0a5da10eb842d4a8ba63",
+      "n_paths": 224,
+      "disagreements": []
+    },
+    {
+      "repo": "TanishqJoshi/Larynx-Function-prediction-using-W-KNN-on-sEMG-data",
+      "commit": "ea89237fa4604aa6334a5caa93341ccab4ee712e",
+      "n_paths": 225,
+      "disagreements": []
+    },
+    {
+      "repo": "20206666/Classification-of-chewing-and-swallowing",
+      "commit": "6c87acb44f6505517baa2069e88fa27d10b60a6e",
+      "n_paths": 4,
+      "disagreements": []
+    },
+    {
+      "repo": "SimonZeng7108/Video-SwinUNet",
+      "commit": "fb2042b6f0289ed9c9dca0c21176b048d1e4c84e",
+      "n_paths": 57,
+      "disagreements": []
+    },
+    {
+      "repo": "ResearchgroupMITI/swallow-detection",
+      "commit": "7f59838ccec7fc10adf43686af709a1179bd86d4",
+      "n_paths": 41,
+      "disagreements": []
+    },
+    {
+      "repo": "enoch0307/streamlitapp_cn",
+      "commit": "289f7d187dd1b75445bbbae827366592357b6282",
+      "n_paths": 9,
+      "disagreements": []
+    },
+    {
+      "repo": "yonghunsong/Throat-related-events-classification",
+      "commit": "95164d52cdcc54ecab6e0619ad6ca8336a00461c",
+      "n_paths": 17,
+      "disagreements": []
+    },
+    {
+      "repo": "PRI2MA/DL_NTCP_Dysphagia",
+      "commit": "60bb8b0cb7fb405bac6f34cde900eb7844a6e393",
+      "n_paths": 154,
+      "disagreements": []
+    },
+    {
+      "repo": "greenapple-sea/Esophagus-Motility-Data",
+      "commit": "9572b157067247a98bef88cc676518c29bfdaae1",
+      "n_paths": 2,
+      "disagreements": []
+    },
+    {
+      "repo": "BSEL-UC3M/VFSS_analysis",
+      "commit": "960aa368c4a1c338f19560d4a289397678bdb17c",
+      "n_paths": 41,
+      "disagreements": [
+        {
+          "signal": "env_file",
+          "recorded": "environment.yml+setup.py",
+          "recomputed": "environment.yml;setup.py"
+        },
+        {
+          "signal": "weights",
+          "recorded": "external (Zenodo)",
+          "recomputed": "NONE"
+        },
+        {
+          "signal": "data_dir",
+          "recorded": "external (Zenodo)",
+          "recomputed": "data/"
+        }
+      ]
+    },
+    {
+      "repo": "UofTNeurology/masa-open-source",
+      "commit": "4fb83b3325142965fe6994ea22f64666042fc49b",
+      "n_paths": 26,
+      "disagreements": [
+        {
+          "signal": "data_dir",
+          "recorded": "NONE",
+          "recomputed": "sample"
+        }
+      ]
+    }
+  ]
+}

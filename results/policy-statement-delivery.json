@@ -1,0 +1,190 @@
+{
+  "generated_by": "30_policy_statement_delivery.py",
+  "scope": "The 7 studies of the 18 whose publication could be identified. The other 11 answer to no journal policy, so the question is undefined for them and they are not included here.",
+  "limits": "Policy strength is our reading of the publisher's author guidance at the recorded URL. The mapping shows what was declared and what the artifact held; it does not show whether a journal enforced its policy, and 7 purposively selected studies are not a sample.",
+  "n": 7,
+  "n_with_statement_retrieved": 5,
+  "studies": [
+    {
+      "study": "A",
+      "citekey": "cubero2025",
+      "journal": "Computers in Biology and Medicine",
+      "doi": "10.1016/j.compbiomed.2025.109759",
+      "policy": "statement required",
+      "policy_source": "https://www.elsevier.com/researcher/author/policies-and-guidelines/research-data",
+      "repo": "BSEL-UC3M/VFSS_analysis",
+      "availability_statement": null,
+      "statement_source": "no open full text in Europe PMC",
+      "title": "Automated dysphagia characterization in head and neck cancer patients using videofluoroscopic swallowing studies.",
+      "pmcid": null,
+      "is_open_access": "N",
+      "pointers_checked": [],
+      "observed": {
+        "license": "none/not_reported",
+        "env_file": "environment.yml+setup.py",
+        "weights_in_repo": "external (Zenodo)",
+        "n_files": "not measured",
+        "code_files": "not measured",
+        "readme": "yes"
+      }
+    },
+    {
+      "study": "B",
+      "citekey": "saab2023",
+      "journal": "Frontiers in Neuroscience",
+      "doi": "10.3389/fnins.2023.1302132",
+      "policy": "mandatory",
+      "policy_source": "https://www.frontiersin.org/guidelines/policies-and-publication-ethics",
+      "repo": "UofTNeurology/masa-open-source",
+      "availability_statement": "Data availability statement The datasets presented in this article are not readily available because REB at Sunnybrook Health Sciences requires human voice data to be stored and analyzed locally. Requests to access the datasets should be directed to h.khosravani@utoronto.ca .",
+      "statement_source": "Europe PMC full text (PMC10734030)",
+      "title": "Machine-learning assisted swallowing assessment: a deep learning-based quality improvement tool to screen for post-stroke dysphagia.",
+      "pmcid": "PMC10734030",
+      "is_open_access": "Y",
+      "pointers_checked": [],
+      "observed": {
+        "license": "present",
+        "env_file": "requirements.txt",
+        "weights_in_repo": "NONE",
+        "n_files": "not measured",
+        "code_files": "not measured",
+        "readme": "yes"
+      }
+    },
+    {
+      "study": "N",
+      "citekey": "geiger2025",
+      "journal": "Communications Medicine",
+      "doi": "10.1038/s43856-025-01255-1",
+      "policy": "mandatory",
+      "policy_source": "https://www.nature.com/commsmed/editorial-policies/reporting-standards",
+      "repo": "ResearchgroupMITI/swallow-detection",
+      "availability_statement": "Data availability The main data supporting the results of this study are available within the paper and its Supplementary Information . Source data underlying Fig. 8 , Tables 1 , 2 , and 3 can be found in Supplementary Data 1 . The data sets generated and analyzed during the current study are not publicly available due to restrictions related to privacy concerns for the research participants, but are available from the corresponding author on reasonable request, subject to approval by the relevant institutional committees and in accordance with all applicable laws and regulations. Requests will be evaluated on a case-by-case basis and processed within 6–8 weeks. Data usage will be governed by a data use agreement that prohibits re-identification and limits usage to the approved scientific purpose.",
+      "statement_source": "Europe PMC full text (PMC12678422)",
+      "title": "A deep learning-based approach to enhance accuracy and feasibility of long-term high-resolution manometry examinations.",
+      "pmcid": "PMC12678422",
+      "is_open_access": "Y",
+      "pointers_checked": [],
+      "observed": {
+        "license": "CC0-1.0",
+        "env_file": "NONE",
+        "weights_in_repo": "NONE",
+        "n_files": "41",
+        "code_files": "24",
+        "readme": "yes"
+      }
+    },
+    {
+      "study": "O",
+      "citekey": "dai2026",
+      "journal": "iScience",
+      "doi": "10.1016/j.isci.2025.114451",
+      "policy": "mandatory",
+      "policy_source": "https://www.cell.com/iscience/authors",
+      "repo": "enoch0307/streamlitapp_cn",
+      "availability_statement": "Resource availability Lead contact Requests for further information and resources should be directed to and will be fulfilled by the lead contact, Yingying Zhang ( 13092612689@163.com ).",
+      "statement_source": "Europe PMC full text (PMC12803820)",
+      "title": "Interpretable machine learning for accessible dysphagia screening and staging in older adults.",
+      "pmcid": "PMC12803820",
+      "is_open_access": "Y",
+      "pointers_checked": [],
+      "observed": {
+        "license": "none/not_reported",
+        "env_file": "requirements.txt",
+        "weights_in_repo": "2",
+        "n_files": "9",
+        "code_files": "2",
+        "readme": "no"
+      }
+    },
+    {
+      "study": "P",
+      "citekey": "song2025",
+      "journal": "npj Digital Medicine",
+      "doi": "10.1038/s41746-024-01417-w",
+      "policy": "mandatory",
+      "policy_source": "https://www.nature.com/npjdigitalmed/editorial-policies",
+      "repo": "yonghunsong/Throat-related-events-classification",
+      "availability_statement": "Data availability The data supporting this study’s findings are publicly available on Zenodo at 10.5281/zenodo.12630148.",
+      "statement_source": "Europe PMC full text (PMC11706958)",
+      "title": "Multimodal deep ensemble classification system with wearable vibration sensor for detecting throat-related events.",
+      "pmcid": "PMC11706958",
+      "is_open_access": "Y",
+      "pointers_checked": [
+        {
+          "kind": "zenodo",
+          "resolves": true,
+          "n_files": 2,
+          "total_bytes": 157848305,
+          "title": "A dataset of throat-related events collected with a soft skin-attachable vibration sensor",
+          "named_in_statement": "10.5281/zenodo.12630148"
+        }
+      ],
+      "observed": {
+        "license": "none/not_reported",
+        "env_file": "NONE",
+        "weights_in_repo": "NONE",
+        "n_files": "17",
+        "code_files": "12",
+        "readme": "yes"
+      }
+    },
+    {
+      "study": "Q",
+      "citekey": "park2022",
+      "journal": "Scientific Reports",
+      "doi": "10.1038/s41598-022-20348-8",
+      "policy": "mandatory",
+      "policy_source": "https://www.nature.com/srep/journal-policies/editorial-policies",
+      "repo": "ruaeh/Dysphagia-ML",
+      "availability_statement": "Data availability Data may be available upon special request to the corresponding authors. Scripts, including the method of feature extract, the preprocessing method, and ML algorithms, on GitHub: https://github.com/ruaeh/Dysphagia-ML .",
+      "statement_source": "Europe PMC full text (PMC9537337)",
+      "title": "Post-stroke respiratory complications using machine learning with voice features from mobile devices.",
+      "pmcid": "PMC9537337",
+      "is_open_access": "Y",
+      "pointers_checked": [
+        {
+          "kind": "github",
+          "resolves": true,
+          "repo": "ruaeh/Dysphagia-ML",
+          "size_kb": 0,
+          "empty": true,
+          "created_at": "2022-08-08T11:19:19Z",
+          "pushed_at": "2022-08-08T11:19:20Z",
+          "named_in_statement": "https://github.com/ruaeh/Dysphagia-ML"
+        }
+      ],
+      "observed": {
+        "license": "none/not_reported",
+        "env_file": "NONE",
+        "weights_in_repo": "NONE",
+        "n_files": "0",
+        "code_files": "0",
+        "readme": "no"
+      }
+    },
+    {
+      "study": "R",
+      "citekey": "devette2025",
+      "journal": "Radiotherapy and Oncology",
+      "doi": "10.1016/j.radonc.2025.111169",
+      "policy": "statement required",
+      "policy_source": "https://www.elsevier.com/researcher/author/policies-and-guidelines/research-data",
+      "repo": "PRI2MA/DL_NTCP_Dysphagia",
+      "availability_statement": null,
+      "statement_source": "no open full text in Europe PMC",
+      "title": "Deep learning NTCP model for late dysphagia after radiotherapy for head and neck cancer patients based on 3D dose, CT and segmentations.",
+      "pmcid": "PMC12520315",
+      "is_open_access": "Y",
+      "pointers_checked": [],
+      "observed": {
+        "license": "none/not_reported",
+        "env_file": "NONE",
+        "weights_in_repo": "NONE",
+        "n_files": "154",
+        "code_files": "82",
+        "readme": "yes"
+      }
+    }
+  ]
+}

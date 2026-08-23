@@ -1,0 +1,249 @@
+{
+  "generated_by": "28_screening_sensitivity.py",
+  "why": "The screening disagreements are records the recorded decision excluded and the blind rule would have included. The sensitivity that answers them adds those records; removing borderline studies tests the opposite direction and leaves the question open.",
+  "n_disputed_records": 3,
+  "n_that_could_add_a_study": 1,
+  "n_same_study_variants": 2,
+  "study_level_denominator": {
+    "published": 18,
+    "if_all_admitted": 19
+  },
+  "repository_level_denominator": {
+    "published": 22,
+    "if_all_admitted": 25
+  },
+  "why_the_two_differ": "Two of the three disputed records are same-team variants of a repository already counted. Admitting them enlarges the repository count and not the study count, because the study they belong to is already in the set. The blind rule cannot see that from a name, a title and a description, which is the kind of judgment the article says an objective rule cannot encode.",
+  "disputed_records": [
+    {
+      "repo": "excluded-personal-01",
+      "recorded_decision": "no",
+      "exclusion_reason": "personal learning repository with no associated study",
+      "in_intake_table": false
+    },
+    {
+      "repo": "SheenZhang721/SwallowingFunctionAnalysis-Self",
+      "recorded_decision": "dedup",
+      "exclusion_reason": "same underlying study as another included repository; merged at study level",
+      "in_intake_table": false
+    },
+    {
+      "repo": "SheenZhang721/TTUnet",
+      "recorded_decision": "dedup",
+      "exclusion_reason": "same underlying study as another included repository; merged at study level",
+      "in_intake_table": false
+    }
+  ],
+  "composite_note": "The composite stays at 0 under every scenario short of an added repository carrying all four prerequisites at once. None of the disputed records was coded as carrying even one of them, so the headline does not move; the individual transparency proportions do, which is why they are given here.",
+  "proportions": [
+    {
+      "signal": "open license",
+      "published": {
+        "k": 3,
+        "n": 18,
+        "proportion": 0.1667,
+        "wilson": [
+          0.0584,
+          0.3922
+        ]
+      },
+      "worst_case_added_all_lack_it": {
+        "k": 3,
+        "n": 19,
+        "proportion": 0.1579,
+        "wilson": [
+          0.0552,
+          0.3757
+        ]
+      },
+      "best_case_added_all_have_it": {
+        "k": 4,
+        "n": 19,
+        "proportion": 0.2105,
+        "wilson": [
+          0.0851,
+          0.4333
+        ]
+      }
+    },
+    {
+      "signal": "retrievable weights",
+      "published": {
+        "k": 2,
+        "n": 18,
+        "proportion": 0.1111,
+        "wilson": [
+          0.031,
+          0.328
+        ]
+      },
+      "worst_case_added_all_lack_it": {
+        "k": 2,
+        "n": 19,
+        "proportion": 0.1053,
+        "wilson": [
+          0.0294,
+          0.3139
+        ]
+      },
+      "best_case_added_all_have_it": {
+        "k": 3,
+        "n": 19,
+        "proportion": 0.1579,
+        "wilson": [
+          0.0552,
+          0.3757
+        ]
+      }
+    },
+    {
+      "signal": "usable sample data",
+      "published": {
+        "k": 2,
+        "n": 18,
+        "proportion": 0.1111,
+        "wilson": [
+          0.031,
+          0.328
+        ]
+      },
+      "worst_case_added_all_lack_it": {
+        "k": 2,
+        "n": 19,
+        "proportion": 0.1053,
+        "wilson": [
+          0.0294,
+          0.3139
+        ]
+      },
+      "best_case_added_all_have_it": {
+        "k": 3,
+        "n": 19,
+        "proportion": 0.1579,
+        "wilson": [
+          0.0552,
+          0.3757
+        ]
+      }
+    },
+    {
+      "signal": "environment declared",
+      "published": {
+        "k": 6,
+        "n": 18,
+        "proportion": 0.3333,
+        "wilson": [
+          0.1628,
+          0.5625
+        ]
+      },
+      "worst_case_added_all_lack_it": {
+        "k": 6,
+        "n": 19,
+        "proportion": 0.3158,
+        "wilson": [
+          0.1536,
+          0.5399
+        ]
+      },
+      "best_case_added_all_have_it": {
+        "k": 7,
+        "n": 19,
+        "proportion": 0.3684,
+        "wilson": [
+          0.1915,
+          0.5896
+        ]
+      }
+    },
+    {
+      "signal": "run instructions",
+      "published": {
+        "k": 7,
+        "n": 18,
+        "proportion": 0.3889,
+        "wilson": [
+          0.2031,
+          0.6138
+        ]
+      },
+      "worst_case_added_all_lack_it": {
+        "k": 7,
+        "n": 19,
+        "proportion": 0.3684,
+        "wilson": [
+          0.1915,
+          0.5896
+        ]
+      },
+      "best_case_added_all_have_it": {
+        "k": 8,
+        "n": 19,
+        "proportion": 0.4211,
+        "wilson": [
+          0.2314,
+          0.6372
+        ]
+      }
+    },
+    {
+      "signal": "pinned and portable",
+      "published": {
+        "k": 0,
+        "n": 18,
+        "proportion": 0.0,
+        "wilson": [
+          0.0,
+          0.1759
+        ]
+      },
+      "worst_case_added_all_lack_it": {
+        "k": 0,
+        "n": 19,
+        "proportion": 0.0,
+        "wilson": [
+          0.0,
+          0.1682
+        ]
+      },
+      "best_case_added_all_have_it": {
+        "k": 1,
+        "n": 19,
+        "proportion": 0.0526,
+        "wilson": [
+          0.0094,
+          0.2464
+        ]
+      }
+    },
+    {
+      "signal": "all four prerequisites",
+      "published": {
+        "k": 0,
+        "n": 18,
+        "proportion": 0.0,
+        "wilson": [
+          0.0,
+          0.1759
+        ]
+      },
+      "worst_case_added_all_lack_it": {
+        "k": 0,
+        "n": 19,
+        "proportion": 0.0,
+        "wilson": [
+          0.0,
+          0.1682
+        ]
+      },
+      "best_case_added_all_have_it": {
+        "k": 1,
+        "n": 19,
+        "proportion": 0.0526,
+        "wilson": [
+          0.0094,
+          0.2464
+        ]
+      }
+    }
+  ]
+}

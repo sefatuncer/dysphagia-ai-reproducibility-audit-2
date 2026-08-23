@@ -1,0 +1,112 @@
+{
+  "generated_by": "29_publication_confirmed_subset.py",
+  "subset_rule": "The study-level table names a venue and a year, rather than a placeholder such as 'unclear' or 'could not be confirmed'.",
+  "publication_confirmed_ids": [
+    "A",
+    "B",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R"
+  ],
+  "n_publication_confirmed": 7,
+  "n_all_studies": 18,
+  "composite_all_four": {
+    "publication_confirmed": 0,
+    "all_studies": 0
+  },
+  "note": "The subset is selected on retrievability, which is if anything associated with fuller reporting, so it should be read as a best case for the full set rather than a representative sample of it. The run instruction row is the one where the two differ appreciably, in the direction that selection predicts.",
+  "rows": [
+    {
+      "signal": "Open license",
+      "publication_confirmed": {
+        "k": 2,
+        "n": 7,
+        "wilson": [
+          0.0822,
+          0.6411
+        ]
+      },
+      "all_studies": {
+        "k": 3,
+        "n": 18
+      }
+    },
+    {
+      "signal": "Retrievable weights",
+      "publication_confirmed": {
+        "k": 2,
+        "n": 7,
+        "wilson": [
+          0.0822,
+          0.6411
+        ]
+      },
+      "all_studies": {
+        "k": 2,
+        "n": 18
+      }
+    },
+    {
+      "signal": "Usable sample data",
+      "publication_confirmed": {
+        "k": 1,
+        "n": 7,
+        "wilson": [
+          0.0257,
+          0.5131
+        ]
+      },
+      "all_studies": {
+        "k": 2,
+        "n": 18
+      }
+    },
+    {
+      "signal": "Environment declared",
+      "publication_confirmed": {
+        "k": 3,
+        "n": 7,
+        "wilson": [
+          0.1582,
+          0.7495
+        ]
+      },
+      "all_studies": {
+        "k": 6,
+        "n": 18
+      }
+    },
+    {
+      "signal": "Run instructions",
+      "publication_confirmed": {
+        "k": 4,
+        "n": 7,
+        "wilson": [
+          0.2505,
+          0.8418
+        ]
+      },
+      "all_studies": {
+        "k": 7,
+        "n": 18
+      }
+    },
+    {
+      "signal": "Model card or datasheet",
+      "publication_confirmed": {
+        "k": 0,
+        "n": 7,
+        "wilson": [
+          0.0,
+          0.3543
+        ]
+      },
+      "all_studies": {
+        "k": 0,
+        "n": 18
+      }
+    }
+  ]
+}

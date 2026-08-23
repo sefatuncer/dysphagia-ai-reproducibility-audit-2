@@ -98,9 +98,11 @@ resolves to the most recent one. See `CITATION.cff` and the Zenodo record.
 
 All versions share the concept DOI
 [10.5281/zenodo.21629516](https://doi.org/10.5281/zenodo.21629516), which always resolves to
-the most recent release. Version DOIs: v1.1.0 is
-[10.5281/zenodo.22054994](https://doi.org/10.5281/zenodo.22054994), published 22 August 2026,
-and it is the version the article reports; v1.0.0 is
+the most recent release. Version DOIs: v1.1.1 is
+[10.5281/zenodo.22068273](https://doi.org/10.5281/zenodo.22068273), published 23 August 2026,
+and it is the version the article reports; v1.1.0 is
+[10.5281/zenodo.22054994](https://doi.org/10.5281/zenodo.22054994), which this release
+corrects and which is not withdrawn; v1.0.0 is
 [10.5281/zenodo.21629517](https://doi.org/10.5281/zenodo.21629517), which predates the
 protocol document and the self-audit checklist and should not be cited for them.
 

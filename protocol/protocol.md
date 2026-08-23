@@ -46,9 +46,12 @@ v1.1.0; the first release, v1.0.0, is DOI 10.5281/zenodo.21629517 and predates t
 The concept DOI 10.5281/zenodo.21629516 covers all versions and resolves to the most recent
 one; cite it, or the version DOI of the release you are actually reading.
 
-**Remaining steps:** finalize the RS1–RS6 clinical sign-off → notify the authors of the audited
-repositories → submit. No external registry entry is made; §2.1 of
-the manuscript gives the reason.
+**Remaining steps:** finalize the RS1–RS6 clinical sign-off → submit. No external registry
+entry is made; §2.1 of the manuscript gives the reason. [Corrected 2026-08-23: this line
+previously read “finalize the RS1–RS6 clinical sign-off → notify the authors of the audited
+repositories → submit”, which contradicted the Ethics paragraph above. No notification round
+was carried out; the manuscript and the self-audit checklist both record that item as not
+met. The earlier wording is quoted here rather than deleted.]
 
 
 ---

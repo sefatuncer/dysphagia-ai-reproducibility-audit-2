@@ -98,14 +98,28 @@ resolves to the most recent one. See `CITATION.cff` and the Zenodo record.
 
 All versions share the concept DOI
 [10.5281/zenodo.21629516](https://doi.org/10.5281/zenodo.21629516), which always resolves to
-the most recent release. Version DOIs: v1.1.1 is
-[10.5281/zenodo.22068273](https://doi.org/10.5281/zenodo.22068273), published 23 August 2026,
-and it is the version the article reports; v1.1.0 is
-[10.5281/zenodo.22054994](https://doi.org/10.5281/zenodo.22054994), which this release
-corrects and which is not withdrawn; v1.0.0 is
+the most recent release. **v1.1.2 is the current release and the one the article reports.**
+Zenodo mints its version DOI when the release is published, so that identifier cannot appear
+inside the release itself; cite the concept DOI, which resolves to it. Earlier version DOIs:
+v1.1.1 is [10.5281/zenodo.22068273](https://doi.org/10.5281/zenodo.22068273); v1.1.0 is
+[10.5281/zenodo.22054994](https://doi.org/10.5281/zenodo.22054994); both are superseded and
+neither is withdrawn. v1.0.0 is
 [10.5281/zenodo.21629517](https://doi.org/10.5281/zenodo.21629517), which predates the
 protocol document and the self-audit checklist and should not be cited for them.
 
+- **v1.1.2** — corrective; the analysis, the data and every reported number are unchanged.
+  The protocol's remaining-steps line still listed notifying the authors of the audited
+  repositories as a step, contradicting the ethics paragraph of the same document, which
+  states that they are not notified. No notification round was carried out, and the
+  manuscript and the self-audit checklist both record that item as not met. The earlier
+  wording is quoted in place rather than deleted. `CITATION.cff`, which still declared
+  v1.1.0 and had never recorded the version DOIs minted for v1.1.0 and v1.1.1, is brought
+  up to date.
+- **v1.1.1** — corrective; four files described a personal relationship between the two
+  authors, which is not an interest in the audited subject matter and is no longer stated.
+  The methodological facts that were doing the work remain: the primary measurements are
+  script-derived, and the exploratory clinical axis was coded by one clinician with no
+  second coder. The article title is corrected in every file that repeats it.
 - **v1.1.0** — adds the dated protocol document and the self-audit checklist the manuscript
   cites as archived; replaces the census-synthesis and screening-reliability scripts with the
   versions that produce the reported figures; adds the post-hoc robustness checks (12–18);

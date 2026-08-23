@@ -3,8 +3,8 @@ message: "If you use these materials, please cite both the article and this arch
 title: "Available but not executable: transparency-audit and containerized re-execution artifacts for code-available dysphagia and swallowing AI"
 abstract: "Reproducibility artifacts (search, transparency-audit, and containerized re-execution pipeline) for a meta-research study of code-available dysphagia/swallowing AI models."
 type: software
-version: v1.1.0
-date-released: 2026-07-29
+version: v1.1.2
+date-released: 2026-08-23
 license:
   - MIT
   - CC-BY-4.0
@@ -31,5 +31,15 @@ identifiers:
     description: "Concept DOI: cites all versions of this archive and resolves to the most recent one. Prefer this when no specific version is required."
   - type: doi
     value: "10.5281/zenodo.21629517"
-    description: "Version DOI for v1.0.0. Zenodo mints the v1.1.0 version DOI when this release is published; it is recorded here and in the manuscript once minted."
+    description: "Version DOI for v1.0.0. Predates the protocol document and the self-audit checklist; do not cite it for them."
+  - type: doi
+    value: "10.5281/zenodo.22054994"
+    description: "Version DOI for v1.1.0. Superseded but not withdrawn."
+  - type: doi
+    value: "10.5281/zenodo.22068273"
+    description: "Version DOI for v1.1.1. Superseded but not withdrawn."
 repository-code: "https://github.com/sefatuncer/dysphagia-ai-reproducibility-audit-2"
+
+# The version DOI for this release (v1.1.2) is minted by Zenodo when the release is
+# published and therefore cannot appear inside the release itself. Cite the concept
+# DOI above, which always resolves to the most recent version.

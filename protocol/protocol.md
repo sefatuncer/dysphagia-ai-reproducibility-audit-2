@@ -38,7 +38,7 @@ code in dysphagia and swallowing artificial-intelligence studies
 
 **Timing and disclosure (transparency):** We make no claim that this document predates the analysis. It is a transparently dated record of the objective inclusion rule, rubric, and analysis plan, posted for audit. At the time of writing we had already completed the reproducible discovery and objective intake of the code-available set, the census re-execution (including three in-depth case studies: VFSS_analysis, masa-open-source, and enoch0307), and a first-pass RS1–RS6 clinical coding. The clinical author finalizes the interpretive RS columns.
 
-**Ethics:** Published literature + public repositories only; no human participants or newly collected/identifiable data, so ethics-committee review was not required. **Consistent with the manuscript, no ethics submission and no formal non-human-subjects determination was sought, and we state this explicitly in lieu of an approval number.** *(This wording is identical to the ethics section of the manuscript. Should an institutional exemption letter be obtained later, this document and the manuscript are to be amended together, so that the two never diverge.)* Data governance: artifacts used within original licenses; where a repository carried no license (15/18) we relied only on local, non-distributive use and claim no general research-use exemption; no re-identification; no redistribution of third-party code/weights/human-derived data. Authors of audited repositories are notified before publication and offered a right to respond (COPE).
+**Ethics:** Published literature + public repositories only; no human participants or newly collected/identifiable data, so ethics-committee review was not required. **Consistent with the manuscript, no ethics submission and no formal non-human-subjects determination was sought, and we state this explicitly in lieu of an approval number.** *(This wording is identical to the ethics section of the manuscript. Should an institutional exemption letter be obtained later, this document and the manuscript are to be amended together, so that the two never diverge.)* Data governance: artifacts used within original licenses; where a repository carried no license (15/18) we relied only on local, non-distributive use and claim no general research-use exemption; no re-identification; no redistribution of third-party code/weights/human-derived data. Authors of audited repositories are not notified before publication: the findings record the state of a public artifact at a logged date and allege no misconduct, and a correction sent to us is recorded as a dated addendum to the archive.
 
 **Archive:** This document is released as part of the artifact archive on Zenodo, alongside the
 scripts, rubric, codebook and re-execution logs it describes. It first appears in release
@@ -47,7 +47,7 @@ The concept DOI 10.5281/zenodo.21629516 covers all versions and resolves to the 
 one; cite it, or the version DOI of the release you are actually reading.
 
 **Remaining steps:** finalize the RS1–RS6 clinical sign-off → notify the authors of the audited
-repositories and offer a right to respond → submit. No external registry entry is made; §2.1 of
+repositories → submit. No external registry entry is made; §2.1 of
 the manuscript gives the reason.
 
 

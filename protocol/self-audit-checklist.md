@@ -44,7 +44,7 @@ this archive. Nothing is marked met on the strength of an intention.
 | C4 | Registration timing stated without over-claiming | **Met** | The protocol is publicly posted and transparently dated. The manuscript makes **no** claim of temporal precedence over the analysis. |
 | C5 | Competing interests disclosed, including non-financial ones | **Met** | Declared: no prior professional relationship with the authors of any audited study or repository, and no financial interest. |
 | C6 | Generative-AI use disclosed, separating method use from writing use | **Met** | Declaration section. |
-| C7 | Named third parties notified and offered a right to respond | **Human step, before submission** | Template and recipient list in the manuscript repository. To be dated in §Ethics at submission. |
+| C7 | Named third parties notified and offered a right to respond | **Not met** | We did not notify. The findings record a public artifact at a logged date and allege no misconduct; the reasoning is stated in §Ethics, and a correction sent to us is recorded as a dated addendum. Recorded here as not met rather than reframed as inapplicable. |
 
 ## D. Clinical axis
 

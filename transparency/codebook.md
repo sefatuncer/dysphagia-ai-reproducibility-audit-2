@@ -66,3 +66,5 @@
 1. Once the included set is fixed after screening, select **8–10 studies at random** and have two independent coders code them separately.
 2. Compute item-wise Cohen κ (`03_analysis.py`). Any item with **κ < 0.60** triggers a clarification of the codebook and re-calibration.
 3. Clinical block (RS1–RS6): N.K.T. with the methodologist; technical block: S.T. with the methodologist, so that independence is genuine.
+
+**On `code_files` and `n_files` in `repo-intake-table.csv`.** Two rows read `not measured` rather than a number: the two repositories carried forward from the July 13-14 feasibility pilots were assessed by hand before the scripted intake ran, so the automated file-tree count was never taken for them. Both demonstrably contain code, since both were built. The cells are marked rather than left blank because a blank counts as zero in a naive read, which would put the number of included repositories holding no code file at five instead of the three the article reports.

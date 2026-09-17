@@ -106,10 +106,11 @@ resolves to the most recent one. See `CITATION.cff` and the Zenodo record.
 
 All versions share the concept DOI
 [10.5281/zenodo.21629516](https://doi.org/10.5281/zenodo.21629516), which always resolves to
-the most recent release. **v1.1.4 is the current release and the one the article reports**;
-its version DOI is [10.5281/zenodo.22813553](https://doi.org/10.5281/zenodo.22813553),
-recorded here after the release because a release cannot contain the DOI minted for it, so
-the copy inside v1.1.4 itself does not carry it. v1.1.3 is [10.5281/zenodo.22071534](https://doi.org/10.5281/zenodo.22071534),
+the most recent release. **v1.1.5 is the current release and the one the article reports.** Its
+version DOI is recorded here after the release, because a release cannot contain the DOI minted
+for it, so the copy inside v1.1.5 itself does not carry it. v1.1.4 is
+[10.5281/zenodo.22813553](https://doi.org/10.5281/zenodo.22813553), superseded and not
+withdrawn. v1.1.3 is [10.5281/zenodo.22071534](https://doi.org/10.5281/zenodo.22071534),
 superseded and not withdrawn. v1.1.2 is
 [10.5281/zenodo.22069521](https://doi.org/10.5281/zenodo.22069521), minted when the release
 was published and therefore recorded here from v1.1.3 onward rather than inside v1.1.2
@@ -120,6 +121,14 @@ neither is withdrawn. v1.0.0 is
 [10.5281/zenodo.21629517](https://doi.org/10.5281/zenodo.21629517), which predates the
 protocol document and the self-audit checklist and should not be cited for them.
 
+- **v1.1.5** — corrects the sensitivity bounds and two location pointers. Script 31 derived the
+  point shifts of the screening sensitivity from figures that had already been rounded, which
+  moved two of them by 0.1 point, and reported the largest increase only over the signals with a
+  nonzero count, leaving out the larger shift a zero row can take. Both bounds are now computed
+  from the exact fractions and rounded away from zero, and the increase over every signal is
+  recorded beside the earlier figure. In the adapted reporting checklist, the item on unadjusted
+  estimates pointed only at the footnote that explains the row given without an interval, and the
+  funding item named only the title page heading. No other number changes.
 - **v1.1.4** — adds what a second pre-submission review asked for and corrects what it found.
   Script 30 (version 2) corrects the journal-policy mapping, 31 computes strata, joint patterns
   and corrected denominators, and 32 re-issues the code-link mining extraction without its

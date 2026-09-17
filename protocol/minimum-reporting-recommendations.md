@@ -11,10 +11,10 @@
 | Pinned **and** portable environment specification | **0/18** | study level, N=18 |
 | Trained weights retrievable | **2/18** | study level, N=18 |
 | Open (OSI-approved) license | **3/18** | study level, N=18 |
-| Usable sample or test data | **4/18** | study level, N=18 |
+| Usable sample or test data | **2/18** | study level, N=18 |
 | Run instructions | **7/18** | study level, N=18 |
-| Rater reliability reported (RS4) | **0/4 applicable** (0/6 counting all) | full-text subset, k=6 |
-| Reference standard stated and justified (RS1, RS2) | heterogeneous; no study reported a single instrumental standard with justification | full-text subset, k=6 |
+| Rater reliability reported (RS4) | **0/6** of the releases with a person-assigned label; the seventh has no rater | releases with retrievable methods, k=7 |
+| Reference standard stated and justified (RS1, RS2) | heterogeneous; no study reported a single instrumental standard with justification | releases with retrievable methods, k=7 |
 | External validation | **not measured in this audit** | — |
 
 The first five are the packaging items and are measured for every included study. The

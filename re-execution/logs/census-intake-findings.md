@@ -1,6 +1,12 @@
 # Census intake findings — code-available swallowing-AI repositories (objective, re-execution centred)
 
-> ## ⬆️ v2 UPDATE (16 July, after code-link mining; THIS SECTION IS CURRENT)
+> ## ⬆️ v2 UPDATE (16 July, after code-link mining)
+>
+> **Superseded in two figures, kept as written.** The sample data rule was corrected on
+> 18 August 2026 and the study-level count moved from 4/18 to 2/18, as
+> `protocol/measurement-definitions.md` records. The clinical subset was reopened on
+> 18 September 2026 and is now 7 releases, with rater reliability reported by 0 of the 6
+> that have a person-assigned label. The figures below are what was current on 16 July.
 > The v1 section below describes **N=17**. Script 10 (code-link mining over open-access full texts) added **5 in-scope repositories**, taking the census from **17 to 22 repositories covering 18 distinct studies** (clustering: scut-jol ×2, tsukagoshi ×3, Yash and Tanishq ×2). Details in `code-mining-vetting.md`. **The primary level is the study (N=18); the repository level (N=22) is reported as sensitivity, and the two agree.**
 > - **Current study-level figures (Wilson 95% intervals):** open license **3/18** [0.06, 0.39] · weights **in the repository** **1/18** [0.01, 0.26] · weights including external hosting **2/18** [0.03, 0.33] · environment file **6/18** [0.16, 0.56] · example data **4/18** [0.09, 0.45] · **inference attemptable 2/18** [0.03, 0.33] · **re-executable out of the box 0/18** [upper bound 0.18].
 > - **Verdicts:** re_executable **0**, partial **2** (VFSS_analysis and the actual re-run of **enoch0307**, in `C-repo-003-enoch0307/`), not_reproduced **1** (masa: a build was attempted and observed to fail), not_attemptable **15** at study level (0 / 2 / 1 / 19 at repository level). The build stage and the inference stage are reported separately for masa and are not merged: its build failure was observed, while its inference was never reachable.

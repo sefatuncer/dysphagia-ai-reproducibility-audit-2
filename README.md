@@ -123,7 +123,7 @@ protocol document and the self-audit checklist and should not be cited for them.
   Script 30 (version 2) corrects the journal-policy mapping, 31 computes strata, joint patterns
   and corrected denominators, and 32 re-issues the code-link mining extraction without its
   de-duplication step. Scripts 33 and 34 need Docker: the environment files that were never
-  built were installed as declared (3 of 4 repositories installed with a clean `pip check` and
+  built were put through an as-declared install (3 of 4 repositories installed with a clean `pip check` and
   loadable imports; Video-SwinUNet failed at the first line of its requirements file), and the
   one shipped model that loaded in July gave identical predictions on all 2,002 scored inputs
   under the library versions recorded in its file and under those its unpinned install resolved

@@ -1021,12 +1021,12 @@
       },
       {
         "signal": "environment declared",
-        "worst_case_points": -1.7,
+        "worst_case_points": -1.8,
         "best_case_points": 3.5
       },
       {
         "signal": "run instructions",
-        "worst_case_points": -2.1,
+        "worst_case_points": -2.0,
         "best_case_points": 3.2
       },
       {
@@ -1041,7 +1041,9 @@
       }
     ],
     "max_decrease_points": -2.1,
-    "max_increase_points_nonzero_signals": 4.7
+    "max_increase_points_nonzero_signals": 4.7,
+    "max_increase_points_any_signal": 5.3,
+    "bounds_are_rounded_away_from_zero": true
   },
   "study_rows": [
     {

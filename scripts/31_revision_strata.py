@@ -28,6 +28,7 @@ Usage: python analiz/scripts/31_revision_strata.py
 """
 import csv
 import json
+import math
 import re
 import sys
 from itertools import product
@@ -257,17 +258,29 @@ def main():
     }
 
     # ------------------------------------------------------------ sensitivity summary
+    # The point shifts are computed from the counts, not from the proportions already rounded to
+    # four places in screening-sensitivity.json: rounding twice moved two of them by 0.1 point.
     shifts = []
+    exact = []
     for p in sens["proportions"]:
-        a = p["published"]["proportion"]
+        a = p["published"]["k"] / p["published"]["n"]
+        w = p["worst_case_added_all_lack_it"]["k"] / p["worst_case_added_all_lack_it"]["n"]
+        b = p["best_case_added_all_have_it"]["k"] / p["best_case_added_all_have_it"]["n"]
         shifts.append({"signal": p["signal"],
-                       "worst_case_points": round(100 * (p["worst_case_added_all_lack_it"]["proportion"] - a), 1),
-                       "best_case_points": round(100 * (p["best_case_added_all_have_it"]["proportion"] - a), 1)})
-    nonzero = [x for x in shifts if x["signal"] not in ("pinned and portable", "all four prerequisites")]
+                       "worst_case_points": round(100 * (w - a), 1),
+                       "best_case_points": round(100 * (b - a), 1)})
+        exact.append({"signal": p["signal"], "worst": 100 * (w - a), "best": 100 * (b - a)})
+    zero_rows = ("pinned and portable", "all four prerequisites")
+    nonzero = [x for x in exact if x["signal"] not in zero_rows]
+    # The text quotes these as bounds, so they are rounded away from zero: a bound must not be
+    # tighter than the value it bounds.
+    ceil1 = lambda x: math.ceil(abs(x) * 10 - 1e-9) / 10 * (1 if x >= 0 else -1)
     sensitivity = {
         "per_signal_point_shift": shifts,
-        "max_decrease_points": min(x["worst_case_points"] for x in nonzero),
-        "max_increase_points_nonzero_signals": max(x["best_case_points"] for x in nonzero),
+        "max_decrease_points": ceil1(min(x["worst"] for x in nonzero)),
+        "max_increase_points_nonzero_signals": ceil1(max(x["best"] for x in nonzero)),
+        "max_increase_points_any_signal": ceil1(max(x["best"] for x in exact)),
+        "bounds_are_rounded_away_from_zero": True,
     }
 
     payload = {

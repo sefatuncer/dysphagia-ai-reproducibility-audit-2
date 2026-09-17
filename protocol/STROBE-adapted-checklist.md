@@ -45,7 +45,7 @@ This copy was matched to the article on 17 September 2026.
 | 14a | Descriptive characteristics | Modality, channel, link to a publication and signals for each release | Results, Discovery and Inclusion, Table 1, Fig. 2, and Online Resources 4 and 5. `transparency/repo-intake-table.csv` gives the record for each repository |
 | 14b | Missing data per variable | Same | Results, Label Provenance, Table 4, Fig. 2, where an empty cell marks a signal not observed, and Online Resource 4, where fields are marked not measured |
 | 15 | Outcome data | Signal counts and the distribution of verdicts | Tables 1 and 2, Fig. 2, and Results, Reruns |
-| 16a | Unadjusted estimates and precision | Proportions with intervals, and the derived composite given without one | Table 1, footnote c, and Results, Reruns |
+| 16a | Unadjusted estimates and precision | Proportions with intervals, and the derived composite given without one | Table 1 and its footnote c, Results, What the Repositories Carried, and Results, Reruns |
 | 16b | Category boundaries | **Not applicable**, since no continuous variable is categorized | Not applicable |
 | 16c | Relative risk | **Not applicable**, since no risks are compared | Not applicable |
 | 17 | Other analyses | Journal policy, printed statement and repository, the exploratory clinical axis, the strata, the install checks and the comparison of library versions. The policy mapping, the strata and the two container checks were added after the main analysis and are post hoc | Results, What the Transparency Signal Delivers and Table 3, Results, Label Provenance and Table 4, Results, What the Repositories Carried, Methods, Containerized Reruns and Results, Reruns, and Online Resource 2, sections S4 and S6. Scripts `30`, `31`, `33` and `34` |
@@ -53,7 +53,7 @@ This copy was matched to the article on 17 September 2026.
 | 19 | Limitations | Same | Discussion, Limitations |
 | 20 | Interpretation | Same | Discussion |
 | 21 | Generalizability | Bounded to what the stated channels reach | Results, Discovery and Inclusion, Discussion, and Discussion, Limitations |
-| 22 | Funding | Same | Title page, Statements and Declarations |
+| 22 | Funding | Same | Title page, Statements and Declarations, and the manuscript's Declarations, Funding |
 
 ## Items where the substitution changes the meaning
 

@@ -51,7 +51,11 @@ entry is made; §2.1 of the manuscript gives the reason. [Corrected 2026-08-23: 
 previously read “finalize the RS1–RS6 clinical sign-off → notify the authors of the audited
 repositories → submit”, which contradicted the Ethics paragraph above. No notification round
 was carried out; the manuscript and the self-audit checklist both record that item as not
-met. The earlier wording is quoted here rather than deleted.]
+met. The earlier wording is quoted here rather than deleted.] [Updated 2026-09-17: the
+RS1–RS6 clinical sign-off is complete. The corrected codes were accepted by the clinician
+author on 22 August 2026, and the revised presentation of the clinical axis (task types, RS5
+wording, crosswalk to existing instruments) was accepted on 17 September 2026. Submission is
+the remaining step.]
 
 
 ---

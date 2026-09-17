@@ -50,6 +50,9 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.22819445"
     description: "Version DOI for v1.1.5. Superseded by v1.1.6, the release the article reports, but not withdrawn."
+  - type: doi
+    value: "10.5281/zenodo.22821000"
+    description: "Version DOI for v1.1.6, the release the article reports."
 repository-code: "https://github.com/sefatuncer/dysphagia-ai-reproducibility-audit-2"
 
 # A release cannot contain the DOI Zenodo mints for it, so each version DOI is recorded

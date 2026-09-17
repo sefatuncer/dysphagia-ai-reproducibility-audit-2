@@ -41,6 +41,8 @@ OFFLINE = [
     ("11_screening_kappa.py", "screening-reliability.json"),
     ("24_rs_coding_evidence.py", "rs-coding-evidence.csv"),
     ("21_reported_numbers.py", "reported-numbers.json"),
+    # Added in the JIIM revision: the strata, joint patterns and corrected denominators.
+    ("31_revision_strata.py", "revision-strata.json"),
 ]
 NETWORK = [
     ("12_truncation_check.py", "truncation-check.json"),
@@ -48,11 +50,14 @@ NETWORK = [
     ("19_env_pinning_audit.py", "env-pinning-audit.json"),
     ("20_run_instructions_audit.py", "run-instructions-audit.json"),
     ("23_sample_data_audit.py", "sample-data-audit.json"),
+    ("30_policy_statement_delivery.py", "policy-statement-delivery.json"),
+    ("32_mining_overlap_check.py", "mining-overlap-check.json"),
 ]
 
 # Fields that record when a live read happened. A change in these is expected on
 # a re-run and is not a difference in the finding.
-VOLATILE = {"access_date", "generated", "run_at", "retrieved"}
+VOLATILE = {"access_date", "generated", "run_at", "retrieved", "retrieved_on",
+            "checked_on", "reissued_on"}
 
 
 def strip_volatile(obj):

@@ -1,0 +1,189 @@
+{
+  "generated_by": "32_mining_overlap_check.py",
+  "reissued_on": "2026-09-17",
+  "original_query_date": "2026-07-16",
+  "query": "(dysphagia OR deglutition OR swallowing) AND (\"deep learning\" OR \"machine learning\" OR \"neural network\" OR \"artificial intelligence\" OR CNN) AND (github OR gitlab OR zenodo OR \"code is available\" OR \"code available\" OR \"publicly available\") AND (OPEN_ACCESS:y) AND (FIRST_PDATE:[2010 TO 2026])",
+  "max_pages": 4,
+  "n_fulltexts_listed": 395,
+  "n_fulltexts_unreadable": 69,
+  "n_distinct_repository_links": 106,
+  "included_repositories_reached": 3,
+  "by_recorded_channel": {
+    "github": {
+      "repositories": 15,
+      "reached": 0
+    },
+    "carried": {
+      "repositories": 2,
+      "reached": 0
+    },
+    "mining": {
+      "repositories": 5,
+      "reached": 3
+    }
+  },
+  "why": "10_code_link_mining.py drops a link already present in the candidate inventory before recording it, so the released record cannot show whether the mining channel also reached repositories that another source found first. This re-issue records every link.",
+  "limits": "A re-issue on a later date against a moved search index, not a replay of the original run. It shows what the channel reaches now.",
+  "rows": [
+    {
+      "study": "A",
+      "repo": "BSEL-UC3M/VFSS_analysis",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "B",
+      "repo": "UofTNeurology/masa-open-source",
+      "recorded_channel": "carried",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "C",
+      "repo": "aht4005/dysphagia-risk-calculator",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "D",
+      "repo": "MinghaoSam/SwallowingFunctionAnalysis",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "E",
+      "repo": "scut-jol/CFSCNet",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "E",
+      "repo": "scut-jol/swallow_segment_system",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "F",
+      "repo": "kwahid/ABAS_swallowing_structures",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "G",
+      "repo": "tsukagoshi56/liquid_swallowing_segmentation",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "G",
+      "repo": "tsukagoshi56/swallowing_segmentation_meanteacher",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "G",
+      "repo": "tsukagoshi56/swallowing_segmentation_with_ssl_gru",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "H",
+      "repo": "zhengfj1994/dysphagia-viscosity-classifier",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "I",
+      "repo": "arivv22/ai-swallowing-sound-classification",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "J",
+      "repo": "Kai-Washino/swallowing-recognition-DLmachine",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "K",
+      "repo": "TanishqJoshi/Larynx-Function-prediction-using-W-KNN-on-sEMG-data",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "K",
+      "repo": "YashC1308/Larynx-Prediction-using-sEMG-data",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "L",
+      "repo": "20206666/Classification-of-chewing-and-swallowing",
+      "recorded_channel": "github",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "M",
+      "repo": "SimonZeng7108/Video-SwinUNet",
+      "recorded_channel": "carried",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "N",
+      "repo": "ResearchgroupMITI/swallow-detection",
+      "recorded_channel": "mining",
+      "reached_by_mining_on_reissue": true,
+      "pmcids": [
+        "PMC12678422"
+      ]
+    },
+    {
+      "study": "O",
+      "repo": "enoch0307/streamlitapp_cn",
+      "recorded_channel": "mining",
+      "reached_by_mining_on_reissue": true,
+      "pmcids": [
+        "PMC12803820"
+      ]
+    },
+    {
+      "study": "P",
+      "repo": "yonghunsong/Throat-related-events-classification",
+      "recorded_channel": "mining",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    },
+    {
+      "study": "Q",
+      "repo": "ruaeh/Dysphagia-ML",
+      "recorded_channel": "mining",
+      "reached_by_mining_on_reissue": true,
+      "pmcids": [
+        "PMC9537337"
+      ]
+    },
+    {
+      "study": "R",
+      "repo": "PRI2MA/DL_NTCP_Dysphagia",
+      "recorded_channel": "mining",
+      "reached_by_mining_on_reissue": false,
+      "pmcids": []
+    }
+  ]
+}

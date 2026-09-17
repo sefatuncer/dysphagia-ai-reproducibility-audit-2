@@ -1,5 +1,19 @@
 # Clinical reproducibility construct and a dysphagia-specific reference-standard and label-quality taxonomy (RS1–RS6)
 
+> **Revision note, 17 September 2026.** This document is kept as the dated record of how the
+> taxonomy was first framed. Two of its claims are superseded, and the article and its Online
+> Resource 3 govern. (1) Positioning: the article no longer says that RS2–RS4 fall outside
+> existing instruments. CLAIM asks for the definition and rationale of the reference standard
+> and for measurement of rater variability, QUADAS-2 for patient selection and reference-standard
+> conduct, and PROBAST+AI for outcome definition; the taxonomy is presented as an
+> operationalization for swallowing, most distinct in RS2 and RS3, not as a new appraisal domain.
+> (2) Denominator: "0/6" in §5 is reported as 0/5 releases with a person-assigned label plus one
+> (Song et al.) whose labels are defined by protocol and have no rater. The article also records
+> what the taxonomy does not yet capture: the scale threshold defining a label, the label unit
+> (swallow or patient), the bolus protocol, and the task type (diagnostic, prognostic or
+> measurement). The first-pass phrase "healthy-control contamination" is no longer used as a
+> deficiency code; RS5 now describes recruitment and setting.
+
 **Status:** the taxonomy design and the clinical judgements are the work of N.K.T. (clinical axis). Rows marked `[NKT]` in the accompanying coding table are clinical judgements; rows marked `inventory-only` could not be coded because the full text was not retrieved through the study's channels, which is a finding rather than an outstanding task. The clinical judgements were checked against the source publications on 21-22 August 2026, four were corrected, and the corrected set was reviewed and accepted by the clinician author on 22 August 2026.
 **Purpose:** reference-standard validity and spectrum bias, taken alone, are already covered by QUADAS-2 and were applied to this literature by Kwok and Wong (JMIR 2025). This document defines a clinical construct that goes **beyond** QUADAS-2 and is **specific to dysphagia AI**: it enters the audit as a coding block in the rubric, as the clinical anchor of the article's thesis, and as the clinical half of the minimum-reporting recommendations.
 

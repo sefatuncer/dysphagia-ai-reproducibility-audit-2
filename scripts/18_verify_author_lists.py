@@ -108,6 +108,12 @@ def crossref_families(doi):
                 fam = clean_name(fam)
                 if fam:
                     fams.append(fam)
+                # A group author of the form "for the ... Panel/Group/Consortium" closes the
+                # byline. Crossref lists the group's members after it (CLAIM 2024 lists 73),
+                # but they are collaborators, not authors of the cited byline, so the
+                # comparison stops at the group name.
+                if not a.get("family") and re.match(r"(?i)^(for|on behalf of) the ", a.get("name") or ""):
+                    break
             return fams, msg.get("title", [""])[0]
         except Exception as e:
             if "404" in str(e):

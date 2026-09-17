@@ -16,29 +16,29 @@
   {
     "key": "venkatesh2022",
     "status": "ok",
-    "truncated": true,
-    "n_named": 1,
+    "truncated": false,
+    "n_named": 4,
     "n_crossref": 4
   },
   {
     "key": "lee2025",
     "status": "ok",
-    "truncated": true,
-    "n_named": 1,
+    "truncated": false,
+    "n_named": 5,
     "n_crossref": 5
   },
   {
     "key": "probastai2025",
     "status": "ok",
-    "truncated": true,
-    "n_named": 6,
+    "truncated": false,
+    "n_named": 28,
     "n_crossref": 28
   },
   {
     "key": "tripodai2024",
     "status": "ok",
-    "truncated": true,
-    "n_named": 2,
+    "truncated": false,
+    "n_named": 34,
     "n_crossref": 34
   },
   {
@@ -51,22 +51,22 @@
   {
     "key": "stard2015",
     "status": "ok",
-    "truncated": true,
-    "n_named": 1,
+    "truncated": false,
+    "n_named": 17,
     "n_crossref": 17
   },
   {
     "key": "quadas2",
     "status": "ok",
-    "truncated": true,
-    "n_named": 1,
+    "truncated": false,
+    "n_named": 10,
     "n_crossref": 10
   },
   {
     "key": "modelcards2019",
     "status": "ok",
-    "truncated": true,
-    "n_named": 1,
+    "truncated": false,
+    "n_named": 9,
     "n_crossref": 9
   },
   {
@@ -108,8 +108,8 @@
   {
     "key": "prisma2020",
     "status": "ok",
-    "truncated": true,
-    "n_named": 6,
+    "truncated": false,
+    "n_named": 26,
     "n_crossref": 26
   },
   {
@@ -129,8 +129,8 @@
   {
     "key": "haibekains2020",
     "status": "ok",
-    "truncated": true,
-    "n_named": 4,
+    "truncated": false,
+    "n_named": 32,
     "n_crossref": 32
   },
   {
@@ -164,8 +164,8 @@
   {
     "key": "baijens2016",
     "status": "ok",
-    "truncated": true,
-    "n_named": 1,
+    "truncated": false,
+    "n_named": 13,
     "n_crossref": 13
   },
   {
@@ -199,15 +199,15 @@
   {
     "key": "wilkinson2016",
     "status": "ok",
-    "truncated": true,
-    "n_named": 3,
+    "truncated": false,
+    "n_named": 53,
     "n_crossref": 53
   },
   {
     "key": "barker2022",
     "status": "ok",
-    "truncated": true,
-    "n_named": 3,
+    "truncated": false,
+    "n_named": 11,
     "n_crossref": 11
   },
   {
@@ -325,15 +325,43 @@
   {
     "key": "nosek2015",
     "status": "ok",
-    "truncated": true,
-    "n_named": 6,
+    "truncated": false,
+    "n_named": 39,
     "n_crossref": 39
   },
   {
     "key": "li2026",
     "status": "ok",
-    "truncated": true,
-    "n_named": 6,
+    "truncated": false,
+    "n_named": 28,
     "n_crossref": 28
+  },
+  {
+    "key": "moassefi2023",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 16,
+    "n_crossref": 16
+  },
+  {
+    "key": "moassefi2024",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 19,
+    "n_crossref": 19
+  },
+  {
+    "key": "claim2024",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 8,
+    "n_crossref": 8
+  },
+  {
+    "key": "rosenbek1996",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 5,
+    "n_crossref": 5
   }
 ]

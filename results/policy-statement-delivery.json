@@ -1,9 +1,14 @@
 {
   "generated_by": "30_policy_statement_delivery.py",
+  "version": 2,
+  "version_note": "Version 1 (2026-08-23) read only the first availability section of each full text and stopped at the first nested </sec>, and it skipped one open full text on a metadata flag. It therefore missed the code statements of Geiger et al. and Song et al., read only the lead-contact subsection of Dai et al., and recorded de Vette et al. as having no open full text. Version 2 reads every availability section, separates data from code statements, and records where the repository is named when no statement names it.",
+  "retrieved_on": "2026-09-17",
   "scope": "The 7 studies of the 18 whose publication could be identified. The other 11 answer to no journal policy, so the question is undefined for them and they are not included here.",
   "limits": "Policy strength is our reading of the publisher's author guidance at the recorded URL. The mapping shows what was declared and what the artifact held; it does not show whether a journal enforced its policy, and 7 purposively selected studies are not a sample.",
   "n": 7,
   "n_with_statement_retrieved": 5,
+  "n_open_full_text": 6,
+  "n_code_statement_naming_repo": 3,
   "studies": [
     {
       "study": "A",
@@ -13,7 +18,12 @@
       "policy": "statement required",
       "policy_source": "https://www.elsevier.com/researcher/author/policies-and-guidelines/research-data",
       "repo": "BSEL-UC3M/VFSS_analysis",
+      "retrieved_on": "2026-09-17",
       "availability_statement": null,
+      "availability_sections": [],
+      "data_statement": null,
+      "code_statement": null,
+      "repo_named_in": [],
       "statement_source": "no open full text in Europe PMC",
       "title": "Automated dysphagia characterization in head and neck cancer patients using videofluoroscopic swallowing studies.",
       "pmcid": null,
@@ -36,7 +46,21 @@
       "policy": "mandatory",
       "policy_source": "https://www.frontiersin.org/guidelines/policies-and-publication-ethics",
       "repo": "UofTNeurology/masa-open-source",
+      "retrieved_on": "2026-09-17",
       "availability_statement": "Data availability statement The datasets presented in this article are not readily available because REB at Sunnybrook Health Sciences requires human voice data to be stored and analyzed locally. Requests to access the datasets should be directed to h.khosravani@utoronto.ca .",
+      "availability_sections": [
+        {
+          "title": "Data availability statement",
+          "kind": "data",
+          "text": "Data availability statement The datasets presented in this article are not readily available because REB at Sunnybrook Health Sciences requires human voice data to be stored and analyzed locally. Requests to access the datasets should be directed to h.khosravani@utoronto.ca ."
+        }
+      ],
+      "data_statement": "Data availability statement The datasets presented in this article are not readily available because REB at Sunnybrook Health Sciences requires human voice data to be stored and analyzed locally. Requests to access the datasets should be directed to h.khosravani@utoronto.ca .",
+      "code_statement": null,
+      "repo_named_in": [
+        "Discussion",
+        "Footnotes"
+      ],
       "statement_source": "Europe PMC full text (PMC10734030)",
       "title": "Machine-learning assisted swallowing assessment: a deep learning-based quality improvement tool to screen for post-stroke dysphagia.",
       "pmcid": "PMC10734030",
@@ -59,12 +83,42 @@
       "policy": "mandatory",
       "policy_source": "https://www.nature.com/commsmed/editorial-policies/reporting-standards",
       "repo": "ResearchgroupMITI/swallow-detection",
-      "availability_statement": "Data availability The main data supporting the results of this study are available within the paper and its Supplementary Information . Source data underlying Fig. 8 , Tables 1 , 2 , and 3 can be found in Supplementary Data 1 . The data sets generated and analyzed during the current study are not publicly available due to restrictions related to privacy concerns for the research participants, but are available from the corresponding author on reasonable request, subject to approval by the relevant institutional committees and in accordance with all applicable laws and regulations. Requests will be evaluated on a case-by-case basis and processed within 6–8 weeks. Data usage will be governed by a data use agreement that prohibits re-identification and limits usage to the approved scientific purpose.",
+      "retrieved_on": "2026-09-17",
+      "availability_statement": "Data availability The main data supporting the results of this study are available within the paper and its Supplementary Information . Source data underlying Fig. 8 , Tables 1 , 2 , and 3 can be found in Supplementary Data 1 . The data sets generated and analyzed during the current study are not publicly available due to restrictions related to privacy concerns for the research participants, but are available from the corresponding author on reasonable request, subject to approval by the relevant institutional committees and in accordance with all applicable laws and regulations. Requests will be evaluated on a case-by-case basis and processed within 6–8 weeks. Data usage will be governed by a data use agreement that prohibits re-identification and limits usage to the approved scientific purpose. | Code availability The underlying code for this study is available at https://github.com/ResearchgroupMITI/swallow-detection and provided in Zenodo 46 . The following packages were used: Python 3.10.13, PyTorch 2.0.0, Torchvision 0.15.2, Numpy 1.26.0, Pandas 2.1.1, Matplotlib 3.8.0, Scikit-image 0.20.0, Scikit-learn 1.3.0, and Wandb 0.15.12.",
+      "availability_sections": [
+        {
+          "title": "Data availability",
+          "kind": "data",
+          "text": "Data availability The main data supporting the results of this study are available within the paper and its Supplementary Information . Source data underlying Fig. 8 , Tables 1 , 2 , and 3 can be found in Supplementary Data 1 . The data sets generated and analyzed during the current study are not publicly available due to restrictions related to privacy concerns for the research participants, but are available from the corresponding author on reasonable request, subject to approval by the relevant institutional committees and in accordance with all applicable laws and regulations. Requests will be evaluated on a case-by-case basis and processed within 6–8 weeks. Data usage will be governed by a data use agreement that prohibits re-identification and limits usage to the approved scientific purpose."
+        },
+        {
+          "title": "Code availability",
+          "kind": "code",
+          "text": "Code availability The underlying code for this study is available at https://github.com/ResearchgroupMITI/swallow-detection and provided in Zenodo 46 . The following packages were used: Python 3.10.13, PyTorch 2.0.0, Torchvision 0.15.2, Numpy 1.26.0, Pandas 2.1.1, Matplotlib 3.8.0, Scikit-image 0.20.0, Scikit-learn 1.3.0, and Wandb 0.15.12."
+        }
+      ],
+      "data_statement": "Data availability The main data supporting the results of this study are available within the paper and its Supplementary Information . Source data underlying Fig. 8 , Tables 1 , 2 , and 3 can be found in Supplementary Data 1 . The data sets generated and analyzed during the current study are not publicly available due to restrictions related to privacy concerns for the research participants, but are available from the corresponding author on reasonable request, subject to approval by the relevant institutional committees and in accordance with all applicable laws and regulations. Requests will be evaluated on a case-by-case basis and processed within 6–8 weeks. Data usage will be governed by a data use agreement that prohibits re-identification and limits usage to the approved scientific purpose.",
+      "code_statement": "Code availability The underlying code for this study is available at https://github.com/ResearchgroupMITI/swallow-detection and provided in Zenodo 46 . The following packages were used: Python 3.10.13, PyTorch 2.0.0, Torchvision 0.15.2, Numpy 1.26.0, Pandas 2.1.1, Matplotlib 3.8.0, Scikit-image 0.20.0, Scikit-learn 1.3.0, and Wandb 0.15.12.",
+      "repo_named_in": [
+        "Code availability"
+      ],
       "statement_source": "Europe PMC full text (PMC12678422)",
       "title": "A deep learning-based approach to enhance accuracy and feasibility of long-term high-resolution manometry examinations.",
       "pmcid": "PMC12678422",
       "is_open_access": "Y",
-      "pointers_checked": [],
+      "pointers_checked": [
+        {
+          "kind": "github",
+          "resolves": true,
+          "repo": "ResearchgroupMITI/swallow-detection",
+          "size_kb": 217,
+          "empty": false,
+          "created_at": "2025-08-21T13:05:03Z",
+          "pushed_at": "2025-08-21T13:16:55Z",
+          "named_in_statement": "https://github.com/ResearchgroupMITI/swallow-detection",
+          "checked_on": "2026-09-17"
+        }
+      ],
       "observed": {
         "license": "CC0-1.0",
         "env_file": "NONE",
@@ -82,12 +136,38 @@
       "policy": "mandatory",
       "policy_source": "https://www.cell.com/iscience/authors",
       "repo": "enoch0307/streamlitapp_cn",
-      "availability_statement": "Resource availability Lead contact Requests for further information and resources should be directed to and will be fulfilled by the lead contact, Yingying Zhang ( 13092612689@163.com ).",
+      "retrieved_on": "2026-09-17",
+      "availability_statement": "Resource availability Lead contact Requests for further information and resources should be directed to and will be fulfilled by the lead contact, Yingying Zhang ( 13092612689@163.com ). Materials availability This study did not generate new unique reagents. Data and code availability • Additional data may be available upon reasonable request, pending any necessary consultation with the Ethics Committee for approval. Requests to access the datasets should be directed to Yingying Zhang at 13092612689@163.com . • We have now uploaded the fully annotated code (including data preprocessing, feature selection, model training, SHAP analysis, and web application deployment) to a publicly accessible repository at https://github.com/enoch0307/streamlitapp_cn , and the code resources will be immediately accessible to readers upon the publication of this article. • Any other information required for reanalyzing the data reported in this article can be obtained from the lead contact upon request.",
+      "availability_sections": [
+        {
+          "title": "Resource availability",
+          "kind": "combined",
+          "text": "Resource availability Lead contact Requests for further information and resources should be directed to and will be fulfilled by the lead contact, Yingying Zhang ( 13092612689@163.com ). Materials availability This study did not generate new unique reagents. Data and code availability • Additional data may be available upon reasonable request, pending any necessary consultation with the Ethics Committee for approval. Requests to access the datasets should be directed to Yingying Zhang at 13092612689@163.com . • We have now uploaded the fully annotated code (including data preprocessing, feature selection, model training, SHAP analysis, and web application deployment) to a publicly accessible repository at https://github.com/enoch0307/streamlitapp_cn , and the code resources will be immediately accessible to readers upon the publication of this article. • Any other information required for reanalyzing the data reported in this article can be obtained from the lead contact upon request."
+        }
+      ],
+      "data_statement": "Resource availability Lead contact Requests for further information and resources should be directed to and will be fulfilled by the lead contact, Yingying Zhang ( 13092612689@163.com ). Materials availability This study did not generate new unique reagents. Data and code availability • Additional data may be available upon reasonable request, pending any necessary consultation with the Ethics Committee for approval. Requests to access the datasets should be directed to Yingying Zhang at 13092612689@163.com . • We have now uploaded the fully annotated code (including data preprocessing, feature selection, model training, SHAP analysis, and web application deployment) to a publicly accessible repository at https://github.com/enoch0307/streamlitapp_cn , and the code resources will be immediately accessible to readers upon the publication of this article. • Any other information required for reanalyzing the data reported in this article can be obtained from the lead contact upon request.",
+      "code_statement": "Resource availability Lead contact Requests for further information and resources should be directed to and will be fulfilled by the lead contact, Yingying Zhang ( 13092612689@163.com ). Materials availability This study did not generate new unique reagents. Data and code availability • Additional data may be available upon reasonable request, pending any necessary consultation with the Ethics Committee for approval. Requests to access the datasets should be directed to Yingying Zhang at 13092612689@163.com . • We have now uploaded the fully annotated code (including data preprocessing, feature selection, model training, SHAP analysis, and web application deployment) to a publicly accessible repository at https://github.com/enoch0307/streamlitapp_cn , and the code resources will be immediately accessible to readers upon the publication of this article. • Any other information required for reanalyzing the data reported in this article can be obtained from the lead contact upon request.",
+      "repo_named_in": [
+        "Data and code availability",
+        "Key resources table"
+      ],
       "statement_source": "Europe PMC full text (PMC12803820)",
       "title": "Interpretable machine learning for accessible dysphagia screening and staging in older adults.",
       "pmcid": "PMC12803820",
       "is_open_access": "Y",
-      "pointers_checked": [],
+      "pointers_checked": [
+        {
+          "kind": "github",
+          "resolves": true,
+          "repo": "enoch0307/streamlitapp_cn",
+          "size_kb": 562,
+          "empty": false,
+          "created_at": "2025-07-01T04:15:50Z",
+          "pushed_at": "2026-08-25T07:08:06Z",
+          "named_in_statement": "https://github.com/enoch0307/streamlitapp_cn",
+          "checked_on": "2026-09-17"
+        }
+      ],
       "observed": {
         "license": "none/not_reported",
         "env_file": "requirements.txt",
@@ -105,7 +185,25 @@
       "policy": "mandatory",
       "policy_source": "https://www.nature.com/npjdigitalmed/editorial-policies",
       "repo": "yonghunsong/Throat-related-events-classification",
-      "availability_statement": "Data availability The data supporting this study’s findings are publicly available on Zenodo at 10.5281/zenodo.12630148.",
+      "retrieved_on": "2026-09-17",
+      "availability_statement": "Code availability The ensemble-based deep learning model codes are available on GitHub at https://github.com/yonghunsong/Throat-related-events-classification.git . | Data availability The data supporting this study’s findings are publicly available on Zenodo at 10.5281/zenodo.12630148.",
+      "availability_sections": [
+        {
+          "title": "Code availability",
+          "kind": "code",
+          "text": "Code availability The ensemble-based deep learning model codes are available on GitHub at https://github.com/yonghunsong/Throat-related-events-classification.git ."
+        },
+        {
+          "title": "Data availability",
+          "kind": "data",
+          "text": "Data availability The data supporting this study’s findings are publicly available on Zenodo at 10.5281/zenodo.12630148."
+        }
+      ],
+      "data_statement": "Data availability The data supporting this study’s findings are publicly available on Zenodo at 10.5281/zenodo.12630148.",
+      "code_statement": "Code availability The ensemble-based deep learning model codes are available on GitHub at https://github.com/yonghunsong/Throat-related-events-classification.git .",
+      "repo_named_in": [
+        "Code availability"
+      ],
       "statement_source": "Europe PMC full text (PMC11706958)",
       "title": "Multimodal deep ensemble classification system with wearable vibration sensor for detecting throat-related events.",
       "pmcid": "PMC11706958",
@@ -117,7 +215,19 @@
           "n_files": 2,
           "total_bytes": 157848305,
           "title": "A dataset of throat-related events collected with a soft skin-attachable vibration sensor",
-          "named_in_statement": "10.5281/zenodo.12630148"
+          "named_in_statement": "10.5281/zenodo.12630148",
+          "checked_on": "2026-09-17"
+        },
+        {
+          "kind": "github",
+          "resolves": true,
+          "repo": "yhsong06/Throat-related-events-classification",
+          "size_kb": 160,
+          "empty": false,
+          "created_at": "2024-01-24T10:32:05Z",
+          "pushed_at": "2025-01-08T00:13:43Z",
+          "named_in_statement": "https://github.com/yonghunsong/Throat-related-events-classification.git",
+          "checked_on": "2026-09-17"
         }
       ],
       "observed": {
@@ -137,7 +247,20 @@
       "policy": "mandatory",
       "policy_source": "https://www.nature.com/srep/journal-policies/editorial-policies",
       "repo": "ruaeh/Dysphagia-ML",
+      "retrieved_on": "2026-09-17",
       "availability_statement": "Data availability Data may be available upon special request to the corresponding authors. Scripts, including the method of feature extract, the preprocessing method, and ML algorithms, on GitHub: https://github.com/ruaeh/Dysphagia-ML .",
+      "availability_sections": [
+        {
+          "title": "Data availability",
+          "kind": "data",
+          "text": "Data availability Data may be available upon special request to the corresponding authors. Scripts, including the method of feature extract, the preprocessing method, and ML algorithms, on GitHub: https://github.com/ruaeh/Dysphagia-ML ."
+        }
+      ],
+      "data_statement": "Data availability Data may be available upon special request to the corresponding authors. Scripts, including the method of feature extract, the preprocessing method, and ML algorithms, on GitHub: https://github.com/ruaeh/Dysphagia-ML .",
+      "code_statement": null,
+      "repo_named_in": [
+        "Data availability"
+      ],
       "statement_source": "Europe PMC full text (PMC9537337)",
       "title": "Post-stroke respiratory complications using machine learning with voice features from mobile devices.",
       "pmcid": "PMC9537337",
@@ -151,7 +274,8 @@
           "empty": true,
           "created_at": "2022-08-08T11:19:19Z",
           "pushed_at": "2022-08-08T11:19:20Z",
-          "named_in_statement": "https://github.com/ruaeh/Dysphagia-ML"
+          "named_in_statement": "https://github.com/ruaeh/Dysphagia-ML",
+          "checked_on": "2026-09-17"
         }
       ],
       "observed": {
@@ -171,8 +295,15 @@
       "policy": "statement required",
       "policy_source": "https://www.elsevier.com/researcher/author/policies-and-guidelines/research-data",
       "repo": "PRI2MA/DL_NTCP_Dysphagia",
+      "retrieved_on": "2026-09-17",
       "availability_statement": null,
-      "statement_source": "no open full text in Europe PMC",
+      "availability_sections": [],
+      "data_statement": null,
+      "code_statement": null,
+      "repo_named_in": [
+        "Deep learning (DL) model architecture and training"
+      ],
+      "statement_source": "Europe PMC full text (PMC12520315); no availability section",
       "title": "Deep learning NTCP model for late dysphagia after radiotherapy for head and neck cancer patients based on 3D dose, CT and segmentations.",
       "pmcid": "PMC12520315",
       "is_open_access": "Y",

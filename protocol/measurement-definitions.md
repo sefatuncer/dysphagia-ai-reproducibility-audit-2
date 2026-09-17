@@ -73,20 +73,31 @@ violate.
 
 ## 4. Harness entry rule
 
-A repository entered the containerized harness if it declared an environment
-specification **and** carried either retrievable trained weights or usable sample
-data — the minimum for a build to be able to end in inference. The rule is checkable
-against `transparency/repo-intake-table.csv`.
+A repository can be expected to end in inference if it declares an environment
+specification **and** carries either retrievable trained weights or usable sample
+data. The condition is checkable against `transparency/repo-intake-table.csv`.
 
-Two deviations are on record, in opposite directions, and both are reported in the
-article rather than tidied away:
+**When it was written.** The three builds were run on 13, 14 and 16 July 2026. This
+condition was written on 30 July 2026, after them, as a checkable description of which
+repositories an as-declared attempt could meaningfully start from. It is not a selection
+made in advance, and the article says so. [Corrected 2026-09-17: this section previously
+said that a repository "entered" the harness under the rule, which implied that the rule
+preceded the builds.]
 
-- `SimonZeng7108/Video-SwinUNet` **met** the rule and was **not** attempted. It was
-  set aside at vetting on grounds not contained in the rule: unclear license,
-  segmentation data described as ethically restricted and not shared, and an implied
-  GPU requirement.
-- `UofTNeurology/masa-open-source` **did not meet** the rule and **was** attempted,
-  as a feasibility pilot run while the set was still being assembled.
+On the corrected intake table the condition selects exactly two releases,
+`BSEL-UC3M/VFSS_analysis` and `enoch0307/streamlitapp_cn`, both built. Two further facts
+are on record:
+
+- `UofTNeurology/masa-open-source` **does not meet** the condition and **was** built, as
+  a feasibility pilot run before the condition existed.
+- `SimonZeng7108/Video-SwinUNet` met the condition **until the sample-data correction of
+  18 August 2026**, which found that its data directories hold only zero-byte
+  placeholders. It was not built, on grounds outside the condition: unclear license,
+  segmentation data described as ethically restricted and not shared, and an implied GPU
+  requirement. Its README links only generic ImageNet-pretrained backbones, not trained
+  weights, so it could not have reached inference in any case. [Corrected 2026-09-17: this
+  bullet previously said the repository met the rule, which was true only of the table
+  before the correction.]
 
 This rule narrows a broader provision in `transparency/statistical-analysis-plan.md`
 §6, which would have sent every included repository to re-execution. The narrowing
@@ -115,9 +126,11 @@ developer's own machine; a repair path is documented in
 weights and data block inference independently of the environment. The log says so
 rather than implying an effort that did not happen.
 
-**Not-attemptable turns on weights, not on data.** Three studies receiving it do
-share usable sample data. Data without weights still cannot produce inference, so
-the weights criterion is the operative one.
+**Not-attemptable turns on weights, not on data.** One study receiving it
+(`MinghaoSam/SwallowingFunctionAnalysis`) shares usable sample data. Data without
+weights still cannot produce inference, so the weights criterion is the operative one.
+[Corrected 2026-09-17: this sentence previously said three studies, a count made before
+the sample-data correction of 18 August 2026.]
 
 ## 6. Harness procedure
 

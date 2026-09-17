@@ -102,27 +102,94 @@ def find_record(doi):
     return res[0] if res else None
 
 
-def availability_from_fulltext(pmcid):
-    """Pull the availability section out of the JATS full text, verbatim."""
-    xml = fetch("%s/%s/fullTextXML" % (EPMC, pmcid))
-    # Sections are <sec> blocks with a <title>; take the one whose title matches.
-    for m in re.finditer(r"<sec[^>]*>(.*?)</sec>", xml, re.S):
-        block = m.group(1)
-        t = re.search(r"<title[^>]*>(.*?)</title>", block, re.S)
-        if not t:
-            continue
-        title = re.sub(r"<[^>]+>", " ", t.group(1))
-        title = re.sub(r"\s+", " ", title).strip().lower()
-        if any(h in title for h in SECTION_HINTS):
-            text = re.sub(r"<[^>]+>", " ", block)
-            text = re.sub(r"\s+", " ", text).strip()
-            return text
-    # Nature-family journals often use <notes notes-type="data-availability">.
-    for m in re.finditer(r'<notes[^>]*notes-type="[^"]*availability[^"]*"[^>]*>(.*?)</notes>',
-                         xml, re.S):
-        text = re.sub(r"<[^>]+>", " ", m.group(1))
-        return re.sub(r"\s+", " ", text).strip()
+def _flat(s):
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", s)).strip()
+
+
+def _enclosing_block(xml, pos, tag):
+    """Return the text of the innermost <tag> element that encloses position pos.
+
+    Version 1 of this script matched <sec>(.*?)</sec> non-greedily, which stops at the
+    first nested </sec>. A Cell Press "Resource availability" section nests "Lead
+    contact", "Materials availability" and "Data and code availability", so only the
+    first subsection was read and the code statement was lost. Counting open and close
+    tags gives the whole element instead.
+    """
+    opens = [m.start() for m in re.finditer(r"<%s[\s>]" % tag, xml[:pos])]
+    close_tag = "</%s>" % tag
+    for start in reversed(opens):
+        depth, i = 0, start
+        while True:
+            nxt_open = re.search(r"<%s[\s>]" % tag, xml[i + 1:])
+            nxt_close = xml.find(close_tag, i + 1)
+            o = i + 1 + nxt_open.start() if nxt_open else -1
+            if nxt_close == -1:
+                break
+            if o != -1 and o < nxt_close:
+                depth += 1
+                i = o
+                continue
+            if depth == 0:
+                end = nxt_close + len(close_tag)
+                if end > pos:
+                    return xml[start:end]
+                break
+            depth -= 1
+            i = nxt_close
     return None
+
+
+def availability_sections(xml):
+    """Every availability-type section or note in a JATS full text, verbatim.
+
+    Version 1 returned only the first match, so a journal that prints a separate
+    "Code availability" section after "Data availability" (the Nature family) lost the
+    code statement. All matches are returned now, de-duplicated, with their titles, and
+    each is classified as a data statement, a code statement or a combined one.
+    """
+    found = []
+    for m in re.finditer(r"<title[^>]*>(.*?)</title>", xml, re.S):
+        title = _flat(m.group(1))
+        tl = title.lower()
+        if len(title) > 80 or not any(h in tl for h in SECTION_HINTS):
+            continue
+        block = _enclosing_block(xml, m.start(), "sec") or _enclosing_block(xml, m.start(), "notes")
+        if not block:
+            continue
+        text = _flat(block)
+        found.append((title, text))
+    out, seen = [], set()
+    # Longest first, so a parent section absorbs the subsections it contains.
+    for title, text in sorted(found, key=lambda x: -len(x[1])):
+        # JATS often repeats a statement (article body and back matter) with a title
+        # that differs only in case, so compare case-insensitively.
+        if any(text.lower() in s for s in seen):
+            continue
+        seen.add(text.lower())
+        tl = title.lower()
+        kind = ("code" if "code" in tl and "data" not in tl else
+                "data" if "data" in tl and "code" not in tl else "combined")
+        out.append({"title": title, "kind": kind, "text": text})
+    return out
+
+
+def where_repo_is_named(xml, repo):
+    """If no availability section names the repository, say where the text does.
+
+    Returns the title of the innermost section whose text contains the repository URL,
+    or 'footnote' / 'unlocated' when it sits outside any titled section.
+    """
+    hits = []
+    for m in re.finditer(re.escape("github.com/" + repo), xml, re.I):
+        block = _enclosing_block(xml, m.start(), "sec") or _enclosing_block(xml, m.start(), "notes")
+        if block:
+            t = re.search(r"<title[^>]*>(.*?)</title>", block, re.S)
+            hits.append(_flat(t.group(1)) if t else "untitled section")
+        elif _enclosing_block(xml, m.start(), "fn"):
+            hits.append("footnote")
+        else:
+            hits.append("unlocated")
+    return sorted(set(hits))
 
 
 def check_pointer(target):
@@ -146,6 +213,8 @@ def check_pointer(target):
     m = re.search(r"github\.com/([^/\s,;)\]]+/[^/\s,;)\]]+)", target)
     if m:
         repo = m.group(1).rstrip(".").rstrip("/")
+        if repo.endswith(".git"):
+            repo = repo[:-4]
         try:
             d = json.loads(fetch("https://api.github.com/repos/%s" % repo))
             return {"kind": "github", "resolves": True, "repo": d.get("full_name"),
@@ -165,10 +234,17 @@ def main():
     for r in csv.DictReader(inp("repo-intake-table").open(encoding="utf-8-sig")):
         intake[r["repo"].strip()] = r
 
+    import datetime
+    retrieved_on = datetime.date.today().isoformat()
     rows = []
     for s in STUDIES:
         rec = dict(s)
+        rec["retrieved_on"] = retrieved_on
         rec["availability_statement"] = None
+        rec["availability_sections"] = []
+        rec["data_statement"] = None
+        rec["code_statement"] = None
+        rec["repo_named_in"] = []
         rec["statement_source"] = None
         try:
             hit = find_record(s["doi"])
@@ -177,15 +253,27 @@ def main():
                 pmcid = hit.get("pmcid")
                 rec["pmcid"] = pmcid
                 rec["is_open_access"] = hit.get("isOpenAccess")
-                if pmcid and hit.get("hasTextMinedTerms") is not None:
+                # Version 1 also required hasTextMinedTerms, which is absent for some
+                # open records; de Vette et al. (PMC12520315, open access) was therefore
+                # recorded as having no open full text although Table 5 was coded from it.
+                if pmcid:
                     try:
-                        st = availability_from_fulltext(pmcid)
-                        if st:
-                            rec["availability_statement"] = st[:1200]
-                            rec["statement_source"] = "Europe PMC full text (%s)" % pmcid
+                        xml = fetch("%s/%s/fullTextXML" % (EPMC, pmcid))
+                        secs = availability_sections(xml)
+                        rec["availability_sections"] = [dict(x, text=x["text"][:1500]) for x in secs]
+                        for x in secs:
+                            if x["kind"] in ("data", "combined") and not rec["data_statement"]:
+                                rec["data_statement"] = x["text"][:1500]
+                            if x["kind"] in ("code", "combined") and not rec["code_statement"]:
+                                rec["code_statement"] = x["text"][:1500]
+                        if secs:
+                            rec["availability_statement"] = " | ".join(x["text"] for x in secs)[:2500]
+                        rec["repo_named_in"] = where_repo_is_named(xml, s["repo"])
+                        rec["statement_source"] = ("Europe PMC full text (%s)" % pmcid if secs else
+                                                   "Europe PMC full text (%s); no availability section" % pmcid)
                     except Exception as e:
                         rec["statement_source"] = "full text not retrievable: %s" % type(e).__name__
-                if not rec["availability_statement"] and not rec["statement_source"]:
+                if not rec["statement_source"]:
                     rec["statement_source"] = "no open full text in Europe PMC"
         except Exception as e:
             rec["statement_source"] = "lookup failed: %s" % type(e).__name__
@@ -199,6 +287,7 @@ def main():
                 chk = check_pointer(t)
                 if chk:
                     chk["named_in_statement"] = t
+                    chk["checked_on"] = retrieved_on
                     rec["pointers_checked"].append(chk)
                     time.sleep(0.4)
 
@@ -212,13 +301,25 @@ def main():
             "readme": it.get("readme"),
         }
         rows.append(rec)
-        got = "yes" if rec["availability_statement"] else "no"
-        print("  %-3s %-34s policy=%-19s statement=%s"
-              % (s["study"], s["journal"][:34], s["policy"], got))
+        print("  %-3s %-28s policy=%-19s data=%-3s code=%-3s repo named in: %s"
+              % (s["study"], s["journal"][:28], s["policy"],
+                 "yes" if rec["data_statement"] else "no",
+                 "yes" if rec["code_statement"] else "no",
+                 "; ".join(rec["repo_named_in"]) or "-"))
         time.sleep(0.5)
 
     payload = {
         "generated_by": "30_policy_statement_delivery.py",
+        "version": 2,
+        "version_note": ("Version 1 (2026-08-23) read only the first availability section of "
+                         "each full text and stopped at the first nested </sec>, and it "
+                         "skipped one open full text on a metadata flag. It therefore missed "
+                         "the code statements of Geiger et al. and Song et al., read only the "
+                         "lead-contact subsection of Dai et al., and recorded de Vette et al. "
+                         "as having no open full text. Version 2 reads every availability "
+                         "section, separates data from code statements, and records where "
+                         "the repository is named when no statement names it."),
+        "retrieved_on": retrieved_on,
         "scope": ("The 7 studies of the 18 whose publication could be identified. The "
                   "other 11 answer to no journal policy, so the question is undefined "
                   "for them and they are not included here."),
@@ -228,6 +329,9 @@ def main():
                    "policy, and 7 purposively selected studies are not a sample."),
         "n": len(rows),
         "n_with_statement_retrieved": sum(1 for r in rows if r["availability_statement"]),
+        "n_open_full_text": sum(1 for r in rows if (r["statement_source"] or "").startswith("Europe PMC full text")),
+        "n_code_statement_naming_repo": sum(
+            1 for r in rows if r["code_statement"] and r["repo"].lower() in r["code_statement"].lower()),
         "studies": rows,
     }
     p = out("policy-statement-delivery.json")

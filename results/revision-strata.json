@@ -1,0 +1,2092 @@
+{
+  "generated_by": "31_revision_strata.py",
+  "definitions": {
+    "imaging": [
+      "CT",
+      "Cine-MRI",
+      "RT/imaging",
+      "VFSS",
+      "VFSS/video"
+    ],
+    "imaging_narrow": [
+      "Cine-MRI",
+      "VFSS",
+      "VFSS/video"
+    ],
+    "publication_linked": "29_publication_confirmed_subset.py rule",
+    "scripted_only": "discovery channel other than carried",
+    "feasibility_pilots": {
+      "BSEL-UC3M/VFSS_analysis": "2026-07-13",
+      "UofTNeurology/masa-open-source": "2026-07-14"
+    },
+    "carried_forward": "repositories not surfaced by the scripted channels: UofTNeurology/masa-open-source, SimonZeng7108/Video-SwinUNet"
+  },
+  "repositories": {
+    "n": 22,
+    "imaging": 10,
+    "imaging_narrow": 8
+  },
+  "strata": {
+    "all": {
+      "n": 18,
+      "ids": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R"
+      ],
+      "signals": {
+        "license_open": {
+          "k": 3,
+          "n": 18,
+          "wilson": [
+            0.0584,
+            0.3922
+          ]
+        },
+        "weights_in_repo": {
+          "k": 1,
+          "n": 18,
+          "wilson": [
+            0.0099,
+            0.2576
+          ]
+        },
+        "weights_anywhere": {
+          "k": 2,
+          "n": 18,
+          "wilson": [
+            0.031,
+            0.328
+          ]
+        },
+        "env_spec": {
+          "k": 6,
+          "n": 18,
+          "wilson": [
+            0.1628,
+            0.5625
+          ]
+        },
+        "pinned_and_portable": {
+          "k": 0,
+          "n": 18,
+          "wilson": [
+            0.0,
+            0.1759
+          ]
+        },
+        "sample_data": {
+          "k": 2,
+          "n": 18,
+          "wilson": [
+            0.031,
+            0.328
+          ]
+        },
+        "run_instructions": {
+          "k": 7,
+          "n": 18,
+          "wilson": [
+            0.2031,
+            0.6138
+          ]
+        },
+        "readme": {
+          "k": 15,
+          "n": 18,
+          "wilson": [
+            0.6078,
+            0.9416
+          ]
+        },
+        "no_code_file": {
+          "k": 3,
+          "n": 18,
+          "wilson": [
+            0.0584,
+            0.3922
+          ]
+        },
+        "model_card": {
+          "k": 0,
+          "n": 18,
+          "wilson": [
+            0.0,
+            0.1759
+          ],
+          "note": "hand-searched, carried unchanged"
+        }
+      },
+      "verdicts": {
+        "partial": 2,
+        "not_reproduced": 1,
+        "not_attemptable": 15
+      }
+    },
+    "imaging": {
+      "n": 7,
+      "ids": [
+        "A",
+        "D",
+        "E",
+        "F",
+        "G",
+        "M",
+        "R"
+      ],
+      "signals": {
+        "license_open": {
+          "k": 1,
+          "n": 7,
+          "wilson": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "weights_in_repo": {
+          "k": 0,
+          "n": 7,
+          "wilson": [
+            0.0,
+            0.3543
+          ]
+        },
+        "weights_anywhere": {
+          "k": 1,
+          "n": 7,
+          "wilson": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "env_spec": {
+          "k": 3,
+          "n": 7,
+          "wilson": [
+            0.1582,
+            0.7495
+          ]
+        },
+        "pinned_and_portable": {
+          "k": 0,
+          "n": 7,
+          "wilson": [
+            0.0,
+            0.3543
+          ]
+        },
+        "sample_data": {
+          "k": 2,
+          "n": 7,
+          "wilson": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "run_instructions": {
+          "k": 4,
+          "n": 7,
+          "wilson": [
+            0.2505,
+            0.8418
+          ]
+        },
+        "readme": {
+          "k": 7,
+          "n": 7,
+          "wilson": [
+            0.6457,
+            1.0
+          ]
+        },
+        "no_code_file": {
+          "k": 1,
+          "n": 7,
+          "wilson": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "model_card": {
+          "k": 0,
+          "n": 7,
+          "wilson": [
+            0.0,
+            0.3543
+          ],
+          "note": "hand-searched, carried unchanged"
+        }
+      },
+      "verdicts": {
+        "partial": 1,
+        "not_attemptable": 6
+      }
+    },
+    "non_imaging": {
+      "n": 11,
+      "ids": [
+        "B",
+        "C",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "N",
+        "O",
+        "P",
+        "Q"
+      ],
+      "signals": {
+        "license_open": {
+          "k": 2,
+          "n": 11,
+          "wilson": [
+            0.0514,
+            0.477
+          ]
+        },
+        "weights_in_repo": {
+          "k": 1,
+          "n": 11,
+          "wilson": [
+            0.0162,
+            0.3774
+          ]
+        },
+        "weights_anywhere": {
+          "k": 1,
+          "n": 11,
+          "wilson": [
+            0.0162,
+            0.3774
+          ]
+        },
+        "env_spec": {
+          "k": 3,
+          "n": 11,
+          "wilson": [
+            0.0975,
+            0.5656
+          ]
+        },
+        "pinned_and_portable": {
+          "k": 0,
+          "n": 11,
+          "wilson": [
+            0.0,
+            0.2588
+          ]
+        },
+        "sample_data": {
+          "k": 0,
+          "n": 11,
+          "wilson": [
+            0.0,
+            0.2588
+          ]
+        },
+        "run_instructions": {
+          "k": 3,
+          "n": 11,
+          "wilson": [
+            0.0975,
+            0.5656
+          ]
+        },
+        "readme": {
+          "k": 8,
+          "n": 11,
+          "wilson": [
+            0.4344,
+            0.9025
+          ]
+        },
+        "no_code_file": {
+          "k": 2,
+          "n": 11,
+          "wilson": [
+            0.0514,
+            0.477
+          ]
+        },
+        "model_card": {
+          "k": 0,
+          "n": 11,
+          "wilson": [
+            0.0,
+            0.2588
+          ],
+          "note": "hand-searched, carried unchanged"
+        }
+      },
+      "verdicts": {
+        "not_reproduced": 1,
+        "not_attemptable": 9,
+        "partial": 1
+      }
+    },
+    "imaging_narrow_VFSS_cineMRI": {
+      "n": 5,
+      "ids": [
+        "A",
+        "D",
+        "E",
+        "G",
+        "M"
+      ],
+      "signals": {
+        "license_open": {
+          "k": 1,
+          "n": 5,
+          "wilson": [
+            0.0362,
+            0.6245
+          ]
+        },
+        "weights_in_repo": {
+          "k": 0,
+          "n": 5,
+          "wilson": [
+            0.0,
+            0.4345
+          ]
+        },
+        "weights_anywhere": {
+          "k": 1,
+          "n": 5,
+          "wilson": [
+            0.0362,
+            0.6245
+          ]
+        },
+        "env_spec": {
+          "k": 3,
+          "n": 5,
+          "wilson": [
+            0.2307,
+            0.8824
+          ]
+        },
+        "pinned_and_portable": {
+          "k": 0,
+          "n": 5,
+          "wilson": [
+            0.0,
+            0.4345
+          ]
+        },
+        "sample_data": {
+          "k": 2,
+          "n": 5,
+          "wilson": [
+            0.1176,
+            0.7693
+          ]
+        },
+        "run_instructions": {
+          "k": 3,
+          "n": 5,
+          "wilson": [
+            0.2307,
+            0.8824
+          ]
+        },
+        "readme": {
+          "k": 5,
+          "n": 5,
+          "wilson": [
+            0.5655,
+            1.0
+          ]
+        },
+        "no_code_file": {
+          "k": 0,
+          "n": 5,
+          "wilson": [
+            0.0,
+            0.4345
+          ]
+        },
+        "model_card": {
+          "k": 0,
+          "n": 5,
+          "wilson": [
+            0.0,
+            0.4345
+          ],
+          "note": "hand-searched, carried unchanged"
+        }
+      },
+      "verdicts": {
+        "partial": 1,
+        "not_attemptable": 4
+      }
+    },
+    "publication_linked": {
+      "n": 7,
+      "ids": [
+        "A",
+        "B",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R"
+      ],
+      "signals": {
+        "license_open": {
+          "k": 2,
+          "n": 7,
+          "wilson": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "weights_in_repo": {
+          "k": 1,
+          "n": 7,
+          "wilson": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "weights_anywhere": {
+          "k": 2,
+          "n": 7,
+          "wilson": [
+            0.0822,
+            0.6411
+          ]
+        },
+        "env_spec": {
+          "k": 3,
+          "n": 7,
+          "wilson": [
+            0.1582,
+            0.7495
+          ]
+        },
+        "pinned_and_portable": {
+          "k": 0,
+          "n": 7,
+          "wilson": [
+            0.0,
+            0.3543
+          ]
+        },
+        "sample_data": {
+          "k": 1,
+          "n": 7,
+          "wilson": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "run_instructions": {
+          "k": 4,
+          "n": 7,
+          "wilson": [
+            0.2505,
+            0.8418
+          ]
+        },
+        "readme": {
+          "k": 5,
+          "n": 7,
+          "wilson": [
+            0.3589,
+            0.9178
+          ]
+        },
+        "no_code_file": {
+          "k": 1,
+          "n": 7,
+          "wilson": [
+            0.0257,
+            0.5131
+          ]
+        },
+        "model_card": {
+          "k": 0,
+          "n": 7,
+          "wilson": [
+            0.0,
+            0.3543
+          ],
+          "note": "hand-searched, carried unchanged"
+        }
+      },
+      "verdicts": {
+        "partial": 2,
+        "not_reproduced": 1,
+        "not_attemptable": 4
+      }
+    },
+    "not_publication_linked": {
+      "n": 11,
+      "ids": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M"
+      ],
+      "signals": {
+        "license_open": {
+          "k": 1,
+          "n": 11,
+          "wilson": [
+            0.0162,
+            0.3774
+          ]
+        },
+        "weights_in_repo": {
+          "k": 0,
+          "n": 11,
+          "wilson": [
+            0.0,
+            0.2588
+          ]
+        },
+        "weights_anywhere": {
+          "k": 0,
+          "n": 11,
+          "wilson": [
+            0.0,
+            0.2588
+          ]
+        },
+        "env_spec": {
+          "k": 3,
+          "n": 11,
+          "wilson": [
+            0.0975,
+            0.5656
+          ]
+        },
+        "pinned_and_portable": {
+          "k": 0,
+          "n": 11,
+          "wilson": [
+            0.0,
+            0.2588
+          ]
+        },
+        "sample_data": {
+          "k": 1,
+          "n": 11,
+          "wilson": [
+            0.0162,
+            0.3774
+          ]
+        },
+        "run_instructions": {
+          "k": 3,
+          "n": 11,
+          "wilson": [
+            0.0975,
+            0.5656
+          ]
+        },
+        "readme": {
+          "k": 10,
+          "n": 11,
+          "wilson": [
+            0.6226,
+            0.9838
+          ]
+        },
+        "no_code_file": {
+          "k": 2,
+          "n": 11,
+          "wilson": [
+            0.0514,
+            0.477
+          ]
+        },
+        "model_card": {
+          "k": 0,
+          "n": 11,
+          "wilson": [
+            0.0,
+            0.2588
+          ],
+          "note": "hand-searched, carried unchanged"
+        }
+      },
+      "verdicts": {
+        "not_attemptable": 11
+      }
+    },
+    "scripted_only": {
+      "n": 16,
+      "ids": [
+        "A",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R"
+      ],
+      "signals": {
+        "license_open": {
+          "k": 2,
+          "n": 16,
+          "wilson": [
+            0.035,
+            0.3602
+          ]
+        },
+        "weights_in_repo": {
+          "k": 1,
+          "n": 16,
+          "wilson": [
+            0.0111,
+            0.2833
+          ]
+        },
+        "weights_anywhere": {
+          "k": 2,
+          "n": 16,
+          "wilson": [
+            0.035,
+            0.3602
+          ]
+        },
+        "env_spec": {
+          "k": 4,
+          "n": 16,
+          "wilson": [
+            0.1018,
+            0.495
+          ]
+        },
+        "pinned_and_portable": {
+          "k": 0,
+          "n": 16,
+          "wilson": [
+            0.0,
+            0.1936
+          ]
+        },
+        "sample_data": {
+          "k": 2,
+          "n": 16,
+          "wilson": [
+            0.035,
+            0.3602
+          ]
+        },
+        "run_instructions": {
+          "k": 5,
+          "n": 16,
+          "wilson": [
+            0.1416,
+            0.556
+          ]
+        },
+        "readme": {
+          "k": 13,
+          "n": 16,
+          "wilson": [
+            0.5699,
+            0.9341
+          ]
+        },
+        "no_code_file": {
+          "k": 3,
+          "n": 16,
+          "wilson": [
+            0.0659,
+            0.4301
+          ]
+        },
+        "model_card": {
+          "k": 0,
+          "n": 16,
+          "wilson": [
+            0.0,
+            0.1936
+          ],
+          "note": "hand-searched, carried unchanged"
+        }
+      },
+      "verdicts": {
+        "partial": 2,
+        "not_attemptable": 14
+      }
+    }
+  },
+  "composite": {
+    "strict_pinned_and_portable": {
+      "intake_upper_bound": 0,
+      "ids": []
+    },
+    "pinned_only": {
+      "intake_upper_bound": 1,
+      "ids": [
+        "A"
+      ]
+    },
+    "environment_declared": {
+      "intake_upper_bound": 1,
+      "ids": [
+        "A"
+      ]
+    },
+    "observed_verdict_of_those_ids": {
+      "A": "partial"
+    },
+    "conditional_pinned_and_portable": {
+      "k": 0,
+      "n": 6,
+      "wilson": [
+        0.0,
+        0.3903
+      ],
+      "ids_with_environment_file": [
+        "A",
+        "B",
+        "C",
+        "G",
+        "M",
+        "O"
+      ]
+    },
+    "joint_patterns_weights_sample_env": {
+      "weights+sample+env": [
+        "A"
+      ],
+      "env": [
+        "B",
+        "C",
+        "G",
+        "M"
+      ],
+      "sample": [
+        "D"
+      ],
+      "none": [
+        "E",
+        "F",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "N",
+        "P",
+        "Q",
+        "R"
+      ],
+      "weights+env": [
+        "O"
+      ]
+    },
+    "n_prerequisites_met_env_declared": {
+      "0": 11,
+      "1": 5,
+      "2": 1,
+      "3": 1
+    },
+    "n_prerequisites_met_strict": {
+      "0": 15,
+      "1": 2,
+      "2": 1,
+      "3": 0
+    }
+  },
+  "backward_coverage": {
+    "assessable_records": 39,
+    "declaring_a_repository": 3,
+    "in_scope_declaring": 2,
+    "educational_tool_excluded": 1,
+    "records": [
+      {
+        "doi": "10.3389/fnins.2023.1302132",
+        "repo": "UofTNeurology/masa-open-source",
+        "in_set": true,
+        "channel": "carried"
+      },
+      {
+        "doi": "10.1088/1361-6560/ac4000",
+        "repo": "cerr/CERR; cerr/CT_SwallowingAndChewing_DeepLabV3",
+        "in_set": false,
+        "channel": null
+      }
+    ],
+    "recall_whole_instrument": {
+      "k": 1,
+      "n": 2,
+      "wilson": [
+        0.0945,
+        0.9055
+      ]
+    },
+    "recall_scripted_channels_as_recorded": {
+      "k": 0,
+      "n": 2,
+      "wilson": [
+        0.0,
+        0.6576
+      ]
+    },
+    "note": "The one in-scope record already in the set is a carried-forward feasibility pilot, so on the released record the scripted channels reached neither in-scope record. 10_code_link_mining.py dropped links already in the inventory before recording them, so whether mining also reached it is not recoverable from that record; see mining-overlap-check.json."
+  },
+  "screening": {
+    "rule_vs_record_disagreements": {
+      "k": 5,
+      "n": 181
+    },
+    "disagreements_among_records_with_any_include": {
+      "k": 5,
+      "n": 24,
+      "wilson": [
+        0.0924,
+        0.4047
+      ]
+    },
+    "positive_specific_agreement_pooled": 0.884,
+    "per_channel": {
+      "oa_mining": {
+        "n": 163,
+        "both1": 4,
+        "both0": 157,
+        "a1b0": 2,
+        "a0b1": 0,
+        "po": 0.9877300613496932,
+        "kappa": 0.7939317319848284,
+        "pabak": 0.9754601226993864,
+        "ppos": 0.8,
+        "pneg": 0.9936708860759493
+      },
+      "oa_mining_code_only": {
+        "n": 143,
+        "both1": 4,
+        "both0": 137,
+        "a1b0": 2,
+        "a0b1": 0,
+        "po": 0.986013986013986,
+        "kappa": 0.793053545586108,
+        "pabak": 0.9720279720279721,
+        "ppos": 0.8,
+        "pneg": 0.9927536231884058
+      },
+      "github_pwc": {
+        "n": 18,
+        "both1": 15,
+        "both0": 0,
+        "a1b0": 0,
+        "a0b1": 3,
+        "po": 0.8333333333333334,
+        "kappa": 0.0,
+        "pabak": 0.6666666666666667,
+        "ppos": 0.9090909090909091,
+        "pneg": 0.0
+      },
+      "pooled": {
+        "n": 181,
+        "both1": 19,
+        "both0": 157,
+        "a1b0": 2,
+        "a0b1": 3,
+        "po": 0.9723756906077348,
+        "kappa": 0.8680565680128297,
+        "pabak": 0.9447513812154695,
+        "ppos": 0.8837209302325582,
+        "pneg": 0.9843260188087775
+      }
+    },
+    "pre_revision_rule_A": {
+      "oa_mining": {
+        "n": 163,
+        "both1": 2,
+        "both0": 157,
+        "a1b0": 4,
+        "a0b1": 0,
+        "po": 0.9754601226993865,
+        "kappa": 0.490625000000002,
+        "pabak": 0.9509202453987731,
+        "ppos": 0.5
+      },
+      "github_pwc_degenerate": {
+        "n": 18,
+        "both1": 0,
+        "both0": 3,
+        "a1b0": 15,
+        "a0b1": 0,
+        "po": 0.16666666666666666,
+        "kappa": 3.3306690738754695e-17,
+        "pabak": -0.6666666666666667,
+        "ppos": 0.0
+      }
+    },
+    "bootstrap": {
+      "oa_mining": {
+        "n_boot": 2000,
+        "seed": 20260730,
+        "undefined_replicates": 4,
+        "method": "BCa",
+        "lo": 0.0,
+        "hi": 1.0,
+        "percentile_lo": 0.32644628099173817,
+        "percentile_hi": 1.0
+      },
+      "oa_mining_code_only": {
+        "n_boot": 2000,
+        "seed": 20260730,
+        "undefined_replicates": 2,
+        "method": "BCa",
+        "lo": 0.0,
+        "hi": 1.0,
+        "percentile_lo": 0.32547169811320714,
+        "percentile_hi": 1.0
+      },
+      "github_pwc": {
+        "n_boot": 2000,
+        "seed": 20260730,
+        "undefined_replicates": 84,
+        "method": "percentile (BCa bias correction not computable)",
+        "lo": 0.0,
+        "hi": 0.0,
+        "percentile_lo": 0.0,
+        "percentile_hi": 0.0
+      },
+      "pooled": {
+        "n_boot": 2000,
+        "seed": 20260730,
+        "undefined_replicates": 0,
+        "method": "BCa",
+        "lo": 0.6932203389830509,
+        "hi": 0.9519639065817411,
+        "percentile_lo": 0.7290869782138698,
+        "percentile_hi": 0.9647242252972131
+      }
+    },
+    "why_pooled_exceeds_both_channels": "Recorded inclusion prevalence is 15/18 on GitHub and 6/163 on mining. Pooling lowers expected agreement (pe) below either channel's, so kappa rises for a reason unrelated to how well the rule reproduces decisions within a channel.",
+    "pe": {
+      "oa_mining": 0.94,
+      "github_pwc": 0.833,
+      "pooled": 0.791
+    }
+  },
+  "sensitivity": {
+    "per_signal_point_shift": [
+      {
+        "signal": "open license",
+        "worst_case_points": -0.9,
+        "best_case_points": 4.4
+      },
+      {
+        "signal": "retrievable weights",
+        "worst_case_points": -0.6,
+        "best_case_points": 4.7
+      },
+      {
+        "signal": "usable sample data",
+        "worst_case_points": -0.6,
+        "best_case_points": 4.7
+      },
+      {
+        "signal": "environment declared",
+        "worst_case_points": -1.7,
+        "best_case_points": 3.5
+      },
+      {
+        "signal": "run instructions",
+        "worst_case_points": -2.1,
+        "best_case_points": 3.2
+      },
+      {
+        "signal": "pinned and portable",
+        "worst_case_points": 0.0,
+        "best_case_points": 5.3
+      },
+      {
+        "signal": "all four prerequisites",
+        "worst_case_points": 0.0,
+        "best_case_points": 5.3
+      }
+    ],
+    "max_decrease_points": -2.1,
+    "max_increase_points_nonzero_signals": 4.7
+  },
+  "study_rows": [
+    {
+      "study": "A",
+      "paper": "Comput Biol Med 2025",
+      "repositories": "BSEL-UC3M/VFSS_analysis",
+      "modality": "VFSS",
+      "imaging": true,
+      "imaging_narrow": true,
+      "publication_linked": true,
+      "discovery_channel": "github",
+      "feasibility_pilot": true,
+      "intake_method": "by hand, before the scripted intake",
+      "access_dates": "2026-07-13",
+      "verdict": "partial",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": true,
+      "env_spec": true,
+      "sample_data": true,
+      "pinned": true,
+      "portable": false,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_file_present": "not measured",
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": true,
+      "env_declared_intake_conjuncts": true,
+      "n_prerequisites_env_declared": 3,
+      "n_prerequisites_strict": 2,
+      "commits": "960aa368c4a1c338f19560d4a289397678bdb17c"
+    },
+    {
+      "study": "B",
+      "paper": "Front Neurosci 2023",
+      "repositories": "UofTNeurology/masa-open-source",
+      "modality": "acoustic",
+      "imaging": false,
+      "imaging_narrow": false,
+      "publication_linked": true,
+      "discovery_channel": "carried",
+      "feasibility_pilot": true,
+      "intake_method": "by hand, before the scripted intake",
+      "access_dates": "2026-07-14",
+      "verdict": "not_reproduced",
+      "license_open": true,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": true,
+      "sample_data": false,
+      "pinned": true,
+      "portable": false,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_file_present": "not measured",
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 1,
+      "n_prerequisites_strict": 0,
+      "commits": "4fb83b3325142965fe6994ea22f64666042fc49b"
+    },
+    {
+      "study": "C",
+      "paper": "needs-check (anti-reflux postoperative)",
+      "repositories": "aht4005/dysphagia-risk-calculator",
+      "modality": "clinical/tabular",
+      "imaging": false,
+      "imaging_narrow": false,
+      "publication_linked": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": true,
+      "sample_data": false,
+      "pinned": false,
+      "portable": true,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_file_present": true,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 1,
+      "n_prerequisites_strict": 0,
+      "commits": "653dc8b668621c2627f181d07a7db76c614995c9"
+    },
+    {
+      "study": "D",
+      "paper": "MICCAI 2024 (could not be confirmed)",
+      "repositories": "MinghaoSam/SwallowingFunctionAnalysis",
+      "modality": "Cine-MRI",
+      "imaging": true,
+      "imaging_narrow": true,
+      "publication_linked": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": true,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "sample_data": true,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_file_present": true,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 1,
+      "n_prerequisites_strict": 1,
+      "commits": "85942cc6128dc385784d8d575758c187e5034fb8"
+    },
+    {
+      "study": "E",
+      "paper": "article (could not be confirmed)",
+      "repositories": "scut-jol/CFSCNet; scut-jol/swallow_segment_system",
+      "modality": "VFSS/video",
+      "imaging": true,
+      "imaging_narrow": true,
+      "publication_linked": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "sample_data": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_file_present": true,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 0,
+      "n_prerequisites_strict": 0,
+      "commits": "4912e37ee031c2228f7bebec1a15b05d09847878; 72e54312533a26dc4acd0b34d594f6592da8eb8d"
+    },
+    {
+      "study": "F",
+      "paper": "MD Anderson RT (could not be confirmed)",
+      "repositories": "kwahid/ABAS_swallowing_structures",
+      "modality": "CT",
+      "imaging": true,
+      "imaging_narrow": false,
+      "publication_linked": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "sample_data": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_file_present": false,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 0,
+      "n_prerequisites_strict": 0,
+      "commits": "e7d9b5f226d09c5c9f926be7738f90a6bed6b4a3"
+    },
+    {
+      "study": "G",
+      "paper": "article (could not be confirmed)",
+      "repositories": "tsukagoshi56/liquid_swallowing_segmentation; tsukagoshi56/swallowing_segmentation_meanteacher; tsukagoshi56/swallowing_segmentation_with_ssl_gru",
+      "modality": "VFSS/video",
+      "imaging": true,
+      "imaging_narrow": true,
+      "publication_linked": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": true,
+      "sample_data": false,
+      "pinned": false,
+      "portable": true,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_file_present": true,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 1,
+      "n_prerequisites_strict": 0,
+      "commits": "77deb15a6ed4089dde2c6a278ed2ece30c0d4a88; 00c1a428c1b84a4278c443c095941fa065731816; 1457a1710d28b28b75ca80d87d4387db18a4ead5"
+    },
+    {
+      "study": "H",
+      "paper": "unclear",
+      "repositories": "zhengfj1994/dysphagia-viscosity-classifier",
+      "modality": "video (smartphone)",
+      "imaging": false,
+      "imaging_narrow": false,
+      "publication_linked": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "sample_data": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_file_present": true,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 0,
+      "n_prerequisites_strict": 0,
+      "commits": "f72c326d3926b8bb6cda8e8425f4c136566d9fc9"
+    },
+    {
+      "study": "I",
+      "paper": "publication unclear (student project?)",
+      "repositories": "arivv22/ai-swallowing-sound-classification",
+      "modality": "acoustic",
+      "imaging": false,
+      "imaging_narrow": false,
+      "publication_linked": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "sample_data": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_file_present": true,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 0,
+      "n_prerequisites_strict": 0,
+      "commits": "809b49c669a00e5b4f3e29728a1f0a96f9a8eb7c"
+    },
+    {
+      "study": "J",
+      "paper": "publication unclear",
+      "repositories": "Kai-Washino/swallowing-recognition-DLmachine",
+      "modality": "unclear",
+      "imaging": false,
+      "imaging_narrow": false,
+      "publication_linked": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "sample_data": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "readme": false,
+      "run_instructions": false,
+      "code_file_present": true,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 0,
+      "n_prerequisites_strict": 0,
+      "commits": "8e561b11ab83f9771f38083a13559be95497f2d7"
+    },
+    {
+      "study": "K",
+      "paper": "publication unclear (laryngectomy)",
+      "repositories": "TanishqJoshi/Larynx-Function-prediction-using-W-KNN-on-sEMG-data; YashC1308/Larynx-Prediction-using-sEMG-data",
+      "modality": "sEMG",
+      "imaging": false,
+      "imaging_narrow": false,
+      "publication_linked": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "sample_data": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_file_present": true,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 0,
+      "n_prerequisites_strict": 0,
+      "commits": "ea89237fa4604aa6334a5caa93341ccab4ee712e; cc1848909a218f4097ce0a5da10eb842d4a8ba63"
+    },
+    {
+      "study": "L",
+      "paper": "publication unclear",
+      "repositories": "20206666/Classification-of-chewing-and-swallowing",
+      "modality": "unclear",
+      "imaging": false,
+      "imaging_narrow": false,
+      "publication_linked": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "sample_data": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_file_present": false,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 0,
+      "n_prerequisites_strict": 0,
+      "commits": "6c87acb44f6505517baa2069e88fa27d10b60a6e"
+    },
+    {
+      "study": "M",
+      "paper": "scoping candidate",
+      "repositories": "SimonZeng7108/Video-SwinUNet",
+      "modality": "VFSS",
+      "imaging": true,
+      "imaging_narrow": true,
+      "publication_linked": false,
+      "discovery_channel": "carried",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": true,
+      "sample_data": false,
+      "pinned": false,
+      "portable": true,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_file_present": true,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 1,
+      "n_prerequisites_strict": 0,
+      "commits": "fb2042b6f0289ed9c9dca0c21176b048d1e4c84e"
+    },
+    {
+      "study": "N",
+      "paper": "Communications Medicine 2025",
+      "repositories": "ResearchgroupMITI/swallow-detection",
+      "modality": "HRM/manometry",
+      "imaging": false,
+      "imaging_narrow": false,
+      "publication_linked": true,
+      "discovery_channel": "mining",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": true,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "sample_data": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_file_present": true,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 0,
+      "n_prerequisites_strict": 0,
+      "commits": "7f59838ccec7fc10adf43686af709a1179bd86d4"
+    },
+    {
+      "study": "O",
+      "paper": "iScience 2026",
+      "repositories": "enoch0307/streamlitapp_cn",
+      "modality": "clinical/tabular",
+      "imaging": false,
+      "imaging_narrow": false,
+      "publication_linked": true,
+      "discovery_channel": "mining",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "partial",
+      "license_open": false,
+      "weights_in_repo": true,
+      "weights_anywhere": true,
+      "env_spec": true,
+      "sample_data": false,
+      "pinned": false,
+      "portable": true,
+      "pinned_and_portable": false,
+      "readme": false,
+      "run_instructions": false,
+      "code_file_present": true,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 2,
+      "n_prerequisites_strict": 1,
+      "commits": "289f7d187dd1b75445bbbae827366592357b6282"
+    },
+    {
+      "study": "P",
+      "paper": "npj Digit Med 2025",
+      "repositories": "yonghunsong/Throat-related-events-classification",
+      "modality": "acoustic/wearable",
+      "imaging": false,
+      "imaging_narrow": false,
+      "publication_linked": true,
+      "discovery_channel": "mining",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "sample_data": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_file_present": true,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 0,
+      "n_prerequisites_strict": 0,
+      "commits": "95164d52cdcc54ecab6e0619ad6ca8336a00461c"
+    },
+    {
+      "study": "Q",
+      "paper": "Scientific Reports 2022 (PMC9537337)",
+      "repositories": "ruaeh/Dysphagia-ML",
+      "modality": "voice/acoustic",
+      "imaging": false,
+      "imaging_narrow": false,
+      "publication_linked": true,
+      "discovery_channel": "mining",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "sample_data": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "readme": false,
+      "run_instructions": false,
+      "code_file_present": false,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 0,
+      "n_prerequisites_strict": 0,
+      "commits": "none (empty repository)"
+    },
+    {
+      "study": "R",
+      "paper": "Radiotherapy & Oncology 2025 (PMC12520315)",
+      "repositories": "PRI2MA/DL_NTCP_Dysphagia",
+      "modality": "RT/imaging",
+      "imaging": true,
+      "imaging_narrow": false,
+      "publication_linked": true,
+      "discovery_channel": "mining",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "access_dates": "2026-07-16",
+      "verdict": "not_attemptable",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "sample_data": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_file_present": true,
+      "strict_intake_conjuncts": false,
+      "pinned_only_intake_conjuncts": false,
+      "env_declared_intake_conjuncts": false,
+      "n_prerequisites_env_declared": 0,
+      "n_prerequisites_strict": 0,
+      "commits": "60bb8b0cb7fb405bac6f34cde900eb7844a6e393"
+    }
+  ],
+  "repository_rows": [
+    {
+      "study": "A",
+      "repo": "BSEL-UC3M/VFSS_analysis",
+      "modality": "VFSS",
+      "imaging": true,
+      "discovery_channel": "github",
+      "feasibility_pilot": true,
+      "intake_method": "by hand, before the scripted intake",
+      "intake_date": "2026-07-13",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": true,
+      "env_spec": true,
+      "pinned": true,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": true,
+      "readme": true,
+      "run_instructions": true,
+      "code_files": "not measured",
+      "commit_on_access_date": "960aa368c4a1c338f19560d4a289397678bdb17c"
+    },
+    {
+      "study": "B",
+      "repo": "UofTNeurology/masa-open-source",
+      "modality": "acoustic",
+      "imaging": false,
+      "discovery_channel": "carried",
+      "feasibility_pilot": true,
+      "intake_method": "by hand, before the scripted intake",
+      "intake_date": "2026-07-14",
+      "license_open": true,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": true,
+      "pinned": true,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_files": "not measured",
+      "commit_on_access_date": "4fb83b3325142965fe6994ea22f64666042fc49b"
+    },
+    {
+      "study": "C",
+      "repo": "aht4005/dysphagia-risk-calculator",
+      "modality": "clinical/tabular",
+      "imaging": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": true,
+      "pinned": false,
+      "portable": true,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_files": "1",
+      "commit_on_access_date": "653dc8b668621c2627f181d07a7db76c614995c9"
+    },
+    {
+      "study": "D",
+      "repo": "MinghaoSam/SwallowingFunctionAnalysis",
+      "modality": "Cine-MRI",
+      "imaging": true,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": true,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": true,
+      "readme": true,
+      "run_instructions": false,
+      "code_files": "26",
+      "commit_on_access_date": "85942cc6128dc385784d8d575758c187e5034fb8"
+    },
+    {
+      "study": "E",
+      "repo": "scut-jol/CFSCNet",
+      "modality": "VFSS/video",
+      "imaging": true,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_files": "14",
+      "commit_on_access_date": "4912e37ee031c2228f7bebec1a15b05d09847878"
+    },
+    {
+      "study": "E",
+      "repo": "scut-jol/swallow_segment_system",
+      "modality": "VFSS/video",
+      "imaging": true,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_files": "1",
+      "commit_on_access_date": "72e54312533a26dc4acd0b34d594f6592da8eb8d"
+    },
+    {
+      "study": "F",
+      "repo": "kwahid/ABAS_swallowing_structures",
+      "modality": "CT",
+      "imaging": true,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_files": "0",
+      "commit_on_access_date": "e7d9b5f226d09c5c9f926be7738f90a6bed6b4a3"
+    },
+    {
+      "study": "G",
+      "repo": "tsukagoshi56/liquid_swallowing_segmentation",
+      "modality": "VFSS/video",
+      "imaging": true,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": true,
+      "pinned": false,
+      "portable": true,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_files": "16",
+      "commit_on_access_date": "77deb15a6ed4089dde2c6a278ed2ece30c0d4a88"
+    },
+    {
+      "study": "G",
+      "repo": "tsukagoshi56/swallowing_segmentation_meanteacher",
+      "modality": "VFSS/video",
+      "imaging": true,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_files": "20",
+      "commit_on_access_date": "00c1a428c1b84a4278c443c095941fa065731816"
+    },
+    {
+      "study": "G",
+      "repo": "tsukagoshi56/swallowing_segmentation_with_ssl_gru",
+      "modality": "VFSS/video",
+      "imaging": true,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": true,
+      "pinned": false,
+      "portable": true,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_files": "3",
+      "commit_on_access_date": "1457a1710d28b28b75ca80d87d4387db18a4ead5"
+    },
+    {
+      "study": "H",
+      "repo": "zhengfj1994/dysphagia-viscosity-classifier",
+      "modality": "video (smartphone)",
+      "imaging": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_files": "10",
+      "commit_on_access_date": "f72c326d3926b8bb6cda8e8425f4c136566d9fc9"
+    },
+    {
+      "study": "I",
+      "repo": "arivv22/ai-swallowing-sound-classification",
+      "modality": "acoustic",
+      "imaging": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_files": "1",
+      "commit_on_access_date": "809b49c669a00e5b4f3e29728a1f0a96f9a8eb7c"
+    },
+    {
+      "study": "J",
+      "repo": "Kai-Washino/swallowing-recognition-DLmachine",
+      "modality": "unclear",
+      "imaging": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": false,
+      "run_instructions": false,
+      "code_files": "9",
+      "commit_on_access_date": "8e561b11ab83f9771f38083a13559be95497f2d7"
+    },
+    {
+      "study": "K",
+      "repo": "TanishqJoshi/Larynx-Function-prediction-using-W-KNN-on-sEMG-data",
+      "modality": "sEMG",
+      "imaging": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_files": "17",
+      "commit_on_access_date": "ea89237fa4604aa6334a5caa93341ccab4ee712e"
+    },
+    {
+      "study": "K",
+      "repo": "YashC1308/Larynx-Prediction-using-sEMG-data",
+      "modality": "sEMG",
+      "imaging": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_files": "17",
+      "commit_on_access_date": "cc1848909a218f4097ce0a5da10eb842d4a8ba63"
+    },
+    {
+      "study": "L",
+      "repo": "20206666/Classification-of-chewing-and-swallowing",
+      "modality": "unclear",
+      "imaging": false,
+      "discovery_channel": "github",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_files": "0",
+      "commit_on_access_date": "6c87acb44f6505517baa2069e88fa27d10b60a6e"
+    },
+    {
+      "study": "M",
+      "repo": "SimonZeng7108/Video-SwinUNet",
+      "modality": "VFSS",
+      "imaging": true,
+      "discovery_channel": "carried",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": true,
+      "pinned": false,
+      "portable": true,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_files": "10",
+      "commit_on_access_date": "fb2042b6f0289ed9c9dca0c21176b048d1e4c84e"
+    },
+    {
+      "study": "N",
+      "repo": "ResearchgroupMITI/swallow-detection",
+      "modality": "HRM/manometry",
+      "imaging": false,
+      "discovery_channel": "mining",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": true,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_files": "24",
+      "commit_on_access_date": "7f59838ccec7fc10adf43686af709a1179bd86d4"
+    },
+    {
+      "study": "O",
+      "repo": "enoch0307/streamlitapp_cn",
+      "modality": "clinical/tabular",
+      "imaging": false,
+      "discovery_channel": "mining",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": true,
+      "weights_anywhere": true,
+      "env_spec": true,
+      "pinned": false,
+      "portable": true,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": false,
+      "run_instructions": false,
+      "code_files": "2",
+      "commit_on_access_date": "289f7d187dd1b75445bbbae827366592357b6282"
+    },
+    {
+      "study": "P",
+      "repo": "yonghunsong/Throat-related-events-classification",
+      "modality": "acoustic/wearable",
+      "imaging": false,
+      "discovery_channel": "mining",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": false,
+      "code_files": "12",
+      "commit_on_access_date": "95164d52cdcc54ecab6e0619ad6ca8336a00461c"
+    },
+    {
+      "study": "Q",
+      "repo": "ruaeh/Dysphagia-ML",
+      "modality": "voice/acoustic",
+      "imaging": false,
+      "discovery_channel": "mining",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": false,
+      "run_instructions": false,
+      "code_files": "0",
+      "commit_on_access_date": "none (empty repository)"
+    },
+    {
+      "study": "R",
+      "repo": "PRI2MA/DL_NTCP_Dysphagia",
+      "modality": "RT/imaging",
+      "imaging": true,
+      "discovery_channel": "mining",
+      "feasibility_pilot": false,
+      "intake_method": "script",
+      "intake_date": "2026-07-16",
+      "license_open": false,
+      "weights_in_repo": false,
+      "weights_anywhere": false,
+      "env_spec": false,
+      "pinned": false,
+      "portable": false,
+      "pinned_and_portable": false,
+      "sample_data": false,
+      "readme": true,
+      "run_instructions": true,
+      "code_files": "82",
+      "commit_on_access_date": "60bb8b0cb7fb405bac6f34cde900eb7844a6e393"
+    }
+  ]
+}

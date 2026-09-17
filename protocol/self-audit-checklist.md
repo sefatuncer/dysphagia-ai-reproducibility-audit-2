@@ -34,7 +34,7 @@ this archive. Nothing is marked met on the strength of an intention.
 | B6 | Observed failures kept distinct from inferred ones | **Met** | Manuscript, Containerized Reruns in Methods and Reruns in Results. The 15 not-attemptable verdicts are never merged with the 1 observed build failure, and the install checks of 17 September 2026 are reported beside the verdicts without reassigning them. |
 | B7 | Reliability of the one subjective step measured and released | **Met** | Blind rule-based re-coding of all 181 screened records, full contingency tables, both rule versions. |
 | B8 | Mid-course changes to the method disclosed with their effect | **Met** | The screening rule was revised after its first run; the manuscript reports the revision and its numerical effect (κ 0.49 → 0.79 on the mining channel). |
-| B9 | Sensitivity analyses for the discovery limitations | **Met** | Two: excluding the two non-scripted repositories (0/16 unchanged), and full-pagination re-run of every GitHub term (the per-term cutoff never bound). |
+| B9 | Sensitivity analyses for the discovery limitations | **Met** | Three: excluding the two non-scripted repositories (0/16 unchanged), a full-pagination re-run of every GitHub term (the per-term cutoff never bound), and reading the repository excluded by the fourth criterion back in (denominator 19). The third moves only the denominator, since that repository was never taken through intake, and the checklist records that limit rather than claiming a two-sided result. |
 
 ## C. Reporting honesty
 
@@ -45,7 +45,7 @@ this archive. Nothing is marked met on the strength of an intention.
 | C3 | Clustering acknowledged and handled | **Met** | Study level primary; repository level reported as sensitivity and explicitly not corrected for within-team clustering. |
 | C4 | Registration timing stated without over-claiming | **Met** | The protocol is publicly posted and transparently dated. The manuscript makes **no** claim of temporal precedence over the analysis. |
 | C5 | Competing interests disclosed, including non-financial ones | **Met** | Declared: no prior professional relationship with the authors of any audited study or repository, and no financial interest. |
-| C6 | Generative-AI use disclosed, separating method use from writing use | **Met** | Declaration section. |
+| C6 | Generative-AI use disclosed | **Met** | Declaration section. The declaration covers the writing of the manuscript. No step of the measurement pipeline uses a generative model, and every reported number is produced by a released script. |
 | C7 | Named third parties notified and offered a right to respond | **Not met** | We did not notify. The findings record a public artifact at a logged date and allege no misconduct; the reasoning is stated in §Ethics, and a correction sent to us is recorded as a dated addendum. Recorded here as not met rather than reframed as inapplicable. |
 
 ## D. Clinical axis

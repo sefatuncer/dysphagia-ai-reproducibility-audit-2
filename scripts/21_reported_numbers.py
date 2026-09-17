@@ -209,12 +209,23 @@ def main():
           "        the same reason the sharing rate above is a lower bound on sharing.")
 
     # ------------------------------------------------------------- clinical axis
+    # The denominator is read from the coding file rather than written here, because it
+    # changed once already when a row coded from an accepted manuscript was counted.
+    coding = list(csv.DictReader(open(inp("rs-taxonomy-coding"), encoding="utf-8")))
+    assessable = [r for r in coding
+                  if r["evidence_level"].strip() in ("fulltext-verified", "abstract+fulltext",
+                                                     "accepted manuscript")]
+    with_rater = [r for r in assessable if "no raters" not in r["RS4_evidence"]]
+    reported = [r for r in with_rater if not r["RS4_rater_reliability_reported"].startswith("NR")]
+    assert not reported, [r["study_id"] for r in reported]
     print("\n" + "=" * 96)
-    print("5. CLINICAL AXIS (RQ3), ASSESSABLE SUBSET k=6")
+    print("5. CLINICAL AXIS (RQ3), ASSESSABLE SUBSET k=%d" % len(assessable))
     print("=" * 96)
     rep["clinical"] = {}
+    rep["clinical"]["assessable_subset"] = len(assessable)
     rep["clinical"]["rs4_reliability_reported"] = line(
-        "quantitative rater reliability reported (RS4)", 0, 6, "exploratory subset")
+        "quantitative rater reliability reported (RS4)", 0, len(with_rater),
+        "exploratory subset, releases with a person-assigned label")
 
     OUT.write_text(json.dumps(rep, indent=2), encoding="utf-8")
     print("\n" + "=" * 96)

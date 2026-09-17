@@ -156,13 +156,14 @@
     }
   },
   "clinical": {
+    "assessable_subset": 7,
     "rs4_reliability_reported": {
       "k": 0,
       "n": 6,
       "p": 0.0,
       "wilson_lo": 0.0,
       "wilson_hi": 0.390334288013856,
-      "note": "exploratory subset"
+      "note": "exploratory subset, releases with a person-assigned label"
     }
   }
 }

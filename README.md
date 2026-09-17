@@ -106,10 +106,11 @@ resolves to the most recent one. See `CITATION.cff` and the Zenodo record.
 
 All versions share the concept DOI
 [10.5281/zenodo.21629516](https://doi.org/10.5281/zenodo.21629516), which always resolves to
-the most recent release. **v1.1.5 is the current release and the one the article reports**; its
-version DOI is [10.5281/zenodo.22819445](https://doi.org/10.5281/zenodo.22819445), recorded here
-after the release because a release cannot contain the DOI minted for it, so the copy inside
-v1.1.5 itself does not carry it. v1.1.4 is
+the most recent release. **v1.1.6 is the current release and the one the article reports.** Its
+version DOI is recorded here after the release, because a release cannot contain the DOI minted
+for it, so the copy inside v1.1.6 itself does not carry it. v1.1.5 is
+[10.5281/zenodo.22819445](https://doi.org/10.5281/zenodo.22819445), superseded and not
+withdrawn. v1.1.4 is
 [10.5281/zenodo.22813553](https://doi.org/10.5281/zenodo.22813553), superseded and not
 withdrawn. v1.1.3 is [10.5281/zenodo.22071534](https://doi.org/10.5281/zenodo.22071534),
 superseded and not withdrawn. v1.1.2 is
@@ -122,6 +123,17 @@ neither is withdrawn. v1.0.0 is
 [10.5281/zenodo.21629517](https://doi.org/10.5281/zenodo.21629517), which predates the
 protocol document and the self-audit checklist and should not be cited for them.
 
+- **v1.1.6** — counts the release whose codes come from an accepted manuscript. One audited
+  release has no open published version, and its codes were assigned from the version its authors
+  deposited in an institutional repository, which the deposit records as the version accepted for
+  publication. The row was held outside the clinical denominator while it already carried a
+  confirmed absence for label reliability, which the study's own rule does not allow. It is now
+  counted, its spectrum cell is filled from the same source, and the denominator moves from six to
+  seven with the reliability count from 0 of 5 to 0 of 6, since one release has no rater. Script 21
+  now reads that denominator from the coding file instead of printing it as a constant. Two
+  documents are brought up to the counts the article reports: the recommendation set still carried
+  the sample data count from before the rule was corrected in August, and the July intake log
+  presented its figures as current and now says what superseded them. No other number changes.
 - **v1.1.5** — corrects the sensitivity bounds and two location pointers. Script 31 derived the
   point shifts of the screening sensitivity from figures that had already been rounded, which
   moved two of them by 0.1 point, and reported the largest increase only over the signals with a

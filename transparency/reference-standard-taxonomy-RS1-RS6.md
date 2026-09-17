@@ -7,8 +7,8 @@
 > and for measurement of rater variability, QUADAS-2 for patient selection and reference-standard
 > conduct, and PROBAST+AI for outcome definition; the taxonomy is presented as an
 > operationalization for swallowing, most distinct in RS2 and RS3, not as a new appraisal domain.
-> (2) Denominator: "0/6" in §5 is reported as 0/5 releases with a person-assigned label plus one
-> (Song et al.) whose labels are defined by protocol and have no rater. The article also records
+> (2) Denominator: the article reports 0/6 releases with a person-assigned label plus one
+> (Song et al.) whose labels are defined by protocol and have no rater, k = 7 in all. The article also records
 > what the taxonomy does not yet capture: the scale threshold defining a label, the label unit
 > (swallow or patient), the bolus protocol, and the task type (diagnostic, prognostic or
 > measurement). The first-pass phrase "healthy-control contamination" is no longer used as a
@@ -92,7 +92,7 @@ These are recorded here rather than silently resolved, because they bear on how 
 
 ### Objective preliminary findings (all auditable)
 
-1. **Rater reliability (κ / ICC) is not reported at all in the studies we could read: 0/6** of the full-text-accessible subset (the other 12 of the 18 have no retrievable full text and are coded *not assessable*, so this is **not** extrapolated to 18). What makes this striking is that even studies that **acknowledge** the problem do not quantify their own label reliability — *masa/Saab* notes that "even VFSS by SLP has … poor inter-rater reliability"; *MITI* describes manual expert annotation as "prone to errors". The problem is known but not measured.
+1. **Rater reliability (κ / ICC) is not reported at all in the studies we could read: 0/6** of the releases with a person-assigned label, out of k = 7 with retrievable methods (the other 11 of the 18 have no identified publication and are coded *not assessable*, so this is **not** extrapolated to 18). What makes this striking is that even studies that **acknowledge** the problem do not quantify their own label reliability — *masa/Saab* notes that "even VFSS by SLP has … poor inter-rater reliability"; *MITI* describes manual expert annotation as "prone to errors". The problem is known but not measured.
 2. **The reference standard is heterogeneous and unstandardized:** instrumental reference (VFSS: A, E, G, M, O · manometry: N · CT/MRI segmentation: D, F) / clinical bedside (B) / **proxy outcome** (Q tube feeding and pneumonia · R CTCAE toxicity · C postoperative outcome) / physical (H viscosity) / unclear and low-provenance (I, J, K, L, P). There is no common reference.
 3. **Proxy leakage (RS2) is common** `[NKT]`: several models predict not the instrumental gold standard but a **proxy** for it — *B* (voice → bedside screen), *Q* (voice → clinical outcome), *O* (clinical and voice → VFSS-confirmed dysphagia), *R* (dose → toxicity). The model learns a shadow of dysphagia rather than dysphagia.
 4. **The code-available subset skews toward low label provenance:** for studies such as I, J, K and L the publication link and the reference standard are unclear, so the repositories that share code may also be those with the weakest label provenance.
@@ -105,7 +105,7 @@ The full text of the Kwok and Wong scoping review (JMIR 2025, PMC12089864) repor
 
 > Dysphagia AI is **reproducible neither computationally nor clinically**, because **both kinds of provenance are systematically missing**:
 > - **Computational provenance:** weights, environment and license are absent → 0/18 re-executable out of the box.
-> - **Clinical and label provenance:** rater reliability, spectrum and reference standard are under-reported → 0/6 of the readable studies report label κ or ICC (not extrapolated to 18), and the labels themselves are heterogeneous proxies.
+> - **Clinical and label provenance:** rater reliability, spectrum and reference standard are under-reported → 0/6 of the readable studies with a person-assigned label report label κ or ICC (not extrapolated to 18), and the labels themselves are heterogeneous proxies.
 >
 > Even a model that re-runs perfectly is **not clinically reproducible** if it rests on weak or unreported labels. Each axis is necessary, so the contribution is more than one further audit.
 
@@ -113,4 +113,4 @@ The full text of the Kwok and Wong scoping review (JMIR 2025, PMC12089864) repor
 
 - The `inventory-only` rows could not be coded from full text. That is reported as the reason the clinical axis rests on a subset, not carried as work still to do.
 - The `[NKT]` judgements were verified against the source publications on 21-22 August 2026. Four rows were corrected and the change is recorded per row in `correction_2026-08-22`; the corrected set was accepted by the clinician author on 22 August 2026.
-- One row remains outside the assessable subset by decision rather than by necessity: the Cubero row's published version was not retrieved through the study's channels, and a postprint that would make it assessable was identified afterwards. Reopening it would move the subset from six studies to seven and the reliability count from 0 of 6 to 0 of 7. The authors have not taken that step, and the reason is recorded here so the choice is visible.
+- That row was reopened on 18 September 2026. The Cubero row's published version was not retrieved through the study's channels, but the version the authors deposited in an institutional repository is recorded there as the accepted manuscript, so the codes rest on the peer reviewed text. The subset moves from six studies to seven and the reliability count from 0 of 5 to 0 of 6, since Song et al. has no rater. The published version could not be compared with the deposited one.

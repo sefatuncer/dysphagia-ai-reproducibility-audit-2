@@ -52,11 +52,11 @@ this archive. Nothing is marked met on the strength of an intention.
 
 | # | Item | Status | Where |
 |---|---|---|---|
-| D1 | Reference-standard type stated per study | **Met (k=6)** | `transparency/rs-taxonomy-coding.csv`; manuscript Table 4. The instrument itself is published in full as Online Resource 3 of the article and in `transparency/` in this archive. |
-| D2 | Label scale and any binarization loss recorded | **Met (k=6)** | Same. |
-| D3 | Rater reliability (κ or ICC) recorded, with "not reported" kept distinct from "weak" | **Met (k=6)** | Same. This is the item the audited literature fails: 0/6. |
+| D1 | Reference-standard type stated per study | **Met (k=7)** | `transparency/rs-taxonomy-coding.csv`; manuscript Table 4. The instrument itself is published in full as Online Resource 3 of the article and in `transparency/` in this archive. |
+| D2 | Label scale and any binarization loss recorded | **Met (k=7)** | Same. |
+| D3 | Rater reliability (κ or ICC) recorded, with "not reported" kept distinct from "weak" | **Met (k=7)** | Same. This is the item the audited literature fails: 0/6 of the releases with a person-assigned label. |
 | D4 | Applicable appraisal instrument named, without producing an unsupported rating | **Met** | Table 4 names the appraisal family that would apply, and the Label Provenance section states that no formal QUADAS-2 or PROBAST+AI rating was produced. |
-| D5 | Which studies are in which axis, made explicit | **Met** | The k=6 clinical subset is the full-text-accessible subset of the same 18 studies, stated in the Table 4 caption and in the Label Provenance section. Every study in Table 4 is also in the computational set. |
+| D5 | Which studies are in which axis, made explicit | **Met** | The k=7 clinical subset is the publication-linked subset of the same 18 studies, stated in the Table 4 caption and in the Label Provenance section. Every study in Table 4 is also in the computational set. |
 
 | D6 | Reliability of the clinical coding itself | **Not met** | The RS coding was done by one clinician with no second coder, so it reports no agreement statistic. RS4 asks the audited studies for exactly what this coding does not provide. The manuscript states this in the limitations rather than leaving it for a reader to notice. |
 

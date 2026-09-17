@@ -16,10 +16,10 @@ script emits one row per study per item, carrying the code, the basis recorded f
 basis is. Reliability is not claimed; auditability is provided instead, and the two are
 different remedies for different problems.
 
-The evidence_level column is carried through unchanged and matters: `fulltext-verified`
-and `abstract+fulltext` rest on the source text, while `inventory-only` records that no
-paper could be matched to the repository, so the code is an inference from the modality
-and should be read as such.
+The evidence_level column is carried through unchanged and matters: `fulltext-verified`,
+`abstract+fulltext` and `accepted manuscript` rest on the source text, while
+`inventory-only` records that no paper could be matched to the repository, so the code is
+an inference from the modality and should be read as such.
 
 Input : rs-taxonomy-coding (via paths.py)
 Output: rs-coding-evidence.csv
@@ -88,8 +88,10 @@ def main():
         w.writerows(out_rows)
 
     studies = {r["study_id"] for r in out_rows}
+    # An accepted manuscript is the peer reviewed text, so it counts with the full texts.
     assessable = {r["study_id"] for r in out_rows
-                  if r["evidence_level"] in ("fulltext-verified", "abstract+fulltext")}
+                  if r["evidence_level"] in ("fulltext-verified", "abstract+fulltext",
+                                             "accepted manuscript")}
     quoted = sum(1 for r in out_rows if "'" in r["recorded_basis"]
                  or '"' in r["recorded_basis"])
     print("  studies coded            : %d" % len(studies))

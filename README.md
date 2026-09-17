@@ -106,9 +106,10 @@ resolves to the most recent one. See `CITATION.cff` and the Zenodo record.
 
 All versions share the concept DOI
 [10.5281/zenodo.21629516](https://doi.org/10.5281/zenodo.21629516), which always resolves to
-the most recent release. **v1.1.5 is the current release and the one the article reports.** Its
-version DOI is recorded here after the release, because a release cannot contain the DOI minted
-for it, so the copy inside v1.1.5 itself does not carry it. v1.1.4 is
+the most recent release. **v1.1.5 is the current release and the one the article reports**; its
+version DOI is [10.5281/zenodo.22819445](https://doi.org/10.5281/zenodo.22819445), recorded here
+after the release because a release cannot contain the DOI minted for it, so the copy inside
+v1.1.5 itself does not carry it. v1.1.4 is
 [10.5281/zenodo.22813553](https://doi.org/10.5281/zenodo.22813553), superseded and not
 withdrawn. v1.1.3 is [10.5281/zenodo.22071534](https://doi.org/10.5281/zenodo.22071534),
 superseded and not withdrawn. v1.1.2 is

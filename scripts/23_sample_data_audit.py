@@ -14,7 +14,7 @@ Until this script the signal was carried by a hand-coded literal inside script 0
 that literal was wrong in both directions. Two repositories with an identical recorded
 signal (`data_dir=datasets/`) were coded differently, which is what prompted the check.
 
-OPERATIONAL DEFINITION (pre-stated here, applied identically to every repository)
+OPERATIONAL DEFINITION (stated here, applied identically to every repository)
 --------------------------------------------------------------------------------
 A repository carries USABLE SAMPLE OR TEST DATA if at least one file under a
 data-designating directory is a non-empty, non-code, non-documentation file.

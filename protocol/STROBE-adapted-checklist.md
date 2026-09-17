@@ -57,8 +57,8 @@ Three items do not carry over cleanly and are recorded here rather than forced:
   reaches, so neither applies. Marking them "not applicable" is a design statement,
   not an omission.
 - **Item 16 (effect estimates)** presupposes an effect. There is none; the estimands
-  are proportions, and the intervals are reported as small-sample fragility bands
-  with that stated in §2.7.
+  are proportions, and the intervals are reported as descriptive indicators of
+  imprecision, with that stated in §2.7.
 
 ## What this checklist does not do
 

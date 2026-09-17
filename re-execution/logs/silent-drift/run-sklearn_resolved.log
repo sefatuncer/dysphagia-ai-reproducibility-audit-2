@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/sklearn/utils/_tags.py", line 281, in get_tags
+    tags = estimator.__sklearn_tags__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CatBoostClassifier' object has no attribute '__sklearn_tags__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/w/probe.py", line 35, in <module>
+    P = model.predict_proba(X)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/sklearn/pipeline.py", line 920, in predict_proba
+    check_is_fitted(self)
+  File "/usr/local/lib/python3.11/site-packages/sklearn/utils/validation.py", line 1717, in check_is_fitted
+    if not _is_fitted(estimator, attributes, all_or_any):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/sklearn/utils/validation.py", line 1626, in _is_fitted
+    return estimator.__sklearn_is_fitted__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/sklearn/pipeline.py", line 1336, in __sklearn_is_fitted__
+    check_is_fitted(last_step)
+  File "/usr/local/lib/python3.11/site-packages/sklearn/utils/validation.py", line 1712, in check_is_fitted
+    tags = get_tags(estimator)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/sklearn/utils/_tags.py", line 289, in get_tags
+    raise AttributeError(
+AttributeError: The following error was raised: 'CatBoostClassifier' object has no attribute '__sklearn_tags__'. It seems that there are no classes that implement `__sklearn_tags__` in the MRO and/or all classes in the MRO call `super().__sklearn_tags__()`. Make sure to inherit from `BaseEstimator` which implements `__sklearn_tags__` (or alternatively define `__sklearn_tags__` but we don't recommend this approach). Note that `BaseEstimator` needs to be on the right side of other Mixins in the inheritance order.

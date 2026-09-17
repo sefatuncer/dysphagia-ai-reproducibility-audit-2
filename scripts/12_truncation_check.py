@@ -3,8 +3,8 @@
 12_truncation_check.py — quantify the GitHub top-N truncation limitation.
 
 The discovery script takes only the first page (15 repositories, ranked by stars)
-per search term. Zero-star academic repositories can therefore be missed. A
-reviewer asked how large that loss actually is, so this script re-runs every
+per search term. Zero-star academic repositories can therefore be missed. How
+large that loss actually is had not been measured, so this script re-runs every
 GitHub search term with full pagination, applies the same blind, rule-based
 scope test used for the screening-reliability check, and reports how many
 in-scope candidates sit BEYOND rank 15.

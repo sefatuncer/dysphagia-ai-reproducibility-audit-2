@@ -7,7 +7,7 @@ WHY THIS SCRIPT EXISTS
 RQ1 asks for five transparency signals, and (e) run instructions was the only one
 never tabulated: intake (script 08) records whether a README file exists, which is
 not the same question. This script answers the question that was asked, with a
-pre-stated and machine-checkable definition, so that RQ1(e) is reported rather than
+written and machine-checkable definition, so that RQ1(e) is reported rather than
 deferred to the codebook.
 
 OPERATIONAL DEFINITION (applied identically to every repository)

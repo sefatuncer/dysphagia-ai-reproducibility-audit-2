@@ -2,7 +2,7 @@
 """
 13_backward_coverage.py — backward-coverage check against two independent reviews.
 
-A reviewer asked for an upper-bound argument on channel coverage: our discovery
+Channel coverage needs an upper-bound argument, because our discovery
 uses GitHub Search, Papers with Code, and open-access full-text mining, which
 defines a tool-reachable universe rather than a topic universe. This script tests
 that universe against the study sets of two independent syntheses of the same

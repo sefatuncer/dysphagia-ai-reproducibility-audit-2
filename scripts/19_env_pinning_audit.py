@@ -13,7 +13,7 @@ leave its own binding conjunct unmeasured, so the two properties are given
 operational, machine-checkable definitions here and applied to every study whose
 repository declares an environment specification.
 
-OPERATIONAL DEFINITIONS (pre-stated, applied identically to every file)
+OPERATIONAL DEFINITIONS (stated here, applied identically to every file)
 ----------------------------------------------------------------------
 PINNED   : every declared dependency carries an exact version. For pip, each
            requirement line uses '==' or '===' (or is an exact wheel/archive

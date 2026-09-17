@@ -119,7 +119,7 @@ def main():
         ok &= check("%s bootstrap %.2f--%.2f" % (label, b["lo"], b["hi"]),
                     "%.2f--%.2f" % (b["lo"], b["hi"]))
 
-    # ---- provenance and re-verification added after external review ----------
+    # ---- provenance and re-verification added after a pre-submission review --
     # Each of these entered the article with the second round of work and must stay tied
     # to the file that produced it.
     print("\nprovenance and re-verification (scripts 25-30)")

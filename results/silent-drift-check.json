@@ -1,0 +1,156 @@
+{
+  "generated_by": "34_silent_drift_check.py",
+  "run_on": "2026-09-17",
+  "repo": "enoch0307/streamlitapp_cn",
+  "commit": "289f7d187dd1b75445bbbae827366592357b6282",
+  "files_sha256": {
+    "Binary.pkl": "cd7a0bbaab2a44bca4870c5e40fa7883cc20394f7730d0524430d9d2e0c85789",
+    "变量1.xlsx": "bf7e17f33cfc534d75c4bf56990407c1a7d03b848194b9ad2ffe930caea9df06"
+  },
+  "versions_recorded_in_pickle": {
+    "scikit-learn": [
+      "1.6.1"
+    ],
+    "catboost": [
+      "1.2.8"
+    ]
+  },
+  "base_image": "python:3.11-slim",
+  "base_image_digest": "python@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534",
+  "common_pins": [
+    "numpy==2.4.6",
+    "pandas==3.0.3",
+    "joblib==1.5.3",
+    "openpyxl==3.1.5"
+  ],
+  "environments": {
+    "training": {
+      "pins": [
+        "scikit-learn==1.6.1",
+        "catboost==1.2.8"
+      ],
+      "logs": {
+        "build_exit": 0,
+        "run_exit": 0
+      },
+      "versions": {
+        "sklearn": "1.6.1",
+        "catboost": "1.2.8",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "joblib": "1.5.3"
+      },
+      "load_warnings": [],
+      "predict_warnings": [
+        "UserWarning: X has feature names, but StandardScaler was fitted without feature names"
+      ],
+      "model_type": "Pipeline",
+      "steps": [
+        "StandardScaler",
+        "CatBoostClassifier"
+      ]
+    },
+    "catboost_resolved": {
+      "pins": [
+        "scikit-learn==1.6.1",
+        "catboost==1.2.10"
+      ],
+      "logs": {
+        "build_exit": 0,
+        "run_exit": 0
+      },
+      "versions": {
+        "sklearn": "1.6.1",
+        "catboost": "1.2.10",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "joblib": "1.5.3"
+      },
+      "load_warnings": [],
+      "predict_warnings": [
+        "UserWarning: X has feature names, but StandardScaler was fitted without feature names"
+      ],
+      "model_type": "Pipeline",
+      "steps": [
+        "StandardScaler",
+        "CatBoostClassifier"
+      ]
+    },
+    "sklearn_resolved": {
+      "pins": [
+        "scikit-learn==1.9.0",
+        "catboost==1.2.8"
+      ],
+      "logs": {
+        "build_exit": 0,
+        "run_exit": 1,
+        "run_error": "AttributeError: The following error was raised: 'CatBoostClassifier' object has no attribute '__sklearn_tags__'. It seems that there are no classes that implement `__sklearn_tags__` in the MRO and/or all classes in the MRO call `super().__sklearn_tags__()`. Make sure to inherit from `BaseEstimator` "
+      },
+      "versions": null,
+      "load_warnings": null,
+      "predict_warnings": null,
+      "model_type": null,
+      "steps": null
+    },
+    "resolved": {
+      "pins": [
+        "scikit-learn==1.9.0",
+        "catboost==1.2.10"
+      ],
+      "logs": {
+        "build_exit": 0,
+        "run_exit": 0
+      },
+      "versions": {
+        "sklearn": "1.9.0",
+        "catboost": "1.2.10",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "joblib": "1.5.3"
+      },
+      "load_warnings": [
+        "InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.6.1 when using version 1.9.0. This might lead to breaking code or invalid results. Use at your own risk. Fo",
+        "InconsistentVersionWarning: Trying to unpickle estimator StandardScaler from version 1.6.1 when using version 1.9.0. This might lead to breaking code or invalid results. Use at your own ri"
+      ],
+      "predict_warnings": [
+        "UserWarning: X has feature names, but StandardScaler was fitted without feature names"
+      ],
+      "model_type": "Pipeline",
+      "steps": [
+        "StandardScaler",
+        "CatBoostClassifier"
+      ]
+    }
+  },
+  "grid": {
+    "seed": 20260917,
+    "random_draws": 2000,
+    "corners": 2,
+    "rows": 2002,
+    "source": "ranges and categories offered by the application (变量1.xlsx)",
+    "reference_output_spread": {
+      "min_p_class1": 0.4593332443396113,
+      "max_p_class1": 0.9720391611634243,
+      "distinct_values": 1059,
+      "predicted_class1": 2001
+    }
+  },
+  "reference": "training",
+  "comparisons": {
+    "catboost_resolved_vs_training": {
+      "n_inputs": 2002,
+      "identical_rows": 2002,
+      "max_abs_probability_difference": 0.0,
+      "mean_abs_probability_difference": 0.0,
+      "class_flips": 0
+    },
+    "resolved_vs_training": {
+      "n_inputs": 2002,
+      "identical_rows": 2002,
+      "max_abs_probability_difference": 0.0,
+      "mean_abs_probability_difference": 0.0,
+      "class_flips": 0
+    }
+  },
+  "scope": "Binary.pkl only: Multi.pkl does not load under the resolved scikit-learn, so its failure is visible and was reported in July. The numpy and pandas versions used in training are not recorded in the pickle and are held at the July resolution. The model and spreadsheet are fetched from the access-date commit and not redistributed; the grid is regenerated by the released probe. Equal outputs on this grid do not prove equal outputs on every input."
+}

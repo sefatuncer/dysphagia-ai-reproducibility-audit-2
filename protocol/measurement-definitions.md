@@ -150,7 +150,7 @@ output*, not the study's *reported metric*.
 
 ## 7. Screening reliability
 
-`scripts/11_screening_kappa.py` re-applies the pre-stated inclusion rule to every
+`scripts/11_screening_kappa.py` re-applies the written inclusion rule to every
 screened record from both scripted channels (n=181), using only the repository name,
 paper title and description, and blind to the recorded decisions.
 
@@ -181,8 +181,8 @@ information about how unstable the estimate is.
 
 ## 8. Interval reporting
 
-Wilson intervals throughout, as small-sample fragility bands rather than inferential
-confidence statements. They indicate how few observations underlie each proportion,
+Wilson intervals throughout, as descriptive indicators of imprecision rather than
+inferential confidence statements. They indicate how few observations underlie each proportion,
 do not capture selection bias from non-random discovery, and are not used to infer to
 the whole dysphagia-AI literature.
 

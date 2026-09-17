@@ -19,7 +19,7 @@ census count (22 repositories / 18 studies).
 RATERS
 ------
 Rater 1 = the recorded scope decisions in the released candidate lists.
-Rater 2 = an INDEPENDENT, BLIND, rule-based re-application of the pre-stated
+Rater 2 = an INDEPENDENT, BLIND, rule-based re-application of the written
           inclusion rule (this script), using only OBJECTIVE record features
           (record type, repository name, paper title, repository description)
           and NOT the recorded decisions or the reviewer's free-text notes.
@@ -69,7 +69,7 @@ ENV = inp("repo-inventory")        # consolidated inventory (recorded decisions)
 OUT = out("screening-reliability.json")
 
 # ---------------------------------------------------------------- blind rule
-# Objective operationalization of the pre-stated inclusion rule, applied blind
+# Objective operationalization of the written inclusion rule, applied blind
 # to the recorded decisions and to the reviewer's notes.
 TOOL_LIBS = (
     "yolo", "opencv", "labelme", "labelimg", "opensmile", "silero", "soxr",

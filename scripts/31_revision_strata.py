@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Strata, joint patterns and corrected denominators requested in review.
+"""Strata, joint patterns and corrected denominators requested in pre-submission review.
 
-Why this exists. A seven-reviewer panel (17 September 2026) found that the article
+Why this exists. A pre-submission review of the manuscript (17 September 2026) found that it
 reported every signal for the whole set but for no subset a reader of an imaging
 journal would ask about, that it gave the binding conjunct only over all 18 studies
 although it is measurable only where an environment file exists, that it capped a

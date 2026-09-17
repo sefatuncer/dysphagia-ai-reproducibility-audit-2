@@ -47,7 +47,7 @@ The concept DOI 10.5281/zenodo.21629516 covers all versions and resolves to the 
 one; cite it, or the version DOI of the release you are actually reading.
 
 **Remaining steps:** finalize the RS1–RS6 clinical sign-off → submit. No external registry
-entry is made; §2.1 of the manuscript gives the reason. [Corrected 2026-08-23: this line
+entry is made; the design details in the article's methods supplement give the reason. [Corrected 2026-08-23: this line
 previously read “finalize the RS1–RS6 clinical sign-off → notify the authors of the audited
 repositories → submit”, which contradicted the Ethics paragraph above. No notification round
 was carried out; the manuscript and the self-audit checklist both record that item as not

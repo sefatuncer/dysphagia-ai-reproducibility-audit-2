@@ -24,7 +24,7 @@ Two screeners (N.K.T. through the clinical lens, S.T. through the open-science a
 - **E3** — does not describe a computational model.
 - **E4** — **oesophageal motility only**, unrelated to oropharyngeal swallowing.
 - **E5** — a **duplicate** report of the same model or cohort (keep the most complete version).
-- **E6** — language: **not English with extractable full text** (the canonical criterion, locked in the record and identical to §2.2 of the article).
+- **E6** — language: **not English with extractable full text** (the canonical criterion, locked in the record and identical to the eligibility criteria of the article).
 
 ## Borderline cases (clarified for κ consistency)
 - **Cancer and radiotherapy:** *prediction of post-radiotherapy dysphagia* (modelling a dysphagia outcome) → **INCLUDE**. *Radiotherapy dose or treatment planning* that is not dysphagia AI → **EXCLUDE as E3/E4**. The `likely_cancer_rt` flag in `combined-corpus.csv` marks where this decision is needed.

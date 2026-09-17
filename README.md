@@ -167,7 +167,7 @@ protocol document and the self-audit checklist and should not be cited for them.
 - **Article:** _DOI to be added on acceptance._
 - **Protocol:** no external registration. The protocol is `protocol/protocol.md` in this
   archive, posted as a dated record with no claim of temporal precedence over the analysis
-  (PROSPERO does not accept this design; see §2.1 of the article).
+  (PROSPERO does not accept this design; see the design details in the article's methods supplement).
 
 ---
 *Environment for the re-execution harness: CPU-only, 32 GB RAM, 16 cores, Docker. All analysis is reproducible as a frozen-snapshot-plus-fixed-seed pipeline.*

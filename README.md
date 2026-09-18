@@ -1,7 +1,7 @@
 # Dysphagia & Swallowing AI — Reproducibility Audit (research artifacts)
 
 Reproducibility artifacts for the meta-research study
-*"Available but not runnable out of the box: an audit of execution prerequisites and label reporting in shared code for dysphagia and swallowing artificial intelligence."*
+*"Available but not runnable out of the box: execution prerequisites and label reporting in shared dysphagia and swallowing AI code."*
 The protocol in `protocol/` keeps the working title it was written under.
 
 We audited whether published swallowing/dysphagia-AI code is not just **available** but **re-runnable**, and we release the full measurement pipeline so that the audit is itself reproducible — *we practice what we audit*.

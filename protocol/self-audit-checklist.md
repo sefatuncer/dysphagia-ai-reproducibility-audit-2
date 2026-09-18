@@ -4,7 +4,7 @@ No EQUATOR reporting guideline fits a meta-research audit of execution prerequis
 with an embedded re-execution case series, and the manuscript says so rather than
 claiming conformance to one that does not apply. This file closes that gap in the
 only way that is consistent with the paper's own argument: we take the
-minimum-reporting recommendation set the study proposes and apply it to the study
+candidate reporting set the study proposes and apply it to the study
 itself, item by item, with a pointer to where each item is met.
 
 Every "where" below resolves either to a section of the manuscript or to a file in

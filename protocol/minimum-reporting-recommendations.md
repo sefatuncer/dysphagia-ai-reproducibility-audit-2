@@ -1,4 +1,6 @@
-# Minimum-reporting RECOMMENDATION SET for dysphagia AI — v1.0 (final)
+# Candidate reporting set for dysphagia AI — v1.0 (final)
+
+> The article calls this a candidate reporting set rather than a minimum reporting set, because the items have not been through a consensus process.
 
 > ⚠️ **This is a set of RECOMMENDATIONS, not a "standard" or a "checklist".** A formal standard would require a Delphi or consensus process, which this study did not run. Calling it a checklist or a standard would be an overclaim, so it is presented as recommendations throughout.
 >

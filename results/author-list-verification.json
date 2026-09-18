@@ -363,5 +363,19 @@
     "truncated": false,
     "n_named": 5,
     "n_crossref": 5
+  },
+  {
+    "key": "ridge2024",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 17,
+    "n_crossref": 17
+  },
+  {
+    "key": "kline2025",
+    "status": "ok",
+    "truncated": false,
+    "n_named": 20,
+    "n_crossref": 20
   }
 ]

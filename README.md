@@ -106,10 +106,12 @@ resolves to the most recent one. See `CITATION.cff` and the Zenodo record.
 
 All versions share the concept DOI
 [10.5281/zenodo.21629516](https://doi.org/10.5281/zenodo.21629516), which always resolves to
-the most recent release. **v1.1.7 is the current release and the one the article reports**; its
-version DOI is [10.5281/zenodo.22843406](https://doi.org/10.5281/zenodo.22843406), recorded here after the
-release because a release cannot contain the DOI minted for it, so the copy inside v1.1.7 itself
-does not carry it. v1.1.6 is
+the most recent release. **v1.1.8 is the current release and the one the article reports**; its
+version DOI is [10.5281/zenodo.22843787](https://doi.org/10.5281/zenodo.22843787), recorded here after the
+release because a release cannot contain the DOI minted for it, so the copy inside v1.1.8 itself
+does not carry it. v1.1.7 is
+[10.5281/zenodo.22843406](https://doi.org/10.5281/zenodo.22843406), superseded and not
+withdrawn. v1.1.6 is
 [10.5281/zenodo.22821000](https://doi.org/10.5281/zenodo.22821000), superseded and not
 withdrawn. v1.1.5 is
 [10.5281/zenodo.22819445](https://doi.org/10.5281/zenodo.22819445), superseded and not
@@ -126,6 +128,15 @@ neither is withdrawn. v1.0.0 is
 [10.5281/zenodo.21629517](https://doi.org/10.5281/zenodo.21629517), which predates the
 protocol document and the self-audit checklist and should not be cited for them.
 
+- **v1.1.8** — records the re-judged target-validity code for the row whose premise an earlier
+  correction had changed. The target is the instrumental standard itself, since the raters read
+  the videofluoroscopy, and the label is also marked as judged from the same signal the model
+  takes as input, since the input parameters are measured from the recordings those raters
+  scored. Read literally that mark would fit the segmentation studies, whose masks are drawn on
+  the images being segmented, and the manometric detection study, whose annotation lies on the
+  trace the model consumes. Those are measurement tasks, so it is applied only where the endpoint
+  is a diagnostic claim, and the taxonomy document states that criterion. One row carries it. No
+  reported number changes.
 - **v1.1.7** — corrects one label granularity field and reopens one target-validity judgment.
   The August correction rewrote the scale field of one row but not the binarization field beside
   it, which still described the segmentation step alone, so the count of releases that reduce the

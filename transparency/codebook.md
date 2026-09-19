@@ -46,6 +46,16 @@
 | `uncertainty_reported` | `yes` / `no` | Confidence intervals or an appropriate test (DeLong or similar) |
 
 ## D. Clinical — reference-standard taxonomy (clinical axis, N.K.T. · RS1–RS6)
+
+> **This section records the schema as it was planned, not the one that was released.** The
+> released file `rs-taxonomy-coding.csv` uses different column names and records each code as
+> prose with the evidence beside it, rather than the enumerated tokens listed here. Where the two
+> differ the released file and the item table in Online Resource 3 are authoritative. RS2 in
+> particular carries five permitted answers in the published instrument, including a label judged
+> from the same signal the model takes as input, which is absent from the planned set below. The
+> planned schema is kept rather than rewritten so that the distance between design and release
+> stays visible.
+
 | Column | Permitted values | Decision rule |
 |---|---|---|
 | `rs1_refstandard_type` | `instrumental_gold` (VFSS/MBSS/FEES) / `clinical_exam` / `screening_surrogate` / `patient_reported` / `ai_derived` / `not_reported` | Source of the label |

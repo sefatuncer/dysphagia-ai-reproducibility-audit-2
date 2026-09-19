@@ -60,7 +60,20 @@ ITEMS = [
 
 
 def main():
-    rows = list(csv.DictReader(SRC.open(encoding="utf-8-sig")))
+    reader = csv.DictReader(SRC.open(encoding="utf-8-sig"))
+    rows = list(reader)
+    # A comma written into an unquoted field once split a row and shifted every column
+    # after it, and nothing noticed: the codes still looked like prose, so the output
+    # was wrong but not obviously wrong. A short row leaves fields None and a long one
+    # collects the surplus under the None key, so both shapes are caught here.
+    for i, r in enumerate(rows, start=2):
+        if None in r:
+            raise SystemExit("line %d has more fields than the header" % i)
+        missing = [k for k, v in r.items() if v is None]
+        if missing:
+            raise SystemExit("line %d is missing %s" % (i, ", ".join(missing)))
+    if len(set(r["study_id"] for r in rows)) != len(rows):
+        raise SystemExit("study_id is not unique, the file is likely misaligned")
     out_rows = []
     for r in rows:
         for label, code_col, basis_col, kind in ITEMS:

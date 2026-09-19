@@ -68,6 +68,15 @@ def main():
             if not code:
                 continue
             basis = (r.get(basis_col) or "").strip() if basis_col else ""
+            # A code whose premise was corrected can be left flagged for re-judgment
+            # rather than re-decided, because the judgment items belong to the clinician
+            # author. That flag lived only in the coding file, so the released table
+            # showed such a code beside evidence that contradicts it with nothing to say
+            # why. The flag now travels with the code, in the form the file writes it,
+            # "<item> is still open", so no study is named here.
+            item_key = label.split()[0]
+            if item_key + " is still open" in (r.get("clinical_judgment_needed") or ""):
+                code = "UNDER RE-JUDGMENT, see clinical_judgment_needed: " + code
             out_rows.append({
                 "study_id": r.get("study_id", "").strip(),
                 "study": r.get("study", "").strip(),

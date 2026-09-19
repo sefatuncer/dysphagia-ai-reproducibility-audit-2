@@ -106,10 +106,12 @@ resolves to the most recent one. See `CITATION.cff` and the Zenodo record.
 
 All versions share the concept DOI
 [10.5281/zenodo.21629516](https://doi.org/10.5281/zenodo.21629516), which always resolves to
-the most recent release. **v1.1.6 is the current release and the one the article reports**; its
-version DOI is [10.5281/zenodo.22821000](https://doi.org/10.5281/zenodo.22821000), recorded here after the
-release because a release cannot contain the DOI minted for it, so the copy inside v1.1.6 itself
-does not carry it. v1.1.5 is
+the most recent release. **v1.1.7 is the current release and the one the article reports**; its
+version DOI is [10.5281/zenodo.22843406](https://doi.org/10.5281/zenodo.22843406), recorded here after the
+release because a release cannot contain the DOI minted for it, so the copy inside v1.1.7 itself
+does not carry it. v1.1.6 is
+[10.5281/zenodo.22821000](https://doi.org/10.5281/zenodo.22821000), superseded and not
+withdrawn. v1.1.5 is
 [10.5281/zenodo.22819445](https://doi.org/10.5281/zenodo.22819445), superseded and not
 withdrawn. v1.1.4 is
 [10.5281/zenodo.22813553](https://doi.org/10.5281/zenodo.22813553), superseded and not
@@ -124,6 +126,19 @@ neither is withdrawn. v1.0.0 is
 [10.5281/zenodo.21629517](https://doi.org/10.5281/zenodo.21629517), which predates the
 protocol document and the self-audit checklist and should not be cited for them.
 
+- **v1.1.7** — corrects one label granularity field and reopens one target-validity judgment.
+  The August correction rewrote the scale field of one row but not the binarization field beside
+  it, which still described the segmentation step alone, so the count of releases that reduce the
+  clinical label to two classes moves from four of seven to five of seven. The same correction had
+  flagged the target-validity code of that row for re-judgment, and the closure that followed
+  recorded acceptance of the corrected reading rather than a new code, so the flag was cleared
+  while the judgment it named was never made. The row now states that the item is open and why,
+  the released coding table carries the flag beside the code, and the half of the code the source
+  contradicts is removed. Which category follows is left to the clinician author. The taxonomy
+  document no longer lists a study among those predicting a proxy when its own code reads target
+  valid, section D of the codebook carries a note saying it records a schema that was never
+  released, the row coded from an accepted manuscript names the handle it was read from, and the
+  coding generator now rejects a misaligned file. No other number changes.
 - **v1.1.6** — counts the release whose codes come from an accepted manuscript. One audited
   release has no open published version, and its codes were assigned from the version its authors
   deposited in an institutional repository, which the deposit records as the version accepted for
